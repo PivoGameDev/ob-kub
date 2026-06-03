@@ -854,37 +854,12 @@ sw(0);
 <img src="brewery-voronezh.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивзавод, Воронеж</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">Варочный порядок 5 000 л · 40 000 л/сутки</p>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Варочный порядок 5 000 л · 8 варок/сутки</p>
 <div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> Варочный порядок 5000 л, ЦКТ 10000 л × 8 шт., парогенератор, чиллер.</p>
-<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens, полный контроль параметров.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: 8 варок/сутки, 6 сортов пива</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="brewery-chekhov.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, г. Чехов</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">Мини-пивоварня ресторанного типа</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> Варочник 250 л, ЦКТ 500 л × 3 шт.</p>
-<p style="margin:0 0 4px"><strong>Размещение:</strong> Компактно в цокольном этаже ресторана.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: 5 сортов, окупаемость 14 мес</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="milk-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🥛 Молочный завод</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">50 тонн переработки в сутки</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> Емкости приёмки 25 000 л × 2, хранение 30 000 л × 4.</p>
-<p style="margin:0 0 4px"><strong>Линия:</strong> Пастеризация 5000 л/ч, CIP-мойка 4 контура.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: +40% производительности, -15% потерь</p>
+<p style="margin:0 0 6px">Изготовили и ввели в эксплуатацию варочный порядок на 5000 литров. Производственная мощность линии — 40 000 литров сусла в сутки. Внедрена автоматизированная система управления на базе Siemens.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 5000 л, ЦКТ 10000 л × 8 шт., парогенератор, чиллер, CIP-мойка.</p>
+<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens S7-1200, контроль температуры, давления, уровней.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: снижение человеческого фактора, стабильное качество, 8 варок/сутки, 6 сортов пива</p>
 </div>
 <p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
@@ -893,11 +868,40 @@ sw(0);
 <img src="brewery-abkhazia.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, Абхазия</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">Комплексное оснащение под ключ</p>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Комплексное оснащение под ключ</p>
 <div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> Варочный порядок 1000 л, ЦКТ 2000 л × 6.</p>
-<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens, управление с планшета.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: запуск за 6 недель, 4 сорта</p>
+<p style="margin:0 0 6px">Полный цикл оснащения пивоварни «под ключ»: от проекта до первой варки. Все ёмкости из AISI 304 с зеркальной полировкой.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 1000 л, ЦКТ 2000 л × 6 шт., БГВ, парогенератор, чиллер.</p>
+<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens, управление с планшета, CIP-мойка.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: запуск за 6 недель, 4 сорта пива, стабильное качество</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="brewery-chekhov.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, г. Чехов</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Мини-пивоварня ресторанного типа</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Небольшая пивоварня ресторанного формата на 5 сортов разливного пива. Проект реализован под ключ за 4 недели.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 250 л, ЦКТ 500 л × 3 шт., парогенератор 60 кВт, чиллер 8 кВт.</p>
+<p style="margin:0 0 4px"><strong>Размещение:</strong> Компактно в цокольном этаже ресторана, CIP-мойка на 2 контура.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: 5 сортов, стабильное качество, окупаемость 14 месяцев</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="milk-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🥛 Молочный завод</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">50 тонн переработки в сутки</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Полный цикл оснащения молочного завода мощностью 50 тонн переработки в сутки: от приёмки до хранения.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Приёмно-охладительные ёмкости 25 000 л × 2, хранение 30 000 л × 4, пастеризация 5000 л/ч.</p>
+<p style="margin:0 0 4px"><strong>Система:</strong> CIP-мойка на 4 контура с программируемым циклом.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: +40% производительности, сокращение потерь сырья на 15%</p>
 </div>
 <p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
@@ -906,11 +910,54 @@ sw(0);
 <img src="wine-equipment.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍷 Винодельня, Ставрополье</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">Винодельня полного цикла</p>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Винодельня полного цикла</p>
 <div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> Ферментация 10 000 л × 8, система инертизации N2.</p>
+<p style="margin:0 0 6px">Винодельня «под ключ» — от приёмки винограда до розлага. Проект включал бродильный цех, погреб выдержки и линию розлага.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Ферментация 10 000 л × 8, система инертизации N2, погреб выдержки.</p>
 <p style="margin:0 0 4px"><strong>Линия:</strong> Розлив 3000 бут/ч, АСУ ТП Siemens.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: 500 000 бут/год, 7 сортов</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: 500 000 бутылок/год, 7 сортов, запуск за 16 недель</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="kvas-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧃 Завод кваса, Воронеж</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">300 000 л/мес · 6 сортов</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Линия производства кваса полного цикла на базе пивоваренного оборудования. Уникальный рецепт сбраживания в ЦКТ.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 3000 л, ЦКТ 5000 л × 4, купажные ёмкости 3000 л × 2.</p>
+<p style="margin:0 0 4px"><strong>Линия:</strong> Розлив ПЭТ 1,5 л (3000 бут/ч), автоматизация.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: 300 000 л/мес, 6 сортов кваса, запуск за 10 недель</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="sir.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧀 Сыроварня, МО</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">600 кг сыра/смена</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Комплексное оснащение крафтовой сыроварни мощностью 2 тонны молока в смену. Все ёмкости из AISI 304.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Сыроизготовители 1000 л × 2, ВДП 500 л с профилем, ферментация 300 л × 3.</p>
+<p style="margin:0 0 4px"><strong>Оснащение:</strong> Контейнеры для посола 500 л × 2, лазерная резка сырного зерна.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: 6 сортов сыра, 600 кг/смена, запуск за 8 недель</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="cheez-kont.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧀 Цех созревания сыров</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">20 тонн единовременного хранения</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Специализированный цех созревания твёрдых и полутвёрдых сыров. Полностью автоматизированное поддержание микроклимата.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Стелажные системы из AISI 304, камеры 4 зоны: +8°C / +12°C / +15°C / +18°C.</p>
+<p style="margin:0 0 4px"><strong>Система:</strong> Увлажнение и вентиляция с HEPA-фильтрацией, контроль влажности 75–95%.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: стабильное качество сыра, снижение брака на 25%</p>
 </div>
 <p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
@@ -919,11 +966,12 @@ sw(0);
 <img src="projects/industrial-tanks.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🏭 Парк резервуаров</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">10+ емкостей для масла 100–200 тыс. л</p>
+<p style="font-size:12px;color:#888;margin:0 0 6px">10+ емкостей для масла</p>
 <div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> Резервуары хранения 100 000–200 000 л × 10+.</p>
-<p style="margin:0 0 4px"><strong>Система:</strong> Азотная подушка на каждом, CIP-мойка.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: +300 тонн единовременного хранения</p>
+<p style="margin:0 0 6px">Изготовление и монтаж крупного парка резервуаров для масложирового комбината. Более 10 емкостей из нержавеющей стали.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Резервуары 100 000–200 000 л × 10+, ёмкости с мешалкой 20 000 л × 2.</p>
+<p style="margin:0 0 4px"><strong>Система:</strong> Азотная подушка на каждом, CIP-мойка, теплообменники.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: +300 тонн единовременного хранения</p>
 </div>
 <p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
@@ -932,24 +980,26 @@ sw(0);
 <img src="projects/cip-station.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧼 CIP-станция</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">Автоматическая безразборная мойка</p>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Автоматическая безразборная мойка</p>
 <div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> 4 контура, баки 1500 л, AISI 316.</p>
-<p style="margin:0 0 4px"><strong>Управление:</strong> Siemens S7-1200, профили моек.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: -40% времени, -25% моющих средств</p>
+<p style="margin:0 0 6px">Автоматизированная CIP-станция для безразборной мойки технологического оборудования. Корпус и трубопроводы из AISI 316.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> 4 независимых контура мойки, баки 1500 л × 4 из AISI 316.</p>
+<p style="margin:0 0 4px"><strong>Управление:</strong> Siemens S7-1200, визуализация, датчики концентрации.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: -40% времени мойки, -25% расхода моющих средств</p>
 </div>
 <p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
 </div>
 <div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="kvas-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<img src="wine-equipment-1.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧃 Завод кваса</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">300 000 л/мес, г. Воронеж</p>
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍷 Винификаторы, Крым</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">3 винификатора с рубашкой охлаждения</p>
 <div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> Варочный 3000 л, ЦКТ 5000 л × 4, купаж 3000 л × 2.</p>
-<p style="margin:0 0 4px"><strong>Линия:</strong> Розлив ПЭТ 3000 бут/ч.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: 6 сортов, запуск за 10 недель</p>
+<p style="margin:0 0 6px">Изготовление и установка трёх винификаторов из AISI 304 для винодельни в Крыму. Каждый танк с рубашкой охлаждения.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Винификаторы 2 000 л × 3, лазерная сварка, полировка Ra ≤ 0,4 мкм.</p>
+<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens, пробоотборники, смотровые фонари.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: точный контроль ферментации, выход за 6 недель</p>
 </div>
 <p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
@@ -958,24 +1008,12 @@ sw(0);
 <img src="milk-park.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🥛 Молочный парк</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">Танки хранения 25 000–50 000 л</p>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Танки 25 000–50 000 л</p>
 <div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> Хранение 25 000–50 000 л × 6, приёмка 20 000 л × 3.</p>
-<p style="margin:0 0 4px"><strong>Система:</strong> CIP-мойка всех резервуаров.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: 500 тонн единовременного хранения</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="sir.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧀 Сыроварня</h3>
-<p style="font-size:12px;color:#888;margin:0 0 8px">Производство 600 кг сыра/смена</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px"><strong>Оборудование:</strong> Сыроизготовители 1000 л × 2, ВДП 500 л, ферментация 300 л × 3.</p>
-<p style="margin:0 0 4px"><strong>Материал:</strong> AISI 304, зеркальная полировка.</p>
-<p style="color:#F77C2A;font-weight:600">Результат: 6 сортов, запуск за 8 недель</p>
+<p style="margin:0 0 6px">Изготовление и монтаж парка ёмкостного оборудования для молочного завода. Резервуары из AISI 304.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Хранение 25 000–50 000 л × 6 с теплоизоляцией, приёмка 20 000 л × 3.</p>
+<p style="margin:0 0 4px"><strong>Технология:</strong> Танки для созревания сливок 10 000 л × 2, CIP-мойка.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: 500 тонн единовременного хранения молока</p>
 </div>
 <p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
