@@ -1061,17 +1061,33 @@ function toggleProj(el){
 <div id="aboutEquip" style="display:none;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06)">
 <p style="font-size:12px;color:rgba(255,255,255,.45);margin:0 0 10px;font-weight:600">⚙️ Оборудование цеха:</p>
 <div style="display:flex;gap:8px;flex-wrap:wrap">
-<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Лазерная резка металла</span>
-<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Аргонодуговая сварка</span>
-<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Гидравлические испытания</span>
-<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Вальцовка днищ</span>
-<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Siemens автоматика</span>
+<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
+<img src="equipment/ostas-mill.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
+<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Вальцы OSTAS</div>
+</div>
+<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
+<img src="equipment/hydraulic-press.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
+<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Пресс с ЧПУ</div>
+</div>
+<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
+<img src="equipment/cnc-guillotine.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
+<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Гильотина с ЧПУ</div>
+</div>
+<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
+<img src="equipment/band-saw.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
+<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Ленточная пила</div>
+</div>
+<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
+<img src="equipment/laser-welding.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
+<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Лазерная сварка</div>
+</div>
 </div>
 </div>
 <span onclick="toggleAboutEquip()" style="display:inline-block;color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;margin-top:10px">Оборудование цеха →</span>
 </div>
-<div style="display:flex;align-items:center;justify-content:center;padding:30px;background:rgba(255,255,255,.02)">
+<div style="display:flex;align-items:center;justify-content:center;padding:30px;background:rgba(255,255,255,.02);flex-direction:column">
 <img src="about-workshop.jpg" alt="Производственный цех" style="max-width:100%;max-height:380px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.2)">
+<p style="font-size:12px;color:rgba(255,255,255,.35);margin:12px 0 0;text-align:center">📍 Краснодар, пос. Индустриальный, Дорожный пер., 5</p>
 </div>
 </div>
 </div>
