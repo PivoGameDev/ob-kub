@@ -745,81 +745,72 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </section>
 
 <!-- EQUIPMENT CATEGORIES -->
-<section class="db-section scroll-reveal" id="equipment" style="padding:48px 0;background:linear-gradient(180deg,#f8f9fb,#fff)">
+<section class="db-section" id="equipment" style="padding:20px 0 48px;background:transparent">
 <div class="db-wrap" style="max-width:1400px">
-<div class="db-section-line"></div>
-<h2 class="db-section-title">Категории оборудования</h2>
-<p class="db-section-sub">Полный каталог промышленного оборудования из нержавеющей стали AISI 304/316</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px">
-<a href="/beer.html" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(247,124,42,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 12px rgba(0,0,0,.04)'">
-<div style="height:180px;background:url(cat-img-565c2c35.jpg) center/cover no-repeat"></div>
-<div style="padding:18px 20px 20px">
-<div style="font-size:17px;font-weight:700;color:#1a1a26;margin-bottom:4px">🍺 Пивоваренное</div>
-<div style="font-size:13px;color:#666;line-height:1.5;margin-bottom:10px">ЦКТ, варочные порядки, дробилки, БГВ, парогенераторы, чиллеры, форфасы</div>
-<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:10px">
-<span style="font-size:12px;color:#F77C2A;font-weight:600">от 94 000 ₽</span>
-<span style="padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">→</span>
+<div class="db-weld-frame" style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
+<div style="text-align:center;margin-bottom:24px">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">Каталог</div>
+<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 4px">Оборудование по отраслям</h2>
+<p style="font-size:14px;color:rgba(255,255,255,.5);margin:0">Выберите вашу отрасль — подберем оборудование с ценой</p>
+</div>
+
+<div id="catTabs" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px">
+<button class="cat-tab active" data-cat="0" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:#F77C2A;color:#fff;font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🍺 Пивоваренное</button>
+<button class="cat-tab" data-cat="1" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🥛 Молочное</button>
+<button class="cat-tab" data-cat="2" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🍷 Винодельческое</button>
+<button class="cat-tab" data-cat="3" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">💧 Вода</button>
+<button class="cat-tab" data-cat="4" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🫒 Масло</button>
+<button class="cat-tab" data-cat="5" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🍯 Кондитерская</button>
+</div>
+
+<div id="catDisplay" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;min-height:200px;transition:opacity .3s">
+<div>
+<div id="catDispName" style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px"></div>
+<div id="catDispDesc" style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:14px"></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+<span class="db-weld-badge" id="catDispPrice" style="font-size:12px"></span>
+<span class="db-weld-badge" style="font-size:12px">AISI 304/316</span>
+<span class="db-weld-badge" style="font-size:12px">Гарантия 12 мес</span>
+</div>
+<a id="catDispLink" href="#" style="display:inline-flex;align-items:center;gap:6px;padding:12px 28px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none">Перейти в каталог →</a>
+</div>
+<div style="display:flex;align-items:center;justify-content:center">
+<img id="catDispImg" src="" alt="" style="max-width:100%;max-height:280px;border-radius:10px;display:block;box-shadow:0 4px 20px rgba(0,0,0,.3)">
 </div>
 </div>
-</a>
-<a href="/dairy.html" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(247,124,42,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 12px rgba(0,0,0,.04)'">
-<div style="height:180px;background:url(cat-dairy.jpg) center/cover no-repeat"></div>
-<div style="padding:18px 20px 20px">
-<div style="font-size:17px;font-weight:700;color:#1a1a26;margin-bottom:4px">🥛 Молочное</div>
-<div style="font-size:13px;color:#666;line-height:1.5;margin-bottom:10px">Ёмкости приёмки и хранения, охладители, ВДП, ферментационные танки, сыро- и творогоизготовители</div>
-<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:10px">
-<span style="font-size:12px;color:#F77C2A;font-weight:600">от 195 000 ₽</span>
-<span style="padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">→</span>
-</div>
-</div>
-</a>
-<a href="/winery.html" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(247,124,42,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 12px rgba(0,0,0,.04)'">
-<div style="height:180px;background:url(cat-wine.jpg) center/cover no-repeat"></div>
-<div style="padding:18px 20px 20px">
-<div style="font-size:17px;font-weight:700;color:#1a1a26;margin-bottom:4px">🍷 Винодельческое</div>
-<div style="font-size:13px;color:#666;line-height:1.5;margin-bottom:10px">Ферментация красных и белых вин, выдержка, криостабилизация, купажирование, винификаторы</div>
-<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:10px">
-<span style="font-size:12px;color:#F77C2A;font-weight:600">от 280 000 ₽</span>
-<span style="padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">→</span>
-</div>
-</div>
-</a>
-<a href="/catalog/beer/hot-water-tank/" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(247,124,42,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 12px rgba(0,0,0,.04)'">
-<div style="height:180px;background:url(cat-water.jpg) center/cover no-repeat"></div>
-<div style="padding:18px 20px 20px">
-<div style="font-size:17px;font-weight:700;color:#1a1a26;margin-bottom:4px">💧 Для воды</div>
-<div style="font-size:13px;color:#666;line-height:1.5;margin-bottom:10px">Баки горячей воды, резервуары для хранения, ёмкости с терморегуляцией. AISI 304/316.</div>
-<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:10px">
-<span style="font-size:12px;color:#F77C2A;font-weight:600">от 150 000 ₽</span>
-<span style="padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">→</span>
-</div>
-</div>
-</a>
-<a href="/catalog/industrial/" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(247,124,42,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 12px rgba(0,0,0,.04)'">
-<div style="height:180px;background:url(cat-oil.jpg) center/cover no-repeat"></div>
-<div style="padding:18px 20px 20px">
-<div style="font-size:17px;font-weight:700;color:#1a1a26;margin-bottom:4px">🫒 Для масла</div>
-<div style="font-size:13px;color:#666;line-height:1.5;margin-bottom:10px">Ёмкости с мешалкой, резервуары хранения, терморегуляция для пищевых масел и жиров.</div>
-<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:10px">
-<span style="font-size:12px;color:#F77C2A;font-weight:600">от 220 000 ₽</span>
-<span style="padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">→</span>
-</div>
-</div>
-</a>
-<a href="/catalog/industrial/" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(247,124,42,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 12px rgba(0,0,0,.04)'">
-<div style="height:180px;background:url(cat-food.jpg) center/cover no-repeat"></div>
-<div style="padding:18px 20px 20px">
-<div style="font-size:17px;font-weight:700;color:#1a1a26;margin-bottom:4px">🍯 Глазури и кондитерская</div>
-<div style="font-size:13px;color:#666;line-height:1.5;margin-bottom:10px">Ёмкости с мешалкой и терморегуляцией для глазурей, сиропов, кондитерских масс.</div>
-<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:10px">
-<span style="font-size:12px;color:#F77C2A;font-weight:600">от 200 000 ₽</span>
-<span style="padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">→</span>
-</div>
-</div>
-</a>
 </div>
 </div>
 </section>
+
+<script>
+var catData = [
+  {name:"🍺 Пивоваренное",desc:"ЦКТ (100–50 000 л), варочные порядки (6 типов), дробилки солода, баки горячей воды, парогенераторы, чиллеры, форфасы, теплообменники.",price:"Цены от 94 000 ₽",img:"cat-img-565c2c35.jpg",link:"/beer.html"},
+  {name:"🥛 Молочное",desc:"Ёмкости приёмки и хранения молока, резервуары-охладители, ванны пастеризации (ВДП), ферментационные танки, сыро- и творогоизготовители.",price:"Цены от 195 000 ₽",img:"cat-dairy.jpg",link:"/dairy.html"},
+  {name:"🍷 Винодельческое",desc:"Ферментация красных и белых вин, ёмкости выдержки и хранения, криостабилизация, купажирование, сульфитация, винификаторы.",price:"Цены от 280 000 ₽",img:"cat-wine.jpg",link:"/winery.html"},
+  {name:"💧 Для воды",desc:"Баки горячей воды, резервуары для хранения воды, ёмкости с терморегуляцией. Пищевая нержавеющая сталь AISI 304/316.",price:"Цены от 150 000 ₽",img:"cat-water.jpg",link:"/catalog/beer/hot-water-tank/"},
+  {name:"🫒 Для масла",desc:"Ёмкости с мешалкой, резервуары хранения, терморегуляция для пищевых масел и жиров. Полный цикл производства.",price:"Цены от 220 000 ₽",img:"cat-oil.jpg",link:"/catalog/industrial/"},
+  {name:"🍯 Глазури и кондитерская",desc:"Ёмкости с мешалкой и терморегуляцией для глазурей, сиропов, кондитерских масс. Индивидуальные решения.",price:"Цены от 200 000 ₽",img:"cat-food.jpg",link:"/catalog/industrial/"}
+];
+var catIdx = 0;
+function showCat(i){
+  if(i===catIdx)return;
+  catIdx=i;
+  var d=catData[i];
+  document.querySelectorAll('.cat-tab').forEach(function(b,j){b.style.background=j===i?'#F77C2A':'rgba(255,255,255,.08)';b.style.color=j===i?'#fff':'rgba(255,255,255,.7)'});
+  var disp=document.getElementById('catDisplay');
+  disp.style.opacity='0';
+  setTimeout(function(){
+    document.getElementById('catDispName').textContent=d.name;
+    document.getElementById('catDispDesc').textContent=d.desc;
+    document.getElementById('catDispPrice').textContent=d.price;
+    document.getElementById('catDispImg').src=d.img;
+    document.getElementById('catDispLink').href=d.link;
+    disp.style.opacity='1';
+  },200);
+}
+document.querySelectorAll('.cat-tab').forEach(function(b){b.addEventListener('click',function(){showCat(parseInt(this.dataset.cat))})});
+showCat(0);
+</script>
 
 <!-- PROJECTS -->
 <section class="db-section alt" id="projects">
