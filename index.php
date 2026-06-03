@@ -459,7 +459,7 @@ body{padding-top:0!important}
 <div class="db-hero-overlay"></div>
 <div class="db-hero-inner">
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
-<h1>Резервуары из стали AISI 304/316<br><span style="color:#F77C2A">с ценой сразу на сайте</span></h1>
+<h1>Резервуары из стали AISI 304/316</h1>
 <p>Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px">
 <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">✅ Цена на каждую позицию</span>
@@ -471,208 +471,17 @@ body{padding-top:0!important}
 <a href="/beer.html">🍺 Пивоваренное</a>
 <a href="/dairy.html">🥛 Молочное</a>
 <a href="/winery.html">🍷 Винодельческое</a>
-<a href="/industrial.html">🏭 Промышленное</a>
+<a href="/industrial.html">🍽️ Пищевые производства</a>
 </div>
-<button class="db-hero-cta" onclick="document.getElementById('quiz-block').scrollIntoView({behavior:'smooth'})">🔄 Подобрать и узнать цену за 1 минуту →</button>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;max-width:700px">
+<div style="flex:1;min-width:250px;display:flex;align-items:center;background:#fff;border-radius:10px;border:2px solid transparent;transition:border-color .25s">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 8px 0 14px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+<input type="text" id="heroQuizInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:14px 8px;font-size:16px;outline:none;font-family:inherit;color:#333">
 </div>
-</section>
-
-<!-- QUIZ -->
-<section class="db-section alt" id="quiz-block" style="background:linear-gradient(180deg,#fff,#f8f9fb)">
-<div class="db-wrap" style="max-width:800px;margin:0 auto">
-<h2 class="db-section-title">🔧 Быстрый подбор оборудования</h2>
-<p class="db-section-sub" style="max-width:600px">Введите название, выберите объём и получите цену за 2 минуты</p>
-<div style="text-align:center;margin:-20px 0 32px"><span style="display:inline-block;padding:8px 24px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:20px;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(247,124,42,.25)">🔥 Без звонков — цена сразу</span></div>
-<div class="db-quiz-steps" style="display:flex;justify-content:center;align-items:center;gap:0;margin-bottom:32px">
-<div class="db-qstep active" id="qs1"><span class="qnum">1</span> Выбор</div><span class="qline"></span>
-<div class="db-qstep" id="qs2"><span class="qnum">2</span> Объём</div><span class="qline"></span>
-<div class="db-qstep" id="qs3"><span class="qnum">3</span> Цена</div></div>
-<div class="db-qcard active" id="qc1">
-<div class="db-qsearch"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 8px 0 14px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type="text" id="quizInput" placeholder="ЦКТ, БГВ, ферментатор, сыроизготовитель..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:14px 8px;font-size:16px;outline:none;font-family:inherit;color:#333"></div>
-<div id="quizResults" style="background:#fff;border:1px solid #e8e8e8;border-radius:12px;display:none;box-shadow:0 8px 32px rgba(0,0,0,.1);padding:8px;overflow-y:auto;max-height:800px"></div>
-<div style="text-align:center;margin-top:12px"><span id="catToggle" style="color:#F77C2A;font-size:13px;cursor:pointer;font-weight:600" onclick="toggleCatList()">📋 Или выберите из каталога ↓</span></div>
-<div id="catList" style="display:none;margin-top:12px;padding:16px;background:#f8f9fb;border-radius:12px">
-<div class="quiz-cat-group"><div class="quiz-cat-label" style="font-size:12px;font-weight:700;color:#F77C2A;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px">🍺 Пивоваренное</div>
-<div class="quiz-cat-items" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
-<a onclick="pickCat('beer','cct')" class="quiz-cat-chip">ЦКТ</a>
-<a onclick="pickCat('beer','brew-house')" class="quiz-cat-chip">Варочные порядки</a>
-<a onclick="pickCat('beer','hot-water-tank')" class="quiz-cat-chip">Баки горячей воды</a>
-<a onclick="pickCat('beer','grain-mill')" class="quiz-cat-chip">Дробилки солода</a>
-<a onclick="pickCat('beer','steam-generator')" class="quiz-cat-chip">Парогенераторы</a>
-<a onclick="pickCat('beer','chiller')" class="quiz-cat-chip">Чиллеры</a>
-<a onclick="pickCat('beer','unitank')" class="quiz-cat-chip">Форфасы (BBT)</a>
-<a onclick="pickCat('beer','heat-exchanger')" class="quiz-cat-chip">Теплообменники</a>
-</div></div>
-<div class="quiz-cat-group"><div class="quiz-cat-label" style="font-size:12px;font-weight:700;color:#F77C2A;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px">🥛 Молочное</div>
-<div class="quiz-cat-items" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
-<a onclick="pickCat('dairy','reception')" class="quiz-cat-chip">Ёмкость приёмки молока</a>
-<a onclick="pickCat('dairy','cooler')" class="quiz-cat-chip">Резервуар-охладитель</a>
-<a onclick="pickCat('dairy','storage')" class="quiz-cat-chip">Резервуар хранения</a>
-<a onclick="pickCat('dairy','vdp')" class="quiz-cat-chip">Ванна пастеризации (ВДП)</a>
-<a onclick="pickCat('dairy','fermentation')" class="quiz-cat-chip">Ферментационный танк</a>
-<a onclick="pickCat('dairy','cheese-maker')" class="quiz-cat-chip">Сыроизготовитель</a>
-<a onclick="pickCat('dairy','cottage-cheese')" class="quiz-cat-chip">Творогоизготовитель</a>
-<a onclick="pickCat('dairy','yeast')" class="quiz-cat-chip">Заквасочник</a>
-<a onclick="pickCat('dairy','brine')" class="quiz-cat-chip">Контейнер для соления</a>
-<a onclick="pickCat('dairy','cheese-shelves')" class="quiz-cat-chip">Стеллажи для сыра</a>
-</div></div>
-<div class="quiz-cat-group"><div class="quiz-cat-label" style="font-size:12px;font-weight:700;color:#F77C2A;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px">🍷 Винодельческое</div>
-<div class="quiz-cat-items" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
-<a onclick="pickCat('wine','red-fermentation')" class="quiz-cat-chip">Ферментация красных вин</a>
-<a onclick="pickCat('wine','white-fermentation')" class="quiz-cat-chip">Ферментация белых вин</a>
-<a onclick="pickCat('wine','storage-aging')" class="quiz-cat-chip">Выдержка и хранение</a>
-<a onclick="pickCat('wine','cold-stabilization')" class="quiz-cat-chip">Холодная стабилизация</a>
-<a onclick="pickCat('wine','blending')" class="quiz-cat-chip">Купажирование</a>
-<a onclick="pickCat('wine','sulfitation')" class="quiz-cat-chip">Сульфитация</a>
-<a onclick="pickCat('wine','universal-tank')" class="quiz-cat-chip">Винификатор (УТТ)</a>
-</div></div>
-<div class="quiz-cat-group"><div class="quiz-cat-label" style="font-size:12px;font-weight:700;color:#F77C2A;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px">🏭 Промышленное</div>
-<div class="quiz-cat-items" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px">
-<a onclick="pickCat('industrial','storage')" class="quiz-cat-chip">Резервуар для хранения</a>
-<a onclick="pickCat('industrial','mixing')" class="quiz-cat-chip">Ёмкость с мешалкой</a>
-<a onclick="pickCat('industrial','thermal')" class="quiz-cat-chip">Ёмкость с терморегуляцией</a>
-<a onclick="pickCat('industrial','pressure')" class="quiz-cat-chip">Ёмкость под давлением</a>
-</div></div>
+<button class="db-hero-cta" onclick="document.getElementById('heroQuizInput').focus()" style="position:static">Подобрать и узнать цену →</button>
 </div>
+<div id="heroQuizResults" style="background:#fff;border:1px solid #e8e8e8;border-radius:12px;display:none;box-shadow:0 8px 32px rgba(0,0,0,.1);padding:8px;overflow-y:auto;max-height:600px;margin-top:8px;max-width:700px"></div>
 </div>
-<div class="db-qcard" id="qc2" style="text-align:center;background:#fff">
-<div style="margin-bottom:16px">
-<img id="qImg2" src="" alt="" style="width:144px;height:144px;object-fit:contain;border-radius:16px;background:#fff;flex-shrink:0;display:none;margin:0 auto">
-<div style="margin-top:8px"><div style="font-size:13px;color:#888;margin-bottom:2px">Выбрано:</div>
-<strong id="qSelName" style="color:#F77C2A;font-size:18px"></strong> <a style="color:#F77C2A;font-size:12px;cursor:pointer;margin-left:6px" onclick="quizBack()">(изменить)</a></div>
-<div id="qDesc2" style="font-size:13px;color:#666;margin-top:8px;line-height:1.4;display:none"></div>
-<ul id="qFeats2" style="display:none;list-style:none;margin:8px 0 0;padding:0;gap:4px;flex-wrap:wrap;justify-content:center"></ul></div>
-<div class="db-qvolgrid" id="qVolGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px"></div>
-<div style="margin-top:12px;font-size:13px;color:#999;text-align:center">Не нашли объём? <a style="color:#F77C2A;cursor:pointer;font-weight:600" onclick="document.getElementById('qCustomVol').style.display='flex';this.style.display='none'">Укажите свой</a></div>
-<div id="qCustomVol" style="display:none;margin-top:10px;gap:8px">
-<input type="number" id="qCustomVal" placeholder="Ваш объём, л" style="flex:1;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;outline:none;font-family:inherit">
-<button style="padding:10px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit" onclick="selectQuizVol(0,0)">Выбрать</button></div></div>
-<div class="db-qcard" id="qc3">
-<div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:16px">
-<img id="qImg3" src="" alt="" style="width:180px;height:180px;border-radius:16px;object-fit:contain;background:#fff;flex-shrink:0">
-<div style="flex:1;min-width:0"><div style="font-weight:700;color:#1a1a26;font-size:15px" id="qResName"></div><div style="font-size:13px;color:#888" id="qResVol"></div>
-<div id="qDesc3" style="font-size:13px;color:#666;margin-top:6px;line-height:1.4;display:none"></div>
-<ul id="qFeats3" style="display:none;list-style:none;margin:6px 0 0;padding:0;gap:4px;flex-wrap:wrap"></ul></div></div>
-<div class="db-qprice" id="qPrice" style="display:none;background:linear-gradient(135deg,#fff8f0,#fff);border:2px solid #F77C2A;border-radius:12px;padding:20px;text-align:center;margin-bottom:20px">
-<div style="font-size:12px;color:#888;margin-bottom:4px">💰 Ориентировочная цена с НДС</div>
-<div style="font-size:36px;font-weight:900;color:#F77C2A;letter-spacing:-1px;line-height:1" id="qPriceVal"></div>
-<div style="font-size:11px;color:#bbb;margin-top:4px">Точная цена — после расчёта инженером</div></div>
-<form method="post" action="/php/send.php">
-<input type="hidden" name="form_type" value="item"><input type="hidden" name="product" id="qFormProduct" value="">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-<div><input type="text" name="name" placeholder="Имя" required style="width:100%;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;font-family:inherit;outline:none"></div>
-<div><input type="tel" name="phone" placeholder="Телефон" required style="width:100%;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;font-family:inherit;outline:none"></div>
-<div style="grid-column:1/-1"><input type="email" name="email" placeholder="Email для КП" style="width:100%;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;font-family:inherit;outline:none"></div>
-<div style="grid-column:1/-1"><textarea name="comment" placeholder="Дополнительные требования..." style="width:100%;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;font-family:inherit;outline:none;min-height:56px;resize:vertical"></textarea></div></div>
-<button type="submit" class="submit-btn" style="margin-top:12px;width:100%;padding:14px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit">📩 Получить КП с точной ценой</button></form>
-<div style="display:flex;justify-content:center;gap:16px;margin-top:12px;font-size:11px;color:#bbb;flex-wrap:wrap">
-<span>🔒 Конфиденциально</span> <span>⚡ Ответ за 2 часа</span> <span>📋 Бесплатный расчёт</span></div></div></div>
-<style>
-.db-qstep{display:flex;align-items:center;gap:6px;font-size:13px;color:#ccc;font-weight:600;padding:6px 14px;border-radius:20px;transition:.3s}
-.db-qstep .qnum{width:26px;height:26px;border-radius:50%;background:#e8e8e8;color:#bbb;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;transition:.3s;flex-shrink:0}
-.db-qstep.active{color:#F77C2A}.db-qstep.active .qnum{background:#F77C2A;color:#fff}
-.db-qstep.done{color:#27ae60}.db-qstep.done .qnum{background:#27ae60;color:#fff}
-.qline{width:30px;height:2px;background:#e8e8e8;flex-shrink:0}.db-qstep.done+.qline{background:#27ae60}
-.db-qcard{background:#fff;border-radius:14px;padding:28px;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,.04);margin-bottom:24px;display:none}
-.db-qcard.active{display:block}
-.db-qsearch{display:flex;align-items:center;background:#fff;border:2px solid #e0e0e0;border-radius:10px;transition:border-color .25s}
-.db-qsearch:focus-within{border-color:#F77C2A}
-.quiz-cat-chip{display:inline-block;padding:6px 14px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;font-size:12px;font-weight:500;color:#333;cursor:pointer;transition:all .15s;text-decoration:none}
-.quiz-cat-chip:hover{background:#fff4e6;border-color:#F77C2A;color:#F77C2A}
-
-/* ===== SCROLL ANIMATIONS ===== */
-.scroll-reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
-.scroll-reveal.visible{opacity:1;transform:translateY(0)}
-.scroll-reveal-delay-1{transition-delay:.1s}
-.scroll-reveal-delay-2{transition-delay:.2s}
-.scroll-reveal-delay-3{transition-delay:.3s}
-.scroll-reveal-delay-4{transition-delay:.4s}
-/* fallback if JS doesn't load */
-.scroll-reveal-nojs{opacity:1!important;transform:translateY(0)!important}
-</style>
-<noscript><style>.scroll-reveal{opacity:1!important;transform:translateY(0)!important}</style></noscript>
-<script>
-var quizTimer=null,quizSelected=null,quizPrices={},quizStep=1;
-var QIMGS={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg'};
-var QDEFS={beer:'cct-tank.jpg',dairy:'dairy-reception.jpg',wine:'wine-red-fermentation.jpg',industrial:'industrial-cip.jpg'};
-var QDESC={'cct':'Цилиндро-конические танки для брожения, дображивания и лагеризации пива из нержавеющей стали AISI 304','hot-water-tank':'Баки горячей воды из нержавейки для пивоварения','reception':'Ёмкости для приёмки и фильтрации молока','storage':'Резервуары для хранения молока','vdp':'Ванны длительной пастеризации','fermentation':'Танки для ферментации йогурта, сметаны, кефира','cheese-maker':'Аппараты для производства сыра','universal-tank':'Универсальные терморегулируемые танки для виноделия','cooler':'Резервуары-охладители молока','cottage-cheese':'Танки для производства творога','yeast':'Заквасочные аппараты','brine':'Контейнеры для соления сыра','cheese-shelves':'Стеллажи для созревания сыра','red-fermentation':'Ферментационные танки для красных вин','white-fermentation':'Ферментационные танки для белых вин','storage-aging':'Ёмкости для выдержки и хранения вина','cold-stabilization':'Танки криостабилизации','mixing':'Ёмкости с мешалкой','thermal':'Ёмкости с терморегуляцией','pressure':'Ёмкости под давлением','cip':'CIP-станции','heat-exchanger':'Промышленные теплообменники'};
-var QFEATS={'cct':['AISI 304/316','до 4 зон охлаждения','угол конуса 60-70°','CIP-мойка'],'hot-water-tank':['Паровой нагрев','Термоизоляция ППУ','Люк-лаз DN400'],'reception':['Фильтр грубой очистки','Люк-лаз DN400','CIP-мойка'],'storage':['Объём до 200 000 л','Термоизоляция','CIP-мойка'],'vdp':['AISI 304','Ручная/автоматика','Сливной кран'],'fermentation':['Рубашка охлаждения','AISI 304','CIP-мойка'],'cheese-maker':['Плавный нагрев','AISI 304/316','Мешалка'],'universal-tank':['AISI 304/316','Рубашка охлаждения','2 зоны терморегуляции'],'cooler':['Охлаждение до 4°C','AISI 304','Автоматика'],'cottage-cheese':['AISI 304','Мешалка','Слив'],'red-fermentation':['AISI 304/316','Рубашка охлаждения','Гребнеотделитель'],'white-fermentation':['AISI 304/316','Термоизоляция','Фильтр'],'storage-aging':['AISI 304/316','Объём до 200 000 л','CIP-мойка'],'cold-stabilization':['AISI 304/316','Термоизоляция','Автоматика'],'mixing':['AISI 304/316','Мешалка','CIP-мойка'],'thermal':['AISI 304/316','Рубашка','Термоизоляция'],'pressure':['AISI 304/316','До 10 бар','Герметичность'],'cip':['AISI 304','Автоматика','Насосы Alfa Laval']};
-function qImg(k,s){return '/'+(QIMGS[k]||QDEFS[s]||'cct-tank.jpg');}
-function qFeats(k){return QFEATS[k]||['AISI 304','Гарантия 12 мес','Доставка по РФ'];}
-function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽');}
-function toggleCatList(){var el=document.getElementById('catList'),t=document.getElementById('catToggle');if(el.style.display==='none'||!el.style.display){el.style.display='block';t.innerHTML='📋 Или выберите из каталога ↑'}else{el.style.display='none';t.innerHTML='📋 Или выберите из каталога ↓'}}
-function pickCat(si,slug){var names={'cct':'ЦКТ (Цилиндро-конические танки)','brew-house':'Варочные порядки','hot-water-tank':'Бак горячей воды','grain-mill':'Дробилка солода','steam-generator':'Парогенератор','chiller':'Чиллер','unitank':'Форфас (BBT)','heat-exchanger':'Теплообменник пластинчатый','reception':'Ёмкость приёмки молока','cooler':'Резервуар-охладитель молока','storage':'Резервуар для хранения молока','vdp':'Ванна длительной пастеризации (ВДП)','fermentation':'Ферментационный танк','cheese-maker':'Сыроизготовитель','cottage-cheese':'Творогоизготовитель','yeast':'Заквасочник','brine':'Контейнер для соления сыра','cheese-shelves':'Стеллажи для созревания сыра','red-fermentation':'Ферментационный танк для красных вин','white-fermentation':'Ферментационный танк для белых вин','storage-aging':'Ёмкость для выдержки и хранения вина','cold-stabilization':'Танк холодной стабилизации','blending':'Ёмкость для купажирования','sulfitation':'Ёмкость сульфитации','universal-tank':'Винификатор (УТТ)','mixing':'Ёмкость с мешалкой','thermal':'Ёмкость с терморегуляцией','pressure':'Ёмкость под давлением'};
-var urls={'cct':'/catalog/beer/cct/','brew-house':'/catalog/beer/brew-house/','hot-water-tank':'/catalog/beer/hot-water-tank/','grain-mill':'/catalog/beer/grain-mill/','steam-generator':'/catalog/beer/steam-generator/','chiller':'/catalog/beer/chiller/','unitank':'/catalog/beer/unitank/','heat-exchanger':'/catalog/beer/heat-exchanger/','reception':'/catalog/dairy/reception/','cooler':'/catalog/dairy/cooler/','storage':'/catalog/dairy/storage/','vdp':'/catalog/dairy/vdp/','fermentation':'/catalog/dairy/fermentation/','cheese-maker':'/catalog/dairy/cheese-maker/','cottage-cheese':'/catalog/dairy/cottage-cheese/','yeast':'/catalog/dairy/yeast/','brine':'/catalog/dairy/brine/','cheese-shelves':'/catalog/dairy/cheese-shelves/','red-fermentation':'/catalog/wine/red-fermentation/','white-fermentation':'/catalog/wine/white-fermentation/','storage-aging':'/catalog/wine/storage-aging/','cold-stabilization':'/catalog/wine/cold-stabilization/','blending':'/catalog/wine/blending/','sulfitation':'/catalog/wine/sulfitation/','universal-tank':'/catalog/wine/universal-tank/','mixing':'/catalog/industrial/mixing/','thermal':'/catalog/industrial/thermal/','pressure':'/catalog/industrial/pressure/'};
-var secNames={beer:'Пивоваренное оборудование',dairy:'Молочное оборудование',wine:'Винодельческое оборудование',industrial:'Промышленное оборудование'};
-var r={n:names[slug]||slug,u:urls[slug]||'/'+slug,si:si,s:secNames[si]||''};toggleCatList();selectQuiz(r);}
-document.getElementById('quizInput').addEventListener('input',function(){
-clearTimeout(quizTimer);var q=this.value.trim();var res=document.getElementById('quizResults');
-if(!q){res.style.display='none';return;}
-quizTimer=setTimeout(function(){
-fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(d){
-res.innerHTML='';var items=d.results.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/);});
-var seen={};items=items.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true;});
-if(!items.length){res.innerHTML='<div style="padding:16px;text-align:center;color:#999;font-size:13px">Ничего не найдено</div>';res.style.display='block';return;}
-items.forEach(function(r){
-var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
-var im=qImg(k,r.si),feats=qFeats(k);
-var fh='';feats.slice(0,3).forEach(function(f){fh+='<li style="font-size:12px;padding:2px 0">✓ '+f+'</li>';});
-var div=document.createElement('div');div.style.cssText='display:flex;gap:24px;padding:20px;cursor:pointer;border-radius:12px;transition:background .15s;margin-bottom:8px';
-div.onmouseover=function(){this.style.background='#fff8f0';};div.onmouseout=function(){this.style.background='';};
-div.innerHTML='<img src="'+im+'" style="width:240px;height:240px;border-radius:16px;object-fit:contain;background:#fff;flex-shrink:0" onerror="this.style.display=\'none\'"><div style="flex:1;min-width:0"><div style="font-weight:700;font-size:15px;color:#1a1a26;margin-bottom:4px">'+r.n+'</div><div style="font-size:12px;color:#888;margin-bottom:4px">'+(QDESC[k]||r.s)+'</div><ul style="font-size:12px;color:#888;margin:0;padding:0;list-style:none">'+fh+'</ul></div><button style="align-self:center;padding:8px 18px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0">Выбрать</button>';
-div.querySelector('button').onclick=function(e){e.stopPropagation();selectQuiz(r);};div.onclick=function(){selectQuiz(r);};
-res.appendChild(div);});res.style.display='block';}).catch(function(){});
-},300);});
-document.getElementById('quizInput').addEventListener('blur',function(){setTimeout(function(){document.getElementById('quizResults').style.display='none';},300);});
-function selectQuiz(r){
-document.getElementById('quizInput').value=r.n;document.getElementById('quizResults').style.display='none';quizSelected=r;
-var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
-var im=qImg(k,r.si);document.getElementById('qImg2').src=im;document.getElementById('qImg2').style.display='block';
-document.getElementById('qSelName').textContent=r.n;document.getElementById('qVolGrid').innerHTML='<div style="text-align:center;padding:24px;color:#999;font-size:13px">Загружаем цены...</div>';
-var desc=QDESC[k]||'',feats=qFeats(k);
-var d2=document.getElementById('qDesc2');d2.textContent=desc;d2.style.display=desc?'block':'none';
-var f2=document.getElementById('qFeats2');f2.innerHTML='';f2.style.display=feats.length?'flex':'none';
-feats.slice(0,4).forEach(function(f){var li=document.createElement('li');li.style.cssText='display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#666;background:#f5f7fa;padding:4px 10px;border-radius:6px';li.innerHTML='✓ '+f;f2.appendChild(li);});
-var d3=document.getElementById('qDesc3');d3.textContent=desc;d3.style.display=desc?'block':'none';
-var f3=document.getElementById('qFeats3');f3.innerHTML='';f3.style.display=feats.length?'flex':'none';
-feats.slice(0,4).forEach(function(f){var li=document.createElement('li');li.style.cssText='display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#666;background:#f5f7fa;padding:4px 10px;border-radius:6px';li.innerHTML='✓ '+f;f3.appendChild(li);});
-nextQStep();
-var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var last=pp[pp.length-1];var ck=last.match(/^\d+l?$/)?pp[pp.length-2]:last;
-var sm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=sm[r.si]||'';
-if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
-fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+src).then(function(r){return r.json();}).then(function(d){
-quizPrices=d;var g=document.getElementById('qVolGrid');g.innerHTML='';
-if(!d.prices||!d.prices.length){g.innerHTML='<div style="text-align:center;padding:24px;color:#999">Нет данных о ценах</div>';return;}
-d.prices.sort(function(a,b){return a.vol-b.vol;});
-d.prices.forEach(function(p){
-var b=document.createElement('button');
-b.style.cssText='padding:10px;border:2px solid #e0e0e0;border-radius:8px;background:#fff;cursor:pointer;text-align:center;font-family:inherit;font-size:13px;font-weight:600;color:#333;transition:all .2s';
-b.innerHTML='<span style="font-size:16px;font-weight:800;color:#1a1a26;display:block">'+p.vol+'</span><span style="font-size:11px;color:#999">л</span>';
-b.onmouseover=function(){this.style.borderColor='#F77C2A';this.style.transform='translateY(-2px)';};
-b.onmouseout=function(){if(!this.classList.contains('sel')){this.style.borderColor='#e0e0e0';this.style.transform='';}};
-b.onclick=function(){g.querySelectorAll('button').forEach(function(b2){b2.classList.remove('sel');b2.style.background='';b2.style.color='#333';b2.querySelector('span').style.color='#1a1a26';});
-b.classList.add('sel');b.style.background='#F77C2A';b.style.color='#fff';b.querySelector('span').style.color='#fff';qShowPrice(d,p.vol,p.price);};g.appendChild(b);});
-var cb=document.createElement('button');cb.style.cssText='padding:10px;border:2px dashed #e0e0e0;border-radius:8px;background:#fff;cursor:pointer;text-align:center;font-family:inherit;font-size:13px;font-weight:600;color:#333';
-cb.innerHTML='<span style="font-size:14px;display:block">Свой</span><span style="font-size:11px;color:#999">объём</span>';
-cb.onclick=function(){var v=parseInt(document.getElementById('qCustomVal').value);if(!v||v<=0){document.getElementById('qCustomVal').focus();return;}qShowPrice(quizPrices,v,0);};g.appendChild(cb);
-}).catch(function(){document.getElementById('qVolGrid').innerHTML='<div style="text-align:center;padding:24px;color:#e74c3c">Ошибка загрузки</div>';});}
-function qShowPrice(d,vol,price){
-var vs=vol>0?vol+' л':'нестандартный объём';document.getElementById('qFormProduct').value=d.name+' '+vs;
-document.getElementById('qResName').textContent=d.name;document.getElementById('qResVol').textContent=vs;
-document.getElementById('qImg3').src=document.getElementById('qImg2').src;
-if(price>0){document.getElementById('qPriceVal').textContent='от '+fmtP(price);document.getElementById('qPrice').style.display='block';}
-else{document.getElementById('qPrice').style.display='block';document.getElementById('qPriceVal').textContent='По запросу';}
-nextQStep();}
-function nextQStep(){var step=quizStep;
-['qs1','qs2','qs3'].forEach(function(id,i){var el=document.getElementById(id);el.classList.toggle('active',i===step);el.classList.toggle('done',i<step);});
-['qc1','qc2','qc3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===step);});
-quizStep++;window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,behavior:'smooth'});}
-function quizBack(){quizStep=1;
-['qs1','qs2','qs3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===0);document.getElementById(id).classList.remove('done');});
-['qc1','qc2','qc3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===0);});
-window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,behavior:'smooth'});}
-</script>
 </section>
 
 <!-- TRUST BAR -->
