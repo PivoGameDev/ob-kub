@@ -478,9 +478,12 @@ body{padding-top:0!important}
 <span class="qs1" style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
 <span id="hqReset" onclick="hqReset()" style="display:none;margin-left:auto;font-size:18px;color:#999;cursor:pointer;line-height:1" title="Сбросить">×</span>
 </div>
+<div style="position:relative">
 <div style="display:flex;align-items:center;background:#f5f6f8;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:10px">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 6px 0 12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
 <input type="text" id="hqInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:11px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;min-width:0">
+</div>
+<div id="hqResults" style="display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;max-height:260px;overflow-y:auto;position:absolute;z-index:100;left:0;right:0;top:calc(100% - 8px)"></div>
 </div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
 <a href="/beer.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍺 Пиво</a>
