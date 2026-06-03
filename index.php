@@ -472,24 +472,44 @@ body{padding-top:0!important}
 </div>
 
 <div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15)">
-<div style="font-size:13px;font-weight:700;color:#F77C2A;margin-bottom:4px">🔧 Быстрый подбор</div>
-<p style="font-size:12px;color:#888;margin:0 0 14px">Введите название или выберите категорию — узнайте цену за 1 минуту</p>
-<div style="display:flex;align-items:center;background:#f5f6f8;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:12px">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 6px 0 12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type="text" id="heroQuizInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:12px 8px;font-size:14px;outline:none;font-family:inherit;color:#333">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700">1</span>
+<span style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
 </div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
-<span style="font-size:11px;color:#999;width:100%;margin-bottom:2px">Быстрый выбор:</span>
+<div style="display:flex;align-items:center;background:#f5f6f8;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:10px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 6px 0 12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+<input type="text" id="heroQuizInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:11px 8px;font-size:13px;outline:none;font-family:inherit;color:#333">
+</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
 <a href="/beer.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍺 Пиво</a>
 <a href="/dairy.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🥛 Молоко</a>
 <a href="/winery.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍷 Вино</a>
-<a href="/catalog/" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">📋 Весь каталог</a>
+<a href="/industrial.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍽️ Пищевое</a>
 </div>
-<div id="heroQuizResults" style="display:none;background:#fff;border:1px solid #e8e8e8;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:400px;overflow-y:auto"></div>
-<div style="margin-top:12px;padding-top:12px;border-top:1px solid #f0f0f0;display:flex;gap:8px">
-<span style="font-size:11px;color:#999">✅ Цена сразу</span>
-<span style="font-size:11px;color:#999">⚡ Ответ за 2 часа</span>
-<span style="font-size:11px;color:#999">📋 Бесплатный расчёт</span>
+<div id="heroQuizResults" style="display:none;background:#fff;border:1px solid #e8e8e8;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:300px;overflow-y:auto;margin-bottom:14px"></div>
+
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
+<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">2</span>
+<span style="font-size:13px;font-weight:600;color:#999">Выберите объём</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;opacity:.5">
+<button style="padding:7px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;font-size:12px;color:#555;cursor:pointer;font-family:inherit">250 л</button>
+<button style="padding:7px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;font-size:12px;color:#555;cursor:pointer;font-family:inherit">500 л</button>
+<button style="padding:7px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;font-size:12px;color:#555;cursor:pointer;font-family:inherit">1 000 л</button>
+<button style="padding:7px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;font-size:12px;color:#555;cursor:pointer;font-family:inherit">3 000 л</button>
+<button style="padding:7px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;font-size:12px;color:#555;cursor:pointer;font-family:inherit">5 000 л</button>
+</div>
+
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">
+<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">3</span>
+<span style="font-size:13px;font-weight:600;color:#999">Цена и заявка</span>
+</div>
+<button style="width:100%;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;opacity:.6" disabled>Начните с поиска ↑</button>
+
+<div style="display:flex;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid #f0f0f0;justify-content:center;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#999">🔥 Цена сразу</span>
+<span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#999">⚡ КП за 2 часа</span>
+<span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#999">🔒 Конфиденциально</span>
 </div>
 </div>
 
