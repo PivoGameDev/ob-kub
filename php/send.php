@@ -48,6 +48,7 @@ $form_names = [
     'beer-item' => 'Расчёт пивоваренного оборудования',
     'brew-house-product' => 'Расчёт пивоварни под ключ',
     'industrial-cip' => 'Расчёт CIP-станции',
+    'catalog-request' => 'Запрос каталога с ценами',
     'industrial-heat-exchanger' => 'Расчёт теплообменника',
     'dairy-shelves' => 'Расчёт стеллажей для сыра',
     'dairy-item' => 'Расчёт молочного оборудования (карточка)',
