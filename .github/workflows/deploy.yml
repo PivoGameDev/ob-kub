@@ -12,19 +12,19 @@ jobs:
 
       - name: 📂 Deploy via FTP
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
-          lftp -e "
-            set ftp:ssl-allow no
-            set ssl:verify-certificate no
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+          lftp -c "
+            open -u \"${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }}\" ${{ secrets.FTP_HOST }}
             mirror -R -v \
-              --exclude .git \
+              --exclude .git/ \
               --exclude .gitignore \
-              --exclude .github \
-              --exclude _local \
+              --exclude .github/ \
+              --exclude _local/ \
               --exclude urls.txt \
               --exclude test.php \
               --exclude test.html \
-              --exclude 'Сравнение_с_рынком.txt' \
-              . /
+              --exclude Сравнение_с_рынком.txt \
+              ./ ./
             quit
-          " -u "${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_HOST }}"
+          "
