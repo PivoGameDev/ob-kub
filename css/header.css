@@ -184,3 +184,19 @@ body,body.cct-page{padding-top:0!important;background:#fff!important}
 @media(min-width:769px){
 .mobile-header,.mobile-drawer,.mobile-drawer-overlay{display:none!important}
 }
+
+/* ===== FLOATING TELEGRAM ===== */
+.tg-float{position:fixed;right:20px;bottom:100px;z-index:9999;width:52px;height:52px;border-radius:50%;background:#27a6e5;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(39,166,229,.35);transition:transform .25s,box-shadow .25s;text-decoration:none}
+.tg-float:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 6px 24px rgba(39,166,229,.45);color:#fff}
+.tg-float svg{width:24px;height:24px}
+@media(max-width:768px){.tg-float{right:12px;bottom:80px;width:46px;height:46px;z-index:9998}.tg-float svg{width:22px;height:22px}}
+
+/* ===== MOBILE BOTTOM BAR ===== */
+.mobile-bottom-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:1px solid #eee;padding:8px 12px;gap:8px;box-shadow:0 -4px 16px rgba(0,0,0,.06)}
+.mobile-bottom-bar .mbb-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:8px 4px;border-radius:8px;font-size:10px;font-weight:600;color:#555;text-decoration:none;background:none;border:none;cursor:pointer;font-family:inherit;transition:background .15s}
+.mobile-bottom-bar .mbb-btn:active{background:#f5f5f5}
+.mobile-bottom-bar .mbb-btn.tg{color:#27a6e5}
+.mobile-bottom-bar .mbb-btn.primary{background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff}
+.mobile-bottom-bar .mbb-btn.primary:active{opacity:.9}
+@media(max-width:768px){.mobile-bottom-bar{display:flex}}
+@media(min-width:769px){.mobile-bottom-bar{display:none!important}}

@@ -29,10 +29,11 @@
 </div>
 <div class="db-footer-col">
 <h3>Контакты</h3>
-<a href="tel:+79935940107">8 (993) 594-01-07</a>
+<a href="tel:+79935940107" style="font-size:16px;font-weight:700;color:#F77C2A">8 (993) 594-01-07</a>
 <a href="mailto:oborudovanie-kubani@yandex.ru">oborudovanie-kubani@yandex.ru</a>
-<a href="/#order-form" style="display:inline-block;margin-top:4px;padding:8px 14px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">📩 Получить КП</a>
-<a href="/privacy.html">Политика конфиденциальности</a>
+<a href="https://t.me/oborudovanie_kubani" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin:4px 0;color:#27a6e5;font-weight:600;font-size:13px;text-decoration:none"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Написать в Telegram</a>
+<a href="/#order-form" style="display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:10px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">📩 Получить КП</a>
+<a href="/privacy.html" style="margin-top:8px;display:block">Политика конфиденциальности</a>
 </div>
 </div>
 <div class="db-footer-bot">© ОБОРУДОВАНИЕ КУБАНИ · 2008–2026 · Все права защищены</div>
