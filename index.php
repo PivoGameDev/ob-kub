@@ -472,7 +472,7 @@ body{padding-top:0!important}
 </div>
 </div>
 
-<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box;transition:all .3s" id="hqPanel">
+<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box;transition:all .3s;position:relative" id="hqPanel">
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
 <span class="qs1" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700;flex-shrink:0">1</span>
 <span class="qs1" style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
@@ -488,7 +488,8 @@ body{padding-top:0!important}
 <a href="/winery.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍷 Вино</a>
 <a href="/industrial.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍽️ Пищевое</a>
 </div>
-<div id="hqResults" style="display:none;background:#fff;border:1px solid #e8e8e8;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:200px;overflow-y:auto;margin-bottom:10px;position:relative;z-index:10"></div>
+<div id="hqResults" style="display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;max-height:260px;overflow-y:auto;position:absolute;z-index:100;left:0;right:0;top:100%"></div>
+</div>
 
 <div id="hqSelected" style="display:none;align-items:center;gap:8px;margin-bottom:10px;padding:6px 10px;background:#f5f6f8;border-radius:6px">
 <img id="hqSelImg" src="" style="width:64px;height:64px;object-fit:contain;background:#fff;border-radius:6px;flex-shrink:0">
