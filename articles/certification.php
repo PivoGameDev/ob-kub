@@ -593,7 +593,7 @@
         <div class="articles-content">
 <div class="article-content active" id="certification-article">
                 <div class="article-header">
-                    <h2 class="article-title">📋 СТАНДАРТЫ И СЕРТИФИКАЦИЯ</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">📋 СТАНДАРТЫ И СЕРТИФИКАЦИЯ                    </h1>
                     <div class="article-subtitle">Нормативные требования к пищевому оборудованию</div>
                 </div>
                 

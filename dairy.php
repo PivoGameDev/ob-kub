@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 <title>Молочное оборудование — полный каталог | ОБОРУДОВАНИЕ КУБАНИ</title>
     <link rel="canonical" href="https://ob-kub.ru/dairy.html">
+    <meta property="og:title" content="Молочное оборудование — каталог | ОБОРУДОВАНИЕ КУБАНИ">
+    <meta property="og:description" content="Производство оборудования для молочной промышленности из нержавеющей стали AISI 304/316. Резервуары для хранения молока, пастеризаторы.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ob-kub.ru/dairy.html">
+    <meta property="og:image" content="https://ob-kub.ru/logo.png">
+    <meta property="og:locale" content="ru_RU">
 <meta name="description" content="Производство оборудования для молочной промышленности из нержавеющей стали AISI 304/316. Резервуары для хранения молока, пастеризаторы, ферментационные танки. Доставка по РФ.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

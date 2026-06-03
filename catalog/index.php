@@ -80,7 +80,7 @@ http_response_code(404);
 <style>body{font-family:sans-serif;text-align:center;padding:60px 20px;color:#333}h1{font-size:28px;color:#F77C2A}p{font-size:16px;color:#666}a{color:#F77C2A}</style>
 </head>
 <body>
-<h1>404</h1>
+<div style="font-size:28px;font-weight:700;color:#F77C2A">404</div>
 <p>Страница не найдена</p>
 <p><a href="/catalog/">Вернуться в каталог</a></p>
 </body>
@@ -168,13 +168,18 @@ function renderMainCatalog() {
 .db-prod-stat .num{font-size:36px;font-weight:800;color:#F77C2A;line-height:1}
 .db-prod-stat .lbl{font-size:12px;color:#888;margin-top:4px;line-height:1.4}
 .db-prod-equip{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.db-prod-equip-card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;overflow:hidden;transition:opacity .6s ease,transform .6s ease,box-shadow .2s;opacity:0;transform:translateY(24px)}.db-prod-equip-card.visible{opacity:1;transform:translateY(0)}
+.db-prod-equip-card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;overflow:hidden;transition:opacity .6s ease,transform .6s ease,box-shadow .2s;opacity:0;transform:translateY(24px);position:relative}.db-prod-equip-card.visible{opacity:1;transform:translateY(0)}
 .db-prod-equip-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.db-prod-equip-card .eq-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.85),rgba(26,26,38,.4));backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:2;opacity:1;transition:opacity .35s;pointer-events:none}
+.db-prod-equip-card:hover .eq-overlay{opacity:0}
+@media(hover:none){.db-prod-equip-card .eq-overlay{background:linear-gradient(135deg,rgba(26,26,38,.5),rgba(26,26,38,.2));backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}}
 .db-prod-equip-card .eq-img{width:100%;height:160px;display:flex;align-items:center;justify-content:center;padding:12px;background:#fff}
 .db-prod-equip-card .eq-img img{max-width:100%;max-height:100%;display:block;width:auto;height:auto}
-.db-prod-equip-card .eq-body{padding:8px 10px 10px;text-align:center}
-.db-prod-equip-card .eq-name{font-size:13px;font-weight:600;color:#333;line-height:1.3;margin-bottom:3px}
-.db-prod-equip-card .eq-spec{font-size:12px;color:#999;line-height:1.3}
+.db-prod-equip-card .eq-body{padding:8px 10px 10px;text-align:center;position:relative;z-index:3}
+.db-prod-equip-card .eq-name{font-size:13px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:2px;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+.db-prod-equip-card .eq-spec{font-size:12px;color:rgba(255,255,255,.7);line-height:1.3;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.db-prod-equip-card:hover .eq-name{color:#333;text-shadow:none}
+.db-prod-equip-card:hover .eq-spec{color:#999;text-shadow:none}
 .db-prod-equip-title{font-size:14px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:0 0 12px}
 .db-prod-equip-section{margin-top:36px}
 .db-row-section{padding:48px 0}
@@ -586,11 +591,11 @@ function quizBack(){quizStep=1;
 <div class="db-prod-equip-section">
 <div class="db-prod-equip-title">Наше оборудование</div>
 <div class="db-prod-equip">
-<div class="db-prod-equip-card"><div class="eq-img"><img src="/equipment/ostas-mill.jpg" alt="Вальцы OSTAS"></div><div class="eq-body"><div class="eq-name">Вальцы OSTAS 4R-OHS</div><div class="eq-spec">2570×250 мм</div></div></div>
-<div class="db-prod-equip-card"><div class="eq-img"><img src="/equipment/hydraulic-press.jpg" alt="Гидравлический пресс"></div><div class="eq-body"><div class="eq-name">Гидравлический пресс с ЧПУ</div><div class="eq-spec">гибка листового металла</div></div></div>
-<div class="db-prod-equip-card"><div class="eq-img"><img src="/equipment/cnc-guillotine.jpg" alt="Гильотина с ЧПУ"></div><div class="eq-body"><div class="eq-name">Гильотина с ЧПУ</div><div class="eq-spec">рез 3500×10 мм</div></div></div>
-<div class="db-prod-equip-card"><div class="eq-img"><img src="/equipment/band-saw.jpg" alt="Ленточнопильный станок"></div><div class="eq-body"><div class="eq-name">Ленточнопильный станок</div><div class="eq-spec">резка профильной и круглой трубы</div></div></div>
-<div class="db-prod-equip-card"><div class="eq-img"><img src="/equipment/laser-welding.jpg" alt="Лазерная сварка"></div><div class="eq-body"><div class="eq-name">Аппарат лазерной сварки</div><div class="eq-spec">точность до 0,1 мм</div></div></div>
+<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="/equipment/ostas-mill.jpg" alt="Вальцы OSTAS"></div><div class="eq-body"><div class="eq-name">Вальцы OSTAS 4R-OHS</div><div class="eq-spec">2570×250 мм</div></div></div>
+<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="/equipment/hydraulic-press.jpg" alt="Гидравлический пресс"></div><div class="eq-body"><div class="eq-name">Гидравлический пресс с ЧПУ</div><div class="eq-spec">гибка листового металла</div></div></div>
+<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="/equipment/cnc-guillotine.jpg" alt="Гильотина с ЧПУ"></div><div class="eq-body"><div class="eq-name">Гильотина с ЧПУ</div><div class="eq-spec">рез 3500×10 мм</div></div></div>
+<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="/equipment/band-saw.jpg" alt="Ленточнопильный станок"></div><div class="eq-body"><div class="eq-name">Ленточнопильный станок</div><div class="eq-spec">резка профильной и круглой трубы</div></div></div>
+<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="/equipment/laser-welding.jpg" alt="Лазерная сварка"></div><div class="eq-body"><div class="eq-name">Аппарат лазерной сварки</div><div class="eq-spec">точность до 0,1 мм</div></div></div>
 </div>
 </div>
 </div>

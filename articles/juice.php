@@ -593,7 +593,7 @@
         <div class="articles-content">
 <div class="article-content active" id="juice-article">
                 <div class="article-header">
-                    <h2 class="article-title">🧃 ОБОРУДОВАНИЕ ДЛЯ ПРОИЗВОДСТВА СОКОВ И НЕКТАРОВ</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">🧃 ОБОРУДОВАНИЕ ДЛЯ ПРОИЗВОДСТВА СОКОВ И НЕКТАРОВ                    </h1>
                     <div class="article-subtitle">Современные технологии производства соков прямого отжима и восстановленных соков</div>
                 </div>
                 

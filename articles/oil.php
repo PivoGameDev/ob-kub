@@ -593,7 +593,7 @@
         <div class="articles-content">
 <div class="article-content active" id="oil-article">
                 <div class="article-header">
-                    <h2 class="article-title">🫒 ОБОРУДОВАНИЕ ДЛЯ ПРОИЗВОДСТВА РАСТИТЕЛЬНОГО МАСЛА</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">🫒 ОБОРУДОВАНИЕ ДЛЯ ПРОИЗВОДСТВА РАСТИТЕЛЬНОГО МАСЛА                    </h1>
                     <div class="article-subtitle">Технологии производства подсолнечного, оливкового, рапсового и других видов масел</div>
                 </div>
                 

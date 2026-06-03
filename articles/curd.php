@@ -593,7 +593,7 @@
         <div class="articles-content">
 <div class="article-content active" id="curd-article">
                 <div class="article-header">
-                    <h2 class="article-title">🥄 ОБОРУДОВАНИЕ ДЛЯ ПРОИЗВОДСТВА ТВОРОГА</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">🥄 ОБОРУДОВАНИЕ ДЛЯ ПРОИЗВОДСТВА ТВОРОГА                    </h1>
                     <div class="article-subtitle">От классического до зернёного: технологии производства творога</div>
                 </div>
                 

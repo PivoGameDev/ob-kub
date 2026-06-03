@@ -131,6 +131,7 @@ main{display:block;margin:0;padding:0}
 .db-prod-equip-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
 .db-prod-equip-card .eq-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.85),rgba(26,26,38,.4));backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:2;opacity:1;transition:opacity .35s;pointer-events:none}
 .db-prod-equip-card:hover .eq-overlay{opacity:0}
+@media(hover:none){.db-prod-equip-card .eq-overlay{background:linear-gradient(135deg,rgba(26,26,38,.5),rgba(26,26,38,.2));backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}}
 .db-prod-equip-card .eq-img{width:100%;height:160px;display:flex;align-items:center;justify-content:center;padding:12px;background:#fff}
 .db-prod-equip-card .eq-img img{max-width:100%;max-height:100%;display:block;width:auto;height:auto}
 .db-prod-equip-card .eq-body{padding:8px 10px 10px;text-align:center;position:relative;z-index:3}

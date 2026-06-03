@@ -593,7 +593,7 @@
         <div class="articles-content">
 <div class="article-content active" id="installation-article">
                 <div class="article-header">
-                    <h2 class="article-title">🔧 МОНТАЖНАЯ ОБВЯЗКА</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">🔧 МОНТАЖНАЯ ОБВЯЗКА                    </h1>
                     <div class="article-subtitle">Ключевые термины по соединению оборудования</div>
                 </div>
                 

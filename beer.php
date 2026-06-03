@@ -6,6 +6,12 @@
 <title>Пивоваренное оборудование — полный каталог | ОБОРУДОВАНИЕ КУБАНИ</title>
 <meta name="description" content="Производство оборудования для пивоварен из нержавеющей стали AISI 304/316. ЦКТ, варочные порядки, ёмкости для брожения и дображивания. Доставка по РФ.">
 <link rel="canonical" href="https://ob-kub.ru/beer.html">
+    <meta property="og:title" content="Пивоваренное оборудование — каталог | ОБОРУДОВАНИЕ КУБАНИ">
+    <meta property="og:description" content="Производство оборудования для пивоварен из нержавеющей стали AISI 304/316. ЦКТ, варочные порядки, ёмкости для брожения. Доставка по РФ.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ob-kub.ru/beer.html">
+    <meta property="og:image" content="https://ob-kub.ru/logo.png">
+    <meta property="og:locale" content="ru_RU">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">

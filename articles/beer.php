@@ -596,7 +596,7 @@
         <div class="articles-content">
 <div class="article-content active" id="beer-article">
                 <div class="article-header">
-                    <h2 class="article-title">🍺 ОБОРУДОВАНИЕ ДЛЯ ПИВОВАРЕН</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">🍺 ОБОРУДОВАНИЕ ДЛЯ ПИВОВАРЕН                    </h1>
                     <div class="article-subtitle">Как сварить пиво по знаменитому «Закону о чистоте» 1516 года</div>
                 </div>
                 

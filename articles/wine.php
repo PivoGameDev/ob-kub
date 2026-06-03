@@ -594,7 +594,7 @@
         <div class="articles-content">
 <div class="article-content active" id="wine-article">
                 <div class="article-header">
-                    <h2 class="article-title">🍷 ОБОРУДОВАНИЕ ДЛЯ ВИНОДЕЛИЯ</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">🍷 ОБОРУДОВАНИЕ ДЛЯ ВИНОДЕЛИЯ                    </h1>
                     <div class="article-subtitle">Как создать вино по традиционным европейским стандартам</div>
                 </div>
                 

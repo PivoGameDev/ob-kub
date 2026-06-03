@@ -592,7 +592,7 @@
         <div class="articles-content">
 <div class="article-content active" id="milk-article">
                 <div class="article-header">
-                    <h2 class="article-title">🥛 ОБОРУДОВАНИЕ ДЛЯ МОЛОЧНОГО ПРОИЗВОДСТВА</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">🥛 ОБОРУДОВАНИЕ ДЛЯ МОЛОЧНОГО ПРОИЗВОДСТВА                    </h1>
                     <div class="article-subtitle">От сырья до готового продукта: производство молока, кефира, йогуртов</div>
                 </div>
                 

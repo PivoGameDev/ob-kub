@@ -592,7 +592,7 @@
         <div class="articles-content">
 <div class="article-content active" id="cheese-article">
                 <div class="article-header">
-                    <h2 class="article-title">🧀 ОБОРУДОВАНИЕ ДЛЯ СЫРОВАРЕНИЯ</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">🧀 ОБОРУДОВАНИЕ ДЛЯ СЫРОВАРЕНИЯ                    </h1>
                     <div class="article-subtitle">От молока до готового сыра: производство твёрдых, полутвёрдых и мягких сыров</div>
                 </div>
                 

@@ -593,7 +593,7 @@
         <div class="articles-content">
 <div class="article-content active" id="sauce-article">
                 <div class="article-header">
-                    <h2 class="article-title">🍯 ОБОРУДОВАНИЕ ДЛЯ ПРОИЗВОДСТВА СОУСОВ И МАЙОНЕЗА</h2>
+                    <h1 class="article-title" style="font-size:22px;margin:0 0 6px">🍯 ОБОРУДОВАНИЕ ДЛЯ ПРОИЗВОДСТВА СОУСОВ И МАЙОНЕЗА                    </h1>
                     <div class="article-subtitle">Создание продуктов с идеальной консистенцией и вкусом</div>
                 </div>
                 
