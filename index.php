@@ -455,7 +455,7 @@ body{padding-top:0!important}
 
 <!-- HERO -->
 <section class="db-hero">
-<img src="hero-bg-v2.jpg" alt="Емкостное оборудование" class="db-hero-bg">
+<img src="hero-bg.jpg" alt="Емкостное оборудование" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
 <div class="db-hero-inner">
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
