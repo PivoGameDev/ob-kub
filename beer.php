@@ -12,6 +12,7 @@
     <meta property="og:url" content="https://ob-kub.ru/beer.html">
     <meta property="og:image" content="https://ob-kub.ru/logo.png">
     <meta property="og:locale" content="ru_RU">
+    <!-- DEPLOY_VERIFIED -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
