@@ -472,7 +472,7 @@ body{padding-top:0!important}
 </div>
 </div>
 
-<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
+<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box;transition:all .3s" id="hqPanel">
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
 <span class="qs1" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700;flex-shrink:0">1</span>
 <span class="qs1" style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
@@ -491,7 +491,7 @@ body{padding-top:0!important}
 <div id="hqResults" style="display:none;background:#fff;border:1px solid #e8e8e8;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:200px;overflow-y:auto;margin-bottom:10px;position:relative;z-index:10"></div>
 
 <div id="hqSelected" style="display:none;align-items:center;gap:8px;margin-bottom:10px;padding:6px 10px;background:#f5f6f8;border-radius:6px">
-<img id="hqSelImg" src="" style="width:40px;height:40px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0">
+<img id="hqSelImg" src="" style="width:64px;height:64px;object-fit:contain;background:#fff;border-radius:6px;flex-shrink:0">
 <span id="hqSelName" style="font-size:12px;color:#333;font-weight:600;flex:1"></span>
 </div>
 
@@ -554,6 +554,7 @@ document.getElementById('hqSelected').style.display='flex';
 document.getElementById('hqSelImg').src='/'+(hqImgs[k]||'cct-tank.jpg');
 document.getElementById('hqSelName').textContent=r.n;
 document.getElementById('hqReset').style.display='inline';
+document.getElementById('hqPanel').style.padding='32px';
 document.querySelectorAll('.qs1,.qs2,.qs3').forEach(function(e,i){e.style.background=i?i===1?'#F77C2A':'#e8e8e8':'#27ae60';e.style.color=i?i===1?'#fff':'#999':'#fff'});
 var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
 var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var last=pp[pp.length-1];var ck=last.match(/^\d+l?$/)?pp[pp.length-2]:last;
