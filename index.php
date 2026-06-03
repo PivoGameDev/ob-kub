@@ -588,7 +588,10 @@ body{padding-top:0!important}
 .scroll-reveal-delay-2{transition-delay:.2s}
 .scroll-reveal-delay-3{transition-delay:.3s}
 .scroll-reveal-delay-4{transition-delay:.4s}
+/* fallback if JS doesn't load */
+.scroll-reveal-nojs{opacity:1!important;transform:translateY(0)!important}
 </style>
+<noscript><style>.scroll-reveal{opacity:1!important;transform:translateY(0)!important}</style></noscript>
 <script>
 var quizTimer=null,quizSelected=null,quizPrices={},quizStep=1;
 var QIMGS={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg'};
@@ -669,9 +672,6 @@ function quizBack(){quizStep=1;
 ['qs1','qs2','qs3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===0);document.getElementById(id).classList.remove('done');});
 ['qc1','qc2','qc3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===0);});
 window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,behavior:'smooth'});}
-
-// Scroll reveal
-(function(){if(!window.IntersectionObserver)return;document.querySelectorAll('.scroll-reveal').forEach(function(el){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){e[0].target.classList.add('visible');o.disconnect()}},{threshold:.15});o.observe(el)})})();
 </script>
 </section>
 
@@ -1067,6 +1067,8 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </div>
 </section>
 
+<!-- Scroll reveal -->
+<script>(function(){if(!window.IntersectionObserver)return;document.querySelectorAll('.scroll-reveal').forEach(function(el){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){e[0].target.classList.add('visible');o.disconnect()}},{threshold:.15});o.observe(el)})})();</script>
 </main>
 
 <?php require $_SERVER['DOCUMENT_ROOT'].'/php/footer.php'; ?>
