@@ -580,6 +580,14 @@ body{padding-top:0!important}
 .db-qsearch:focus-within{border-color:#F77C2A}
 .quiz-cat-chip{display:inline-block;padding:6px 14px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;font-size:12px;font-weight:500;color:#333;cursor:pointer;transition:all .15s;text-decoration:none}
 .quiz-cat-chip:hover{background:#fff4e6;border-color:#F77C2A;color:#F77C2A}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.scroll-reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.scroll-reveal.visible{opacity:1;transform:translateY(0)}
+.scroll-reveal-delay-1{transition-delay:.1s}
+.scroll-reveal-delay-2{transition-delay:.2s}
+.scroll-reveal-delay-3{transition-delay:.3s}
+.scroll-reveal-delay-4{transition-delay:.4s}
 </style>
 <script>
 var quizTimer=null,quizSelected=null,quizPrices={},quizStep=1;
@@ -661,11 +669,14 @@ function quizBack(){quizStep=1;
 ['qs1','qs2','qs3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===0);document.getElementById(id).classList.remove('done');});
 ['qc1','qc2','qc3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===0);});
 window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,behavior:'smooth'});}
+
+// Scroll reveal
+(function(){if(!window.IntersectionObserver)return;document.querySelectorAll('.scroll-reveal').forEach(function(el){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){e[0].target.classList.add('visible');o.disconnect()}},{threshold:.15});o.observe(el)})})();
 </script>
 </section>
 
 <!-- TRUST BAR -->
-<section class="db-row-section" style="padding:32px 0">
+<section class="db-row-section scroll-reveal" style="padding:32px 0">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:28px 36px">
 <div class="db-weld-inner" style="grid-template-columns:1fr 1fr;gap:36px;align-items:center">
@@ -709,7 +720,7 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </section>
 
 <!-- EQUIPMENT CATEGORIES -->
-<section class="db-section alt" id="equipment" style="padding:64px 0 48px">
+<section class="db-section alt scroll-reveal" id="equipment" style="padding:64px 0 48px">
 <div class="db-wrap" style="max-width:1400px">
 <div class="db-section-line"></div>
 <h2 class="db-section-title">Категории оборудования</h2>
