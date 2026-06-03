@@ -564,8 +564,8 @@ fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+src).then(function(
 var g=document.getElementById('hqVols');g.innerHTML='';if(!d.prices||!d.prices.length){g.innerHTML='<span style="font-size:12px;color:#888">Нет данных</span>';return;}
 d.prices.sort(function(a,b){return a.vol-b.vol;});
 d.prices.forEach(function(p){var b=document.createElement('button');
-b.style.cssText='padding:3px 8px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:10px;color:#555;cursor:pointer;font-family:inherit;font-weight:600';
-b.innerHTML=p.vol+' <span style="font-size:9px;color:#999">л</span>';
+b.style.cssText='padding:4px 10px;border:1px solid #ddd;border-radius:5px;background:#fff;font-size:12px;color:#333;cursor:pointer;font-family:inherit;font-weight:600;white-space:nowrap';
+b.innerHTML=p.vol+' <span style="font-size:10px;color:#999">л</span>';
 b.onmouseover=function(){this.style.borderColor='#F77C2A'};b.onmouseout=function(){if(!this.classList.contains('sel'))this.style.borderColor='#e0e0e0'};
 b.onclick=function(){g.querySelectorAll('button').forEach(function(b2){b2.classList.remove('sel');b2.style.background='';b2.style.color='#555';b2.querySelector('span').style.color='#1a1a26'});
 b.classList.add('sel');b.style.background='#F77C2A';b.style.color='#fff';b.querySelector('span').style.color='#fff';
@@ -573,8 +573,8 @@ document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#
 document.getElementById('hqPrice').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(p.price);
 document.getElementById('hqStatus').textContent='✅ Цена известна — отправьте заявку';};
 g.appendChild(b);});
-var cb=document.createElement('button');cb.style.cssText='padding:4px 8px;border:1px dashed #ccc;border-radius:5px;background:#fff;font-size:11px;color:#888;cursor:pointer;font-family:inherit';
-cb.innerHTML='<span style="display:block;font-size:12px">Свой</span><span style="font-size:10px;color:#999">объём</span>';
+var cb=document.createElement('button');cb.style.cssText='padding:4px 10px;border:1px dashed #ccc;border-radius:5px;background:#fff;font-size:12px;color:#666;cursor:pointer;font-family:inherit;white-space:nowrap';
+cb.innerHTML='✚ Свой объём';
 cb.onclick=function(){document.getElementById('hqCustomVol').style.display='flex';this.style.display='none'};g.appendChild(cb);
 document.getElementById('hqStatus').textContent='Выберите объём';});}
 function hqReset(){
