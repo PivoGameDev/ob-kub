@@ -973,6 +973,28 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </div>
 </section>
 
+<!-- LEAD MAGNET: Скачать каталог -->
+<section class="db-row-section" style="padding:0;margin-top:-24px">
+<div class="db-wrap">
+<div class="db-weld-frame" style="background:linear-gradient(135deg,#1a1a26,#2b2b39);padding:0;overflow:hidden">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center">
+<div style="padding:40px 44px">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:8px">Скачать каталог</div>
+<div style="font-size:22px;font-weight:800;color:#fff;margin-bottom:10px">Полный каталог с ценами</div>
+<div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:16px">Все позиции, объёмы и цены в одном PDF. Удобно для планирования бюджета и согласования.</div>
+<form method="post" action="/php/send.php" style="display:flex;gap:10px;flex-wrap:wrap">
+<input type="hidden" name="form_type" value="catalog-request">
+<input type="email" name="email" required placeholder="Ваш email для получения каталога" style="flex:1;min-width:200px;padding:12px 16px;border:1px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none">
+<button type="submit" style="padding:12px 28px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap">📥 Скачать →</button>
+</form>
+<div style="font-size:11px;color:rgba(255,255,255,.35);margin-top:8px">Нажимая «Скачать», вы соглашаетесь с Политикой конфиденциальности</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;padding:40px;background:rgba(247,124,42,.04);font-size:60px">📋</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- CONTACTS -->
 <section class="db-section alt" id="contacts">
 <div class="db-wrap">

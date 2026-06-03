@@ -1,0 +1,11 @@
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/yandex_
+    RewriteRule ^(.+)\.html$ $1.php [L]
+    RewriteRule ^catalog/beer/cct/(\d+)l/?$ /catalog/beer/cct/volume.php?vol=$1 [R=301,L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^catalog/.*$ catalog/index.php [L]
+</IfModule>
