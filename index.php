@@ -696,6 +696,31 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </div>
 </section>
 
+<!-- QUALITY / WHY US -->
+<section class="db-row-section scroll-reveal" style="padding:0 0 32px">
+<div class="db-wrap">
+<div class="db-weld-frame" style="padding:0;overflow:hidden;border-color:rgba(247,124,42,.08)">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+<div style="display:flex;align-items:center;justify-content:center;padding:36px;background:rgba(247,124,42,.03)">
+<img src="cct-tank.jpg" alt="Качество лазерной сварки" style="max-width:100%;max-height:340px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.15)">
+</div>
+<div style="padding:36px 40px;display:flex;flex-direction:column;justify-content:center">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:8px">Качество</div>
+<div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.25">Емкости из стали AISI 304/316 <br>с лазерной сваркой швов</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px">
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">🔬</span> Лазерная сварка</div>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">🧪</span> Гидроиспытания</div>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">📏</span> Зеркальная полировка Ra≤0,8</div>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">🔧</span> Арматура Inoxpa</div>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">📄</span> Паспорта сосудов под давление</div>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">✅</span> Сертификаты ТР ЕАЭС</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- ENGINEERING / BLUEPRINT -->
 <section class="db-row-section" style="padding:0 0 40px;background:transparent">
 <div class="db-wrap">
