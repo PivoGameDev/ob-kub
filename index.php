@@ -472,135 +472,84 @@ body{padding-top:0!important}
 </div>
 </div>
 
-<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box;transition:all .3s;position:relative" id="hqPanel">
-<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
-<span class="qs1" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700;flex-shrink:0">1</span>
-<span class="qs1" style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
-<span id="hqReset" onclick="hqReset()" style="display:none;margin-left:auto;font-size:18px;color:#999;cursor:pointer;line-height:1" title="Сбросить">×</span>
+<div style="max-height:520px;overflow-y:auto;background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.12);position:relative">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
+<span style="font-size:13px;font-weight:600;color:#333">Найдите оборудование</span>
+<span id="hqRst" onclick="hqReset()" style="display:none;margin-left:auto;font-size:16px;color:#999;cursor:pointer;line-height:1">×</span>
 </div>
 <div style="position:relative">
-<div style="display:flex;align-items:center;background:#f5f6f8;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:10px">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 6px 0 12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type="text" id="hqInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:11px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;min-width:0">
+<div style="display:flex;align-items:center;border:1px solid #ddd;border-radius:8px;padding:0 10px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+<input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
 </div>
-<div id="hqResults" style="display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;max-height:260px;overflow-y:auto;position:absolute;z-index:100;left:0;right:0;top:calc(100% - 8px)"></div>
-</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
-<a href="/beer.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍺 Пиво</a>
-<a href="/dairy.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🥛 Молоко</a>
-<a href="/winery.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍷 Вино</a>
-<a href="/industrial.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍽️ Пищевое</a>
-</div>
+<div id="hqRes" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:6px;max-height:220px;overflow-y:auto;z-index:50;margin-top:2px"></div>
 </div>
 
-<div id="hqSelected" style="display:none;align-items:center;gap:8px;margin-bottom:10px;padding:6px 10px;background:#f5f6f8;border-radius:6px">
-<img id="hqSelImg" src="" style="width:64px;height:64px;object-fit:contain;background:#fff;border-radius:6px;flex-shrink:0">
-<span id="hqSelName" style="font-size:12px;color:#333;font-weight:600;flex:1"></span>
+<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
+<span id="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">2</span>
+<span id="qs2t" style="font-size:13px;font-weight:600;color:#aaa">Объём</span>
+<a id="hqCst" onclick="hqCustom()" style="display:none;margin-left:auto;font-size:11px;color:#F77C2A;cursor:pointer">Свой объём</a>
 </div>
-
-<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
-<span class="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">2</span>
-<span class="qs2" style="font-size:13px;font-weight:600;color:#999">Выберите объём</span>
-<span id="hqCustomLink" onclick="hqShowCustom()" style="display:none;margin-left:auto;font-size:11px;color:#F77C2A;cursor:pointer;font-weight:600">Свой объём</span>
-</div>
-<div style="margin-bottom:10px">
-<select id="hqVolSelect" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:13px;font-family:inherit;color:#333;background:#fff;display:none" onchange="hqVolSelect()">
-<option value="">— Выберите объём —</option>
+<select id="hqSel" style="display:none;width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:12px;font-family:inherit;color:#333;background:#fff">
+<option value="">— выберите объём —</option>
 </select>
-<div id="hqCustomVol" style="display:none;margin-bottom:10px">
-<input type="number" id="hqCustomVal" placeholder="Ваш объём, л" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:13px;outline:none;font-family:inherit;box-sizing:border-box">
-<button onclick="hqCustom()" style="margin-top:6px;width:100%;padding:8px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit">Узнать цену</button>
+<div id="hqCstBox" style="display:none">
+<input type="number" id="hqCstVal" placeholder="Ваш объём, л" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:12px;outline:none;font-family:inherit;box-sizing:border-box">
+<button onclick="hqCstGo()" style="width:100%;margin-top:6px;padding:8px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">Узнать цену</button>
 </div>
 
-<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">
-<span class="qs3" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">3</span>
-<span class="qs3" style="font-size:13px;font-weight:600;color:#999">Цена и заявка</span>
+<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
+<span id="qs3" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">3</span>
+<span id="qs3t" style="font-size:13px;font-weight:600;color:#aaa">Цена</span>
 </div>
-<div id="hqPrice" style="display:none;text-align:center;padding:12px;background:linear-gradient(135deg,#fff8f0,#fff);border:2px solid #F77C2A;border-radius:8px;margin-bottom:10px">
-<div style="font-size:11px;color:#888;margin-bottom:4px">💰 Ориентировочная цена</div>
-<div id="hqPriceVal" style="font-size:24px;font-weight:900;color:#F77C2A"></div>
+<div id="hqPriceBox" style="display:none;background:linear-gradient(135deg,#fff8f0,#fff);border:2px solid #F77C2A;border-radius:8px;padding:12px;text-align:center">
+<div style="font-size:11px;color:#888">💰 Ориентировочная цена</div>
+<div id="hqPriceVal" style="font-size:22px;font-weight:900;color:#F77C2A"></div>
 </div>
-<button id="hqBtn" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})" style="width:100%;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">📩 Получить КП с точной ценой</button>
-<div id="hqStatus" style="font-size:12px;color:#999;text-align:center;margin-top:8px">Введите название оборудования для начала</div>
-
-<div style="display:flex;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid #f0f0f0;justify-content:center;flex-wrap:wrap">
-<span style="font-size:11px;color:#999">🔥 Цена сразу</span>
-<span style="font-size:11px;color:#999">⚡ КП за 2 часа</span>
-<span style="font-size:11px;color:#999">🔒 Конфиденциально</span>
+<button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">📩 Получить КП</button>
+<div id="hqSt" style="font-size:11px;color:#999;text-align:center;margin-top:8px">Введите название оборудования</div>
 </div>
-</div>
-</div>
-</section>
 
 <script>
-var hqImgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg'};
-document.getElementById('hqInput').addEventListener('focus',function(){
-if(!this.value.trim()){fetch('/php/search.php?q=а').then(function(r){return r.json();}).then(function(d){showHqResults(d.results)})}
-});
-document.getElementById('hqInput').addEventListener('input',function(){
-var q=this.value.trim();
-if(!q){document.getElementById('hqResults').style.display='none';return;}
-fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(d){showHqResults(d.results)});});
-
-function showHqResults(items){
-var res=document.getElementById('hqResults');res.innerHTML='';
-var items2=items.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/);});
-var seen={};items2=items2.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true;});
-if(!items.length){res.innerHTML='<div style="padding:12px;text-align:center;color:#999;font-size:12px">Ничего не найдено</div>';res.style.display='block';return;}
-items.forEach(function(r){var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
-var im='<img src="/'+(hqImgs[k]||'cct-tank.jpg')+'" style="width:36px;height:36px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0">';
-var div=document.createElement('div');div.style.cssText='padding:8px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #f8f8f8';
-div.onmouseover=function(){this.style.background='#fff8f0'};div.onmouseout=function(){this.style.background=''};
-div.innerHTML=im+'<div style="flex:1;min-width:0"><div style="color:#333;font-weight:600;font-size:12px">'+r.n+'</div><div style="color:#888;font-size:11px">'+r.s+'</div></div><span style="color:#F77C2A;font-size:11px;font-weight:600;flex-shrink:0">Выбрать</span>';
-div.onclick=function(){hqSelect(r)};res.appendChild(div);});
- res.style.display='block';}
-function hqSelect(r){
-document.getElementById('hqInput').value=r.n;document.getElementById('hqResults').style.display='none';
-var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
-document.getElementById('hqSelected').style.display='flex';
-document.getElementById('hqSelImg').src='/'+(hqImgs[k]||'cct-tank.jpg');
-document.getElementById('hqSelName').textContent=r.n;
-document.getElementById('hqReset').style.display='inline';
-document.getElementById('hqPanel').style.padding='32px';
-document.querySelectorAll('.qs1,.qs2,.qs3').forEach(function(e,i){e.style.background=i?i===1?'#F77C2A':'#e8e8e8':'#27ae60';e.style.color=i?i===1?'#fff':'#999':'#fff'});
+var hqSel=null;
+document.getElementById('hqInp').addEventListener('focus',function(){if(!this.value.trim())fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){hqShow(d.results)})});
+document.getElementById('hqInp').addEventListener('input',function(){var q=this.value.trim();if(!q){document.getElementById('hqRes').style.display='none';return}fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json()}).then(function(d){hqShow(d.results)})});
+function hqShow(items){
+var r=document.getElementById('hqRes');r.innerHTML='';
+var i=items.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/)});
+var s={};i=i.filter(function(r){var k=r.u;if(s[k])return false;s[k]=true;return true});
+if(!i.length){r.innerHTML='<div style="padding:10px;text-align:center;color:#999;font-size:11px">Ничего не найдено</div>';r.style.display='block';return}
+i.forEach(function(x){var k=x.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=x.u.split('/').filter(Boolean).slice(-2,-1)[0];
+var d=document.createElement('div');d.style.cssText='padding:7px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
+d.onmouseover=function(){this.style.background='#fff8f0'};d.onmouseout=function(){this.style.background=''};
+d.innerHTML='<span style="color:#F77C2A;font-size:10px">▶</span><span style="flex:1;color:#333;font-weight:600">'+x.n+'</span><span style="color:#888;font-size:11px">'+x.s+'</span>';
+d.onclick=function(){hqPick(x)};r.appendChild(d)});
+r.style.display='block';}
+function hqPick(r){
+document.getElementById('hqInp').value=r.n;document.getElementById('hqRes').style.display='none';document.getElementById('hqRst').style.display='inline';
+document.getElementById('qs2').style.background='#F77C2A';document.getElementById('qs2').style.color='#fff';document.getElementById('qs2t').style.color='#333';
 var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
 var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var last=pp[pp.length-1];var ck=last.match(/^\d+l?$/)?pp[pp.length-2]:last;
 var sm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=sm[r.si]||'';
 if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
-fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+src).then(function(r){return r.json();}).then(function(d){
-var sel=document.getElementById('hqVolSelect');sel.innerHTML='<option value="">— Выберите объём —</option>';
-if(!d.prices||!d.prices.length){sel.innerHTML='<option value="">Нет данных</option>';sel.style.display='block';return;}
-d.prices.sort(function(a,b){return a.vol-b.vol;});
-d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л ('+fmtP(p.price)+')';sel.appendChild(o);});
-sel.style.display='block';document.getElementById('hqCustomLink').style.display='inline';
-});
-document.getElementById('hqStatus').textContent='Выберите объём';});}
-function hqVolSelect(){
-var sel=document.getElementById('hqVolSelect'),p=parseInt(sel.value);
-if(p>0){document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#27ae60';e.style.color='#fff'});
-document.getElementById('hqPrice').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(p);
-document.getElementById('hqStatus').textContent='✅ Цена известна — отправьте заявку';}
+fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+src).then(function(r){return r.json()}).then(function(d){
+var s=document.getElementById('hqSel');s.innerHTML='<option value="">— выберите объём —</option>';
+if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л ('+fmtP(p.price)+')';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var v=parseInt(this.value);if(v>0){document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(v);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна'}}}
+else{s.innerHTML='<option value="">Нет данных</option>';s.style.display='block'};document.getElementById('hqSt').textContent='Выберите объём'});
 }
-function hqShowCustom(){document.getElementById('hqCustomVol').style.display='block';document.getElementById('hqVolSelect').style.display='none';document.getElementById('hqCustomLink').style.display='none';}
-function hqCustom(){var v=parseInt(document.getElementById('hqCustomVal').value);if(v>0){
-document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#27ae60';e.style.color='#fff'});
-document.getElementById('hqPrice').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
-document.getElementById('hqStatus').textContent='✅ Цена по запросу — отправьте заявку';}}
-function hqShowPrice(price){
-document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#27ae60';e.style.color='#fff'});
-document.getElementById('hqPrice').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(price);
-document.getElementById('hqStatus').textContent='✅ Цена известна — отправьте заявку';}
+function hqCustom(){document.getElementById('hqCstBox').style.display='block';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none'}
+function hqCstGo(){var v=parseInt(document.getElementById('hqCstVal').value);if(v>0){
+document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';
+document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
+document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена по запросу'}}
 function hqReset(){
-document.getElementById('hqInput').value='';
-document.getElementById('hqResults').style.display='none';
-document.getElementById('hqSelected').style.display='none';
-document.getElementById('hqVols').innerHTML='';
-document.getElementById('hqPrice').style.display='none';
-document.getElementById('hqReset').style.display='none';
-document.getElementById('hqStatus').textContent='Введите название оборудования для начала';
-document.querySelectorAll('.qs1,.qs2,.qs3').forEach(function(e,i){e.style.background=i===0?'#F77C2A':'#e8e8e8';e.style.color=i===0?'#fff':'#999'});
-}
-function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽');}
+document.getElementById('hqInp').value='';document.getElementById('hqRes').style.display='none';document.getElementById('hqRst').style.display='none';
+document.getElementById('qs2').style.background='#eee';document.getElementById('qs2').style.color='#aaa';document.getElementById('qs2t').style.color='#aaa';
+document.getElementById('qs3').style.background='#eee';document.getElementById('qs3').style.color='#aaa';document.getElementById('qs3t').style.color='#aaa';
+document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';
+document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования'}
+function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽')}
 </script>
 
 <!-- TRUST BAR -->
