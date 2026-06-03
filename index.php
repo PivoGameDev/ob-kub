@@ -1234,6 +1234,33 @@ ticking = false;
 window.addEventListener('scroll', function(){ if (!ticking) { requestAnimationFrame(update); ticking = true; } }, {passive: true});
 update();
 })();
+
+// Hero quiz search
+(function(){
+var input=document.getElementById('heroQuizInput');
+var res=document.getElementById('heroQuizResults');
+if(!input||!res)return;
+input.addEventListener('input',function(){
+var q=this.value.trim();
+if(!q){res.style.display='none';return;}
+fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(d){
+res.innerHTML='';
+var items=d.results.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/);});
+var seen={};items=items.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true;});
+if(!items.length){res.innerHTML='<div style="padding:12px;text-align:center;color:#999;font-size:12px">Ничего не найдено</div>';res.style.display='block';return;}
+items.forEach(function(r){
+var div=document.createElement('div');
+div.style.cssText='padding:8px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center';
+div.onmouseover=function(){this.style.background='#fff8f0'};
+div.onmouseout=function(){this.style.background=''};
+div.innerHTML='<span style="flex-shrink:0;font-size:16px">🔹</span><span style="flex:1;color:#333;font-weight:600">'+r.n+'</span><span style="color:#888;font-size:11px">'+r.s+'</span>';
+div.onclick=function(){input.value=r.n;res.style.display='none';};
+res.appendChild(div);
+});
+res.style.display='block';
+}).catch(function(){});
+});
+input.addEventListener('blur',function(){setTimeout(function(){res.style.display='none'},300)});
+})();
 </script></body>
-</html>
 
