@@ -457,13 +457,13 @@ body{padding-top:0!important}
 <section class="db-hero">
 <img src="hero-bg.jpg" alt="" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
-<div class="db-hero-inner" style="display:grid!important;grid-template-columns:1fr 340px!important;gap:32px!important;align-items:start!important;padding:60px 24px!important;max-width:1100px!important">
-<style>@media(max-width:860px){.db-hero-inner{grid-template-columns:1fr!important;gap:20px!important;padding:40px 20px!important}}</style>
+<div class="db-hero-inner" style="display:grid!important;grid-template-columns:1fr 340px!important;gap:32px!important;align-items:start!important;padding:40px 24px!important;max-width:1100px!important">
+<style>@media(max-width:860px){.db-hero-inner{grid-template-columns:1fr!important;gap:20px!important;padding:30px 20px!important}}</style>
 
 <div style="min-width:0">
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
-<h1 style="font-size:44px;max-width:600px">Резервуары из стали AISI 304/316</h1>
-<p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,.6);margin:0 0 24px;max-width:500px">Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
+<h1 style="font-size:36px;max-width:500px">Резервуары из стали AISI 304/316</h1>
+<p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,.6);margin:0 0 20px;max-width:450px">Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
 <div class="db-hero-tags" style="margin-bottom:0">
 <a href="/beer.html">🍺 Пивоваренное</a>
 <a href="/dairy.html">🥛 Молочное</a>
@@ -472,7 +472,7 @@ body{padding-top:0!important}
 </div>
 </div>
 
-<div style="max-height:520px;overflow-y:auto;background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.12);position:relative">
+<div style="background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.12);position:relative;box-sizing:border-box">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
 <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
 <span style="font-size:13px;font-weight:600;color:#333">Найдите оборудование</span>
