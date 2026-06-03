@@ -891,7 +891,7 @@ sw(0);
 </div>
 </div>
 <div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
-<img src="industrial-tanks.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<img src="projects/industrial-tanks.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 18px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Парк резервуаров</h3>
 <p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">10+ емкостей 100 000–200 000 л для масла</p>
@@ -899,7 +899,7 @@ sw(0);
 </div>
 </div>
 <div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
-<img src="cip-station.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<img src="projects/cip-station.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 18px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">CIP-станция</h3>
 <p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">4 контура мойки, полностью автоматическая</p>
@@ -923,7 +923,7 @@ sw(0);
 </div>
 </div>
 </div>
-<div style="text-align:center;margin-top:24px"><a href="/catalog/#projects" style="display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(247,124,42,.2)">Смотреть все проекты →</a></div>
+<div style="text-align:center;margin-top:24px"><a href="/#quiz-block" style="display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(247,124,42,.2)">Подобрать ёмкость →</a></div>
 </div>
 </div>
 </div>
