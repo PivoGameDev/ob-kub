@@ -546,7 +546,7 @@ var div=document.createElement('div');div.style.cssText='padding:8px 10px;cursor
 div.onmouseover=function(){this.style.background='#fff8f0'};div.onmouseout=function(){this.style.background=''};
 div.innerHTML=im+'<div style="flex:1;min-width:0"><div style="color:#333;font-weight:600;font-size:12px">'+r.n+'</div><div style="color:#888;font-size:11px">'+r.s+'</div></div><span style="color:#F77C2A;font-size:11px;font-weight:600;flex-shrink:0">Выбрать</span>';
 div.onclick=function(){hqSelect(r)};res.appendChild(div);});
-res.style.display='block';});});
+ res.style.display='block';}
 function hqSelect(r){
 document.getElementById('hqInput').value=r.n;document.getElementById('hqResults').style.display='none';
 var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
