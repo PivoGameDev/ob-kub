@@ -472,14 +472,14 @@ body{padding-top:0!important}
 </div>
 </div>
 
-<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15)">
+<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);width:380px;max-width:100%;box-sizing:border-box">
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
-<span class="qs1" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700">1</span>
+<span class="qs1" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700;flex-shrink:0">1</span>
 <span class="qs1" style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
 </div>
 <div style="display:flex;align-items:center;background:#f5f6f8;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:10px">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 6px 0 12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type="text" id="hqInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:11px 8px;font-size:13px;outline:none;font-family:inherit;color:#333">
+<input type="text" id="hqInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:11px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;min-width:0">
 </div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
 <a href="/beer.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍺 Пиво</a>
@@ -493,10 +493,10 @@ body{padding-top:0!important}
 <span class="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">2</span>
 <span class="qs2" style="font-size:13px;font-weight:600;color:#999">Выберите объём</span>
 </div>
-<div id="hqVols" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px"></div>
-<div id="hqCustomVol" style="display:none;gap:6px;margin-bottom:10px">
-<input type="number" id="hqCustomVal" placeholder="Свой объём, л" style="flex:1;padding:8px 12px;border:1px solid #e0e0e0;border-radius:6px;font-size:12px;outline:none;font-family:inherit">
-<button onclick="hqCustom()" style="padding:8px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit">OK</button>
+<div id="hqVols" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px"></div>
+<div id="hqCustomVol" style="display:none;gap:4px;margin-bottom:10px">
+<input type="number" id="hqCustomVal" placeholder="Свой объём, л" style="flex:1;min-width:0;padding:8px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:12px;outline:none;font-family:inherit;width:100%;box-sizing:border-box">
+<button onclick="hqCustom()" style="padding:8px 14px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;flex-shrink:0">OK</button>
 </div>
 
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">
