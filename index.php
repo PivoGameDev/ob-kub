@@ -457,7 +457,8 @@ body{padding-top:0!important}
 <section class="db-hero">
 <img src="hero-bg.jpg" alt="" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
-<div class="db-hero-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:80px 24px">
+<div class="db-hero-inner" style="display:grid;grid-template-columns:1fr 400px;gap:48px;align-items:center;padding:80px 24px">
+<style>@media(max-width:900px){.db-hero-inner{grid-template-columns:1fr!important;gap:24px!important}}</style>
 
 <div>
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
