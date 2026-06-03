@@ -457,13 +457,13 @@ body{padding-top:0!important}
 <section class="db-hero">
 <img src="hero-bg.jpg" alt="" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
-<div class="db-hero-inner" style="display:grid;grid-template-columns:1fr 400px;gap:48px;align-items:center;padding:80px 24px">
+<div class="db-hero-inner" style="display:grid!important;grid-template-columns:1fr auto!important;gap:48px!important;align-items:start!important;padding:80px 24px!important;max-width:1200px!important">
 <style>@media(max-width:900px){.db-hero-inner{grid-template-columns:1fr!important;gap:24px!important}}</style>
 
-<div>
+<div style="min-width:0">
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
-<h1 style="font-size:44px">Резервуары из стали AISI 304/316</h1>
-<p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,.6);margin:0 0 24px">Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
+<h1 style="font-size:44px;max-width:600px">Резервуары из стали AISI 304/316</h1>
+<p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,.6);margin:0 0 24px;max-width:500px">Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
 <div class="db-hero-tags" style="margin-bottom:0">
 <a href="/beer.html">🍺 Пивоваренное</a>
 <a href="/dairy.html">🥛 Молочное</a>
