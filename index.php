@@ -467,83 +467,7 @@ body{padding-top:0!important}
 <a href="/winery.html">🍷 Винодельческое</a>
 <a href="/industrial.html">🏭 Промышленное</a>
 </div>
-<button class="db-hero-cta" onclick="document.getElementById('equipment').scrollIntoView({behavior:'smooth'})">Наша продукция →</button>
-</div>
-</section>
-
-<!-- STEEL AISI -->
-<section class="db-section alt" id="about">
-<div class="db-wrap">
-<div class="db-section-line"></div>
-<h2 class="db-section-title">Сталь AISI 304/316</h2>
-<p class="db-section-sub">Высококачественная нержавеющая сталь для пищевой промышленности</p>
-<div class="db-aisi-grid">
-<div class="aisi-gallery-col">
-<div class="aisi-gallery" id="aisiGallery">
-
-<div class="aisi-slide active" data-idx="0">
-<div class="img-wrap"><img src="aisi-steel-tanks.png" alt="Промышленные емкости из нержавеющей стали" loading="lazy"></div>
-</div>
-<div class="aisi-slide" data-idx="1" data-name="Гидроциклонный аппарат (Whirlpool)" data-vol="250–10 000 л" data-link="/catalog/beer/brew-house/">
-<div class="img-wrap"><img data-src="beer-whirlpool.jpg" alt="Гидроциклонный аппарат"></div>
-</div>
-<div class="aisi-slide" data-idx="2" data-name="Бак горячей воды" data-vol="250–50 000 л" data-link="/catalog/beer/hot-water-tank/">
-<div class="img-wrap"><img data-src="hot-water-tank.jpg" alt="Бак горячей воды"></div>
-</div>
-<div class="aisi-slide" data-idx="3" data-name="Фильтрационный аппарат (Фильтрчан)" data-vol="250–10 000 л" data-link="/catalog/beer/brew-house/">
-<div class="img-wrap"><img data-src="lauter-tun.jpg" alt="Фильтрационный аппарат"></div>
-</div>
-<div class="aisi-slide" data-idx="4" data-name="Танк холодной стабилизации" data-vol="500–50 000 л" data-link="/catalog/wine/cold-stabilization/">
-<div class="img-wrap"><img data-src="wine-cold-stabilization.jpg" alt="Танк холодной стабилизации"></div>
-</div>
-</div>
-<div class="aisi-caption" id="aisiCaption" style="visibility:hidden">
-<span class="cap-name"></span><span class="cap-vol"></span><a href="" class="cap-link">→</a>
-</div>
-</div>
-<div>
-<p>Мы специализируемся на производстве промышленных емкостей вертикального и горизонтального типа объёмом от 250 литров до 300 м³. Вся продукция изготавливается из пищевой нержавеющей стали AISI 304 и AISI 316.</p>
-<ul class="db-aisi-features">
-<li>Соответствие стандартам пищевой безопасности</li>
-<li>Полная герметичность и гигиеничность конструкций</li>
-<li>Устойчивость к температурным перепадам</li>
-<li>Индивидуальные решения под ваш техпроцесс</li>
-</ul>
-<button class="db-aisi-btn" onclick="document.getElementById('equipment').scrollIntoView({behavior:'smooth'})">Подобрать емкость →</button>
-</div>
-</div>
-</div>
-</section>
-
-<!-- PRODUCTION CAPACITY -->
-<section class="db-section">
-<div class="db-wrap">
-<div class="db-section-line"></div>
-<h2 class="db-section-title">Производственные мощности</h2>
-<p class="db-section-sub">Крупнейшее предприятие в ЮФО по выпуску промышленных резервуаров, теплообменников и сосудов под давлением</p>
-<div class="db-prod-grid">
-<div class="db-prod-text">
-<p>Наш цех был основан в 2008 году. Сегодня мы — крупнейшее предприятие в ЮФО, выпускающее промышленные резервуары, теплообменники и сосуды под давлением. Собственное производство площадью 2000 м² позволяет контролировать качество на всех этапах.</p>
-<p>Мы используем лазерную резку, аргонодуговую сварку, вальцовку днищ — полный цикл металлообработки. Каждое изделие проходит гидравлические испытания перед отгрузкой.</p>
-<div class="db-prod-stats">
-<div class="db-prod-stat"><div class="num">17</div><div class="lbl">лет работы</div></div>
-<div class="db-prod-stat"><div class="num">60+</div><div class="lbl">высококвалифицированных мастеров</div></div>
-<div class="db-prod-stat"><div class="num">2000 м²</div><div class="lbl">собственное производство</div></div>
-</div>
-<button class="db-aisi-btn" style="margin-top:20px" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">Записаться на экскурсию →</button>
-</div>
-<img src="production-facility.png" alt="Производственный цех" loading="lazy">
-</div>
-<div class="db-prod-equip-section">
-<div class="db-prod-equip-title">Наше оборудование</div>
-<div class="db-prod-equip">
-<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="equipment/ostas-mill.jpg" alt="Вальцы OSTAS"></div><div class="eq-body"><div class="eq-name">Вальцы OSTAS 4R-OHS</div><div class="eq-spec">2570×250 мм</div></div></div>
-<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="equipment/hydraulic-press.jpg" alt="Гидравлический пресс"></div><div class="eq-body"><div class="eq-name">Гидравлический пресс с ЧПУ</div><div class="eq-spec">гибка листового металла</div></div></div>
-<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="equipment/cnc-guillotine.jpg" alt="Гильотина с ЧПУ"></div><div class="eq-body"><div class="eq-name">Гильотина с ЧПУ</div><div class="eq-spec">рез 3500×10 мм</div></div></div>
-<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="equipment/band-saw.jpg" alt="Ленточнопильный станок"></div><div class="eq-body"><div class="eq-name">Ленточнопильный станок</div><div class="eq-spec">резка профильной и круглой трубы</div></div></div>
-<div class="db-prod-equip-card"><div class="eq-overlay"></div><div class="eq-img"><img src="equipment/laser-welding.jpg" alt="Лазерная сварка"></div><div class="eq-body"><div class="eq-name">Аппарат лазерной сварки</div><div class="eq-spec">точность до 0,1 мм</div></div></div>
-</div>
-</div>
+<button class="db-hero-cta" onclick="document.getElementById('quiz-block').scrollIntoView({behavior:'smooth'})">Подобрать и узнать цену за 1 минуту →</button>
 </div>
 </section>
 
@@ -734,7 +658,28 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </script>
 </section>
 
-<!-- EQUIPMENT CATEGORIES — from ob-kub.ru/catalog/ -->
+<!-- TRUST BAR -->
+<section class="db-row-section" style="padding:32px 0">
+<div class="db-wrap">
+<div class="db-weld-frame" style="padding:28px 36px">
+<div class="db-weld-inner" style="grid-template-columns:1fr 1fr;gap:36px;align-items:center">
+<div style="display:flex;flex-wrap:wrap;gap:20px">
+<div><div style="font-size:28px;font-weight:800;color:#F77C2A;line-height:1">17</div><div style="font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.3px">лет работы</div></div>
+<div><div style="font-size:28px;font-weight:800;color:#F77C2A;line-height:1">2000 м²</div><div style="font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.3px">производства</div></div>
+<div><div style="font-size:28px;font-weight:800;color:#F77C2A;line-height:1">60+</div><div style="font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.3px">мастеров</div></div>
+</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<div class="db-weld-badge ok" style="font-size:12px">✓ Гарантия 12 мес</div>
+<a href="/certificates.html" class="db-weld-badge" style="font-size:12px">Сертификаты</a>
+<div class="db-weld-badge" style="font-size:12px">Лазерная сварка</div>
+<div class="db-weld-badge" style="font-size:12px">AISI 304/316</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- EQUIPMENT CATEGORIES -->
 <section class="db-section alt" id="equipment">
 <div class="db-wrap">
 <div class="db-section-line"></div>
@@ -781,63 +726,6 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </div>
 <div class="cat-card-footer"><span class="btn-view">Перейти к каталогу</span></div>
 </a>
-</div>
-</div>
-</section>
-
-<!-- WELDING — Швы которым доверяют -->
-<section class="db-row-section alt">
-<div class="db-wrap">
-<div class="db-section-line"></div>
-<h2 class="db-section-title">Швы, которым можно доверять</h2>
-<p class="db-section-sub" style="margin-bottom:24px!important">Лазерная сварка пищевой нержавеющей стали — герметичные швы без протечек</p>
-<div class="db-weld-frame">
-<div class="db-weld-inner">
-<div>
-<p>Лазерная сварка пищевой нержавеющей стали AISI 304/316 обеспечивает точность до 0,1 мм — исключает протечки и коррозию. Полная герметичность для работы с пищевыми продуктами. Эстетичный вид без наплывов и деформаций.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
-<div class="db-weld-badge ok">✓ Гарантия 12 месяцев</div>
-<a href="/certificates.html" class="db-weld-badge">Сертификаты соответствия</a>
-</div>
-</div>
-<div class="db-weld-img"><img src="weld.jpg" alt="Лазерная сварка швов"></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ARMATURE — Навесная арматура -->
-<section class="db-row-section">
-<div class="db-wrap">
-<div class="db-section-line"></div>
-<h2 class="db-section-title">Навесная арматура</h2>
-<p class="db-section-sub" style="margin-bottom:24px!important">Комплектующие ведущих европейских брендов: насосы, клапаны, шпунт-аппараты и мешалки для пищевого оборудования</p>
-<div class="db-arm-gallery">
-<div class="db-arm-gallery-item"><img src="inoxpa-pump.jpg" alt="Насосы" loading="lazy"></div>
-<div class="db-arm-gallery-item"><img src="inoxpa-valves.jpg" alt="Клапаны" loading="lazy"></div>
-<div class="db-arm-gallery-item"><img src="inoxpa-schunt.jpg" alt="Шпунт-аппараты" loading="lazy"></div>
-<div class="db-arm-gallery-item"><img src="inoxpa-mixers.jpg" alt="Мешалки" loading="lazy"></div>
-</div>
-</div>
-</section>
-
-<!-- CTA: Быстрый подбор -->
-<section class="db-row-section alt">
-<div class="db-wrap">
-<div class="db-weld-frame" style="padding:36px 44px">
-<div class="db-weld-inner" style="grid-template-columns:1fr auto;gap:32px">
-<div>
-<div style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px">Узнайте цену за 1 минуту</div>
-<div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:14px">Быстрый подбор по 30+ категориям и 200+ типоразмерам. Укажите оборудование — получите цену и готовые данные для коммерческого предложения.</div>
-<div style="display:flex;gap:8px;flex-wrap:wrap">
-<div class="db-weld-badge">30+ категорий</div>
-<div class="db-weld-badge">200+ типоразмеров</div>
-<div class="db-weld-badge">от 100 до 200 000 л</div>
-<div class="db-weld-badge">4 пищевые отрасли</div>
-</div>
-</div>
-<a href="#quiz-block" style="flex-shrink:0;padding:14px 32px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-block;box-shadow:0 4px 12px rgba(247,124,42,.25);align-self:center">Подобрать →</a>
-</div>
 </div>
 </div>
 </section>
@@ -934,135 +822,8 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </div>
 </div>
 </div>
-<div class="db-project-card">
-<img src="wine-equipment.jpg" alt="Винодельческое оборудование" loading="lazy">
-<div class="db-project-body">
-<h3>Винодельня полного цикла, Ставрополье</h3>
-<div class="db-project-preview">
-<ul><li>Ферментаторы из нержавеющей стали</li><li>Система инертизации азотом</li><li>Терморегулируемые танки для выдержки</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
 </div>
-<div class="db-project-details">
-<p>Винодельня полного цикла «под ключ» — от приёмки винограда до розлага готового вина. Проект включал бродильный цех, погреб выдержки и линию розлага.</p>
-<ul>
-<li>Танки для ферментации 10 000 л × 8 шт. с рубашками</li>
-<li>Система инертизации азотом с генератором N₂</li>
-<li>Погреб выдержки: бочки + ёмкости из нержавейки</li>
-<li>Линия розлага 3000 бут/час, АСУ ТП Siemens</li>
-</ul>
-<p><strong>Результат:</strong> запуск за 16 недель, 500 000 бутылок/год, 7 сортов.</p>
-<button class="db-project-btn js-toggle-case">Свернуть</button>
-</div>
-</div>
-</div>
-<div class="db-project-card">
-<img src="fermentation-tanks-milk.jpg" alt="Парк резервуаров хранения" loading="lazy">
-<div class="db-project-body">
-<h3>Парк резервуаров для масложирового комбината</h3>
-<div class="db-project-preview">
-<ul><li>Более 10 емкостей от 100 000 до 200 000 л</li><li>Система азотной подушки на каждом резервуаре</li><li>Полная автоматизация и CIP-мойка</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
-</div>
-<div class="db-project-details">
-<p>Изготовление и монтаж крупного парка резервуаров из нержавеющей стали для масложирового комбината. Более 10 емкостей объёмом от 100 000 до 200 000 литров для хранения и обработки растительных масел.</p>
-<ul>
-<li>Резервуары хранения 100 000–200 000 л × более 10 шт. с азотной подушкой</li>
-<li>Ёмкости с мешалкой 20 000 л × 2 шт. для купажирования</li>
-<li>Теплообменники для нагрева/охлаждения масел</li>
-<li>Система CIP-мойки всех резервуаров</li>
-</ul>
-<p><strong>Результат:</strong> увеличение складских мощностей на 300 тонн единовременного хранения.</p>
-<button class="db-project-btn js-toggle-case">Свернуть</button>
-</div>
-</div>
-</div>
-<div class="db-project-card">
-<img src="projects/cip-station.jpg" alt="CIP-станция" loading="lazy">
-<div class="db-project-body">
-<h3>CIP-станция с программируемым циклом мойки</h3>
-<div class="db-project-preview">
-<ul><li>4 контура мойки с независимым управлением</li><li>Программируемый цикл: щелочь → кислота → ополаскивание</li><li>Полная герметизация, исключение контакта с внешней средой</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
-</div>
-<div class="db-project-details">
-<p>Автоматизированная CIP-станция для безразборной мойки технологического оборудования. Корпус и трубопроводы из AISI 316, управление на базе Siemens S7-1200 с визуализацией процесса.</p>
-<ul>
-<li>4 независимых контура мойки с программируемыми профилями</li>
-<li>Рециркуляция моющих растворов с подогревом до 95°C</li>
-<li>Баки моющих растворов 1500 л × 4 шт. из AISI 316</li>
-<li>Датчики контроля концентрации, температуры и расхода</li>
-<li>Сертифицирована для пищевых производств и фармацевтики</li>
-</ul>
-<p><strong>Результат:</strong> сокращение времени мойки на 40%, снижение расхода моющих средств на 25%.</p>
-<button class="db-project-btn js-toggle-case">Свернуть</button>
-</div>
-</div>
-</div>
-<div class="db-project-card">
-<img src="виниф.jpg" alt="Винификаторы" loading="lazy">
-<div class="db-project-body">
-<h3>Винификаторы с рубашкой для винодельни, Крым</h3>
-<div class="db-project-preview">
-<ul><li>3 винификатора с рубашкой охлаждения</li><li>Лазерная сварка, зеркальная полировка</li><li>Полная автоматизация процесса ферментации</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
-</div>
-<div class="db-project-details">
-<p>Изготовление и установка трёх винификаторов из нержавеющей стали AISI 304 для винодельни полного цикла в Крыму. Каждый танк оснащён рубашкой охлаждения для точного контроля температуры брожения.</p>
-<ul>
-<li>Винификаторы 2 000 л × 3 шт. с рубашкой охлаждения</li>
-<li>Лазерная сварка, зеркальная полировка Ra ≤ 0,4 мкм</li>
-<li>Система терморегуляции на базе Siemens</li>
-<li>Арматура: пробоотборники, смотровые фонари, люки</li>
-</ul>
-<p><strong>Результат:</strong> точный контроль температуры ферментации, выход на проектную мощность за 6 недель.</p>
-<button class="db-project-btn js-toggle-case">Свернуть</button>
-</div>
-</div>
-</div>
-<div class="db-project-card">
-<img src="brewery-voronezh-1.jpg" alt="Пивоваренное оборудование" loading="lazy">
-<div class="db-project-body">
-<h3>Пивзавод (Гор. Воронеж)</h3>
-<div class="db-project-preview">
-<ul><li>Варочный порядок 5 000 л</li><li>Производственная мощность 40 000 л сусла в сутки</li><li>Автоматика «под ключ»</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
-</div>
-<div class="db-project-details">
-<p>Изготовили и ввели в эксплуатацию варочный порядок на 5000 литров. Производственная мощность линии составляет 40 000 литров сусла в сутки, что равняется 8 варкам и поддерживает высокую технологичность.</p>
-<p><strong>Автоматика «под ключ»</strong></p>
-<p>Внедрена автоматизированная система управления технологическими процессами, разработанная нашей компанией. Система обеспечивает полуавтоматический режим работы с возможностью ручного вмешательства при необходимости. Автоматика контролирует основные параметры производства: температуру, давление, уровни заполнения, мутность, время технологических циклов. Реализовано управление запорной арматурой (электроприводные клапаны, датчики положения).</p>
-<p><strong>Преимущества решения:</strong></p>
-<ul>
-<li>Снижение влияния человеческого фактора</li>
-<li>Повышение повторяемости и стабильности качества продукции</li>
-<li>Оптимизация производственных циклов</li>
-<li>Возможность интеграции с системами учета и диспетчеризации</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="db-project-card">
-<img src="milk-park.jpg" alt="Молочный парк" loading="lazy">
-<div class="db-project-body">
-<h3>Молочный парк: резервуары хранения и приёмки</h3>
-<div class="db-project-preview">
-<ul><li>Крупный парк ёмкостей для молочного производства</li><li>Резервуары хранения от 25 000 до 50 000 л</li><li>Полный цикл: приёмка → хранение → переработка</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
-</div>
-<div class="db-project-details">
-<p>Изготовление и монтаж парка ёмкостного оборудования для молочного завода. Резервуары из нержавеющей стали AISI 304 для приёмки, охлаждения и хранения молока, а также для технологических процессов переработки.</p>
-<ul>
-<li>Резервуары хранения 25 000–50 000 л × 6 шт. с теплоизоляцией</li>
-<li>Приёмно-охладительные ёмкости 20 000 л × 3 шт.</li>
-<li>Танки для созревания сливок 10 000 л × 2 шт.</li>
-<li>Система CIP-мойки всех резервуаров</li>
-</ul>
-<p><strong>Результат:</strong> увеличение мощностей хранения до 500 тонн единовременного хранения молока.</p>
-<button class="db-project-btn js-toggle-case">Свернуть</button>
-</div>
-</div>
-</div>
-</div>
+<div style="text-align:center;margin-top:16px"><a href="/catalog/#projects" class="db-hero-cta" style="display:inline-flex;font-size:14px;padding:12px 28px">Смотреть все проекты →</a></div>
 </div>
 </section>
 
