@@ -821,99 +821,67 @@ sw(0);
 </script>
 
 <!-- PROJECTS -->
-<section class="db-section alt" id="projects">
-<div class="db-wrap">
-<div class="db-section-line"></div>
-<h2 class="db-section-title">Примеры нашего оборудования</h2>
-<p class="db-section-sub">Реализованные проекты для пищевой промышленности</p>
-<div class="db-projects-scroll">
-
-<div class="db-project-card">
-<img src="milk-tank.jpg" alt="Молочные резервуары" loading="lazy">
-<div class="db-project-body">
-<h3>Оснащение молочного завода, Краснодарский край</h3>
-<div class="db-project-preview">
-<ul><li>Герметичные конструкции двойные швы</li><li>Температурный диапазон 40°C–120°C</li><li>Увеличение производительности на 40%</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
+<section class="db-section" id="projects" style="padding:20px 0 48px;background:transparent">
+<div class="db-wrap" style="max-width:1200px">
+<div class="db-weld-frame" style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
+<div style="text-align:center;margin-bottom:24px">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">Проекты</div>
+<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 4px">Примеры нашего оборудования</h2>
+<p style="font-size:14px;color:rgba(255,255,255,.5);margin:0">Реализованные проекты для пищевой промышленности</p>
 </div>
-<div class="db-project-details">
-<p>Полный цикл оснащения молочного завода мощностью 50 тонн переработки в сутки. Проект включал приёмочное отделение, цех пастеризации, танки хранения и линии розлага.</p>
-<ul>
-<li>Приёмно-охладительные ёмкости 25 000 л × 2 шт.</li>
-<li>Резервуары хранения молока 30 000 л × 4 шт.</li>
-<li>Пастеризационно-охладительная установка 5000 л/час</li>
-<li>CIP-мойка на 4 контура с программируемым циклом</li>
+<div style="display:flex;gap:20px;overflow-x:auto;padding-bottom:8px">
+<div style="flex:0 0 340px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="milk-tank.jpg" alt="" style="width:100%;height:200px;object-fit:cover;display:block">
+<div style="padding:16px 20px 20px">
+<h3 style="font-size:15px;font-weight:700;color:#1a1a26;margin:0 0 6px">Оснащение молочного завода</h3>
+<ul style="font-size:13px;color:#555;padding:0;margin:0 0 12px;list-style:none">
+<li style="padding:3px 0 3px 18px;position:relative">✓ Герметичные двойные швы</li>
+<li style="padding:3px 0 3px 18px;position:relative">✓ Температурный диапазон 40–120°C</li>
+<li style="padding:3px 0 3px 18px;position:relative">✓ Увеличение производительности на 40%</li>
 </ul>
-<p><strong>Результат:</strong> увеличение производительности на 40%, сокращение потерь сырья на 15%.</p>
-<button class="db-project-btn js-toggle-case">Свернуть</button>
+<button style="padding:9px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer" onclick="this.parentElement.innerHTML+='<p style=\'font-size:13px;color:#555;line-height:1.6\'>Полный цикл оснащения молочного завода мощностью 50 тонн переработки в сутки: приёмно-охладительные ёмкости 25 000 л × 2 шт., резервуары хранения молока 30 000 л × 4 шт., пастеризационно-охладительная установка 5000 л/час, CIP-мойка на 4 контура.</p>'">Читать кейс</button>
 </div>
 </div>
-</div>
-<div class="db-project-card">
-<img src="kvas-tank.jpg" alt="ЦКТ для кваса" loading="lazy">
-<div class="db-project-body">
-<h3>Завод по производству кваса, Воронеж</h3>
-<div class="db-project-preview">
-<ul><li>Производственная мощность: 300 000 л/мес</li><li>Полностью автоматизированный процесс</li><li>Система управления ферментацией</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
-</div>
-<div class="db-project-details">
-<p>Линия производства кваса полного цикла на базе пивоваренного оборудования. Уникальный рецепт сбраживания квасного сусла в ЦКТ с последующей купажой.</p>
-<ul>
-<li>Варочный порядок 3000 л для варки квасного сусла</li>
-<li>ЦКТ 5000 л × 4 шт. с рубашкой охлаждения</li>
-<li>Купажные ёмкости 3000 л × 2 шт.</li>
-<li>Линия розлага ПЭТ 1,5 л (3000 бут/час)</li>
+<div style="flex:0 0 340px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="kvas-tank.jpg" alt="" style="width:100%;height:200px;object-fit:cover;display:block">
+<div style="padding:16px 20px 20px">
+<h3 style="font-size:15px;font-weight:700;color:#1a1a26;margin:0 0 6px">Завод по производству кваса</h3>
+<ul style="font-size:13px;color:#555;padding:0;margin:0 0 12px;list-style:none">
+<li style="padding:3px 0 3px 18px;position:relative">✓ 300 000 л/мес</li>
+<li style="padding:3px 0 3px 18px;position:relative">✓ Полностью автоматизированный</li>
+<li style="padding:3px 0 3px 18px;position:relative">✓ Система управления ферментацией</li>
 </ul>
-<p><strong>Результат:</strong> 300 000 л/мес, 6 сортов кваса, запуск за 10 недель.</p>
-<button class="db-project-btn js-toggle-case">Свернуть</button>
+<button style="padding:9px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer">Читать кейс</button>
 </div>
 </div>
-</div>
-<div class="db-project-card">
-<img src="cheez-kont.jpg" alt="Стелажные системы" loading="lazy">
-<div class="db-project-body">
-<h3>Цех созревания сыров, Ленинградская область</h3>
-<div class="db-project-preview">
-<ul><li>Антикоррозийное покрытие двойной защиты</li><li>Регулируемая система вентиляции</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
-</div>
-<div class="db-project-details">
-<p>Специализированный цех созревания твёрдых и полутвёрдых сыров на 20 тонн единовременного хранения. Полностью автоматизированное поддержание микроклимата.</p>
-<ul>
-<li>Стелажные системы из нержавеющей стали AISI 304</li>
-<li>Камеры созревания 4 зоны: +8°C / +12°C / +15°C / +18°C</li>
-<li>Система увлажнения и вентиляции с HEPA-фильтрацией</li>
-<li>Автоматический контроль влажности 75–95%</li>
+<div style="flex:0 0 340px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="cheez-kont.jpg" alt="" style="width:100%;height:200px;object-fit:cover;display:block">
+<div style="padding:16px 20px 20px">
+<h3 style="font-size:15px;font-weight:700;color:#1a1a26;margin:0 0 6px">Цех созревания сыров</h3>
+<ul style="font-size:13px;color:#555;padding:0;margin:0 0 12px;list-style:none">
+<li style="padding:3px 0 3px 18px;position:relative">✓ Антикоррозийное покрытие</li>
+<li style="padding:3px 0 3px 18px;position:relative">✓ Регулируемая вентиляция</li>
+<li style="padding:3px 0 3px 18px;position:relative">✓ 20 тонн единовременного хранения</li>
 </ul>
-<p><strong>Результат:</strong> стабильное качество сыра, снижение брака на 25%.</p>
-<button class="db-project-btn js-toggle-case">Свернуть</button>
+<button style="padding:9px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer">Читать кейс</button>
 </div>
 </div>
-</div>
-<div class="db-project-card">
-<img src="sir.jpg" alt="Сыроварня" loading="lazy">
-<div class="db-project-body">
-<h3>Сыроварня полного цикла, Московская область</h3>
-<div class="db-project-preview">
-<ul><li>Резервуары для хранения молока</li><li>Ёмкости для пастеризации</li><li>Ферментационные танки</li></ul>
-<button class="db-project-btn js-toggle-case">Читать кейс</button>
-</div>
-<div class="db-project-details">
-<p>Комплексное оснащение крафтовой сыроварни мощностью 2 тонны молока в смену. Все ёмкости из AISI 304 с зеркальной полировкой.</p>
-<ul>
-<li>Сыроизготовители 1000 л × 2 шт. с лазерной резкой сырного зерна</li>
-<li>Ванны пастеризации 500 л с программируемым профилем</li>
-<li>Ферментационные танки для заквасок 300 л × 3 шт.</li>
-<li>Контейнеры для посола сыра 500 л × 2 шт.</li>
+<div style="flex:0 0 340px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="sir.jpg" alt="" style="width:100%;height:200px;object-fit:cover;display:block">
+<div style="padding:16px 20px 20px">
+<h3 style="font-size:15px;font-weight:700;color:#1a1a26;margin:0 0 6px">Сыроварня полного цикла</h3>
+<ul style="font-size:13px;color:#555;padding:0;margin:0 0 12px;list-style:none">
+<li style="padding:3px 0 3px 18px;position:relative">✓ Резервуары для хранения молока</li>
+<li style="padding:3px 0 3px 18px;position:relative">✓ Ёмкости для пастеризации</li>
+<li style="padding:3px 0 3px 18px;position:relative">✓ Ферментационные танки</li>
 </ul>
-<p><strong>Результат:</strong> 6 сортов сыра, 600 кг/смена, запуск за 8 недель.</p>
-<button class="db-project-btn js-toggle-case">Свернуть</button>
+<button style="padding:9px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer">Читать кейс</button>
 </div>
 </div>
 </div>
+<div style="text-align:center;margin-top:24px"><a href="/catalog/#projects" style="display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(247,124,42,.2)">Смотреть все проекты →</a></div>
 </div>
-<div style="text-align:center;margin-top:16px"><a href="/catalog/#projects" class="db-hero-cta" style="display:inline-flex;font-size:14px;padding:12px 28px">Смотреть все проекты →</a></div>
+</div>
 </div>
 </section>
 
