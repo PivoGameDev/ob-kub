@@ -473,9 +473,114 @@ body{padding-top:0!important}
 
 <div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15)">
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
-<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700">1</span>
-<span style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
+<span class="qs1" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700">1</span>
+<span class="qs1" style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
 </div>
+<div style="display:flex;align-items:center;background:#f5f6f8;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:10px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 6px 0 12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+<input type="text" id="hqInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:11px 8px;font-size:13px;outline:none;font-family:inherit;color:#333">
+</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+<a href="/beer.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍺 Пиво</a>
+<a href="/dairy.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🥛 Молоко</a>
+<a href="/winery.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍷 Вино</a>
+<a href="/industrial.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍽️ Пищевое</a>
+</div>
+<div id="hqResults" style="display:none;background:#fff;border:1px solid #e8e8e8;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:240px;overflow-y:auto;margin-bottom:10px"></div>
+
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
+<span class="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">2</span>
+<span class="qs2" style="font-size:13px;font-weight:600;color:#999">Выберите объём</span>
+</div>
+<div id="hqVols" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px"></div>
+<div id="hqCustomVol" style="display:none;gap:6px;margin-bottom:10px">
+<input type="number" id="hqCustomVal" placeholder="Свой объём, л" style="flex:1;padding:8px 12px;border:1px solid #e0e0e0;border-radius:6px;font-size:12px;outline:none;font-family:inherit">
+<button onclick="hqCustom()" style="padding:8px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit">OK</button>
+</div>
+
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">
+<span class="qs3" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">3</span>
+<span class="qs3" style="font-size:13px;font-weight:600;color:#999">Цена и заявка</span>
+</div>
+<div id="hqPrice" style="display:none;text-align:center;padding:12px;background:linear-gradient(135deg,#fff8f0,#fff);border:2px solid #F77C2A;border-radius:8px;margin-bottom:10px">
+<div style="font-size:11px;color:#888;margin-bottom:4px">💰 Ориентировочная цена</div>
+<div id="hqPriceVal" style="font-size:24px;font-weight:900;color:#F77C2A"></div>
+</div>
+<button id="hqBtn" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})" style="width:100%;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">📩 Получить КП с точной ценой</button>
+<div id="hqStatus" style="font-size:12px;color:#999;text-align:center;margin-top:8px">Введите название оборудования для начала</div>
+
+<div style="display:flex;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid #f0f0f0;justify-content:center;flex-wrap:wrap">
+<span style="font-size:11px;color:#999">🔥 Цена сразу</span>
+<span style="font-size:11px;color:#999">⚡ КП за 2 часа</span>
+<span style="font-size:11px;color:#999">🔒 Конфиденциально</span>
+</div>
+</div>
+
+<script>
+var hqSelected=null,hqPrices={},hqStep=1;
+var hqImgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg'};
+
+document.getElementById('hqInput').addEventListener('input',function(){
+var q=this.value.trim();
+if(!q){document.getElementById('hqResults').style.display='none';return;}
+fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(d){
+var res=document.getElementById('hqResults');
+res.innerHTML='';
+var items=d.results.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/);});
+var seen={};items=items.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true;});
+if(!items.length){res.innerHTML='<div style="padding:12px;text-align:center;color:#999;font-size:12px">Ничего не найдено</div>';res.style.display='block';return;}
+items.forEach(function(r){
+var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
+var im='<img src="/'+(hqImgs[k]||'cct-tank.jpg')+'" style="width:36px;height:36px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0">';
+var div=document.createElement('div');
+div.style.cssText='padding:8px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #f8f8f8';
+div.onmouseover=function(){this.style.background='#fff8f0'};div.onmouseout=function(){this.style.background=''};
+div.innerHTML=im+'<div style="flex:1;min-width:0"><div style="color:#333;font-weight:600;font-size:12px">'+r.n+'</div><div style="color:#888;font-size:11px">'+r.s+'</div></div><span style="color:#F77C2A;font-size:11px;font-weight:600;flex-shrink:0">Выбрать</span>';
+div.onclick=function(){hqSelect(r)};
+res.appendChild(div);
+});
+res.style.display='block';
+});
+});
+
+function hqSelect(r){
+document.getElementById('hqInput').value=r.n;
+document.getElementById('hqResults').style.display='none';
+hqSelected=r;
+document.querySelectorAll('.qs1,.qs2,.qs3').forEach(function(e,i){e.style.background=i?i===1?'#F77C2A':'#e8e8e8':'#27ae60';e.style.color=i?i===1?'#fff':'#999':'#fff'});
+var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
+var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var last=pp[pp.length-1];var ck=last.match(/^\d+l?$/)?pp[pp.length-2]:last;
+fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+(r.si||'beerExtra')).then(function(r){return r.json();}).then(function(d){
+hqPrices=d;var g=document.getElementById('hqVols');g.innerHTML='';
+if(!d.prices||!d.prices.length){g.innerHTML='<span style="font-size:12px;color:#888;width:100%">Нет данных</span>';return;}
+d.prices.sort(function(a,b){return a.vol-b.vol;});
+d.prices.forEach(function(p){
+var b=document.createElement('button');
+b.style.cssText='padding:7px 14px;border:2px solid #e0e0e0;border-radius:6px;background:#fff;font-size:12px;color:#555;cursor:pointer;font-family:inherit;font-weight:600;transition:all .15s';
+b.innerHTML='<span style="display:block;font-size:14px;color:#1a1a26">'+p.vol+'</span><span style="font-size:10px;color:#999">л</span>';
+b.onmouseover=function(){this.style.borderColor='#F77C2A'};b.onmouseout=function(){if(!this.classList.contains('sel'))this.style.borderColor='#e0e0e0'};
+b.onclick=function(){g.querySelectorAll('button').forEach(function(b2){b2.classList.remove('sel');b2.style.background='';b2.style.color='#555';b2.querySelector('span').style.color='#1a1a26'});
+b.classList.add('sel');b.style.background='#F77C2A';b.style.color='#fff';b.querySelector('span').style.color='#fff';hqShowPrice(p.price);};
+g.appendChild(b);
+});
+var cb=document.createElement('button');
+cb.style.cssText='padding:7px 14px;border:2px dashed #e0e0e0;border-radius:6px;background:#fff;font-size:12px;color:#555;cursor:pointer;font-family:inherit';
+cb.innerHTML='<span style="display:block;font-size:12px">Свой</span><span style="font-size:10px;color:#999">объём</span>';
+cb.onclick=function(){document.getElementById('hqCustomVol').style.display='flex';this.style.display='none'};
+g.appendChild(cb);
+document.getElementById('hqStatus').textContent='Выберите объём';
+}).catch(function(){document.getElementById('hqStatus').textContent='Ошибка загрузки цен';document.getElementById('hqVols').innerHTML='<span style="font-size:12px;color:#e74c3c">Ошибка</span>';});
+}
+function hqShowPrice(price){
+document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#27ae60';e.style.color='#fff'});
+document.getElementById('hqPrice').style.display='block';
+document.getElementById('hqPriceVal').textContent='от '+fmtP(price);
+document.getElementById('hqStatus').textContent='✅ Цена известна — отправьте заявку';
+document.getElementById('hqBtn').onclick=function(){var f=document.getElementById('order-form');if(f)f.scrollIntoView({behavior:'smooth'});else window.location.href='/#order-form';};
+}
+function hqCustom(){var v=parseInt(document.getElementById('hqCustomVal').value);if(v>0)hqShowPrice(v);}
+function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽');}
+</script>
 <div style="display:flex;align-items:center;background:#f5f6f8;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:10px">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 6px 0 12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
 <input type="text" id="heroQuizInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:11px 8px;font-size:13px;outline:none;font-family:inherit;color:#333">
@@ -1233,39 +1338,6 @@ ticking = false;
 }
 window.addEventListener('scroll', function(){ if (!ticking) { requestAnimationFrame(update); ticking = true; } }, {passive: true});
 update();
-})();
-
-// Hero quiz search
-(function(){
-var input=document.getElementById('heroQuizInput');
-var res=document.getElementById('heroQuizResults');
-if(!input||!res)return;
-input.addEventListener('input',function(){
-var q=this.value.trim();
-if(!q){res.style.display='none';return;}
-fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(d){
-res.innerHTML='';
-var items=d.results.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/);});
-var seen={};items=items.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true;});
-if(!items.length){res.innerHTML='<div style="padding:12px;text-align:center;color:#999;font-size:12px">Ничего не найдено</div>';res.style.display='block';return;}
-items.forEach(function(r){
-var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
-var im='';
-var imgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg','red-fermentation':'wine-red-fermentation.jpg','mixing':'industrial-mixing.jpg','thermal':'industrial-thermal.jpg','storage-aging':'wine-storage-aging.jpg'};
-var src=imgs[k]||'cct-tank.jpg';
-im='<img src="/'+src+'" style="width:36px;height:36px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0">';
-var div=document.createElement('div');
-div.style.cssText='padding:8px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #f8f8f8';
-div.onmouseover=function(){this.style.background='#fff8f0'};
-div.onmouseout=function(){this.style.background=''};
-div.innerHTML=im+'<div style="flex:1;min-width:0"><div style="color:#333;font-weight:600;font-size:12px">'+r.n+'</div><div style="color:#888;font-size:11px">'+r.s+'</div></div><span style="color:#F77C2A;font-size:11px;font-weight:600;flex-shrink:0">Выбрать →</span>';
-div.onclick=function(){input.value=r.n;res.style.display='none';};
-res.appendChild(div);
-});
-res.style.display='block';
-}).catch(function(){});
-});
-input.addEventListener('blur',function(){setTimeout(function(){res.style.display='none'},300)});
 })();
 </script></body>
 
