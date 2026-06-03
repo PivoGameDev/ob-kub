@@ -1039,25 +1039,55 @@ function toggleProj(el){
 
 
 
-<!-- SEO TEXT -->
-<section class="db-section">
-<div class="db-wrap">
-<div class="db-section-line"></div>
-<h2 class="db-section-title">Производство оборудования из нержавеющей стали в Краснодаре</h2>
-<p class="db-section-sub">Полный цикл производства емкостного оборудования для пищевой промышленности</p>
-<div class="db-seo-wrap">
-<div class="db-seo-text" id="seoText">
-<p>ООО «Оборудование Кубани» — российский производитель промышленного оборудования из нержавеющей стали AISI 304 и AISI 316. Мы изготавливаем резервуары для хранения, ёмкости с мешалками, ёмкости с терморегуляцией (нагрев и охлаждение), сосуды под давлением до 6 бар, CIP-станции безразборной мойки и пластинчатые теплообменники. Наше оборудование используется в пивоваренной, молочной, винодельческой, масложировой и других отраслях пищевой промышленности.</p>
-<p>Производство находится в Краснодаре, площадь цеха — 2000 м². Собственный парк оборудования включает лазерный раскройный комплекс, автоматы аргонодуговой сварки, вальцы для гибки листового металла до 25 мм, линию вальцовки днищ. Это позволяет выполнять заказы любой сложности без привлечения субподрядчиков. Все сварные швы контролируются неразрушающими методами, каждое изделие проходит гидравлические испытания перед отгрузкой.</p>
-<p>Мы поставляем оборудование как отдельных единиц, так и комплексные решения «под ключ»: от проектирования и изготовления до доставки, монтажа и пусконаладки. В стандартную комплектацию входят необходимая арматура, контрольно-измерительные приборы, системы автоматизации на базе Siemens или отечественных контроллеров. Возможно изготовление по индивидуальным чертежам заказчика с учётом особенностей планировки цеха и технологического процесса.</p>
-<p>География поставок — от Калининграда до Владивостока, а также страны СНГ. Доставка осуществляется любой транспортной компанией или собственным транспортом. Гарантия на оборудование — 12 месяцев. Предоставляем сертификаты ТР ЕАЭС, паспорта сосудов под давлением, полный пакет технической документации. Оставьте заявку через форму ниже — мы подготовим коммерческое предложение в течение 2 рабочих дней.</p>
+<!-- ABOUT US -->
+<section class="db-section" id="about" style="padding:20px 0 48px;background:transparent">
+<div class="db-wrap" style="max-width:1200px">
+<div class="db-weld-frame" style="padding:0;overflow:hidden;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+<div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">О нас</div>
+<h2 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.2">Производство ёмкостей<br>из нержавеющей стали</h2>
+<p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin:0 0 12px">ООО «Оборудование Кубани» — производитель промышленного оборудования из нержавеющей стали AISI 304/316. Собственное производство 2000 м² в Краснодаре.</p>
+<div id="aboutMore" style="display:none;font-size:13px;color:rgba(255,255,255,.5);line-height:1.6">
+<p style="margin:0 0 8px">Изготавливаем резервуары для хранения, ёмкости с мешалками, терморегуляцией, сосуды под давлением до 6 бар, CIP-станции и теплообменники. Оборудование используется в пивоваренной, молочной, винодельческой, масложировой отраслях.</p>
+<p style="margin:0 0 8px">Парк оборудования: лазерный раскройный комплекс, автоматы аргонодуговой сварки, вальцы для гибки металла до 25 мм, линия вальцовки днищ. Контроль качества: неразрушающие методы, гидравлические испытания.</p>
+<p style="margin:0 0 4px">География поставок — от Калининграда до Владивостока и СНГ. Гарантия 12 месяцев. Сертификаты ТР ЕАЭС, паспорта сосудов под давлением.</p>
 </div>
-<button class="db-seo-toggle" onclick="toggleSeo()">Читать подробнее ↓</button>
+<span onclick="toggleAbout()" style="display:inline-block;color:#F77C2A;font-size:13px;font-weight:600;cursor:pointer;margin-bottom:16px">Читать подробнее ↓</span>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<a href="/#order-form" style="display:inline-flex;align-items:center;gap:6px;padding:11px 24px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">📋 Получить расчёт</a>
+<a href="/factory-tour.jpg" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:11px 24px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);border-radius:8px;font-size:13px;font-weight:600;text-decoration:none">🏭 Экскурсия по цеху</a>
+</div>
+<div id="aboutEquip" style="display:none;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06)">
+<p style="font-size:12px;color:rgba(255,255,255,.45);margin:0 0 10px;font-weight:600">⚙️ Оборудование цеха:</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Лазерная резка металла</span>
+<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Аргонодуговая сварка</span>
+<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Гидравлические испытания</span>
+<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Вальцовка днищ</span>
+<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.6)">🔵 Siemens автоматика</span>
+</div>
+</div>
+<span onclick="toggleAboutEquip()" style="display:inline-block;color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;margin-top:10px">Оборудование цеха →</span>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;padding:30px;background:rgba(255,255,255,.02)">
+<img src="about-workshop.jpg" alt="Производственный цех" style="max-width:100%;max-height:380px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.2)">
+</div>
+</div>
 </div>
 </div>
 </section>
 
-<!-- FORM -->
+<script>
+function toggleAbout(){
+  var el=document.getElementById('aboutMore');
+  el.style.display=el.style.display==='none'||!el.style.display?'block':'none';
+}
+function toggleAboutEquip(){
+  var el=document.getElementById('aboutEquip');
+  el.style.display=el.style.display==='none'||!el.style.display?'block':'none';
+}
+</script>
 <section class="db-section dark" id="order-form">
 <div class="db-wrap">
 <div class="db-section-line"></div>
