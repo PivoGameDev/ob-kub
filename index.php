@@ -685,6 +685,29 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </div>
 </section>
 
+<!-- ENGINEERING / BLUEPRINT -->
+<section class="db-row-section" style="padding:0 0 40px;background:transparent">
+<div class="db-wrap">
+<div class="db-weld-frame" style="padding:0;background:linear-gradient(135deg,#1a1a26,#2b2b39);overflow:hidden">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch">
+<div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:8px">Чертежи и ТЗ</div>
+<div style="font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.2">Работаем по вашим чертежам</div>
+<div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:16px">Пришлите чертёж или техническое задание — мы изготовим резервуар под ваш техпроцесс. Любые нестандартные размеры, патрубки, арматура. Срок подготовки КП — 24 часа.</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<div class="db-weld-badge" style="font-size:12px">📐 Любые чертежи</div>
+<div class="db-weld-badge" style="font-size:12px">⚙️ Нестандартные решения</div>
+<div class="db-weld-badge" style="font-size:12px">📄 КП за 24 часа</div>
+</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(255,255,255,.03)">
+<img src="blueprint.jpg" alt="Чертёж резервуара из нержавеющей стали" style="max-width:100%;max-height:320px;border-radius:8px;display:block;box-shadow:0 4px 20px rgba(0,0,0,.3)">
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- EQUIPMENT CATEGORIES -->
 <section class="db-section alt" id="equipment">
 <div class="db-wrap">
