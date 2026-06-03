@@ -18,3 +18,12 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
           dangerous-clean-slate: true
+          exclude: |
+            .git/**
+            .gitignore
+            .github/**
+            _local/**
+            urls.txt
+            test.php
+            test.html
+            "Сравнение_с_рынком.txt"
