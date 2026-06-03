@@ -755,28 +755,46 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </div>
 
 <div id="catTabs" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px">
-<button class="cat-tab active" data-cat="0" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:#F77C2A;color:#fff;font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🍺 Пивоваренное</button>
-<button class="cat-tab" data-cat="1" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🥛 Молочное</button>
-<button class="cat-tab" data-cat="2" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🍷 Винодельческое</button>
-<button class="cat-tab" data-cat="3" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">💧 Вода</button>
-<button class="cat-tab" data-cat="4" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🫒 Масло</button>
-<button class="cat-tab" data-cat="5" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">🍯 Кондитерская</button>
+<button class="cat-tab active" data-cat="0" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:#F77C2A;color:#fff;font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 2l4 4v14a2 2 0 002 2h4a2 2 0 002-2V6l-4-4H8z"/><path d="M8 2H4a2 2 0 00-2 2v14a2 2 0 002 2h4"/></svg>
+Пивоваренное</button>
+<button class="cat-tab" data-cat="1" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v4a2 2 0 01-2 2H6a2 2 0 01-2-2V2z"/><rect x="6" y="8" width="12" height="14" rx="2"/></svg>
+Молочное</button>
+<button class="cat-tab" data-cat="2" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 4 6 4 12s4 10 8 10 8-4 8-10S16 2 12 2z"/><path d="M12 6v12" stroke="white" stroke-width="1.5"/></svg>
+Винодельческое</button>
+<button class="cat-tab" data-cat="3" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+Вода</button>
+<button class="cat-tab" data-cat="4" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="10" r="2" fill="white"/></svg>
+Масло</button>
+<button class="cat-tab" data-cat="5" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;border:none;cursor:pointer;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;font-family:inherit;transition:all .2s">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 10h16" stroke="white" stroke-width="1.5"/><circle cx="12" cy="10" r="3" fill="white"/></svg>
+Кондитерская</button>
 </div>
 
-<div id="catDisplay" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;min-height:200px;transition:opacity .3s">
-<div style="display:flex;align-items:center;justify-content:center">
-<img id="catDispImg" src="" alt="" style="max-width:100%;max-height:280px;border-radius:10px;display:block;box-shadow:0 4px 20px rgba(0,0,0,.3)">
+<div id="catDisplay" style="transition:opacity .3s">
+<div style="margin-bottom:16px;border-radius:10px;overflow:hidden;background:#1a1a26">
+<img id="catDispImg" src="" alt="" style="width:100%;height:auto;max-height:340px;object-fit:cover;display:block">
 </div>
-<div>
-<div id="catDispName" style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px"></div>
-<div id="catDispDesc" style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:14px"></div>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
-<span class="db-weld-badge" id="catDispPrice" style="font-size:12px"></span>
-<span class="db-weld-badge" style="font-size:12px">AISI 304/316</span>
-<span class="db-weld-badge" style="font-size:12px">Гарантия 12 мес</span>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px">
+<div style="background:rgba(255,255,255,.04);border-radius:8px;padding:14px 16px">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);margin-bottom:6px">Объёмы</div>
+<div style="font-size:14px;color:#fff;font-weight:600" id="catDispVol">—</div>
 </div>
+<div style="background:rgba(255,255,255,.04);border-radius:8px;padding:14px 16px">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);margin-bottom:6px">Материал</div>
+<div style="font-size:14px;color:#fff;font-weight:600">AISI 304 / 316</div>
+</div>
+<div style="background:rgba(255,255,255,.04);border-radius:8px;padding:14px 16px">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);margin-bottom:6px">Цена</div>
+<div style="font-size:14px;color:#F77C2A;font-weight:700" id="catDispPrice">—</div>
+</div>
+</div>
+<div id="catDispDesc" style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:16px"></div>
 <a id="catDispLink" href="#" style="display:inline-flex;align-items:center;gap:6px;padding:12px 28px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none">Перейти в каталог →</a>
-</div>
 </div>
 </div>
 </div>
@@ -784,12 +802,12 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 
 <script>
 var catData = [
-  {name:"🍺 Пивоваренное",desc:"ЦКТ (100–50 000 л), варочные порядки (6 типов), дробилки солода, баки горячей воды, парогенераторы, чиллеры, форфасы, теплообменники.",price:"Цены от 94 000 ₽",img:"cat-img-565c2c35.jpg",link:"/beer.html"},
-  {name:"🥛 Молочное",desc:"Ёмкости приёмки и хранения молока, резервуары-охладители, ванны пастеризации (ВДП), ферментационные танки, сыро- и творогоизготовители.",price:"Цены от 195 000 ₽",img:"cat-dairy.jpg",link:"/dairy.html"},
-  {name:"🍷 Винодельческое",desc:"Ферментация красных и белых вин, ёмкости выдержки и хранения, криостабилизация, купажирование, сульфитация, винификаторы.",price:"Цены от 280 000 ₽",img:"cat-wine.jpg",link:"/winery.html"},
-  {name:"💧 Для воды",desc:"Баки горячей воды, резервуары для хранения воды, ёмкости с терморегуляцией. Пищевая нержавеющая сталь AISI 304/316.",price:"Цены от 150 000 ₽",img:"cat-water.jpg",link:"/catalog/beer/hot-water-tank/"},
-  {name:"🫒 Для масла",desc:"Ёмкости с мешалкой, резервуары хранения, терморегуляция для пищевых масел и жиров. Полный цикл производства.",price:"Цены от 220 000 ₽",img:"cat-oil.jpg",link:"/catalog/industrial/"},
-  {name:"🍯 Глазури и кондитерская",desc:"Ёмкости с мешалкой и терморегуляцией для глазурей, сиропов, кондитерских масс. Индивидуальные решения.",price:"Цены от 200 000 ₽",img:"cat-food.jpg",link:"/catalog/industrial/"}
+  {name:"Пивоваренное",desc:"ЦКТ, варочные порядки, дробилки, баки горячей воды, парогенераторы, чиллеры, форфасы, теплообменники — всё для пивоварения из AISI 304/316.",img:"wide-2814e3ec.jpg",vol:"100 – 200 000 л",price:"от 94 000 ₽",link:"/beer.html"},
+  {name:"Молочное",desc:"Ёмкости приёмки и хранения молока, резервуары-охладители, ванны пастеризации, ферментационные танки, сыро- и творогоизготовители.",img:"wide-03a93003.jpg",vol:"500 – 200 000 л",price:"от 195 000 ₽",link:"/dairy.html"},
+  {name:"Винодельческое",desc:"Ферментация красных и белых вин, ёмкости выдержки и хранения, криостабилизация, купажирование, сульфитация, винификаторы.",img:"wide-cd749fba.jpg",vol:"500 – 50 000 л",price:"от 280 000 ₽",link:"/winery.html"},
+  {name:"Для воды",desc:"Баки горячей воды, резервуары для хранения, ёмкости с терморегуляцией. Пищевая нержавеющая сталь AISI 304/316.",img:"wide-564dc3eb.jpg",vol:"250 – 50 000 л",price:"от 150 000 ₽",link:"/catalog/beer/hot-water-tank/"},
+  {name:"Для масла",desc:"Ёмкости с мешалкой, резервуары хранения, терморегуляция для пищевых масел и жиров. Полный цикл производства.",img:"wide-fa5d3c09.jpg",vol:"500 – 50 000 л",price:"от 220 000 ₽",link:"/catalog/industrial/"},
+  {name:"Глазури и кондитерская",desc:"Ёмкости с мешалкой и терморегуляцией для глазурей, сиропов, кондитерских масс. Индивидуальные решения под ваш техпроцесс.",img:"wide-00272282.jpg",vol:"500 – 20 000 л",price:"от 200 000 ₽",link:"/catalog/industrial/"}
 ];
 var catIdx = 0;
 function showCat(i){
@@ -800,10 +818,10 @@ function showCat(i){
   var disp=document.getElementById('catDisplay');
   disp.style.opacity='0';
   setTimeout(function(){
-    document.getElementById('catDispName').textContent=d.name;
-    document.getElementById('catDispDesc').textContent=d.desc;
-    document.getElementById('catDispPrice').textContent=d.price;
     document.getElementById('catDispImg').src=d.img;
+    document.getElementById('catDispVol').textContent=d.vol;
+    document.getElementById('catDispPrice').textContent=d.price;
+    document.getElementById('catDispDesc').textContent=d.desc;
     document.getElementById('catDispLink').href=d.link;
     disp.style.opacity='1';
   },200);
