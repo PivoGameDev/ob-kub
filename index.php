@@ -476,6 +476,7 @@ body{padding-top:0!important}
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
 <span class="qs1" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700;flex-shrink:0">1</span>
 <span class="qs1" style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
+<span id="hqReset" onclick="hqReset()" style="display:none;margin-left:auto;font-size:18px;color:#999;cursor:pointer;line-height:1" title="Сбросить">×</span>
 </div>
 <div style="display:flex;align-items:center;background:#f5f6f8;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:10px">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 6px 0 12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
@@ -546,6 +547,7 @@ var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/'
 document.getElementById('hqSelected').style.display='flex';
 document.getElementById('hqSelImg').src='/'+(hqImgs[k]||'cct-tank.jpg');
 document.getElementById('hqSelName').textContent=r.n;
+document.getElementById('hqReset').style.display='inline';
 document.querySelectorAll('.qs1,.qs2,.qs3').forEach(function(e,i){e.style.background=i?i===1?'#F77C2A':'#e8e8e8':'#27ae60';e.style.color=i?i===1?'#fff':'#999':'#fff'});
 var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
 var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var last=pp[pp.length-1];var ck=last.match(/^\d+l?$/)?pp[pp.length-2]:last;
@@ -568,6 +570,16 @@ var cb=document.createElement('button');cb.style.cssText='padding:4px 8px;border
 cb.innerHTML='<span style="display:block;font-size:12px">Свой</span><span style="font-size:10px;color:#999">объём</span>';
 cb.onclick=function(){document.getElementById('hqCustomVol').style.display='flex';this.style.display='none'};g.appendChild(cb);
 document.getElementById('hqStatus').textContent='Выберите объём';});}
+function hqReset(){
+document.getElementById('hqInput').value='';
+document.getElementById('hqResults').style.display='none';
+document.getElementById('hqSelected').style.display='none';
+document.getElementById('hqVols').innerHTML='';
+document.getElementById('hqPrice').style.display='none';
+document.getElementById('hqReset').style.display='none';
+document.getElementById('hqStatus').textContent='Введите название оборудования для начала';
+document.querySelectorAll('.qs1,.qs2,.qs3').forEach(function(e,i){e.style.background=i===0?'#F77C2A':'#e8e8e8';e.style.color=i===0?'#fff':'#999'});
+}
 function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽');}
 </script>
 
