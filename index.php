@@ -829,53 +829,97 @@ sw(0);
 <h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 4px">Примеры нашего оборудования</h2>
 <p style="font-size:14px;color:rgba(255,255,255,.5);margin:0">Реализованные проекты для пищевой промышленности</p>
 </div>
+
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;text-align:center">
+<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
+<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">400+</div>
+<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">проектов по всей России</div>
+</div>
+<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
+<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">60+</div>
+<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">высококвалифицированных мастеров</div>
+</div>
+<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
+<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">17</div>
+<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">лет на рынке</div>
+</div>
+<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
+<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">12</div>
+<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">месяцев гарантии</div>
+</div>
+</div>
+
 <div style="display:flex;gap:20px;overflow-x:auto;padding-bottom:8px">
-<div style="flex:0 0 340px;background:#fff;border-radius:12px;overflow:hidden">
-<img src="milk-tank.jpg" alt="" style="width:100%;height:200px;object-fit:cover;display:block">
-<div style="padding:16px 20px 20px">
-<h3 style="font-size:15px;font-weight:700;color:#1a1a26;margin:0 0 6px">Оснащение молочного завода</h3>
-<ul style="font-size:13px;color:#555;padding:0;margin:0 0 12px;list-style:none">
-<li style="padding:3px 0 3px 18px;position:relative">✓ Герметичные двойные швы</li>
-<li style="padding:3px 0 3px 18px;position:relative">✓ Температурный диапазон 40–120°C</li>
-<li style="padding:3px 0 3px 18px;position:relative">✓ Увеличение производительности на 40%</li>
-</ul>
-<button style="padding:9px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer" onclick="this.parentElement.innerHTML+='<p style=\'font-size:13px;color:#555;line-height:1.6\'>Полный цикл оснащения молочного завода мощностью 50 тонн переработки в сутки: приёмно-охладительные ёмкости 25 000 л × 2 шт., резервуары хранения молока 30 000 л × 4 шт., пастеризационно-охладительная установка 5000 л/час, CIP-мойка на 4 контура.</p>'">Читать кейс</button>
+<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="brewery-voronezh.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 18px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Пивзавод, Воронеж</h3>
+<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Варочный порядок 5 000 л, ЦКТ 10 000 л × 8 шт.</p>
+<span style="font-size:11px;color:#F77C2A;font-weight:600">400+ проектов по РФ →</span>
 </div>
 </div>
-<div style="flex:0 0 340px;background:#fff;border-radius:12px;overflow:hidden">
-<img src="kvas-tank.jpg" alt="" style="width:100%;height:200px;object-fit:cover;display:block">
-<div style="padding:16px 20px 20px">
-<h3 style="font-size:15px;font-weight:700;color:#1a1a26;margin:0 0 6px">Завод по производству кваса</h3>
-<ul style="font-size:13px;color:#555;padding:0;margin:0 0 12px;list-style:none">
-<li style="padding:3px 0 3px 18px;position:relative">✓ 300 000 л/мес</li>
-<li style="padding:3px 0 3px 18px;position:relative">✓ Полностью автоматизированный</li>
-<li style="padding:3px 0 3px 18px;position:relative">✓ Система управления ферментацией</li>
-</ul>
-<button style="padding:9px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer">Читать кейс</button>
+<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="brewery-chekhov.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 18px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Пивоварня, г. Чехов</h3>
+<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Мини-пивоварня ресторанного типа на 5 сортов</p>
+<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
 </div>
 </div>
-<div style="flex:0 0 340px;background:#fff;border-radius:12px;overflow:hidden">
-<img src="cheez-kont.jpg" alt="" style="width:100%;height:200px;object-fit:cover;display:block">
-<div style="padding:16px 20px 20px">
-<h3 style="font-size:15px;font-weight:700;color:#1a1a26;margin:0 0 6px">Цех созревания сыров</h3>
-<ul style="font-size:13px;color:#555;padding:0;margin:0 0 12px;list-style:none">
-<li style="padding:3px 0 3px 18px;position:relative">✓ Антикоррозийное покрытие</li>
-<li style="padding:3px 0 3px 18px;position:relative">✓ Регулируемая вентиляция</li>
-<li style="padding:3px 0 3px 18px;position:relative">✓ 20 тонн единовременного хранения</li>
-</ul>
-<button style="padding:9px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer">Читать кейс</button>
+<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="milk-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 18px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Молочный завод, Краснодар</h3>
+<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Оснащение 50 тонн переработки в сутки</p>
+<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
 </div>
 </div>
-<div style="flex:0 0 340px;background:#fff;border-radius:12px;overflow:hidden">
-<img src="sir.jpg" alt="" style="width:100%;height:200px;object-fit:cover;display:block">
-<div style="padding:16px 20px 20px">
-<h3 style="font-size:15px;font-weight:700;color:#1a1a26;margin:0 0 6px">Сыроварня полного цикла</h3>
-<ul style="font-size:13px;color:#555;padding:0;margin:0 0 12px;list-style:none">
-<li style="padding:3px 0 3px 18px;position:relative">✓ Резервуары для хранения молока</li>
-<li style="padding:3px 0 3px 18px;position:relative">✓ Ёмкости для пастеризации</li>
-<li style="padding:3px 0 3px 18px;position:relative">✓ Ферментационные танки</li>
-</ul>
-<button style="padding:9px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer">Читать кейс</button>
+<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="wine-equipment.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 18px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Винодельня, Ставрополье</h3>
+<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Ферментация 10 000 л × 8 шт., 500 000 бут/год</p>
+<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+</div>
+</div>
+<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="brewery-abkhazia.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 18px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Пивоварня, Абхазия</h3>
+<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Комплексное оснащение пивоварни под ключ</p>
+<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+</div>
+</div>
+<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="industrial-tanks.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 18px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Парк резервуаров</h3>
+<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">10+ емкостей 100 000–200 000 л для масла</p>
+<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+</div>
+</div>
+<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="cip-station.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 18px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">CIP-станция</h3>
+<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">4 контура мойки, полностью автоматическая</p>
+<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+</div>
+</div>
+<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="kvas-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 18px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Завод кваса, Воронеж</h3>
+<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">300 000 л/мес, 6 сортов</p>
+<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+</div>
+</div>
+<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<img src="milk-park.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 18px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Молочный парк</h3>
+<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Танки хранения 25 000–50 000 л × 6 шт.</p>
+<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
 </div>
 </div>
 </div>
