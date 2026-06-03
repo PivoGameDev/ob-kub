@@ -709,51 +709,67 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </section>
 
 <!-- EQUIPMENT CATEGORIES -->
-<section class="db-section alt" id="equipment">
-<div class="db-wrap">
+<section class="db-section alt" id="equipment" style="padding:64px 0 48px">
+<div class="db-wrap" style="max-width:1400px">
 <div class="db-section-line"></div>
 <h2 class="db-section-title">Категории оборудования</h2>
 <p class="db-section-sub">Полный каталог промышленного оборудования из нержавеющей стали AISI 304/316</p>
-<div class="cat-grid">
-<a href="/beer.html" class="cat-card" data-texture="beer">
-<div class="cat-card-texture"></div>
-<div class="cat-card-img"><img src="cct-tank.jpg" alt="Пивоваренное оборудование"></div>
-<div class="cat-card-body">
-<div class="cat-name">Пивоваренное оборудование</div>
-<div class="cat-desc">ЦКТ (100–50000 л), варочные порядки (6 типов), дробилки солода, баки горячей воды, парогенераторы, чиллеры, форфасы, теплообменники.</div>
-<div class="cat-count">13 категорий</div>
+<div class="cat-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px">
+<a href="/beer.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+<div style="height:200px;overflow:hidden;position:relative">
+<img src="cat-img-565c2c35.jpg" alt="Пивоваренное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
 </div>
-<div class="cat-card-footer"><span class="btn-view">Перейти к каталогу</span></div>
+<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Пивоваренное</div>
+<div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">ЦКТ, варочные порядки, дробилки, БГВ, парогенераторы, чиллеры, форфасы, теплообменники</div>
+<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
+<span style="font-size:12px;color:#F77C2A;font-weight:600">13 категорий</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+</div>
+</div>
 </a>
-<a href="/dairy.html" class="cat-card" data-texture="dairy">
-<div class="cat-card-texture"></div>
-<div class="cat-card-img"><img src="dairy-reception.jpg" alt="Молочное оборудование"></div>
-<div class="cat-card-body">
-<div class="cat-name">Молочное оборудование</div>
-<div class="cat-desc">Ёмкости приёмки и хранения молока, резервуары-охладители, ванны пастеризации, ферментационные танки, сыро- и творогоизготовители.</div>
-<div class="cat-count">10 категорий</div>
+<a href="/dairy.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+<div style="height:200px;overflow:hidden;position:relative">
+<img src="cat-dairy.jpg" alt="Молочное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
 </div>
-<div class="cat-card-footer"><span class="btn-view">Перейти к каталогу</span></div>
+<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Молочное</div>
+<div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">Ёмкости приёмки и хранения, резервуары-охладители, ВДП, ферментационные танки, сыро- и творогоизготовители</div>
+<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
+<span style="font-size:12px;color:#F77C2A;font-weight:600">10 категорий</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+</div>
+</div>
 </a>
-<a href="/winery.html" class="cat-card" data-texture="wine">
-<div class="cat-card-texture"></div>
-<div class="cat-card-img"><img src="wine-red-fermentation.jpg" alt="Винодельческое оборудование"></div>
-<div class="cat-card-body">
-<div class="cat-name">Винодельческое оборудование</div>
-<div class="cat-desc">Ферментация красных и белых вин, выдержка и хранение, холодная стабилизация, купажирование, сульфитация, универсальные танки.</div>
-<div class="cat-count">7 категорий</div>
+<a href="/winery.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+<div style="height:200px;overflow:hidden;position:relative">
+<img src="cat-wine.jpg" alt="Винодельческое оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
 </div>
-<div class="cat-card-footer"><span class="btn-view">Перейти к каталогу</span></div>
+<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Винодельческое</div>
+<div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">Ферментация красных и белых вин, выдержка, криостабилизация, купажирование, сульфитация, винификаторы</div>
+<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
+<span style="font-size:12px;color:#F77C2A;font-weight:600">7 категорий</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+</div>
+</div>
 </a>
-<a href="/industrial.html" class="cat-card" data-texture="oil">
-<div class="cat-card-texture"></div>
-<div class="cat-card-img"><img src="industrial-cip.jpg" alt="Промышленное оборудование"></div>
-<div class="cat-card-body">
-<div class="cat-name">Промышленное оборудование</div>
-<div class="cat-desc">Резервуары для хранения, ёмкости с мешалкой, ёмкости с терморегуляцией, ёмкости под давлением, CIP-станции, теплообменники.</div>
-<div class="cat-count">6 категорий + опции</div>
+<a href="/industrial.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+<div style="height:200px;overflow:hidden;position:relative">
+<img src="cat-industrial.jpg" alt="Промышленное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
 </div>
-<div class="cat-card-footer"><span class="btn-view">Перейти к каталогу</span></div>
+<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Промышленное</div>
+<div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">Резервуары для хранения, ёмкости с мешалкой, терморегуляция, давление, CIP-станции, теплообменники</div>
+<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
+<span style="font-size:12px;color:#F77C2A;font-weight:600">6 категорий</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+</div>
+</div>
 </a>
 </div>
 </div>
