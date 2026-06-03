@@ -11,19 +11,19 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: 📂 Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /
-          dangerous-clean-slate: true
-          exclude: |
-            .git/**
-            .gitignore
-            .github/**
-            _local/**
-            urls.txt
-            test.php
-            test.html
-            "Сравнение_с_рынком.txt"
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+          lftp -u "${{ secrets.FTP_USER }}","${{ secrets.FTP_PASSWORD }}" \
+            -e "set ftp:ssl-allow no; set net:timeout 60; set net:max-retries 3; \
+                mirror -R -v --delete --no-perms \
+                --exclude ^.git/ \
+                --exclude ^.gitignore$ \
+                --exclude ^.github/ \
+                --exclude ^_local/ \
+                --exclude urls.txt \
+                --exclude test.php \
+                --exclude test.html \
+                --exclude Сравнение_с_рынком.txt \
+                . ./; quit" \
+            "${{ secrets.FTP_HOST }}"
