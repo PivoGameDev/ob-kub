@@ -1,0 +1,50 @@
+=== ЧТО СДЕЛАНО ===
+
+1. МОБИЛЬНЫЙ ХЕДЕР + DRAWER (меню-бургер)
+   - css/header.css — добавлены стили мобильного хедера и drawer
+   - php/header.php — добавлен onerror на лого, починены ссылки (/#about, /#projects, /#contacts), closeDrawer(), КП закрывает меню
+   - index.html — заменён на новую версию (draft-main.html) с мега-меню и мобильным хедером
+   - catalog/beer/cct/index.php — добавлен мобильный хедер, drawer, починены ссылки, closeDrawer()
+
+2. ФОРМЫ
+   - php/send.php — добавлены form_type: dairy-item, wine-item, industrial-item
+   - catalog/helpers/product-template.php — добавлен _csrf в форму (иначе ошибка безопасности)
+
+3. НЕДОСТАЮЩИЕ ПАПКИ ОБЪЁМОВ (59 шт)
+   Созданы все папки volumes по данным из dairy-data.php, wine-data.php, industrial-data.php, beer-extra-data.php
+   Чтобы URL вида /catalog/.../3000l/ не выдавали "категория не найдена"
+   
+   Dairy (20): storage/4000l, storage/15000l, storage/30000l, reception/1500l, reception/6000l,
+   reception/15000l, reception/30000l, cooler/1500l, cooler/6000l, cooler/15000l, cooler/30000l,
+   vdp/1500l, fermentation/1500l, fermentation/6000l, fermentation/15000l, fermentation/30000l,
+   cheese-maker/1500l, cottage-cheese/1500l, brine/1500l, brine/6300l
+
+   Wine (24): red-fermentation/1500l,6000l,15000l,30000l · white-fermentation/1500l,6000l,15000l ·
+   storage-aging/1000l,1500l,15000l,30000l · cold-stabilization/1500l,6000l,15000l ·
+   blending/1500l,6000l,15000l,30000l · sulfitation/1500l,6000l,15000l ·
+   universal-tank/1500l,6000l,15000l,30000l
+
+   Industrial (11): storage/1500l,6000l,15000l,30000l · mixing/1500l,6000l,15000l,30000l ·
+   thermal/1500l,6000l,15000l,30000l · pressure/300l,400l,6000l,15000l
+
+   Beer CCT (4): 7500l, 120000l, 150000l, 200000l
+
+=== ФАЙЛЫ ДЛЯ ЗАЛИВКИ НА ХОСТИНГ ===
+
+Основные:
+- index.html
+- css/header.css
+- php/header.php
+- php/send.php
+- catalog/helpers/product-template.php
+- catalog/beer/cct/index.php
+
+Новые папки объёмов (59 шт, все в catalog/*/):
+- Все созданные папки с index.php внутри
+
+Либо просто залить всю папку catalog/ целиком.
+
+=== СТРУКТУРА САЙТА ===
+- /Users/tretyakov/Desktop/Апгрейд/ — корень сайта
+- /Users/tretyakov/Desktop/Апгрейд/хлам/ — дампы с хостинга для показа (не заливать)
+- /Users/tretyakov/Desktop/Апгрейд/хлам/public_html 8/ — последняя копия с хостинга

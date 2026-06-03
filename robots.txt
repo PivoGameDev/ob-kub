@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /php/
+Disallow: /admin/
+Disallow: /rate_limit_cache.json
+
+Sitemap: https://ob-kub.ru/sitemap.xml

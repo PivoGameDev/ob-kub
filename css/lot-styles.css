@@ -1,0 +1,172 @@
+    <!-- Стили для адаптивности -->
+    <style>
+    .equipment-card { position: relative; }
+    .image-container:hover img { transform: scale(1.05) !important; }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 768px) { 
+        .tabs-container { flex-direction: column; align-items: stretch; gap: 10px !important; }
+        .category-tab { width: 100% !important; justify-content: center; padding: 15px 20px !important; }
+        .category-hero { height: 300px !important; }
+        .category-hero h3 { font-size: 1.4rem !important; }
+        .category-hero p { font-size: 1rem !important; }
+        
+        #brewing-equipment-container,
+        #fermentation-equipment-container,
+        #auxiliary-equipment-container { 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important; 
+            gap: 15px !important; 
+        } 
+        
+        .equipment-card { min-height: 500px !important; }
+    }
+    
+    @media (max-width: 480px) {
+        .category-hero { height: 250px !important; }
+        .category-hero h3 { font-size: 1.2rem !important; padding: 20px !important; }
+        .category-hero p { display: none; }
+        
+        #brewing-equipment-container,
+        #fermentation-equipment-container,
+        #auxiliary-equipment-container { 
+            grid-template-columns: 1fr !important; 
+        } 
+        
+        .catalog-title { font-size: 1.8rem !important; padding-bottom: 30px !important; }
+        .catalog-subtitle { font-size: 1rem !important; }
+    }
+    
+    .details-btn:hover { transform: translateY(-2px) !important; box-shadow: 0 8px 20px rgba(44, 82, 130, 0.35) !important; }
+    .volume-btn:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important; }
+    
+    .category-tab:hover:not(.active) {
+        background: #edf2f7 !important;
+        border-color: #cbd5e0 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    }
+    
+    .category-tab.active:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(44, 82, 130, 0.4) !important;
+    }
+
+
+/* Базовые стили для блоков комплектаций - СКРЫТЫ */
+.config-info-section {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    transition: opacity 0.3s ease !important;
+}
+
+/* АКТИВНЫЙ блок - ПОКАЗАН */
+.config-info-section.active {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #f8f9fa !important;
+    border: 2px solid #f77c2a !important;
+    border-radius: 10px !important;
+    margin: 20px 0 !important;
+}
+
+/* Отображение всей секции конфигураций */
+.equipment-configuration-section {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Кнопки конфигурации */
+.configuration-row {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Стиль для активной кнопки */
+.config-btn.active {
+    background: antiquewhite;;
+    color: white !important;
+    border-color: #f77c2a !important;
+}
+/* ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ КАТЕГОРИЙ */
+.category-content {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Стили для верхнего блока ВО ВСЕХ КАТЕГОРИЯХ */
+#fermentation-content > .brewery-main-block,
+#auxiliary-content > .brewery-main-block {
+    background: linear-gradient(135deg, #00a86b, #00bf6f, #00a86b) !important;
+}
+
+#auxiliary-content > .brewery-main-block {
+    background: linear-gradient(135deg, #F77C2A, #E55A00, #FF9500) !important;
+}
+
+/* Принудительно применяем стили варочного порядка ко всем */
+#fermentation-content > .brewery-main-block,
+#auxiliary-content > .brewery-main-block {
+    border-radius: 12px;
+    margin: 20px;
+    padding: 30px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+}
+
+#fermentation-content > .brewery-main-block .brewery-content-wrapper,
+#auxiliary-content > .brewery-main-block .brewery-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#fermentation-content > .brewery-main-block .brewery-text-block,
+#auxiliary-content > .brewery-main-block .brewery-text-block {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 0 20px;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+#fermentation-content > .brewery-main-block .brewery-text-block p,
+#auxiliary-content > .brewery-main-block .brewery-text-block p {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Сетка карточек для всех категорий */
+#fermentation-content > .equipment-grid,
+#auxiliary-content > .equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 30px auto;
+    max-width: 1800px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}

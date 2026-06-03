@@ -1,0 +1,25 @@
+# Безопасность
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Главная страница
+DirectoryIndex index.html
+
+# Запрет доступа к служебным файлам
+<FilesMatch "\.(env|json|lock|md|gitignore)$">
+    Require all denied
+</FilesMatch>
+
+# Запрет доступа к папке хлам
+RedirectMatch 404 /хлам(/|$)
+
+# Редирект с HTTP на HTTPS (раскомментировать когда SSL включен)
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+# </IfModule>

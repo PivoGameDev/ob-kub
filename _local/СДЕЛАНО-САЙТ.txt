@@ -1,0 +1,218 @@
+========================================
+  САЙТ ob-kub.ru — ЧТО СДЕЛАНО
+========================================
+
+Исходная проблема:
+- На страницах каталога (пиво, молоко, вино, промышленное)
+  не было мобильного хедера и меню-бургера
+- Главная страница была старой версии (без мега-меню)
+- В карточках товаров форма не отправлялась (ошибка безопасности)
+- Некоторые URL объёмов выдавали "категория не найдена"
+
+========================================
+1. МОБИЛЬНЫЙ ХЕДЕР И DRAWER
+========================================
+
+Что было сделано:
+- Добавлены CSS-стили для мобильной шапки (mobile-header)
+- Добавлен drawer (выдвижное меню слева) с полным каталогом
+- Добавлен overlay (затемнение фона при открытом меню)
+
+Где:
+- css/header.css — все стили для mobile-header, hamburger, drawer,
+  overlay, drawer-footer (кнопки КП и Звонок)
+
+- php/header.php — HTML mobile-header и drawer:
+  * Логотип, кнопка поиска, гамбургер
+  * Drawer: О нас, Проекты, Каталог (с подкатегориями),
+    Контакты, Статьи, Сертификаты, Оплата, Политика
+  * Footer drawer: кнопка "Получить КП" и "Звонок"
+  * Добавлен onerror на лого (скрывает если не грузится)
+  * Добавлен closeDrawer() — закрывает меню по Escape и клику вне его
+
+- index.html — новая версия главной (draft-main.html):
+  * Десктоп: мега-меню каталога (пиво/молоко/вино/пром)
+  * Мобила: хедер + drawer (как в header.php)
+  * Форма расчёта оборудования с выбором типа и объёма
+  * Калькулятор примерной цены
+  * Поиск по каталогу
+  * Все кнопки меню ведут на якоря с правильными /#about и т.д.
+
+- catalog/beer/cct/index.php — добавил то же самое для страницы ЦКТ
+  (у неё свой render, не использует header.php)
+
+Починено:
+- Все ссылки в drawer: /#about, /#projects, /#contacts
+  (работают с любой страницы, ведут на главную)
+- Кнопка "Получить КП" в drawer: сначала закрывает меню,
+  потом скроллит к форме (или переходит на главную)
+- closeDrawer() добавлена во все 3 файла
+
+========================================
+2. ФОРМЫ НА САЙТЕ
+========================================
+
+Проблема:
+- На главной форма отправлялась
+- В карточках товаров (chiller/12l/, storage/3000l/ и т.д.)
+  форма выдавала "Ошибка безопасности: повторите отправку"
+
+Причина:
+- В product-template.php не было поля _csrf (CSRF-токен)
+- send.php требует _csrf и отклоняет форму без него
+
+Что сделано:
+- catalog/helpers/product-template.php:
+  * Добавлено скрытое поле <input type="hidden" name="_csrf">
+  * Добавлен скрипт, заполняющий _csrf при загрузке
+
+- php/send.php:
+  * Добавлены form_type: 'dairy-item', 'wine-item', 'industrial-item'
+  * Добавлены в $form_names (для темы письма)
+  * Добавлены в $quickLikeTypes (для обработки сообщения)
+
+========================================
+3. НЕДОСТАЮЩИЕ ПАПКИ ОБЪЁМОВ (59 шт)
+========================================
+
+Проблема:
+- URL вида /catalog/dairy/storage/3000l/ выдавал
+  "категория не найдена" (белый экран)
+
+Причина:
+- В данных (dairy-data.php) объём 3000l есть
+- Но папки catalog/dairy/storage/3000l/ не существует
+
+Решение:
+- Созданы все недостающие папки объёмов по данным из
+  dairy-data.php, wine-data.php, industrial-data.php, beer-extra-data.php
+
+Каждая папка содержит index.php с подстановкой объёма:
+  <?php $_SERVER["CATALOG_VOLUME"]=3000; require __DIR__ . "/../index.php";
+
+Список по категориям:
+
+--- МОЛОЧНОЕ (20 шт) ---
+  storage/4000l
+  storage/15000l
+  storage/30000l
+  reception/1500l
+  reception/6000l
+  reception/15000l
+  reception/30000l
+  cooler/1500l
+  cooler/6000l
+  cooler/15000l
+  cooler/30000l
+  vdp/1500l
+  fermentation/1500l
+  fermentation/6000l
+  fermentation/15000l
+  fermentation/30000l
+  cheese-maker/1500l
+  cottage-cheese/1500l
+  brine/1500l
+  brine/6300l
+
+--- ВИНОДЕЛИЕ (24 шт) ---
+  red-fermentation/1500l
+  red-fermentation/6000l
+  red-fermentation/15000l
+  red-fermentation/30000l
+  white-fermentation/1500l
+  white-fermentation/6000l
+  white-fermentation/15000l
+  storage-aging/1000l
+  storage-aging/1500l
+  storage-aging/15000l
+  storage-aging/30000l
+  cold-stabilization/1500l
+  cold-stabilization/6000l
+  cold-stabilization/15000l
+  blending/1500l
+  blending/6000l
+  blending/15000l
+  blending/30000l
+  sulfitation/1500l
+  sulfitation/6000l
+  sulfitation/15000l
+  universal-tank/1500l
+  universal-tank/6000l
+  universal-tank/15000l
+  universal-tank/30000l
+
+--- ПРОМЫШЛЕННОЕ (11 шт) ---
+  storage/1500l
+  storage/6000l
+  storage/15000l
+  storage/30000l
+  mixing/1500l
+  mixing/6000l
+  mixing/15000l
+  mixing/30000l
+  thermal/1500l
+  thermal/6000l
+  thermal/15000l
+  thermal/30000l
+  pressure/300l
+  pressure/400l
+  pressure/6000l
+  pressure/15000l
+
+--- ПИВО ЦКТ (4 шт) ---
+  cct/7500l
+  cct/120000l
+  cct/150000l
+  cct/200000l
+
+========================================
+4. СТРУКТУРА ФАЙЛОВ
+========================================
+
+/Users/tretyakov/Desktop/Апгрейд/ — корень сайта
+  ├── index.html — новая главная (draft-main)
+  ├── index.php — редирект на index.html
+  ├── beer.html — пивная страница (новая, draft-beer)
+  ├── dairy.html — молочная страница (новая, draft-milk)
+  ├── winery.html — винодельческая страница (новая, draft-wine)
+  ├── industrial.html — промышленная страница (новая, draft-industrial)
+  ├── css/
+  │   ├── header.css — +стили мобильного хедера
+  │   ├── style-original.css
+  │   └── catalog-mobile.css
+  ├── php/
+  │   ├── header.php — +drawer, closeDrawer, починены ссылки
+  │   ├── footer.php
+  │   └── send.php — +form_type для dairy/wine/industrial-item
+  ├── catalog/
+  │   ├── helpers/product-template.php — +_csrf
+  │   ├── beer/cct/index.php — +мобильный хедер
+  │   └── dairy/storage/3000l/ — новая папка (+58 других)
+  └── хлам/ — дампы с хостинга (не заливать)
+
+========================================
+5. ФАЙЛЫ ДЛЯ ЗАЛИВКИ НА ХОСТИНГ
+========================================
+
+Обязательно:
+  1. index.html
+  2. css/header.css
+  3. php/header.php
+  4. php/send.php
+  5. catalog/helpers/product-template.php
+  6. catalog/beer/cct/index.php
+  7. Все 59 новых папок объёмов (catalog/*/.../XXXXl/index.php)
+
+Либо вариантом: залить всю папку catalog/ целиком,
+  потом отдельно index.html, css/header.css, php/header.php, php/send.php
+
+Пиво/молоко/вино/промышленное (beer.html, dairy.html, winery.html, industrial.html)
+  — на хостинге уже новые, заливать НЕ НУЖНО
+
+========================================
+6. ИЗВЕСТНЫЕ ОСОБЕННОСТИ
+========================================
+- После заливки на главной может показываться старый дизайн
+  из-за кеша браузера → Ctrl+Shift+R (жёсткая перезагрузка)
+- Логотип на мобильных в каталоге может не грузиться,
+  если на сервере нет файла /logo.png (добавлен onerror — скрывается)

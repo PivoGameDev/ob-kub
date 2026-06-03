@@ -1,0 +1,66 @@
+Binary file ./wine-blending.png matches
+Binary file ./хлам/public_html 7/wine-blending.png matches
+Binary file ./хлам/public_html 7/Ёмкости для купажирования вина.png matches
+Binary file ./хлам/public_html 77/wine-blending.png matches
+Binary file ./хлам/Виноотред/wine-blending.png matches
+http://www.sitemaps.org/schemas/sitemap/0.9
+http://www.w3.org/1999/xlink
+http://www.w3.org/2000/svg
+https://
+https://%
+https://api-maps.yandex.ru/2.1/?apikey=1b0c4bdb-0432-4fa4-9c0a-9a9b61abbe6c
+https://api-maps.yandex.ru/2.1/?lang=ru_RU
+https://api.telegram.org/bot
+https://fonts.googleapis.com
+https://fonts.googleapis.com/css2?family=Source
+https://fonts.gstatic.com
+https://mc.yandex.ru/metrika/tag.js
+https://mc.yandex.ru/metrika/tag.js?id=105816429
+https://mc.yandex.ru/watch/105816429
+https://ob-kub.ru
+https://ob-kub.ru/
+https://ob-kub.ru/beer.html
+https://ob-kub.ru/brewery-equipment.png
+https://ob-kub.ru/catalog/
+https://ob-kub.ru/catalog/beer/
+https://ob-kub.ru/catalog/beer/brew-house/
+https://ob-kub.ru/catalog/beer/cct/
+https://ob-kub.ru/catalog/dairy/
+https://ob-kub.ru/catalog/dairy/cheese-shelves/
+https://ob-kub.ru/catalog/industrial/
+https://ob-kub.ru/catalog/industrial/cip/
+https://ob-kub.ru/catalog/industrial/heat-exchanger/
+https://ob-kub.ru/catalog/wine/
+https://ob-kub.ru/catalog/wine/presses/
+https://ob-kub.ru/cct-tank.jpg
+https://ob-kub.ru/logo.png
+https://ob-kub.ru
+https://ob-kub.ru/
+https://ob-kub.ru/articles.html
+https://ob-kub.ru/articles/automation.html
+https://ob-kub.ru/articles/beer.html
+https://ob-kub.ru/articles/certification.html
+https://ob-kub.ru/articles/cheese.html
+https://ob-kub.ru/articles/curd.html
+https://ob-kub.ru/articles/installation.html
+https://ob-kub.ru/articles/juice.html
+https://ob-kub.ru/articles/milk.html
+https://ob-kub.ru/articles/oil.html
+https://ob-kub.ru/articles/sauce.html
+https://ob-kub.ru/articles/wine.html
+https://ob-kub.ru/beer-ckt.jpg
+https://ob-kub.ru/beer.html
+https://ob-kub.ru/dairy.html
+https://ob-kub.ru/hero-bg.png
+https://ob-kub.ru/logo.png
+https://ob-kub.ru/milk-storage-tanks.png
+https://ob-kub.ru/privacy.html
+https://ob-kub.ru/sitemap.xml
+https://ob-kub.ru/wine-fermentation-red.jpg
+https://ob-kub.ru/winery.html
+https://pivogamedev.github.io/steel-equipment-game/
+https://schema.org
+https://schema.org/InStock
+https://t.me/oborudovanie_kubani
+https://wa.me/
+https://yandex.ru/map-widget/v1/?ll=39.000000%2C45.000000

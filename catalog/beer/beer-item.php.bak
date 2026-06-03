@@ -1,0 +1,338 @@
+<?php
+error_reporting(0);
+ini_set('display_errors', 0);
+
+require __DIR__ . '/../beer-extra-data.php';
+require __DIR__ . '/../helpers/product-template.php';
+
+$uri = $_SERVER['REQUEST_URI'];
+$cat = !empty($_SERVER['CATALOG_CATEGORY']) ? $_SERVER['CATALOG_CATEGORY'] : '';
+$volume = 0;
+if (!empty($_SERVER['CATALOG_VOLUME'])) {
+    $volume = (int)$_SERVER['CATALOG_VOLUME'];
+}
+if (!$cat && preg_match('#/catalog/beer/(hot-water-tank|grain-mill|steam-generator|chiller|unitank|heat-exchanger)/#', $uri, $m)) {
+    $cat = $m[1];
+}
+if (!$volume && preg_match('#/(\d+)l?/?#', $uri, $m)) {
+    $volume = (int)$m[1];
+}
+
+if (!$cat || !isset($beerExtra[$cat])) {
+    header('HTTP/1.0 404 Not Found');
+    echo 'Категория не найдена';
+    exit;
+}
+
+$data = $beerExtra[$cat];
+if ($volume && isset($data['specs'][$volume])) {
+    renderItemPage($cat, $volume, $data);
+} else {
+    renderItemList($cat, $data);
+}
+exit;
+
+function renderItemList($catKey, $data) {
+    $sorted = $data['volumes'];
+    
+sort($sorted);
+    $metaTitle = $data['title'];
+    $metaDesc = $data['desc'];
+    $h1 = $data['h1'];
+    $baseUrl = '/catalog/beer/' . $catKey . '/';
+    $hasDim = !empty($data['specs'][$sorted[0]]['diameter']);
+    $specUnit = $data['spec_unit'] ?? 'л';
+    $specLabel = $data['spec_label'] ?? 'Объём';
+    header('Content-Type: text/html; charset=utf-8');
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-
+scale=1,maximum-
+scale=5">
+<title><?= htmlspecialchars($metaTitle) ?></title>
+<meta name="description" content="<?= htmlspecialchars($metaDesc) ?>">
+<link rel="canonical" href="https://ob-kub.ru<?= $baseUrl ?>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700;800&display=
+swap" rel="
+stylesheet">
+<link rel="
+stylesheet" href="/css/
+style-original.css">
+<link rel="
+stylesheet" href="/css/catalog-mobile.css">
+<link rel="icon" href="/favicon.png">
+<sstyle>
+*,*::before,*::after{box-
+izing:border-box}
+.cct-page{font-family:'Source Sans Pro',
+ans-
+erif;color:#2c3e50;background:#f5f6f8}
+.cct-page .container{max-width:1100px;margin:0 auto;padding:0 24px}
+.list-hero{background:linear-gradient(135deg,#2b2b39 0%,#1a1a26 100%);padding:28px 0;position:relative;overflow:hidden}
+.list-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url(data:image/
+vg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+) repeat;pointer-events:none}
+.list-hero-inner{display:flex;gap:28px;align-items:center;position:relative;z-index:1}
+.list-hero-img{flex:0 0 140px;width:140px;height:105px;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.05);border:1px 
+solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}
+.list-hero-img img{max-width:100%;max-height:100%;display:block}
+.list-hero-text{flex:1;min-width:0}
+.list-hero-text h1{font-
+size:22px;font-weight:800;text-transform:uppercase;letter-
+spacing:.4px;color:#fff;margin:0 0 4px}
+.list-hero-text .hero-
+ub{font-
+size:14px;color:rgba(255,255,255,.6);line-height:1.5;margin:0 0 10px}
+.list-hero-text .hero-tags{display:flex;flex-wrap:wrap;gap:6px}
+.list-hero-text .hero-tags 
+span{background:rgba(247,124,42,.12);border:1px 
+solid rgba(247,124,42,.2);color:#F77C2A;font-
+size:11px;font-weight:600;padding:3px 10px;border-radius:4px;white-
+space:nowrap}
+.list-hero-text .hero-trust{margin-top:8px;font-
+size:11px;color:rgba(255,255,255,.3);letter-
+spacing:.3px}
+.list-hero .breadcrumbs{padding:0 0 8px;font-
+size:11px;color:rgba(255,255,255,.3)}
+.list-hero .breadcrumbs a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.list-hero .breadcrumbs a:hover{color:#F77C2A}
+.list-hero .breadcrumbs .
+ep{margin:0 5px;color:rgba(255,255,255,.12)}
+.list-hero .breadcrumbs .current{color:rgba(255,255,255,.5)}
+@media(max-width:700px){
+.list-hero-inner{flex-direction:column;text-align:center;gap:12px}
+.list-hero-img{flex:0 0 auto;width:100px;height:75px}
+.list-hero-text .hero-tags{justify-content:center}
+}
+.volumes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;padding:40px 0 56px}
+.vol-card{background:#fff;border-radius:12px;box-
+shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .2s,box-
+shadow .2s;text-decoration:none;color:inherit;display:flex;flex-direction:column;border:1px 
+solid #eee;position:relative;overflow:hidden}
+.vol-card:hover{transform:translateY(-6px);box-
+shadow:0 12px 36px rgba(247,124,42,.15);border-color:#fde0c0}
+.vol-card-body{padding:24px 20px 20px;flex:1;display:flex;flex-direction:column}
+.vol-card-body .vol-label{font-
+size:11px;text-transform:uppercase;letter-
+spacing:1px;color:#999;margin-bottom:2px}
+.vol-card-body .vol-value{font-
+size:32px;font-weight:900;color:#1a1a26;line-height:1;margin-bottom:2px}
+.vol-card-body .vol-unit{font-
+size:14px;color:#888;font-weight:400}
+.vol-card-body .price{font-
+size:20px;font-weight:700;color:#F77C2A;margin:8px 0 14px}
+.vol-card-body .
+pecs{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;margin-bottom:auto}
+.vol-card-body .
+pecs div{font-
+size:13px;color:#555;padding:3px 0;border-bottom:1px dotted #eee;display:flex;justify-content:
+space-between}
+.vol-card-body .
+pecs div:last-child,.vol-card-body .
+pecs div:nth-last-child(2){border-bottom:none}
+.vol-card-body .
+pecs .
+l{color:#999}
+.vol-card-footer{padding:0 20px 20px}
+.vol-card-footer .btn-
+select{display:block;width:100%;padding:12px;background:#F77C2A;color:#fff;border:none;border-radius:8px;font-
+size:15px;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;transition:background .2s}
+.vol-card-footer .btn-
+select:hover{background:#e06a1a}
+.popular-badge{position:absolute;top:12px;right:12px;background:#F77C2A;color:#fff;font-
+size:10px;font-weight:700;text-transform:uppercase;letter-
+spacing:.5px;padding:4px 10px;border-radius:4px}
+
+/* Mega Menu */
+.mega-menu-wrap{position:relative;display:inline-block}
+.nav .mega-menu-link{display:inline-flex;align-items:center;gap:4px}
+.nav .mega-menu-link:hover{color:#F77C2A}
+.mega-arrow{font-
+size:9px;transition:transform .25s;display:inline-block;margin-left:2px}
+.mega-menu-wrap:hover .mega-arrow,.mega-menu-wrap.active .mega-arrow{transform:rotate(180deg)}
+.mega-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);background:#fff;border-radius:14px;box-
+shadow:0 20px 60px rgba(0,0,0,.18),0 4px 16px rgba(0,0,0,.08);padding:24px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;min-width:820px;z-index:1000;opacity:0;visibility:hidden;transition:all .25s ease;margin-top:8px;border:1px 
+solid rgba(0,0,0,.04)}
+.mega-menu::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:8px 
+solid transparent;border-bottom-color:#fff}
+.mega-menu::after{content:'';position:absolute;top:0;left:24px;right:24px;height:3px;background:linear-gradient(90deg,#F77C2A,#FF8C42);border-radius:0 0 3px 3px}
+.mega-menu-wrap:hover .mega-menu,.mega-menu-wrap.active .mega-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mega-col h3{font-
+size:11px;font-weight:700;color:#2b2b39;margin:0 0 10px;padding-bottom:7px;border-bottom:2px 
+solid #F77C2A;text-transform:uppercase;letter-
+spacing:.4px}
+.mega-col a{display:block;padding:4px 0;font-
+size:13px;color:#555;text-decoration:none;transition:color .2s;line-height:1.4;white-
+space:normal}
+.mega-col a:hover{color:#F77C2A}
+.mega-aux{grid-column:1 / -1;margin-top:4px;padding-top:14px;border-top:1px 
+solid #eee;text-align:center}
+.mega-aux a{display:inline-block;padding:8px 18px;font-
+size:13px;color:#F77C2A;text-decoration:none;font-weight:600;border-radius:8px;transition:background .2s}
+.mega-aux a:hover{background:#fff8f0}
+.cct-page .header{overflow:visible !important}
+
+@media.nav a,.nav .mega-menu-link{font-
+size:11px;white-
+space:nowrap}.consult-btn{font-
+size:10px;padding:6px 8px}.phone-number a{font-
+size:12px}}
+.mega-col-link{display:block;text-decoration:none;color:inherit;padding:0;font-
+size:inherit;line-height:inherit}
+.mega-col-link:hover h3{color:#F77C2A}
+@media.cct-page .nav,.catalog-page .nav{display:flex !important;gap:15px;position:relative;left:auto;transform:none;width:auto;height:auto;background:none;border:none}.cct-page .header,.catalog-page .header{height:auto !important}.cct-page .header-top,.catalog-page .header-top{height:auto !important}}
+</sstyle>
+</head>
+<body class="sbrewery-page cct-page">
+<header class="sheader">
+<div class="scontainer"><div class="sheader-top">
+<div class="slogo-
+section"><a href="/" class="slogo-link"><div class="slogo"><img 
+rc="/logo.png" alt="ОБОРУДОВАНИЕ КУБАНИ" class="slogo-img" onerror="this.
+style.display='none'"><div class="slogo-fallback">ОБОРУДОВАНИЕ<br>КУБАНИ</div></div></a></div>
+<nav class="snav"><a href="/#about-production">О нас</a><div class="smega-menu-wrap"><a href="/catalog/" class="smega-menu-link">Каталог <sspan class="smega-arrow">▾</sspan></a><div class="smega-menu"><div class="smega-col"><a href="/catalog/beer/" class="smega-col-link"><h3>🍺 Пивоваренное</h3></a><a href="/catalog/beer/cct/">Цилиндро-конические танки (ЦКТ)</a><a href="/catalog/beer/brew-house/">Варочные порядки</a><a href="/catalog/beer/grain-mill/">Дробилки солода</a><a href="/catalog/beer/hot-water-tank/">Баки горячей воды</a><a href="/catalog/beer/
+team-generator/">Парогенераторы</a><a href="/catalog/beer/chiller/">Чиллеры</a><a href="/catalog/beer/unitank/">Форфасы</a><a href="/catalog/beer/heat-exchanger/">Теплообменники</a></div><div class="smega-col"><a href="/catalog/dairy/" class="smega-col-link"><h3>🥛 Молочное</h3></a><a href="/catalog/dairy/reception/">Ёмкости приёмки молока</a><a href="/catalog/dairy/cooler/">Резервуары-охладители</a><a href="/catalog/dairy/
+storage/">Резервуары хранения</a><a href="/catalog/dairy/vdp/">Ванны длительной пастеризации</a><a href="/catalog/dairy/fermentation/">Ферментационные танки</a><a href="/catalog/dairy/cheese-maker/">Сыроизготовители</a><a href="/catalog/dairy/cottage-cheese/">Творогоизготовители</a><a href="/catalog/dairy/yeast/">Заквасочники</a><a href="/catalog/dairy/brine/">Контейнеры для соления сыра</a><a href="/catalog/dairy/cheese-
+helves/">Стеллажи для созревания сыра</a></div><div class="smega-col"><a href="/catalog/wine/" class="smega-col-link"><h3>🍷 Винодельческое</h3></a><a href="/catalog/wine/red-fermentation/">Ферментация красных вин</a><a href="/catalog/wine/white-fermentation/">Ферментация белых вин</a><a href="/catalog/wine/
+storage-aging/">Выдержка и хранение</a><a href="/catalog/wine/cold-
+tabilization/">Холодная стабилизация</a><a href="/catalog/wine/blending/">Купажирование</a><a href="/catalog/wine/
+ulfitation/">Сульфитация</a><a href="/catalog/wine/universal-tank/">Универсальные танки</a></div><div class="smega-col"><a href="/catalog/industrial/" class="smega-col-link"><h3>🏭 Пищевые пром.</h3></a><a href="/catalog/industrial/
+storage/">Резервуары для хранения<... (line truncated to 2000 chars)
+<div class="sheader-right"><div class="sheader-phone-container"><div class="sphone"><div class="sphone-number"><a href="tel:+78001005123">8 (800) 100-51-23</a></div></div><button class="sconsult-btn" onclick="location.href='/#calculator'">Отправить заявку</button></div></div>
+</div></div>
+</header>
+<main>
+<ssection class="slist-hero">
+<div class="scontainer">
+<div class="sbreadcrumbs">
+<a href="/">Главная</a><sspan class="sep">/</sspan>
+<a href="/catalog/">Каталог</a><sspan class="sep">/</sspan>
+<a href="/catalog/beer/">Пивоваренное оборудование</a><sspan class="sep">/</sspan>
+<sspan class="scurrent"><?= htmlspecialchars($h1) ?></sspan>
+</div>
+<div class="slist-hero-inner">
+<div class="slist-hero-img"><img 
+rc="/<?= htmlspecialchars($data['image']) ?>" alt="<?= htmlspecialchars($data['name']) ?>"></div>
+<div class="slist-hero-text">
+<h1><?= htmlspecialchars($h1) ?></h1>
+<p class="shero-
+ub"><?php
+$hooks = [
+    'hot-water-tank' => 'Стабильная подача горячей воды для затирания, CIP-мойки и отопления цеха. Термоизоляция ППУ — минимальные теплопотери.',
+    'grain-mill' => 'Правильный помол — до 85% экстрактивности. Промышленные вальцы из закалённой стали для любых объёмов варки.',
+    '
+team-generator' => 'Компактный источник пара для варочного порядка, ЦКТ и CIP. Быстрый выход на режим, автоматика безопасности.',
+    'chiller' => 'Точное управление температурой брожения. Пропиленгликоль, пластинчатый испаритель, автоматика Danfoss.',
+    'unitank' => 'Дображивание, карбонизация и хранение пива под давлением. Полная герметичность, рубашка охлаждения, предохранительный клапан.',
+    'heat-exchanger' => 'Максимальная теплопередача до 7000 Вт/м²·°C. Компактный, разборный, легко моется. AISI 304/316.',
+];
+echo $hooks[$catKey] ?? htmlspecialchars($metaDesc);
+?></p>
+<div class="shero-tags">
+<?php
+$tagPool = $data['features'] ?? [];
+
+shuffle($tagPool);
+$shown = 0;
+foreach ($tagPool as $f):
+    if ($shown >= 3) break;
+    $clean = preg_replace('/\(.*?\)|\[.*?\]/', '', $f);
+    $clean = trim($clean, ' ·,');
+    if (!$clean) continue;
+    ?><sspan><?= htmlspecialchars($clean) ?></sspan><?php
+    $shown++;
+endforeach;
+?>
+</div>
+<div class="shero-trust">AISI 304/316 · 18+ лет на рынке · Доставка по РФ</div>
+</div>
+</div>
+</div>
+</ssection>
+<sscript type="application/ld+json">
+{"@context":"https://
+chema.org","@type":"ItemList","name":"<?= htmlspecialchars($h1) ?>","description":"<?= htmlspecialchars($metaDesc) ?>","url":"https://ob-kub.ru<?= $_SERVER['REQUEST_URI'] ?>","numberOfItems":<?= count($sorted) ?>,"itemListElement":[<?php $idx=1; foreach ($sorted as $v): $price=$data['specs'][$v]['price']; if($idx>1) echo ','; ?>{"@type":"ListItem","position":<?= $idx++ ?>,"url":"https://ob-kub.ru<?= $baseUrl . $v ?>l/","name":"<?= htmlspecialchars($data['name']) ?> <?= $v ?> <?= $specUnit ?>","offers":{"@type":"Offer","price":"<?= $price ?>","priceCurrency":"RUB"}}<?php endforeach; ?>]}
+</sscript>
+<ssection class="scontainer">
+<div class="svolumes-grid">
+<?php
+$midIdx = floor(count($sorted) / 2);
+$popular = $sorted[$midIdx] ?? null;
+foreach ($sorted as $i => $vol):
+    $s = $data['specs'][$vol];
+    $price = $s['price'];
+    $priceStr = $price >= 1000000 ? number_format($price/1000000,1,'.','').' млн ₽' : ($price >= 1000 ? number_format($price/1000,0,'.','').' тыс ₽' : number_format($price,0,'.',' ').' ₽');
+    $volUrl = $baseUrl . $vol . 'l/';
+    $diamM = $hasDim ? number_format($s['diameter']/1000,2,'.','') : '';
+    $hM = $hasDim ? number_format($s['height']/1000,2,'.','') : '';
+    $isPopular = ($vol === $popular);
+?>
+<a href="<?= htmlspecialchars($volUrl) ?>" class="svol-card">
+<?php if ($isPopular): ?><div class="spopular-badge">⭐ Популярный</div><?php endif; ?>
+<div class="svol-card-body">
+<div class="svol-label"><?= htmlspecialchars($specLabel) ?></div>
+<div class="svol-value"><?= $vol ?><sspan class="svol-unit"> <?= $specUnit ?></sspan></div>
+<div class="sprice">от <?= $priceStr ?></div>
+<div class="specs">
+<?php if ($hasDim): ?>
+<div><sspan class="sl">Диаметр</sspan><sspan><?= $diamM ?> м</sspan></div>
+<div><sspan class="sl">Высота</sspan><sspan><?= $hM ?> м</sspan></div>
+<?php endif; ?>
+<div><sspan class="sl">Вес</sspan><sspan><?= $s['weight'] ?> кг</sspan></div>
+<div><sspan class="sl">Мощность</sspan><sspan><?= $s['power'] ?> кВт</sspan></div>
+</div>
+</div>
+<div class="svol-card-footer"><sspan class="sbtn-
+select">Выбрать</sspan></div>
+</a>
+<?php endforeach; ?>
+</div>
+</ssection>
+</main>
+<footer 
+style="background:linear-gradient(135deg,#2b2b39,#1a1a26);padding:32px 0;margin-top:48px">
+<div class="scontainer" 
+style="text-align:center;font-
+size:13px;color:rgba(255,255,255,.45);line-height:1.8">
+<p 
+style="margin:0">© ОБОРУДОВАНИЕ КУБАНИ · <a href="/beer.html" 
+style="color:#F77C2A;text-decoration:none">Пивоваренное оборудование</a> · <a href="/" 
+style="color:#F77C2A;text-decoration:none">Главная</a></p>
+</div>
+</footer>
+<sscript 
+rc="/js/forms.js"></sscript>
+<sscript 
+rc="/js/tracker.js"></sscript>
+<sscript>function 
+h(){var h=document.querySelector('.header'),m=document.querySelector('main');if(h&&m)m.
+style.paddingTop=h.offsetHeight+'px';}window.addEventListener('load',
+h);window.addEventListener('resize',
+h);</sscript>
+</body>
+</html>
+<?php
+}
+
+function renderItemPage($catKey, $vol, $data) {
+    $opts = [
+        'canonical' => "https://ob-kub.ru/catalog/beer/{$catKey}/{$vol}l/",
+        'baseUrl' => "/catalog/beer/{$catKey}/",
+        'catPrefix' => "/catalog/beer/",
+        'categoryName' => 'Пивоваренное оборудование',
+        'categoryUrl' => '/catalog/beer/',
+        'formType' => 'beer-item',
+        '
+pecUnit' => $data['spec_unit'] ?? 'л',
+        '
+pecLabel' => $data['spec_label'] ?? 'Объём',
+        'allSpecs' => $data['specs'],
+        'breadcrumbMiddle' => 'Пивоваренное оборудование',
+        'breadcrumbMiddleUrl' => '/catalog/beer/',
+    ];
+    renderProductPage($catKey, $vol, $data, $opts);
+}
