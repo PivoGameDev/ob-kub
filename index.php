@@ -454,10 +454,10 @@ body{padding-top:0!important}
 <main>
 
 <!-- HERO -->
-<section class="db-hero">
+<section class="db-hero" style="overflow:hidden">
 <img src="hero-bg.jpg" alt="" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
-<div class="db-hero-inner" style="display:grid!important;grid-template-columns:1fr auto!important;gap:48px!important;align-items:start!important;padding:80px 24px!important;max-width:1200px!important">
+<div class="db-hero-inner" style="display:grid!important;grid-template-columns:1fr 380px!important;gap:48px!important;align-items:start!important;padding:80px 24px!important;max-width:1200px!important">
 <style>@media(max-width:900px){.db-hero-inner{grid-template-columns:1fr!important;gap:24px!important}}</style>
 
 <div style="min-width:0">
@@ -472,7 +472,7 @@ body{padding-top:0!important}
 </div>
 </div>
 
-<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);width:380px;max-width:100%;box-sizing:border-box">
+<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
 <span class="qs1" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#F77C2A;color:#fff;font-size:13px;font-weight:700;flex-shrink:0">1</span>
 <span class="qs1" style="font-size:13px;font-weight:600;color:#333">Выберите оборудование</span>
