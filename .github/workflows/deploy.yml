@@ -14,17 +14,4 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq lftp
-          lftp -c "
-            open -u \"${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }}\" ${{ secrets.FTP_HOST }}
-            mirror -R -v \
-              --exclude .git/ \
-              --exclude .gitignore \
-              --exclude .github/ \
-              --exclude _local/ \
-              --exclude urls.txt \
-              --exclude test.php \
-              --exclude test.html \
-              --exclude Сравнение_с_рынком.txt \
-              ./ ./
-            quit
-          "
+          lftp -u "${{ secrets.FTP_USER }}","${{ secrets.FTP_PASSWORD }}" -e "mirror -R -v ./ ./ --verbose --exclude .git/ --exclude .gitignore --exclude .github/ --exclude _local/ --exclude urls.txt --exclude test.php --exclude test.html ; quit" "${{ secrets.FTP_HOST }}"
