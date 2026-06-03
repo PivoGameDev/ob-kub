@@ -486,7 +486,7 @@ body{padding-top:0!important}
 <a href="/winery.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍷 Вино</a>
 <a href="/industrial.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍽️ Пищевое</a>
 </div>
-<div id="hqResults" style="display:none;background:#fff;border:1px solid #e8e8e8;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:240px;overflow-y:auto;margin-bottom:10px"></div>
+<div id="hqResults" style="display:none;background:#fff;border:1px solid #e8e8e8;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:200px;overflow-y:auto;margin-bottom:10px;position:relative;z-index:10"></div>
 
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
 <span class="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">2</span>
@@ -550,7 +550,9 @@ hqSelected=r;
 document.querySelectorAll('.qs1,.qs2,.qs3').forEach(function(e,i){e.style.background=i?i===1?'#F77C2A':'#e8e8e8':'#27ae60';e.style.color=i?i===1?'#fff':'#999':'#fff'});
 var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
 var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var last=pp[pp.length-1];var ck=last.match(/^\d+l?$/)?pp[pp.length-2]:last;
-fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+(r.si||'beerExtra')).then(function(r){return r.json();}).then(function(d){
+var sm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=sm[r.si]||'';
+if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
+fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+src).then(function(r){return r.json();}).then(function(d){
 hqPrices=d;var g=document.getElementById('hqVols');g.innerHTML='';
 if(!d.prices||!d.prices.length){g.innerHTML='<span style="font-size:12px;color:#888;width:100%">Нет данных</span>';return;}
 d.prices.sort(function(a,b){return a.vol-b.vol;});
