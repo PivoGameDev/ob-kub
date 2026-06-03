@@ -836,8 +836,8 @@ sw(0);
 <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">проектов по всей России</div>
 </div>
 <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
-<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">60+</div>
-<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">высококвалифицированных мастеров</div>
+<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">2000 м²</div>
+<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">собственное производство</div>
 </div>
 <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
 <div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">17</div>
@@ -850,76 +850,134 @@ sw(0);
 </div>
 
 <div style="display:flex;gap:20px;overflow-x:auto;padding-bottom:8px">
-<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
 <img src="brewery-voronezh.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 18px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Пивзавод, Воронеж</h3>
-<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Варочный порядок 5 000 л, ЦКТ 10 000 л × 8 шт.</p>
-<span style="font-size:11px;color:#F77C2A;font-weight:600">400+ проектов по РФ →</span>
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивзавод, Воронеж</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">Варочный порядок 5 000 л · 40 000 л/сутки</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> Варочный порядок 5000 л, ЦКТ 10000 л × 8 шт., парогенератор, чиллер.</p>
+<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens, полный контроль параметров.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: 8 варок/сутки, 6 сортов пива</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
 </div>
-<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
 <img src="brewery-chekhov.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 18px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Пивоварня, г. Чехов</h3>
-<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Мини-пивоварня ресторанного типа на 5 сортов</p>
-<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, г. Чехов</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">Мини-пивоварня ресторанного типа</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> Варочник 250 л, ЦКТ 500 л × 3 шт.</p>
+<p style="margin:0 0 4px"><strong>Размещение:</strong> Компактно в цокольном этаже ресторана.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: 5 сортов, окупаемость 14 мес</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
 </div>
-<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
 <img src="milk-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 18px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Молочный завод, Краснодар</h3>
-<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Оснащение 50 тонн переработки в сутки</p>
-<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🥛 Молочный завод</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">50 тонн переработки в сутки</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> Емкости приёмки 25 000 л × 2, хранение 30 000 л × 4.</p>
+<p style="margin:0 0 4px"><strong>Линия:</strong> Пастеризация 5000 л/ч, CIP-мойка 4 контура.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: +40% производительности, -15% потерь</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
 </div>
-<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
-<img src="wine-equipment.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 18px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Винодельня, Ставрополье</h3>
-<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Ферментация 10 000 л × 8 шт., 500 000 бут/год</p>
-<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
-</div>
-</div>
-<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
 <img src="brewery-abkhazia.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 18px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Пивоварня, Абхазия</h3>
-<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Комплексное оснащение пивоварни под ключ</p>
-<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, Абхазия</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">Комплексное оснащение под ключ</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> Варочный порядок 1000 л, ЦКТ 2000 л × 6.</p>
+<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens, управление с планшета.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: запуск за 6 недель, 4 сорта</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
 </div>
-<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="wine-equipment.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍷 Винодельня, Ставрополье</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">Винодельня полного цикла</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> Ферментация 10 000 л × 8, система инертизации N2.</p>
+<p style="margin:0 0 4px"><strong>Линия:</strong> Розлив 3000 бут/ч, АСУ ТП Siemens.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: 500 000 бут/год, 7 сортов</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
 <img src="projects/industrial-tanks.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 18px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Парк резервуаров</h3>
-<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">10+ емкостей 100 000–200 000 л для масла</p>
-<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🏭 Парк резервуаров</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">10+ емкостей для масла 100–200 тыс. л</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> Резервуары хранения 100 000–200 000 л × 10+.</p>
+<p style="margin:0 0 4px"><strong>Система:</strong> Азотная подушка на каждом, CIP-мойка.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: +300 тонн единовременного хранения</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
 </div>
-<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
 <img src="projects/cip-station.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 18px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">CIP-станция</h3>
-<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">4 контура мойки, полностью автоматическая</p>
-<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧼 CIP-станция</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">Автоматическая безразборная мойка</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> 4 контура, баки 1500 л, AISI 316.</p>
+<p style="margin:0 0 4px"><strong>Управление:</strong> Siemens S7-1200, профили моек.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: -40% времени, -25% моющих средств</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
 </div>
-<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
 <img src="kvas-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 18px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Завод кваса, Воронеж</h3>
-<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">300 000 л/мес, 6 сортов</p>
-<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧃 Завод кваса</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">300 000 л/мес, г. Воронеж</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> Варочный 3000 л, ЦКТ 5000 л × 4, купаж 3000 л × 2.</p>
+<p style="margin:0 0 4px"><strong>Линия:</strong> Розлив ПЭТ 3000 бут/ч.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: 6 сортов, запуск за 10 недель</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
 </div>
-<div style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden">
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
 <img src="milk-park.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 18px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 6px">Молочный парк</h3>
-<p style="font-size:12px;color:#666;line-height:1.4;margin:0 0 10px">Танки хранения 25 000–50 000 л × 6 шт.</p>
-<span style="font-size:11px;color:#F77C2A;font-weight:600">→</span>
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🥛 Молочный парк</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">Танки хранения 25 000–50 000 л</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> Хранение 25 000–50 000 л × 6, приёмка 20 000 л × 3.</p>
+<p style="margin:0 0 4px"><strong>Система:</strong> CIP-мойка всех резервуаров.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: 500 тонн единовременного хранения</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="sir.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧀 Сыроварня</h3>
+<p style="font-size:12px;color:#888;margin:0 0 8px">Производство 600 кг сыра/смена</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px"><strong>Оборудование:</strong> Сыроизготовители 1000 л × 2, ВДП 500 л, ферментация 300 л × 3.</p>
+<p style="margin:0 0 4px"><strong>Материал:</strong> AISI 304, зеркальная полировка.</p>
+<p style="color:#F77C2A;font-weight:600">Результат: 6 сортов, запуск за 8 недель</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
 </div>
 </div>
 </div>
@@ -928,6 +986,15 @@ sw(0);
 </div>
 </div>
 </section>
+<style>
+.proj-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.proj-detail{display:none!important}
+.proj-card.expanded .proj-detail{display:block!important}
+.proj-card.expanded .proj-detail ~ p{display:none}
+</style>
+<script>
+function toggleProj(el){el.classList.toggle('expanded')}
+</script>
 
 
 
