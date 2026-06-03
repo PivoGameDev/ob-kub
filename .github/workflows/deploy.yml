@@ -10,22 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: 📂 Check FTP root
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq lftp
-          lftp -u "${{ secrets.FTP_USER }}","${{ secrets.FTP_PASSWORD }}" \
-            -e "ls; quit" \
-            "${{ secrets.FTP_HOST }}"
-
-      - name: 📂 Deploy
+      - name: 📂 Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
-          dangerous-clean-slate: true
           exclude: |
             .git/**
             .gitignore
