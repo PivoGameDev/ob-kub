@@ -766,7 +766,7 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 <div class="banner2" style="position:relative;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.2)">
 <img id="bimg2" src="banner-dairy.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover">
 <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(26,26,38,.92) 30%,rgba(26,26,38,.5) 70%,rgba(26,26,38,.1) 100%);z-index:2"></div>
-<div style="position:relative;z-index:3;padding:30px 36px 28px">
+<div style="position:relative;z-index:3;padding:30px 36px 32px">
 <div style="font-size:24px;font-weight:800;color:#fff;margin-bottom:2px" id="ttl2">🥛 Молочное</div>
 <div style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:16px" id="ssub2">Оборудование для молочной промышленности</div>
 <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap">
@@ -782,24 +782,25 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </div></div></section>
 
 <style>
-.prods2 div{flex:0 0 auto;width:110px;background:#fff;border-radius:6px;overflow:hidden}
+.prods2 div{flex:0 0 auto;width:120px;background:#fff;border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block}
 .prods2::-webkit-scrollbar{height:4px}
 .prods2::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:2px}
-.prods2 img{width:100%;height:80px;object-fit:contain;display:block;background:#fff;padding:4px}
-.prods2 span{display:block;padding:4px 6px;font-size:10px;color:#444;font-weight:600;text-align:center;border-top:1px solid #eee}
+.prods2 img{width:100%;height:85px;object-fit:contain;display:block;background:#fff;padding:6px}
+.prods2 span{display:block;padding:4px 6px;font-size:10px;color:#333;font-weight:600;text-align:center;border-top:1px solid #f0f0f0}
+.prods2 .pr-btn{display:block;padding:5px;font-size:9px;color:#F77C2A;font-weight:700;text-align:center;text-transform:uppercase;letter-spacing:.3px;border-top:1px solid #f0f0f0;text-decoration:none}
 </style>
 
 <script>
 (function(){
 var D = [
-  {img:"banner-dairy.jpg",title:"🥛 Молочное",sub:"Оборудование для молочной промышленности",vol:"500 – 200 000 л",price:"от 195 000 ₽",desc:"Оборудование для молочной промышленности: ёмкости приёмки и хранения, резервуары-охладители, ВДП, ферментационные танки, сыро- и творогоизготовители.",pd:'<div><img src="banner-dairy.jpg"><span>Приёмка</span></div><div><img src="dairy-storage.jpg"><span>Хранение</span></div><div><img src="dairy-cooler.jpg"><span>Охладитель</span></div>'},
-  {img:"banner-wine.jpg",title:"🍷 Винодельческое",sub:"Танки для ферментации и хранения",vol:"500 – 50 000 л",price:"от 280 000 ₽",desc:"Винодельческое оборудование: ферментационные танки.",pd:'<div><img src="wine-red-fermentation.jpg"><span>Красные</span></div>'},
-  {img:"banner-beer.jpg",title:"🍺 Пивоваренное",sub:"ЦКТ, варочные порядки",vol:"100 – 200 000 л",price:"от 94 000 ₽",desc:"Полный цикл пивоваренного оборудования.",pd:'<div><img src="cct-tank.jpg"><span>ЦКТ</span></div>'},
-  {img:"banner-water.jpg",title:"💧 Для воды",sub:"Баки горячей воды",vol:"250 – 50 000 л",price:"от 150 000 ₽",desc:"Резервуары для воды.",pd:'<div><img src="hot-water-tank.jpg"><span>Бак воды</span></div>'},
-  {img:"banner-oil.jpg",title:"🫒 Для масла",sub:"Ёмкости с мешалкой",vol:"500 – 50 000 л",price:"от 220 000 ₽",desc:"Ёмкости для масел.",pd:'<div><img src="industrial-mixing.jpg"><span>Мешалка</span></div>'},
-  {img:"banner-conf.jpg",title:"🍯 Кондитерская",sub:"Ёмкости для глазурей",vol:"500 – 20 000 л",price:"от 200 000 ₽",desc:"Оборудование для кондитерской.",pd:'<div><img src="industrial-mixing.jpg"><span>Мешалка</span></div>'}
+  {img:"banner-dairy.jpg",title:"🥛 Молочное",sub:"Оборудование для молочной промышленности",vol:"500 – 200 000 л",price:"от 195 000 ₽",desc:"Оборудование для молочной промышленности: ёмкости приёмки и хранения, резервуары-охладители, ВДП, ферментационные танки, сыро- и творогоизготовители.",pd:'<a href="/catalog/dairy/reception/"><div><img src="dairy-reception.jpg"><span>Приёмка</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/dairy/storage/"><div><img src="dairy-storage.jpg"><span>Хранение</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/dairy/cooler/"><div><img src="dairy-cooler.jpg"><span>Охладитель</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/dairy/vdp/"><div><img src="dairy-vdp.jpg"><span>ВДП</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/dairy/fermentation/"><div><img src="dairy-fermentation.jpg"><span>Ферментация</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/dairy/cheese-maker/"><div><img src="dairy-cheese-maker.jpg"><span>Сыроизготовитель</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/dairy/cottage-cheese/"><div><img src="dairy-cottage-cheese.jpg"><span>Творог</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/dairy/yeast/"><div><img src="dairy-yeast.jpg"><span>Заквасочник</span><span class="pr-btn">Подробнее →</span></div></a>'},
+  {img:"banner-wine.jpg",title:"🍷 Винодельческое",sub:"Танки для ферментации и хранения",vol:"500 – 50 000 л",price:"от 280 000 ₽",desc:"Винодельческое оборудование: ферментационные танки.",pd:'<a href="/catalog/wine/red-fermentation/"><div><img src="wine-red-fermentation.jpg"><span>Красные</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/wine/white-fermentation/"><div><img src="wine-white-fermentation.jpg"><span>Белые</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/wine/storage-aging/"><div><img src="wine-storage-aging.jpg"><span>Выдержка</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/wine/cold-stabilization/"><div><img src="wine-cold-stabilization.jpg"><span>Криостат</span><span class="pr-btn">Подробнее →</span></div></a>'},
+  {img:"banner-beer.jpg",title:"🍺 Пивоваренное",sub:"ЦКТ, варочные порядки",vol:"100 – 200 000 л",price:"от 94 000 ₽",desc:"Полный цикл пивоваренного оборудования.",pd:'<a href="/catalog/beer/cct/"><div><img src="cct-tank.jpg"><span>ЦКТ</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/beer/brew-house/"><div><img src="brew-kettle.jpg"><span>Варочный</span><span class="pr-btn">Подробнее →</span></div></a><a href="/catalog/beer/hot-water-tank/"><div><img src="beer-hot-water-tank.jpg"><span>БГВ</span><span class="pr-btn">Подробнее →</span></div></a>'},
+  {img:"banner-water.jpg",title:"💧 Для воды",sub:"Баки горячей воды",vol:"250 – 50 000 л",price:"от 150 000 ₽",desc:"Резервуары для воды.",pd:'<a href="/catalog/beer/hot-water-tank/"><div><img src="hot-water-tank.jpg"><span>Бак воды</span><span class="pr-btn">Подробнее →</span></div></a>'},
+  {img:"banner-oil.jpg",title:"🫒 Для масла",sub:"Ёмкости с мешалкой",vol:"500 – 50 000 л",price:"от 220 000 ₽",desc:"Ёмкости для масел.",pd:'<a href="/catalog/industrial/mixing/"><div><img src="industrial-mixing.jpg"><span>Мешалка</span><span class="pr-btn">Подробнее →</span></div></a>'},
+  {img:"banner-conf.jpg",title:"🍯 Кондитерская",sub:"Ёмкости для глазурей",vol:"500 – 20 000 л",price:"от 200 000 ₽",desc:"Оборудование для кондитерской.",pd:'<a href="/catalog/industrial/mixing/"><div><img src="industrial-mixing.jpg"><span>Мешалка</span><span class="pr-btn">Подробнее →</span></div></a>'}
 ];
-var cur=0;
+var cur=-1;
 function sw(i){
   if(i===cur)return;
   var d=D[i];
