@@ -577,7 +577,10 @@ var cb=document.createElement('button');cb.style.cssText='padding:4px 10px;borde
 cb.innerHTML='✚ Свой объём';
 cb.onclick=function(){document.getElementById('hqCustomVol').style.display='flex';this.style.display='none'};g.appendChild(cb);
 document.getElementById('hqStatus').textContent='Выберите объём';});}
-function hqCustom(){var v=parseInt(document.getElementById('hqCustomVal').value);if(v>0){hqShowPrice(v);}}
+function hqCustom(){var v=parseInt(document.getElementById('hqCustomVal').value);if(v>0){
+document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#27ae60';e.style.color='#fff'});
+document.getElementById('hqPrice').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
+document.getElementById('hqStatus').textContent='✅ Цена по запросу — отправьте заявку';}}
 function hqShowPrice(price){
 document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#27ae60';e.style.color='#fff'});
 document.getElementById('hqPrice').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(price);
