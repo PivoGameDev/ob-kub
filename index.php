@@ -460,7 +460,7 @@ body{padding-top:0!important}
 <div class="db-hero-inner">
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
 <h1>Резервуары из стали AISI 304/316<br><span style="color:#F77C2A">с ценой сразу на сайте</span></h1>
-<p>Производим ЦКТ, танки хранения, ферментаторы, пастеризаторы, CIP-станции. Цена известна до звонка — без «звоните, узнавайте».</p>
+<p>Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px">
 <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">✅ Цена на каждую позицию</span>
 <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">🏭 Своё производство 2000 м²</span>
