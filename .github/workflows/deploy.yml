@@ -10,8 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: 📂 Deploy via FTP
+      - name: 📂 Deploy
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq lftp
-          lftp -u "${{ secrets.FTP_USER }}","${{ secrets.FTP_PASSWORD }}" -e "mirror -R -v ./ ./ --verbose --exclude .git/ --exclude .gitignore --exclude .github/ --exclude _local/ --exclude urls.txt --exclude test.php --exclude test.html ; quit" "${{ secrets.FTP_HOST }}"
+          lftp -u "${{ secrets.FTP_USER }}","${{ secrets.FTP_PASSWORD }}" \
+            -e "set ftp:ssl-allow off; set net:timeout 30; set net:max-retries 3; mirror -R -v --no-perms --verbose ./ ./ --exclude .git/ --exclude .gitignore --exclude .github/ --exclude _local/ --exclude urls.txt --exclude test.php --exclude test.html; quit" \
+            "${{ secrets.FTP_HOST }}"
