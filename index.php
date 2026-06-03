@@ -746,7 +746,7 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 
 <!-- EQUIPMENT CATEGORIES -->
 <section class="db-section" id="equipment" style="padding:20px 0 48px;background:transparent">
-<div class="db-wrap" style="max-width:1400px">
+<div class="db-wrap" style="max-width:1200px">
 <div class="db-weld-frame" style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
 <div style="text-align:center;margin-bottom:24px">
 <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">Каталог</div>
@@ -764,6 +764,9 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </div>
 
 <div id="catDisplay" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;min-height:200px;transition:opacity .3s">
+<div style="display:flex;align-items:center;justify-content:center">
+<img id="catDispImg" src="" alt="" style="max-width:100%;max-height:280px;border-radius:10px;display:block;box-shadow:0 4px 20px rgba(0,0,0,.3)">
+</div>
 <div>
 <div id="catDispName" style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px"></div>
 <div id="catDispDesc" style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:14px"></div>
@@ -773,9 +776,6 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 <span class="db-weld-badge" style="font-size:12px">Гарантия 12 мес</span>
 </div>
 <a id="catDispLink" href="#" style="display:inline-flex;align-items:center;gap:6px;padding:12px 28px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none">Перейти в каталог →</a>
-</div>
-<div style="display:flex;align-items:center;justify-content:center">
-<img id="catDispImg" src="" alt="" style="max-width:100%;max-height:280px;border-radius:10px;display:block;box-shadow:0 4px 20px rgba(0,0,0,.3)">
 </div>
 </div>
 </div>
