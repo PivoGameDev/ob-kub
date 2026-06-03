@@ -527,12 +527,18 @@ body{padding-top:0!important}
 
 <script>
 var hqImgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg'};
+document.getElementById('hqInput').addEventListener('focus',function(){
+if(!this.value.trim()){fetch('/php/search.php?q=а').then(function(r){return r.json();}).then(function(d){showHqResults(d.results)})}
+});
 document.getElementById('hqInput').addEventListener('input',function(){
-var q=this.value.trim();if(!q){document.getElementById('hqResults').style.display='none';return;}
-fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(d){
+var q=this.value.trim();
+if(!q){document.getElementById('hqResults').style.display='none';return;}
+fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(d){showHqResults(d.results)});});
+
+function showHqResults(items){
 var res=document.getElementById('hqResults');res.innerHTML='';
-var items=d.results.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/);});
-var seen={};items=items.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true;});
+var items2=items.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/);});
+var seen={};items2=items2.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true;});
 if(!items.length){res.innerHTML='<div style="padding:12px;text-align:center;color:#999;font-size:12px">Ничего не найдено</div>';res.style.display='block';return;}
 items.forEach(function(r){var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
 var im='<img src="/'+(hqImgs[k]||'cct-tank.jpg')+'" style="width:36px;height:36px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0">';
