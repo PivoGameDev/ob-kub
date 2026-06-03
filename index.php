@@ -751,59 +751,47 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 <h2 class="db-section-title">Категории оборудования</h2>
 <p class="db-section-sub">Полный каталог промышленного оборудования из нержавеющей стали AISI 304/316</p>
 <div class="cat-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px">
-<a href="/beer.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-<div style="height:200px;overflow:hidden;position:relative">
-<img src="cat-img-565c2c35.jpg" alt="Пивоваренное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
-</div>
-<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<a href="/beer.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:380px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)';this.style.borderColor='#fde0c0'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='';this.style.borderColor='#eee'">
+<div style="height:200px;background:url(cat-img-565c2c35.jpg) center/cover no-repeat;flex-shrink:0"></div>
+<div style="padding:20px 24px 24px;flex:1;display:flex;flex-direction:column">
 <div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Пивоваренное</div>
 <div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">ЦКТ, варочные порядки, дробилки, БГВ, парогенераторы, чиллеры, форфасы, теплообменники</div>
 <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
 <span style="font-size:12px;color:#F77C2A;font-weight:600">13 категорий</span>
-<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+<span style="display:inline-block;padding:6px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
 </div>
 </div>
 </a>
-<a href="/dairy.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-<div style="height:200px;overflow:hidden;position:relative">
-<img src="cat-dairy.jpg" alt="Молочное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
-</div>
-<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<a href="/dairy.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:380px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)';this.style.borderColor='#fde0c0'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='';this.style.borderColor='#eee'">
+<div style="height:200px;background:url(cat-dairy.jpg) center/cover no-repeat;flex-shrink:0"></div>
+<div style="padding:20px 24px 24px;flex:1;display:flex;flex-direction:column">
 <div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Молочное</div>
 <div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">Ёмкости приёмки и хранения, резервуары-охладители, ВДП, ферментационные танки, сыро- и творогоизготовители</div>
 <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
 <span style="font-size:12px;color:#F77C2A;font-weight:600">10 категорий</span>
-<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+<span style="display:inline-block;padding:6px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
 </div>
 </div>
 </a>
-<a href="/winery.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-<div style="height:200px;overflow:hidden;position:relative">
-<img src="cat-wine.jpg" alt="Винодельческое оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
-</div>
-<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<a href="/winery.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:380px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)';this.style.borderColor='#fde0c0'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='';this.style.borderColor='#eee'">
+<div style="height:200px;background:url(cat-wine.jpg) center/cover no-repeat;flex-shrink:0"></div>
+<div style="padding:20px 24px 24px;flex:1;display:flex;flex-direction:column">
 <div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Винодельческое</div>
 <div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">Ферментация красных и белых вин, выдержка, криостабилизация, купажирование, сульфитация, винификаторы</div>
 <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
 <span style="font-size:12px;color:#F77C2A;font-weight:600">7 категорий</span>
-<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+<span style="display:inline-block;padding:6px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
 </div>
 </div>
 </a>
-<a href="/industrial.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-<div style="height:200px;overflow:hidden;position:relative">
-<img src="cat-industrial.jpg" alt="Промышленное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
-</div>
-<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<a href="/industrial.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:380px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)';this.style.borderColor='#fde0c0'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='';this.style.borderColor='#eee'">
+<div style="height:200px;background:url(cat-industrial.jpg) center/cover no-repeat;flex-shrink:0"></div>
+<div style="padding:20px 24px 24px;flex:1;display:flex;flex-direction:column">
 <div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Промышленное</div>
 <div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">Резервуары для хранения, ёмкости с мешалкой, терморегуляция, давление, CIP-станции, теплообменники</div>
 <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
 <span style="font-size:12px;color:#F77C2A;font-weight:600">6 категорий</span>
-<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+<span style="display:inline-block;padding:6px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
 </div>
 </div>
 </a>
