@@ -489,6 +489,11 @@ body{padding-top:0!important}
 </div>
 <div id="hqResults" style="display:none;background:#fff;border:1px solid #e8e8e8;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:200px;overflow-y:auto;margin-bottom:10px;position:relative;z-index:10"></div>
 
+<div id="hqSelected" style="display:none;align-items:center;gap:8px;margin-bottom:10px;padding:6px 10px;background:#f5f6f8;border-radius:6px">
+<img id="hqSelImg" src="" style="width:40px;height:40px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0">
+<span id="hqSelName" style="font-size:12px;color:#333;font-weight:600;flex:1"></span>
+</div>
+
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
 <span class="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">2</span>
 <span class="qs2" style="font-size:13px;font-weight:600;color:#999">Выберите объём</span>
@@ -537,6 +542,10 @@ div.onclick=function(){hqSelect(r)};res.appendChild(div);});
 res.style.display='block';});});
 function hqSelect(r){
 document.getElementById('hqInput').value=r.n;document.getElementById('hqResults').style.display='none';
+var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
+document.getElementById('hqSelected').style.display='flex';
+document.getElementById('hqSelImg').src='/'+(hqImgs[k]||'cct-tank.jpg');
+document.getElementById('hqSelName').textContent=r.n;
 document.querySelectorAll('.qs1,.qs2,.qs3').forEach(function(e,i){e.style.background=i?i===1?'#F77C2A':'#e8e8e8':'#27ae60';e.style.color=i?i===1?'#fff':'#999':'#fff'});
 var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
 var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var last=pp[pp.length-1];var ck=last.match(/^\d+l?$/)?pp[pp.length-2]:last;
@@ -546,8 +555,8 @@ fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+src).then(function(
 var g=document.getElementById('hqVols');g.innerHTML='';if(!d.prices||!d.prices.length){g.innerHTML='<span style="font-size:12px;color:#888">Нет данных</span>';return;}
 d.prices.sort(function(a,b){return a.vol-b.vol;});
 d.prices.forEach(function(p){var b=document.createElement('button');
-b.style.cssText='padding:5px 10px;border:1px solid #e0e0e0;border-radius:5px;background:#fff;font-size:11px;color:#555;cursor:pointer;font-family:inherit;font-weight:600';
-b.innerHTML='<span style="display:block;font-size:14px;color:#1a1a26">'+p.vol+'</span><span style="font-size:10px;color:#999">л</span>';
+b.style.cssText='padding:3px 8px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:10px;color:#555;cursor:pointer;font-family:inherit;font-weight:600';
+b.innerHTML=p.vol+' <span style="font-size:9px;color:#999">л</span>';
 b.onmouseover=function(){this.style.borderColor='#F77C2A'};b.onmouseout=function(){if(!this.classList.contains('sel'))this.style.borderColor='#e0e0e0'};
 b.onclick=function(){g.querySelectorAll('button').forEach(function(b2){b2.classList.remove('sel');b2.style.background='';b2.style.color='#555';b2.querySelector('span').style.color='#1a1a26'});
 b.classList.add('sel');b.style.background='#F77C2A';b.style.color='#fff';b.querySelector('span').style.color='#fff';
