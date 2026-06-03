@@ -455,32 +455,44 @@ body{padding-top:0!important}
 
 <!-- HERO -->
 <section class="db-hero">
-<img src="hero-bg.jpg" alt="Емкостное оборудование" class="db-hero-bg">
+<img src="hero-bg.jpg" alt="" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
-<div class="db-hero-inner">
+<div class="db-hero-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:80px 24px">
+
+<div>
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
-<h1>Резервуары из стали AISI 304/316</h1>
-<p>Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px">
-<span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">✅ Цена на каждую позицию</span>
-<span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">🏭 Своё производство 2000 м²</span>
-<span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">📦 Доставка от 2 недель</span>
-<span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">✅ Гарантия 12 мес</span>
-</div>
-<div class="db-hero-tags">
+<h1 style="font-size:44px">Резервуары из стали AISI 304/316</h1>
+<p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,.6);margin:0 0 24px">Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
+<div class="db-hero-tags" style="margin-bottom:0">
 <a href="/beer.html">🍺 Пивоваренное</a>
 <a href="/dairy.html">🥛 Молочное</a>
 <a href="/winery.html">🍷 Винодельческое</a>
 <a href="/industrial.html">🍽️ Пищевые производства</a>
 </div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;max-width:700px">
-<div style="flex:1;min-width:250px;display:flex;align-items:center;background:#fff;border-radius:10px;border:2px solid transparent;transition:border-color .25s">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 8px 0 14px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type="text" id="heroQuizInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:14px 8px;font-size:16px;outline:none;font-family:inherit;color:#333">
 </div>
-<button class="db-hero-cta" onclick="document.getElementById('heroQuizInput').focus()" style="position:static">Подобрать и узнать цену →</button>
+
+<div style="background:rgba(255,255,255,.95);border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15)">
+<div style="font-size:13px;font-weight:700;color:#F77C2A;margin-bottom:4px">🔧 Быстрый подбор</div>
+<p style="font-size:12px;color:#888;margin:0 0 14px">Введите название или выберите категорию — узнайте цену за 1 минуту</p>
+<div style="display:flex;align-items:center;background:#f5f6f8;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:12px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 6px 0 12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+<input type="text" id="heroQuizInput" placeholder="ЦКТ, БГВ, ферментатор..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:12px 8px;font-size:14px;outline:none;font-family:inherit;color:#333">
 </div>
-<div id="heroQuizResults" style="background:#fff;border:1px solid #e8e8e8;border-radius:12px;display:none;box-shadow:0 8px 32px rgba(0,0,0,.1);padding:8px;overflow-y:auto;max-height:600px;margin-top:8px;max-width:700px"></div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+<span style="font-size:11px;color:#999;width:100%;margin-bottom:2px">Быстрый выбор:</span>
+<a href="/beer.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍺 Пиво</a>
+<a href="/dairy.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🥛 Молоко</a>
+<a href="/winery.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍷 Вино</a>
+<a href="/catalog/" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">📋 Весь каталог</a>
+</div>
+<div id="heroQuizResults" style="display:none;background:#fff;border:1px solid #e8e8e8;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:400px;overflow-y:auto"></div>
+<div style="margin-top:12px;padding-top:12px;border-top:1px solid #f0f0f0;display:flex;gap:8px">
+<span style="font-size:11px;color:#999">✅ Цена сразу</span>
+<span style="font-size:11px;color:#999">⚡ Ответ за 2 часа</span>
+<span style="font-size:11px;color:#999">📋 Бесплатный расчёт</span>
+</div>
+</div>
+
 </div>
 </section>
 
