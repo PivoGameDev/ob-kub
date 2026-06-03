@@ -491,7 +491,6 @@ body{padding-top:0!important}
 <a href="/winery.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍷 Вино</a>
 <a href="/industrial.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍽️ Пищевое</a>
 </div>
-<div id="hqResults" style="display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;max-height:260px;overflow-y:auto;position:absolute;z-index:100;left:0;right:0;top:100%"></div>
 </div>
 
 <div id="hqSelected" style="display:none;align-items:center;gap:8px;margin-bottom:10px;padding:6px 10px;background:#f5f6f8;border-radius:6px">
