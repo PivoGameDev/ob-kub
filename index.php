@@ -1249,11 +1249,16 @@ var items=d.results.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/);});
 var seen={};items=items.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true;});
 if(!items.length){res.innerHTML='<div style="padding:12px;text-align:center;color:#999;font-size:12px">Ничего не найдено</div>';res.style.display='block';return;}
 items.forEach(function(r){
+var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
+var im='';
+var imgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg','red-fermentation':'wine-red-fermentation.jpg','mixing':'industrial-mixing.jpg','thermal':'industrial-thermal.jpg','storage-aging':'wine-storage-aging.jpg'};
+var src=imgs[k]||'cct-tank.jpg';
+im='<img src="/'+src+'" style="width:36px;height:36px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0">';
 var div=document.createElement('div');
-div.style.cssText='padding:8px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center';
+div.style.cssText='padding:8px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #f8f8f8';
 div.onmouseover=function(){this.style.background='#fff8f0'};
 div.onmouseout=function(){this.style.background=''};
-div.innerHTML='<span style="flex-shrink:0;font-size:16px">🔹</span><span style="flex:1;color:#333;font-weight:600">'+r.n+'</span><span style="color:#888;font-size:11px">'+r.s+'</span>';
+div.innerHTML=im+'<div style="flex:1;min-width:0"><div style="color:#333;font-weight:600;font-size:12px">'+r.n+'</div><div style="color:#888;font-size:11px">'+r.s+'</div></div><span style="color:#F77C2A;font-size:11px;font-weight:600;flex-shrink:0">Выбрать →</span>';
 div.onclick=function(){input.value=r.n;res.style.display='none';};
 res.appendChild(div);
 });
