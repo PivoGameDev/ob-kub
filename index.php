@@ -1071,7 +1071,7 @@ function toggleProj(el){
 <span onclick="toggleAboutEquip()" style="display:inline-block;color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;margin-top:10px">Оборудование цеха →</span>
 </div>
 <div style="display:flex;align-items:center;justify-content:center;padding:30px;background:rgba(255,255,255,.02)">
-<img src="about-workshop.jpg" alt="Производственный цех" style="max-width:100%;max-height:380px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.2)">
+<img src="production-facility.png" alt="Производственный цех" style="max-width:100%;max-height:380px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.2)">
 </div>
 </div>
 </div>
