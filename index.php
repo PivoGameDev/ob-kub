@@ -498,11 +498,15 @@ body{padding-top:0!important}
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
 <span class="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8e8e8;color:#999;font-size:13px;font-weight:700">2</span>
 <span class="qs2" style="font-size:13px;font-weight:600;color:#999">Выберите объём</span>
+<span id="hqCustomLink" onclick="hqShowCustom()" style="display:none;margin-left:auto;font-size:11px;color:#F77C2A;cursor:pointer;font-weight:600">Свой объём</span>
 </div>
-<div id="hqVols" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px"></div>
-<div id="hqCustomVol" style="display:none;gap:4px;margin-bottom:10px">
-<input type="number" id="hqCustomVal" placeholder="Свой объём, л" style="flex:1;min-width:0;padding:8px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:12px;outline:none;font-family:inherit;width:100%;box-sizing:border-box">
-<button onclick="hqCustom()" style="padding:8px 14px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;flex-shrink:0">OK</button>
+<div style="margin-bottom:10px">
+<select id="hqVolSelect" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:13px;font-family:inherit;color:#333;background:#fff;display:none" onchange="hqVolSelect()">
+<option value="">— Выберите объём —</option>
+</select>
+<div id="hqCustomVol" style="display:none;margin-bottom:10px">
+<input type="number" id="hqCustomVal" placeholder="Ваш объём, л" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:13px;outline:none;font-family:inherit;box-sizing:border-box">
+<button onclick="hqCustom()" style="margin-top:6px;width:100%;padding:8px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit">Узнать цену</button>
 </div>
 
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">
@@ -561,22 +565,20 @@ var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);
 var sm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=sm[r.si]||'';
 if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
 fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+src).then(function(r){return r.json();}).then(function(d){
-var g=document.getElementById('hqVols');g.innerHTML='';if(!d.prices||!d.prices.length){g.innerHTML='<span style="font-size:12px;color:#888">Нет данных</span>';return;}
+var sel=document.getElementById('hqVolSelect');sel.innerHTML='<option value="">— Выберите объём —</option>';
+if(!d.prices||!d.prices.length){sel.innerHTML='<option value="">Нет данных</option>';sel.style.display='block';return;}
 d.prices.sort(function(a,b){return a.vol-b.vol;});
-d.prices.forEach(function(p){var b=document.createElement('button');
-b.style.cssText='padding:4px 10px;border:1px solid #ddd;border-radius:5px;background:#fff;font-size:12px;color:#333;cursor:pointer;font-family:inherit;font-weight:600;white-space:nowrap';
-b.innerHTML=p.vol+' <span style="font-size:10px;color:#999">л</span>';
-b.onmouseover=function(){this.style.borderColor='#F77C2A'};b.onmouseout=function(){if(!this.classList.contains('sel'))this.style.borderColor='#e0e0e0'};
-b.onclick=function(){g.querySelectorAll('button').forEach(function(b2){b2.classList.remove('sel');b2.style.background='';b2.style.color='#555';b2.querySelector('span').style.color='#1a1a26'});
-b.classList.add('sel');b.style.background='#F77C2A';b.style.color='#fff';b.querySelector('span').style.color='#fff';
-document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#27ae60';e.style.color='#fff'});
-document.getElementById('hqPrice').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(p.price);
-document.getElementById('hqStatus').textContent='✅ Цена известна — отправьте заявку';};
-g.appendChild(b);});
-var cb=document.createElement('button');cb.style.cssText='padding:4px 10px;border:1px dashed #ccc;border-radius:5px;background:#fff;font-size:12px;color:#666;cursor:pointer;font-family:inherit;white-space:nowrap';
-cb.innerHTML='✚ Свой объём';
-cb.onclick=function(){document.getElementById('hqCustomVol').style.display='flex';this.style.display='none'};g.appendChild(cb);
+d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л ('+fmtP(p.price)+')';sel.appendChild(o);});
+sel.style.display='block';document.getElementById('hqCustomLink').style.display='inline';
+});
 document.getElementById('hqStatus').textContent='Выберите объём';});}
+function hqVolSelect(){
+var sel=document.getElementById('hqVolSelect'),p=parseInt(sel.value);
+if(p>0){document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#27ae60';e.style.color='#fff'});
+document.getElementById('hqPrice').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(p);
+document.getElementById('hqStatus').textContent='✅ Цена известна — отправьте заявку';}
+}
+function hqShowCustom(){document.getElementById('hqCustomVol').style.display='block';document.getElementById('hqVolSelect').style.display='none';document.getElementById('hqCustomLink').style.display='none';}
 function hqCustom(){var v=parseInt(document.getElementById('hqCustomVal').value);if(v>0){
 document.querySelectorAll('.qs2,.qs3').forEach(function(e){e.style.background='#27ae60';e.style.color='#fff'});
 document.getElementById('hqPrice').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
