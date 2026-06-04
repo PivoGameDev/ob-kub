@@ -333,33 +333,34 @@ body{padding-top:0!important}
 }
 @media(max-width:480px){
 .db-hero{min-height:50vh}
-.db-hero h1{font-size:22px}
+.db-hero h1{font-size:20px}
 .db-hero-tags a{padding:5px 10px;font-size:11px}
-.db-section{padding:32px 0}
+.db-section{padding:28px 0}
 .db-section-title{font-size:16px}
 .db-section-sub{font-size:12px}
-.db-row-section{padding:20px 0}
-.db-weld-frame{padding:20px 16px!important}
-.db-hero-inner{padding:12px 12px 30px!important}
+.db-row-section{padding:16px 0}
+.db-weld-frame{padding:20px 14px!important}
+.db-hero-inner{padding:12px 12px 24px!important}
 .db-hero-inner>div:last-child{width:100%!important}
- .db-weld-badge{font-size:11px!important;padding:5px 10px!important}
- .db-weld-inner{gap:12px!important}
- .db-weld-frame{padding:24px 16px!important}
- .db-prod-equip{grid-template-columns:repeat(2,1fr);gap:8px}
- .db-prod-equip-card .eq-img{height:100px!important;padding:8px!important}
- .db-contacts>div:first-child{padding:0}
- #order-form .db-weld-frame>form>div>div{padding:24px 18px!important}
- #order-form .db-weld-frame>form>div{min-height:auto!important}
- #order-form .db-weld-frame form input,#order-form .db-weld-frame form textarea{font-size:13px!important;padding:11px 14px!important}
- #order-form .db-weld-frame form .db-form-opt-trigger{padding:10px 14px!important;font-size:12px!important}
- #order-form .db-weld-frame form button[type="submit"]{padding:12px!important;font-size:14px!important}
-  #order-form .db-weld-frame form [style*="grid-template-columns:1fr 1fr;gap:14px"]{grid-template-columns:1fr!important}
-  .fnav{display:flex!important;flex-wrap:wrap!important;gap:0 16px!important}
-  .fnav h3{width:100%!important}
-  .fnav a{width:calc(50% - 8px)!important;padding:4px 0!important}
-  .feq{display:flex!important;flex-wrap:wrap!important;gap:0 16px!important}
-  .feq h3{width:100%!important}
-  .feq a{width:calc(50% - 8px)!important;padding:4px 0!important}
+.db-weld-badge{font-size:11px!important;padding:5px 10px!important}
+.db-weld-inner{gap:12px!important}
+.db-prod-equip{grid-template-columns:repeat(2,1fr);gap:8px}
+.db-prod-equip-card .eq-img{height:100px!important;padding:8px!important}
+.db-contacts>div:first-child{padding:0}
+#order-form .db-weld-frame>form>div>div{padding:20px 14px!important}
+#order-form .db-weld-frame>form>div{min-height:auto!important}
+#order-form .db-weld-frame form input,#order-form .db-weld-frame form textarea{font-size:13px!important;padding:10px 12px!important}
+#order-form .db-weld-frame form .db-form-opt-trigger{padding:10px 12px!important;font-size:12px!important}
+#order-form .db-weld-frame form button[type="submit"]{padding:12px!important;font-size:14px!important}
+#order-form .db-weld-frame form [style*="grid-template-columns:1fr 1fr;gap:14px"]{grid-template-columns:1fr!important}
+.fnav{display:flex!important;flex-wrap:wrap!important;gap:0 16px!important}
+.fnav h3{width:100%!important}
+.fnav a{width:calc(50% - 8px)!important;padding:4px 0!important}
+.feq{display:flex!important;flex-wrap:wrap!important;gap:0 16px!important}
+.feq h3{width:100%!important}
+.feq a{width:calc(50% - 8px)!important;padding:4px 0!important}
+.ql-grid>div,.bp-grid>div,.ab-grid>div{padding:28px 20px!important}
+}
 }
 .cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 .cat-card-img{height:110px}
