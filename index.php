@@ -544,12 +544,12 @@ var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);
 if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
 fetch('/catalog/?get_prices='+encodeURIComponent(k)+'&src='+src).then(function(r){return r.json()}).then(function(d){
 var s=document.getElementById('hqSel');s.innerHTML='<option value="">— выберите объём —</option>';
-if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var sel=this,pr=parseInt(sel.value);var txt=sel.options[sel.selectedIndex].text;var btn=document.getElementById('hqBtnGo');if(btn)btn.dataset.vol=txt;document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(pr);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна'}}
+if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var sel=this,pr=parseInt(sel.value);var txt=sel.options[sel.selectedIndex].text;window._hqVol=txt;window._hqPrice=document.getElementById('hqPriceVal').textContent;document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(pr);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна'}}
 else{s.innerHTML='<option value="">Нет данных</option>';s.style.display='block'};document.getElementById('hqSt').textContent='Выберите объём'});
 }
 window.hqCustom=function(){document.getElementById('hqCstBox').style.display='block';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none'}
 window.hqCstGo=function(){var v=parseInt(document.getElementById('hqCstVal').value);if(v>0){
-var btn=document.getElementById('hqBtnGo');if(btn)btn.dataset.vol=v+' л';
+window._hqVol=v+' л';window._hqPrice='По запросу';
 document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';
 document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
 document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена по запросу'}}
@@ -563,15 +563,14 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 window.hqGoForm=function(){
 try{
 var name=(document.getElementById('hqSelName')||{}).textContent||'';
-var vol='',price='';
-var btn=document.getElementById('hqBtnGo');
-if(btn&&btn.dataset.vol){vol=btn.dataset.vol.replace(' л','').trim();price=(document.getElementById('hqPriceVal')||{}).textContent||''}
-else{
+var vol=window._hqVol||'',price=window._hqPrice||'';
+if(!vol||!price){
 var se=document.getElementById('hqSel');
 var ce=document.getElementById('hqCstVal');
 if(se&&se.style.display!='none'&&se.value){vol=(se.options[se.selectedIndex]||{}).textContent||'';vol=vol.replace(' л','').trim();price=(document.getElementById('hqPriceVal')||{}).textContent||''}
 else if(ce&&ce.style.display!='none'&&ce.value){vol=ce.value;price=(document.getElementById('hqPriceVal')||{}).textContent||''}
 }
+vol=String(vol).replace(' л','').trim();
 var si=(window.hqSelData||{}).si||'';
 var key=(window.hqSelData||{}).key||'';
 var os=document.getElementById('optSection2'),ot=document.getElementById('optTrigger');
@@ -624,7 +623,7 @@ var fs=document.getElementById('formVolSel');if(fs){fs.style.display='none';fs.v
 var fpb=document.getElementById('formPriceBlock');if(fpb)fpb.style.display='none';
 var ta=document.querySelector('textarea[name="comment"]');if(ta)ta.value='';
 ['fqProduct','fqVolume','fqPriceInput'].forEach(function(id){var e=document.getElementById(id);if(e)e.value=''});
-window.hqSelData={}
+window.hqSelData={};window._hqVol='';window._hqPrice=''
 };
 })();
 </script>
