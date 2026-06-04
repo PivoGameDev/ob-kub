@@ -1238,9 +1238,6 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 </div>
 </div>
 </section>
-</div>
-</div>
-</section>
 
 <!-- Scroll reveal -->
 <script>(function(){if(!window.IntersectionObserver)return;document.querySelectorAll('.scroll-reveal').forEach(function(el){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){e[0].target.classList.add('visible');o.disconnect()}},{threshold:.15});o.observe(el)})})();</script>
