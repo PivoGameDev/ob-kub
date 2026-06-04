@@ -379,8 +379,7 @@ $volCount = count($volumes);
 <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:28px 32px">
 <div>
 <div style="display:inline-block;background:#fff;border-radius:8px;padding:12px 20px;box-shadow:0 4px 16px rgba(0,0,0,.12)">
-<div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:2px">Выберите объём</div>
-<h2 style="font-size:17px;font-weight:800;color:#1a1a26;margin:0;line-height:1.2">Все доступные объёмы ЦКТ</h2>
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:2px">Выберите объём ЦКТ</div>
 </div>
 </div>
 <div>
