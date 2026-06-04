@@ -50,11 +50,6 @@
 </div>
 <div style="padding:24px 0;margin-top:36px;border-top:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
 <div style="font-size:12px;color:rgba(255,255,255,.3)">© ОБОРУДОВАНИЕ КУБАНИ · 2008–2026 · Все права защищены</div>
-<div style="display:flex;gap:16px">
-<a href="https://t.me/oborudovanie_kubani" target="_blank" rel="noopener" style="color:rgba(255,255,255,.3);font-size:12px;text-decoration:none;transition:color .2s">Telegram</a>
-<a href="mailto:oborudovanie-kubani@yandex.ru" style="color:rgba(255,255,255,.3);font-size:12px;text-decoration:none;transition:color .2s">Email</a>
-<a href="/privacy.html" style="color:rgba(255,255,255,.3);font-size:12px;text-decoration:none;transition:color .2s">Политика</a>
-</div>
 </div>
 </div>
 </footer>
