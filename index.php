@@ -404,9 +404,9 @@ body{padding-top:0!important}
 
 /* ===== MOBILE HEADER + DRAWER ===== */
 @media(max-width:768px){
-.header-top{display:none!important}
-.header .container{display:none!important}
-.header{display:block!important;width:100%!important;position:sticky!important;top:0;z-index:1000;background:#fff;min-height:0!important}
+header.header .container{display:none!important}
+header.header .header-top{display:none!important}
+header.header{display:block!important;width:100%!important;position:sticky!important;top:0;z-index:1000;background:#fff;min-height:0!important}
 
 .mobile-header{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 20px;background:#fff;width:100%;box-sizing:border-box}
 .mobile-header .mobile-logo-wrap{display:flex;align-items:center;flex-shrink:0}
