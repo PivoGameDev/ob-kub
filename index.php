@@ -458,7 +458,7 @@ body{padding-top:0!important}
 <img src="hero-bg.jpg" alt="" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
 <div class="db-hero-inner" style="display:flex!important;gap:48px!important;align-items:center!important;justify-content:space-between!important">
-<style>@media(max-width:900px){.db-hero-inner{flex-direction:column!important;gap:24px!important}}@media(max-width:900px){.db-hero-inner>div:last-child{width:100%!important}}</style>
+<style>@media(max-width:940px){.db-hero-inner{flex-direction:column!important;gap:24px!important}}@media(max-width:940px){.db-hero-inner>div:last-child{width:100%!important}}</style>
 <div style="flex:1;min-width:0">
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
 <h1>Резервуары из стали AISI 304/316</h1>
@@ -470,7 +470,7 @@ body{padding-top:0!important}
 <a href="/industrial.html">🍽️ Пищевые производства</a>
 </div>
 </div>
-<div style="width:340px;max-height:480px;overflow-y:auto;background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
+<div style="width:380px;max-height:520px;overflow-y:auto;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
 <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
 <span style="font-size:13px;font-weight:600;color:#333">Найдите оборудование</span>
@@ -488,6 +488,10 @@ body{padding-top:0!important}
 <span id="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">2</span>
 <span id="qs2t" style="font-size:13px;font-weight:600;color:#aaa">Объём</span>
 <a id="hqCst" onclick="hqCustom()" style="display:none;margin-left:auto;font-size:11px;color:#F77C2A;cursor:pointer">Свой объём</a>
+</div>
+<div id="hqSelected" style="display:none;align-items:center;gap:8px;margin-bottom:8px;padding:6px 8px;background:#f5f6f8;border-radius:6px">
+<img id="hqSelImg" src="" style="width:36px;height:36px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0">
+<span id="hqSelName" style="font-size:12px;color:#333;font-weight:600;flex:1"></span>
 </div>
 <select id="hqSel" style="display:none;width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:12px;font-family:inherit;color:#333;background:#fff">
 <option value="">— выберите объём —</option>
@@ -513,6 +517,7 @@ body{padding-top:0!important}
 (function(){
 var inp=document.getElementById('hqInp'),res=document.getElementById('hqRes');
 if(!inp||!res)return;
+var hqImgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg','red-fermentation':'wine-red-fermentation.jpg','mixing':'industrial-mixing.jpg','thermal':'industrial-thermal.jpg','storage-aging':'wine-storage-aging.jpg','brew-house':'brew-kettle.jpg','chiller':'chiller.jpg','steam-generator':'steam-generator.jpg','unitank':'unitank.jpg'};
 inp.addEventListener('focus',function(){if(!this.value.trim())fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){showRes(d.results)})});
 inp.addEventListener('input',function(){var q=this.value.trim();if(!q){res.style.display='none';return}fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json()}).then(function(d){showRes(d.results)})});
 function showRes(items){
@@ -521,17 +526,20 @@ var s={};a=a.filter(function(r){var k=r.u;if(s[k])return false;s[k]=true;return 
 if(!a.length){res.innerHTML='<div style="padding:10px;text-align:center;color:#999;font-size:11px">Ничего не найдено</div>';res.style.display='block';return}
 a.forEach(function(x){var d=document.createElement('div');d.style.cssText='padding:7px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
 d.onmouseover=function(){this.style.background='#fff8f0'};d.onmouseout=function(){this.style.background=''};
-d.innerHTML='<span style="color:#F77C2A;font-size:10px">▶</span><span style="flex:1;color:#333;font-weight:600">'+x.n+'</span><span style="color:#888;font-size:11px">'+x.s+'</span>';
+d.innerHTML='<img src="/'+(hqImgs[x]||'cct-tank.jpg')+'" style="width:32px;height:32px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0"><span style="flex:1;color:#333;font-weight:600">'+x.n+'</span><span style="color:#888;font-size:11px">'+x.s+'</span>';
 d.onclick=function(){pick(x)};res.appendChild(d)});res.style.display='block'}
 function pick(r){
 inp.value=r.n;res.style.display='none';document.getElementById('hqRst').style.display='inline';
 document.getElementById('qs2').style.background='#F77C2A';document.getElementById('qs2').style.color='#fff';document.getElementById('qs2t').style.color='#333';
 var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
+document.getElementById('hqSelected').style.display='flex';
+document.getElementById('hqSelImg').src='/'+(hqImgs[k]||'cct-tank.jpg');
+document.getElementById('hqSelName').textContent=r.n;
 var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var lm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=lm[r.si]||'';
 if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
 fetch('/catalog/?get_prices='+encodeURIComponent(k)+'&src='+src).then(function(r){return r.json()}).then(function(d){
 var s=document.getElementById('hqSel');s.innerHTML='<option value="">— выберите объём —</option>';
-if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л ('+fmtP(p.price)+')';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var v=parseInt(this.value);if(v>0){document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(v);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна'}}}
+if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var sel=this,pr=parseInt(sel.value);var txt=sel.options[sel.selectedIndex].text;document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(pr);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна'}}
 else{s.innerHTML='<option value="">Нет данных</option>';s.style.display='block'};document.getElementById('hqSt').textContent='Выберите объём'});
 }
 window.hqCustom=function(){document.getElementById('hqCstBox').style.display='block';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none'}
