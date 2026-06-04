@@ -152,7 +152,7 @@ function renderMainCatalog() {
 </div>
 </div>
 <!-- EQUIPMENT CATEGORIES -->
-<section class="db-section" id="equipment" style="padding:48px 0;background:#f5f6f8">
+<section class="db-section" id="equipment" style="padding:40px 0;background:#f5f6f8">
 <div class="db-wrap" style="max-width:1200px">
 <div class="db-weld-frame" style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
 <div style="text-align:center;margin-bottom:24px">
