@@ -694,9 +694,10 @@ window.hqSelData={};window._hqVol='';window._hqPrice=''
 </section>
 
 <!-- EMAIL CTA -->
-<section style="background:linear-gradient(135deg,#F77C2A,#e06a15);position:relative;overflow:hidden">
+<section style="padding:32px 0;background:#f5f6f8">
+<div class="db-wrap" style="max-width:820px">
+<div style="background:linear-gradient(135deg,#F77C2A,#e06a15);border-radius:14px;position:relative;overflow:hidden;padding:28px 24px">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3498db,transparent)"></div>
-<div style="max-width:820px;margin:0 auto;padding:32px 24px">
 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 40px;position:relative;z-index:1">
 <div style="text-align:center">
 <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px">📩 Отправьте проект на рассмотрение</div>
@@ -705,7 +706,7 @@ window.hqSelData={};window._hqVol='';window._hqPrice=''
 <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:8px 14px 8px 20px">
 <span style="font-size:15px;font-weight:700;color:#fff;letter-spacing:.3px">oborudovanie-kubani@yandex.ru</span>
 <button onclick="var b=this;navigator.clipboard.writeText('oborudovanie-kubani@yandex.ru').then(function(){b.textContent='✅ Скопировано';setTimeout(function(){b.textContent='📋 Копировать'},2000)}).catch(function(){b.textContent='❌ Ошибка';setTimeout(function(){b.textContent='📋 Копировать'},2000)})" style="padding:8px 16px;background:#fff;color:#F77C2A;border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;transition:opacity .2s" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity=''">📋 Копировать</button>
-</div>
+ </div>
 </div>
 </div>
 </section>
