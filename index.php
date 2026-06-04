@@ -363,8 +363,10 @@ body{padding-top:0!important}
 .db-hero-stats{gap:14px;flex-direction:column}
 .db-hero h1{font-size:20px}
 .db-hero-tags a{padding:6px 12px;font-size:11px}
+.db-section{padding:36px 0}
 .db-section-title{font-size:16px}
 .db-section-sub{font-size:12px}
+.db-row-section{padding:24px 0}
 .cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 .cat-card-img{height:110px}
 .cat-card-body{padding:10px 12px}
@@ -644,7 +646,7 @@ window.hqSelData={};window._hqVol='';window._hqPrice=''
 </section>
 
 <!-- QUALITY / WHY US -->
-<section class="db-row-section scroll-reveal" style="padding:0 0 32px">
+<section class="db-row-section scroll-reveal" style="padding:48px 0 40px">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:0;overflow:hidden;border-color:rgba(247,124,42,.08)">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
