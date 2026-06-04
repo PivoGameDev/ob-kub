@@ -303,10 +303,10 @@ $volCount = count($volumes);
 </div>
 </div>
 </div>
-<div style="border-top:1px solid rgba(255,255,255,.05);padding:14px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px">
-<span style="font-size:11px;color:rgba(255,255,255,.35)">Нужен нестандартный размер?</span>
-<span style="font-size:12px;font-weight:600;color:rgba(255,255,255,.7)">oborudovanie-kubani@yandex.ru</span>
-<button onclick="var b=this;navigator.clipboard.writeText('oborudovanie-kubani@yandex.ru').then(function(){b.textContent='✅';setTimeout(function(){b.textContent='📋'},1500)})" style="padding:4px 10px;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.15);color:#F77C2A;border-radius:4px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">📋</button>
+<div style="border-top:1px solid rgba(255,255,255,.06);padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px">
+<span style="font-size:12px;color:rgba(255,255,255,.5)">Нужен нестандартный размер?</span>
+<span style="font-size:13px;font-weight:700;color:#fff">oborudovanie-kubani@yandex.ru</span>
+<button onclick="var b=this;navigator.clipboard.writeText('oborudovanie-kubani@yandex.ru').then(function(){b.textContent='✅ Скопировано';b.style.background='rgba(46,204,113,.15)';b.style.borderColor='rgba(46,204,113,.3)';setTimeout(function(){b.textContent='📋 Копировать';b.style.background='';b.style.borderColor=''},2000)})" style="padding:6px 14px;background:rgba(247,124,42,.12);border:1px solid rgba(247,124,42,.25);color:#F77C2A;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;white-space:nowrap">📋 Копировать</button>
 </div>
 </div>
 </section>
