@@ -283,19 +283,23 @@ $volCount = count($volumes);
 </div>
 <section class="container">
 
-<div style="background:linear-gradient(135deg,#2b2b39,#1a1a26);border:1px solid rgba(247,124,42,.12);border-radius:14px;position:relative;overflow:hidden;margin-top:28px;padding:0">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
-<div style="padding:28px 32px 20px;text-align:center">
-<div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:4px">Выберите объём</div>
-<h2 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 2px">Все доступные объёмы ЦКТ</h2>
-<p style="font-size:12px;color:rgba(255,255,255,.4);margin:0 0 16px">Нажмите на нужный объём</p>
-<div style="margin:0 28px 24px;border-radius:10px;overflow:hidden;position:relative;min-height:180px">
+<div style="background:linear-gradient(135deg,#2b2b39,#1a1a26);border:1px solid rgba(247,124,42,.12);border-radius:14px;position:relative;overflow:hidden;margin-top:28px;padding:0;min-height:300px">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent);z-index:3"></div>
 <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url(/banner-beer.jpg) center/cover;z-index:0"></div>
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.75),rgba(26,26,38,.15));z-index:1"></div>
-<div style="position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-height:180px;padding:24px 28px">
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.5),rgba(26,26,38,.1));z-index:1"></div>
+<div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:28px 32px">
+<div>
+<div style="display:inline-block;background:#fff;border-radius:8px;padding:12px 20px;box-shadow:0 4px 16px rgba(0,0,0,.12)">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:2px">Выберите объём</div>
+<h2 style="font-size:17px;font-weight:800;color:#1a1a26;margin:0;line-height:1.2">Все доступные объёмы ЦКТ</h2>
+</div>
+</div>
+<div>
+<div style="display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;background:#fff;border-radius:8px;padding:14px 20px;box-shadow:0 4px 16px rgba(0,0,0,.12)">
 <?php foreach ($volumes as $v): ?>
-<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.12);border-radius:6px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;transition:all .2s;backdrop-filter:blur(3px)" onmouseover="this.style.background='#F77C2A';this.style.borderColor='#F77C2A'" onmouseout="this.style.background='';this.style.borderColor=''"><?= number_format($v, 0, '.', ' ') ?> л</a>
+<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;background:#F77C2A;color:#fff;border:none;border-radius:5px;font-size:12px;font-weight:700;text-decoration:none;transition:all .2s" onmouseover="this.style.background='#e06a15'" onmouseout="this.style.background='#F77C2A'"><?= number_format($v, 0, '.', ' ') ?> л</a>
 <?php endforeach; ?>
+</div>
 </div>
 </div>
 </div>
