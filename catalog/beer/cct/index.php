@@ -319,12 +319,11 @@ foreach ($volumes as $v):
 <div class="vol-card-body">
 <div class="vol-label">Объём</div>
 <div class="vol-value"><?= number_format($v, 0, '.', ' ') ?><span class="vol-unit"> л</span></div>
-<div class="price">от <?= $ps ?></div>
 <div class="specs">
+<div><span class="l">Полный</span><span><?= number_format($d['full_volume'], 0, '.', ' ') ?> л</span></div>
+<div><span class="l">Рабочий</span><span><?= number_format($d['working_volume'], 0, '.', ' ') ?> л</span></div>
 <div><span class="l">Диаметр</span><span><?= $d['diameter'] ?> мм</span></div>
 <div><span class="l">Высота</span><span><?= $d['height_full'] ?> мм</span></div>
-<div><span class="l">Стенка</span><span><?= $d['wall'] ?> мм</span></div>
-<div><span class="l">Зоны охл.</span><span><?= $d['jackets'] ?></span></div>
 </div>
 </div>
 <div class="vol-card-footer"><span class="btn-elect">Выбрать</span></div>
