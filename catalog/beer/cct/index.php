@@ -219,7 +219,7 @@ function renderCctList($allData, $cat) {
     $bodyClass = 'brewery-page cct-page';
     require __DIR__ . '/../../catalog-styles.php';
     require __DIR__ . '/../../layout-start.php';
-?>
+?><style>.container{max-width:1200px!important}</style>
 <section style="background:#fff;border-bottom:1px solid #f0f0f0;padding:14px 0">
 <div class="container">
 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">
