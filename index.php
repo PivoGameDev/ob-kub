@@ -574,7 +574,7 @@ vol=ce.value;price=(document.getElementById('hqPriceVal')||{}).textContent||''
 }
 var si=(window.hqSelData||{}).si||'';
 var key=(window.hqSelData||{}).key||'';
-var os=document.getElementById('optSection'),ot=document.getElementById('optTrigger');
+var os=document.getElementById('optSection2'),ot=document.getElementById('optTrigger');
 if(os&&ot){os.style.display='block';ot.classList.add('open')}
 var fd=document.getElementById('fqDisplay'),mw=document.getElementById('formManualWrap');
 var fn=document.getElementById('fqName'),fm=document.getElementById('fqMeta');
@@ -582,6 +582,7 @@ var fv=document.getElementById('fqVol'),fp=document.getElementById('fqPrice');
 var fi=document.getElementById('fqImg');
 var hp=document.getElementById('fqProduct'),hv=document.getElementById('fqVolume'),hi=document.getElementById('fqPriceInput');
 var en=document.getElementById('formEquipName'),vlinp=document.getElementById('formVolume');
+var fs=document.getElementById('formVolSel'),fp=document.getElementById('formPriceBlock'),fpr=document.getElementById('formPriceVal');
 if(fd&&fn){
 fd.style.display='block';
 fn.textContent=name||'—';
@@ -598,6 +599,12 @@ if(hv)hv.value=v>0?vol:'';
 if(hi)hi.value=price||'';
 if(en)en.value=name||'';
 if(vlinp)vlinp.value=v>0?vol:'';
+if(fs&&v>0){
+for(var xi=0;xi<fs.options.length;xi++){
+if(fs.options[xi].textContent.replace(' л','').trim()==String(v)){fs.value=fs.options[xi].value;break}
+}
+if(fs.value&&fp&&fpr){fpr.textContent=price||'от '+fmtP(parseInt(fs.value));fp.style.display='block'}
+}
 if(key&&fi){
 var imgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','mash-tun':'mash-tun.jpg','combined-kettle':'combined-kettle.jpg','lauter-tun':'lauter-tun.jpg','brew-kettle':'brew-kettle.jpg','whirlpool':'whirlpool.jpg','wort-receiver':'wort-receiver.jpg',unitank:'unitank.jpg',reception:'dairy-reception.jpg',storage:'dairy-storage.jpg','cheese-maker':'dairy-cheese-maker.jpg',fermentation:'dairy-fermentation.jpg',vdp:'dairy-vdp.jpg','cottage-cheese':'dairy-cottage-cheese.jpg',cooler:'dairy-cooler.jpg','red-fermentation':'wine-red-fermentation.jpg','white-fermentation':'wine-white-fermentation.jpg','storage-aging':'wine-storage-aging.jpg','cold-stabilization':'wine-cold-stabilization.jpg',blending:'wine-blending.png','universal-tank':'wine-universal-tank.jpg',mixing:'industrial-mixing.jpg',thermal:'industrial-thermal.jpg',pressure:'industrial-pressure.jpg',cip:'industrial-cip.jpg','steam-generator':'steam-generator.jpg',chiller:'chiller.jpg'};
 var src=imgs[key];
@@ -1041,86 +1048,127 @@ function toggleAboutEquip(){
   el.style.display=el.style.display==='none'||!el.style.display?'block':'none';
 }
 </script>
-<section class="db-section dark" id="order-form">
+<style>@media(max-width:860px){#order-form .db-weld-frame>form>div{grid-template-columns:1fr!important}#order-form .db-weld-frame>form>div>div:first-child{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px}}</style>
+<section id="order-form" style="padding:64px 0;background:#f5f6f8">
 <div class="db-wrap">
-<div class="db-section-line"></div>
-<h2 class="db-section-title">Получить расчёт оборудования</h2>
-<p class="db-section-sub">Оставьте заявку — подготовим КП с точной стоимостью, сроками изготовления и доставки. Отвечаем в течение 2 часов.</p>
-<form class="db-form-inner" method="post" action="/php/send.php" enctype="multipart/form-data">
+<div class="db-weld-frame" style="padding:0;overflow:visible">
+<form method="post" action="/php/send.php" enctype="multipart/form-data">
 <input type="hidden" name="csrf" id="csrfToken" value=""><input type="hidden" name="form_type" value="main-draft">
-
-<div class="db-form-section-label">Контактные данные</div>
-<div class="db-form-note">Укажите контакты — получите КП на почту</div>
-
-<div class="db-form-row">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:480px">
+<div style="padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(255,255,255,.06)">
 <div>
-<input type="text" name="name" required placeholder="Ваше имя">
-</div>
-<div>
-<input type="tel" name="phone" required placeholder="Телефон" class="phone-mask">
-</div>
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#F77C2A;font-weight:600;margin-bottom:8px">Заявка</div>
+<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 4px;text-transform:uppercase;letter-spacing:.4px">Получить расчёт</h2>
+<p style="font-size:13px;color:rgba(255,255,255,.45);margin:0 0 28px;line-height:1.5">Заполните контакты — пришлём КП на почту в течение 2 часов</p>
+
+<div style="margin-bottom:14px">
+<input type="text" name="name" required placeholder="Ваше имя" style="width:100%;padding:13px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;transition:border-color .25s;box-sizing:border-box" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''">
 </div>
 
-<div class="db-form-row single">
-<input type="email" name="email" required placeholder="Email (для отправки КП)">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+<input type="tel" name="phone" required placeholder="Телефон" class="phone-mask" style="padding:13px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;transition:border-color .25s;box-sizing:border-box" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''">
+<input type="email" name="email" required placeholder="Email для КП" style="padding:13px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;transition:border-color .25s;box-sizing:border-box" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''">
 </div>
 
-<div class="db-form-opt-trigger" id="optTrigger" onclick="var s=document.getElementById('optSection');if(s.style.display!='block'){s.style.display='block';this.classList.add('open')}else{s.style.display='none';this.classList.remove('open')}">
-<span>💰 Хочу примерную цену — укажу параметры</span>
+<div class="db-form-opt-trigger" id="optTrigger" style="margin-top:8px;padding:10px 0" onclick="var s=document.getElementById('optSection2');if(s.style.display!='block'){s.style.display='block';this.classList.add('open')}else{s.style.display='none';this.classList.remove('open')}">
+<span>⚙️ Указать параметры оборудования</span>
 <svg class="db-opt-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 </div>
 
-<div class="db-form-optional" id="optSection" style="display:none">
-
-<div class="db-form-divider"></div>
-
-<div class="db-form-section-label" style="font-size:13px">Параметры из подбора</div>
-
-<div id="fqDisplay" style="background:rgba(255,255,255,.06);border-radius:8px;padding:14px;margin-bottom:14px;display:none">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-<img id="fqImg" src="" style="width:40px;height:40px;object-fit:contain;background:rgba(255,255,255,.1);border-radius:6px;flex-shrink:0;display:none">
-<div style="flex:1">
-<div id="fqName" style="font-size:14px;font-weight:700;color:#fff"></div>
-<div id="fqMeta" style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px"></div>
+<div id="optSection2" style="display:none">
+<div id="fqDisplay" style="background:rgba(255,255,255,.04);border-radius:8px;padding:14px;margin-bottom:12px;display:none">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+<img id="fqImg" src="" style="width:36px;height:36px;object-fit:contain;background:rgba(255,255,255,.08);border-radius:6px;flex-shrink:0;display:none">
+<div style="flex:1"><div id="fqName" style="font-size:13px;font-weight:700;color:#fff"></div><div id="fqMeta" style="font-size:11px;color:rgba(255,255,255,.4)"></div></div>
 </div>
-</div>
-<div style="display:flex;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08);padding-top:10px">
-<div><span style="font-size:11px;color:rgba(255,255,255,.4)">Объём</span><div id="fqVol" style="font-size:15px;font-weight:700;color:#fff"></div></div>
-<div><span style="font-size:11px;color:rgba(255,255,255,.4)">Цена</span><div id="fqPrice" style="font-size:15px;font-weight:700;color:#F77C2A"></div></div>
+<div style="display:flex;gap:12px;border-top:1px solid rgba(255,255,255,.06);padding-top:8px">
+<div><span style="font-size:10px;color:rgba(255,255,255,.35)">Объём</span><div id="fqVol" style="font-size:14px;font-weight:700;color:#fff"></div></div>
+<div><span style="font-size:10px;color:rgba(255,255,255,.35)">Цена</span><div id="fqPrice" style="font-size:14px;font-weight:700;color:#F77C2A"></div></div>
 </div>
 </div>
 
-<div class="db-form-row" id="formManualWrap">
-<div>
-<input type="text" name="equipment_name" id="formEquipName" placeholder="Тип оборудования (ЦКТ, БГВ, ферментатор...)" class="db-form-input" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff">
+<div id="formManualWrap">
+<div style="position:relative;margin-bottom:10px">
+<input type="text" id="formEquipName" autocomplete="off" placeholder="Начните вводить оборудование..." style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:13px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''">
+<div id="formEquipRes" style="display:none;position:absolute;top:100%;left:0;right:0;background:#2b2b39;border:1px solid rgba(255,255,255,.12);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.4);padding:6px;max-height:220px;overflow-y:auto;z-index:50"></div>
 </div>
-<div>
-<input type="number" name="volume" id="formVolume" placeholder="Объём, л" class="db-form-input" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff" min="1">
+<select id="formVolSel" style="display:none;width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:13px;font-family:inherit;outline:none;cursor:pointer;box-sizing:border-box">
+<option value="">— выберите объём —</option>
+</select>
 </div>
+
+<div id="formPriceBlock" style="display:none;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.2);border-radius:8px;padding:8px 12px;margin-top:10px;text-align:center">
+<div style="font-size:10px;color:rgba(255,255,255,.35)">💰 Ориентировочная цена</div>
+<div id="formPriceVal" style="font-size:18px;font-weight:900;color:#F77C2A"></div>
 </div>
 
 <input type="hidden" name="quiz_product" id="fqProduct" value="">
 <input type="hidden" name="quiz_volume" id="fqVolume" value="">
 <input type="hidden" name="quiz_price" id="fqPriceInput" value="">
-
-<div class="db-form-row single">
-<textarea name="comment" rows="3" placeholder="Дополнительные пожелания (опции, сроки, планировка...)" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff"></textarea>
-</div>
-
-<div class="db-form-row single">
-<input type="file" name="attachment" class="db-form-file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png,.dxf,.dwg">
 </div>
 
 </div>
+</div>
 
-<label class="db-form-chk">
-<input type="checkbox" name="agreement" value="1" checked>
-<span>Я согласен(а) на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">Политикой конфиденциальности</a></span>
+<div style="padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between">
+<div>
+<div style="font-size:13px;font-weight:700;color:#F77C2A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:18px">Дополнительно</div>
+
+<textarea name="comment" rows="4" placeholder="Дополнительные пожелания — опции, сроки, планировка, чертежи…" style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:13px;font-family:inherit;outline:none;resize:vertical;min-height:100px;box-sizing:border-box;transition:border-color .25s" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''"></textarea>
+
+<div style="margin-top:12px">
+<label style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:12px;cursor:pointer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg>
+<input type="file" name="attachment" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png,.dxf,.dwg" style="display:none" onchange="this.previousElementSibling.textContent=this.files[0]?this.files[0].name:'Прикрепить файл'">
+<span style="flex:1">Прикрепить файл</span>
 </label>
-<button type="submit" class="sbtn submit-btn">Получить расчёт →</button>
+</div>
+</div>
+
+<div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)">
+<label style="display:flex;align-items:flex-start;gap:8px;color:rgba(255,255,255,.35);font-size:11px;cursor:pointer;margin-bottom:16px">
+<input type="checkbox" name="agreement" value="1" checked style="margin-top:2px">
+<span>Я согласен(а) на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" style="color:#F77C2A;text-decoration:none">Политикой конфиденциальности</a></span>
+</label>
+<button type="submit" style="width:100%;padding:15px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .25s,transform .25s" onmouseover="this.style.opacity='.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='';this.style.transform=''">📩 Получить расчёт →</button>
+</div>
+</div>
+
+</div>
 </form>
 </div>
+</div>
 </section>
+
+<script>
+(function(){
+var inp=document.getElementById('formEquipName'),res=document.getElementById('formEquipRes'),sel=document.getElementById('formVolSel'),pb=document.getElementById('formPriceBlock'),pv=document.getElementById('formPriceVal');
+if(!inp||!res)return;
+var hqImgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg','red-fermentation':'wine-red-fermentation.jpg','mixing':'industrial-mixing.jpg','thermal':'industrial-thermal.jpg','storage-aging':'wine-storage-aging.jpg','brew-house':'brew-kettle.jpg','chiller':'chiller.jpg','steam-generator':'steam-generator.jpg','unitank':'unitank.jpg','cooler':'dairy-cooler.jpg','cottage-cheese':'dairy-cottage-cheese.jpg','yeast':'dairy-yeast.jpg','white-fermentation':'wine-white-fermentation.jpg','cold-stabilization':'wine-cold-stabilization.jpg','blending':'wine-blending.png','sulfitation':'wine-sulfitation.jpg','mash-tun':'mash-tun.jpg','combined-kettle':'combined-kettle.jpg','lauter-tun':'lauter-tun.jpg','brew-kettle':'brew-kettle.jpg','whirlpool':'whirlpool.jpg','industrial-storage':'industrial-storage.jpg','cip':'industrial-cip.jpg','pressure':'industrial-pressure.jpg','beer-hot-water-tank':'beer-hot-water-tank.jpg'};
+function hqKey(u){var k=u.split('/').filter(Boolean).pop();if(k&&k.match(/^\d+l?$/))k=u.split('/').filter(Boolean).slice(-2,-1)[0];return k||''}
+inp.addEventListener('focus',function(){if(!this.value.trim())fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){showRes(d.results)})});
+inp.addEventListener('input',function(){var q=this.value.trim();if(!q){res.style.display='none';return}fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json()}).then(function(d){showRes(d.results)})});
+document.addEventListener('click',function(e){if(e.target!=inp&&e.target!=res&&!res.contains(e.target)){res.style.display='none'}});
+function showRes(items){
+res.innerHTML='';var a=items.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/)});
+var s={};a=a.filter(function(r){var k=r.u;if(s[k])return false;s[k]=true;return true});
+if(!a.length){res.innerHTML='<div style="padding:10px;text-align:center;color:rgba(255,255,255,.4);font-size:11px">Ничего не найдено</div>';res.style.display='block';return}
+a.forEach(function(x){var d=document.createElement('div');d.style.cssText='padding:7px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.8)';
+d.onmouseover=function(){this.style.background='rgba(247,124,42,.15)'};d.onmouseout=function(){this.style.background=''};
+d.innerHTML='<img src="/'+(hqImgs[hqKey(x.u)]||'cct-tank.jpg')+'" style="width:28px;height:28px;object-fit:contain;background:rgba(255,255,255,.1);border-radius:4px;flex-shrink:0"><span style="flex:1;font-weight:600">'+x.n+'</span><span style="color:rgba(255,255,255,.35);font-size:11px">'+x.s+'</span>';
+d.onclick=function(){pickForm(x)};res.appendChild(d)});res.style.display='block'}
+function pickForm(r){
+inp.value=r.n;res.style.display='none';
+var k=r.u.split('/').filter(Boolean).pop();if(k&&k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
+var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var lm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=lm[r.si]||'';
+if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
+fetch('/catalog/?get_prices='+encodeURIComponent(k)+'&src='+src).then(function(r){return r.json()}).then(function(d){
+var s=sel;s.innerHTML='<option value="">— выберите объём —</option>';pb.style.display='none';
+if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л';s.appendChild(o)});s.style.display='block';s.onchange=function(){var pr=parseInt(this.value);if(pr){pv.textContent='от '+fmtP(pr);pb.style.display='block'}else{pb.style.display='none'}}}
+else{s.innerHTML='<option value="">Нет данных</option>';s.style.display='block'}})}
+function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽')}
+})();
+</script>
 
 <!-- LEAD MAGNET: Скачать каталог -->
 
