@@ -289,10 +289,14 @@ $volCount = count($volumes);
 <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:4px">Выберите объём</div>
 <h2 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 2px">Все доступные объёмы ЦКТ</h2>
 <p style="font-size:12px;color:rgba(255,255,255,.4);margin:0 0 16px">Нажмите на нужный объём</p>
-<div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center">
+<div style="margin:0 28px 24px;border-radius:10px;overflow:hidden;position:relative">
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url(/banner-beer.jpg) center/cover;z-index:0"></div>
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.88),rgba(26,26,38,.4));z-index:1"></div>
+<div style="position:relative;z-index:2;padding:26px 24px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
 <?php foreach ($volumes as $v): ?>
-<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.15);border-radius:6px;font-size:12px;font-weight:700;color:#F77C2A;text-decoration:none;transition:all .2s" onmouseover="this.style.background='#F77C2A';this.style.color='#fff';this.style.borderColor='#F77C2A'" onmouseout="this.style.background='';this.style.color='';this.style.borderColor=''"><?= number_format($v, 0, '.', ' ') ?> л</a>
+<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:8px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;transition:all .2s;min-width:62px;backdrop-filter:blur(2px)" onmouseover="this.style.background='#F77C2A';this.style.borderColor='#F77C2A'" onmouseout="this.style.background='';this.style.borderColor=''"><?= number_format($v, 0, '.', ' ') ?> л</a>
 <?php endforeach; ?>
+</div>
 </div>
 </div>
 <div style="border-top:1px solid rgba(255,255,255,.05);padding:14px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px">
