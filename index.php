@@ -455,102 +455,225 @@ body{padding-top:0!important}
 
 <!-- HERO -->
 <section class="db-hero">
-<img src="hero-bg.jpg" alt="" class="db-hero-bg">
+<img src="hero-bg.jpg" alt="Емкостное оборудование" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
-<div style="display:grid!important;grid-template-columns:1fr 340px!important;gap:32px!important;align-items:start!important;padding:60px 24px!important;max-width:1100px!important;margin:0 auto!important;width:auto!important;overflow:hidden!important">
-<style>@media(max-width:860px){.db-hero .db-hero-inner,div[style*='grid-template-columns:1fr 340px']{grid-template-columns:1fr!important;gap:20px!important;padding:40px 20px!important}}</style>
-
-<div style="min-width:0">
+<div class="db-hero-inner">
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
-<h1 style="font-size:36px;max-width:500px">Резервуары из стали AISI 304/316</h1>
-<p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,.6);margin:0 0 20px;max-width:450px">Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
-<div class="db-hero-tags" style="margin-bottom:0">
+<h1>Резервуары из стали AISI 304/316</h1>
+<p>Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px">
+<span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">✅ Цена на каждую позицию</span>
+<span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">🏭 Своё производство 2000 м²</span>
+<span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">📦 Доставка от 2 недель</span>
+<span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.7)">✅ Гарантия 12 мес</span>
+</div>
+<div class="db-hero-tags">
 <a href="/beer.html">🍺 Пивоваренное</a>
 <a href="/dairy.html">🥛 Молочное</a>
 <a href="/winery.html">🍷 Винодельческое</a>
-<a href="/industrial.html">🍽️ Пищевые производства</a>
+<a href="/industrial.html">🏭 Промышленное</a>
 </div>
+<button class="db-hero-cta" onclick="document.getElementById('quiz-block').scrollIntoView({behavior:'smooth'})">🔄 Подобрать и узнать цену за 1 минуту →</button>
 </div>
+</section>
 
-<div style="background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.12);position:relative;box-sizing:border-box">
-<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
-<span style="font-size:13px;font-weight:600;color:#333">Найдите оборудование</span>
-<span id="hqRst" onclick="hqReset()" style="display:none;margin-left:auto;font-size:16px;color:#999;cursor:pointer;line-height:1">×</span>
+<!-- QUIZ -->
+<section class="db-section alt" id="quiz-block" style="background:linear-gradient(180deg,#fff,#f8f9fb)">
+<div class="db-wrap" style="max-width:800px;margin:0 auto">
+<h2 class="db-section-title">🔧 Быстрый подбор оборудования</h2>
+<p class="db-section-sub" style="max-width:600px">Введите название, выберите объём и получите цену за 2 минуты</p>
+<div style="text-align:center;margin:-20px 0 32px"><span style="display:inline-block;padding:8px 24px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:20px;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(247,124,42,.25)">🔥 Без звонков — цена сразу</span></div>
+<div class="db-quiz-steps" style="display:flex;justify-content:center;align-items:center;gap:0;margin-bottom:32px">
+<div class="db-qstep active" id="qs1"><span class="qnum">1</span> Выбор</div><span class="qline"></span>
+<div class="db-qstep" id="qs2"><span class="qnum">2</span> Объём</div><span class="qline"></span>
+<div class="db-qstep" id="qs3"><span class="qnum">3</span> Цена</div></div>
+<div class="db-qcard active" id="qc1">
+<div class="db-qsearch"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin:0 8px 0 14px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+<input type="text" id="quizInput" placeholder="ЦКТ, БГВ, ферментатор, сыроизготовитель..." autocomplete="off" style="flex:1;border:none;background:transparent;padding:14px 8px;font-size:16px;outline:none;font-family:inherit;color:#333"></div>
+<div id="quizResults" style="background:#fff;border:1px solid #e8e8e8;border-radius:12px;display:none;box-shadow:0 8px 32px rgba(0,0,0,.1);padding:8px;overflow-y:auto;max-height:800px"></div>
+<div style="text-align:center;margin-top:12px"><span id="catToggle" style="color:#F77C2A;font-size:13px;cursor:pointer;font-weight:600" onclick="toggleCatList()">📋 Или выберите из каталога ↓</span></div>
+<div id="catList" style="display:none;margin-top:12px;padding:16px;background:#f8f9fb;border-radius:12px">
+<div class="quiz-cat-group"><div class="quiz-cat-label" style="font-size:12px;font-weight:700;color:#F77C2A;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px">🍺 Пивоваренное</div>
+<div class="quiz-cat-items" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
+<a onclick="pickCat('beer','cct')" class="quiz-cat-chip">ЦКТ</a>
+<a onclick="pickCat('beer','brew-house')" class="quiz-cat-chip">Варочные порядки</a>
+<a onclick="pickCat('beer','hot-water-tank')" class="quiz-cat-chip">Баки горячей воды</a>
+<a onclick="pickCat('beer','grain-mill')" class="quiz-cat-chip">Дробилки солода</a>
+<a onclick="pickCat('beer','steam-generator')" class="quiz-cat-chip">Парогенераторы</a>
+<a onclick="pickCat('beer','chiller')" class="quiz-cat-chip">Чиллеры</a>
+<a onclick="pickCat('beer','unitank')" class="quiz-cat-chip">Форфасы (BBT)</a>
+<a onclick="pickCat('beer','heat-exchanger')" class="quiz-cat-chip">Теплообменники</a>
+</div></div>
+<div class="quiz-cat-group"><div class="quiz-cat-label" style="font-size:12px;font-weight:700;color:#F77C2A;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px">🥛 Молочное</div>
+<div class="quiz-cat-items" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
+<a onclick="pickCat('dairy','reception')" class="quiz-cat-chip">Ёмкость приёмки молока</a>
+<a onclick="pickCat('dairy','cooler')" class="quiz-cat-chip">Резервуар-охладитель</a>
+<a onclick="pickCat('dairy','storage')" class="quiz-cat-chip">Резервуар хранения</a>
+<a onclick="pickCat('dairy','vdp')" class="quiz-cat-chip">Ванна пастеризации (ВДП)</a>
+<a onclick="pickCat('dairy','fermentation')" class="quiz-cat-chip">Ферментационный танк</a>
+<a onclick="pickCat('dairy','cheese-maker')" class="quiz-cat-chip">Сыроизготовитель</a>
+<a onclick="pickCat('dairy','cottage-cheese')" class="quiz-cat-chip">Творогоизготовитель</a>
+<a onclick="pickCat('dairy','yeast')" class="quiz-cat-chip">Заквасочник</a>
+<a onclick="pickCat('dairy','brine')" class="quiz-cat-chip">Контейнер для соления</a>
+<a onclick="pickCat('dairy','cheese-shelves')" class="quiz-cat-chip">Стеллажи для сыра</a>
+</div></div>
+<div class="quiz-cat-group"><div class="quiz-cat-label" style="font-size:12px;font-weight:700;color:#F77C2A;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px">🍷 Винодельческое</div>
+<div class="quiz-cat-items" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
+<a onclick="pickCat('wine','red-fermentation')" class="quiz-cat-chip">Ферментация красных вин</a>
+<a onclick="pickCat('wine','white-fermentation')" class="quiz-cat-chip">Ферментация белых вин</a>
+<a onclick="pickCat('wine','storage-aging')" class="quiz-cat-chip">Выдержка и хранение</a>
+<a onclick="pickCat('wine','cold-stabilization')" class="quiz-cat-chip">Холодная стабилизация</a>
+<a onclick="pickCat('wine','blending')" class="quiz-cat-chip">Купажирование</a>
+<a onclick="pickCat('wine','sulfitation')" class="quiz-cat-chip">Сульфитация</a>
+<a onclick="pickCat('wine','universal-tank')" class="quiz-cat-chip">Винификатор (УТТ)</a>
+</div></div>
+<div class="quiz-cat-group"><div class="quiz-cat-label" style="font-size:12px;font-weight:700;color:#F77C2A;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px">🏭 Промышленное</div>
+<div class="quiz-cat-items" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px">
+<a onclick="pickCat('industrial','storage')" class="quiz-cat-chip">Резервуар для хранения</a>
+<a onclick="pickCat('industrial','mixing')" class="quiz-cat-chip">Ёмкость с мешалкой</a>
+<a onclick="pickCat('industrial','thermal')" class="quiz-cat-chip">Ёмкость с терморегуляцией</a>
+<a onclick="pickCat('industrial','pressure')" class="quiz-cat-chip">Ёмкость под давлением</a>
+</div></div>
 </div>
-<div style="position:relative">
-<div style="display:flex;align-items:center;border:1px solid #ddd;border-radius:8px;padding:0 10px">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
 </div>
-<div id="hqRes" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:6px;max-height:220px;overflow-y:auto;z-index:50;margin-top:2px"></div>
-</div>
+<div class="db-qcard" id="qc2" style="text-align:center;background:#fff">
+<div style="margin-bottom:16px">
+<img id="qImg2" src="" alt="" style="width:144px;height:144px;object-fit:contain;border-radius:16px;background:#fff;flex-shrink:0;display:none;margin:0 auto">
+<div style="margin-top:8px"><div style="font-size:13px;color:#888;margin-bottom:2px">Выбрано:</div>
+<strong id="qSelName" style="color:#F77C2A;font-size:18px"></strong> <a style="color:#F77C2A;font-size:12px;cursor:pointer;margin-left:6px" onclick="quizBack()">(изменить)</a></div>
+<div id="qDesc2" style="font-size:13px;color:#666;margin-top:8px;line-height:1.4;display:none"></div>
+<ul id="qFeats2" style="display:none;list-style:none;margin:8px 0 0;padding:0;gap:4px;flex-wrap:wrap;justify-content:center"></ul></div>
+<div class="db-qvolgrid" id="qVolGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px"></div>
+<div style="margin-top:12px;font-size:13px;color:#999;text-align:center">Не нашли объём? <a style="color:#F77C2A;cursor:pointer;font-weight:600" onclick="document.getElementById('qCustomVol').style.display='flex';this.style.display='none'">Укажите свой</a></div>
+<div id="qCustomVol" style="display:none;margin-top:10px;gap:8px">
+<input type="number" id="qCustomVal" placeholder="Ваш объём, л" style="flex:1;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;outline:none;font-family:inherit">
+<button style="padding:10px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit" onclick="selectQuizVol(0,0)">Выбрать</button></div></div>
+<div class="db-qcard" id="qc3">
+<div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:16px">
+<img id="qImg3" src="" alt="" style="width:180px;height:180px;border-radius:16px;object-fit:contain;background:#fff;flex-shrink:0">
+<div style="flex:1;min-width:0"><div style="font-weight:700;color:#1a1a26;font-size:15px" id="qResName"></div><div style="font-size:13px;color:#888" id="qResVol"></div>
+<div id="qDesc3" style="font-size:13px;color:#666;margin-top:6px;line-height:1.4;display:none"></div>
+<ul id="qFeats3" style="display:none;list-style:none;margin:6px 0 0;padding:0;gap:4px;flex-wrap:wrap"></ul></div></div>
+<div class="db-qprice" id="qPrice" style="display:none;background:linear-gradient(135deg,#fff8f0,#fff);border:2px solid #F77C2A;border-radius:12px;padding:20px;text-align:center;margin-bottom:20px">
+<div style="font-size:12px;color:#888;margin-bottom:4px">💰 Ориентировочная цена с НДС</div>
+<div style="font-size:36px;font-weight:900;color:#F77C2A;letter-spacing:-1px;line-height:1" id="qPriceVal"></div>
+<div style="font-size:11px;color:#bbb;margin-top:4px">Точная цена — после расчёта инженером</div></div>
+<form method="post" action="/php/send.php">
+<input type="hidden" name="form_type" value="item"><input type="hidden" name="product" id="qFormProduct" value="">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div><input type="text" name="name" placeholder="Имя" required style="width:100%;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;font-family:inherit;outline:none"></div>
+<div><input type="tel" name="phone" placeholder="Телефон" required style="width:100%;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;font-family:inherit;outline:none"></div>
+<div style="grid-column:1/-1"><input type="email" name="email" placeholder="Email для КП" style="width:100%;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;font-family:inherit;outline:none"></div>
+<div style="grid-column:1/-1"><textarea name="comment" placeholder="Дополнительные требования..." style="width:100%;padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;font-family:inherit;outline:none;min-height:56px;resize:vertical"></textarea></div></div>
+<button type="submit" class="submit-btn" style="margin-top:12px;width:100%;padding:14px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit">📩 Получить КП с точной ценой</button></form>
+<div style="display:flex;justify-content:center;gap:16px;margin-top:12px;font-size:11px;color:#bbb;flex-wrap:wrap">
+<span>🔒 Конфиденциально</span> <span>⚡ Ответ за 2 часа</span> <span>📋 Бесплатный расчёт</span></div></div></div>
+<style>
+.db-qstep{display:flex;align-items:center;gap:6px;font-size:13px;color:#ccc;font-weight:600;padding:6px 14px;border-radius:20px;transition:.3s}
+.db-qstep .qnum{width:26px;height:26px;border-radius:50%;background:#e8e8e8;color:#bbb;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;transition:.3s;flex-shrink:0}
+.db-qstep.active{color:#F77C2A}.db-qstep.active .qnum{background:#F77C2A;color:#fff}
+.db-qstep.done{color:#27ae60}.db-qstep.done .qnum{background:#27ae60;color:#fff}
+.qline{width:30px;height:2px;background:#e8e8e8;flex-shrink:0}.db-qstep.done+.qline{background:#27ae60}
+.db-qcard{background:#fff;border-radius:14px;padding:28px;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,.04);margin-bottom:24px;display:none}
+.db-qcard.active{display:block}
+.db-qsearch{display:flex;align-items:center;background:#fff;border:2px solid #e0e0e0;border-radius:10px;transition:border-color .25s}
+.db-qsearch:focus-within{border-color:#F77C2A}
+.quiz-cat-chip{display:inline-block;padding:6px 14px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;font-size:12px;font-weight:500;color:#333;cursor:pointer;transition:all .15s;text-decoration:none}
+.quiz-cat-chip:hover{background:#fff4e6;border-color:#F77C2A;color:#F77C2A}
 
-<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
-<span id="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">2</span>
-<span id="qs2t" style="font-size:13px;font-weight:600;color:#aaa">Объём</span>
-<a id="hqCst" onclick="hqCustom()" style="display:none;margin-left:auto;font-size:11px;color:#F77C2A;cursor:pointer">Свой объём</a>
-</div>
-<select id="hqSel" style="display:none;width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:12px;font-family:inherit;color:#333;background:#fff">
-<option value="">— выберите объём —</option>
-</select>
-<div id="hqCstBox" style="display:none">
-<input type="number" id="hqCstVal" placeholder="Ваш объём, л" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:12px;outline:none;font-family:inherit;box-sizing:border-box">
-<button onclick="hqCstGo()" style="width:100%;margin-top:6px;padding:8px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">Узнать цену</button>
-</div>
-
-<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
-<span id="qs3" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">3</span>
-<span id="qs3t" style="font-size:13px;font-weight:600;color:#aaa">Цена</span>
-</div>
-<div id="hqPriceBox" style="display:none;background:linear-gradient(135deg,#fff8f0,#fff);border:2px solid #F77C2A;border-radius:8px;padding:12px;text-align:center">
-<div style="font-size:11px;color:#888">💰 Ориентировочная цена</div>
-<div id="hqPriceVal" style="font-size:22px;font-weight:900;color:#F77C2A"></div>
-</div>
-<button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">📩 Получить КП</button>
-<div id="hqSt" style="font-size:11px;color:#999;text-align:center;margin-top:8px">Введите название оборудования</div>
-</div>
-
+/* ===== SCROLL ANIMATIONS ===== */
+.scroll-reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.scroll-reveal.visible{opacity:1;transform:translateY(0)}
+.scroll-reveal-delay-1{transition-delay:.1s}
+.scroll-reveal-delay-2{transition-delay:.2s}
+.scroll-reveal-delay-3{transition-delay:.3s}
+.scroll-reveal-delay-4{transition-delay:.4s}
+</style>
 <script>
-var hqSel=null;
-document.getElementById('hqInp').addEventListener('focus',function(){if(!this.value.trim())fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){hqShow(d.results)})});
-document.getElementById('hqInp').addEventListener('input',function(){var q=this.value.trim();if(!q){document.getElementById('hqRes').style.display='none';return}fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json()}).then(function(d){hqShow(d.results)})});
-function hqShow(items){
-var r=document.getElementById('hqRes');r.innerHTML='';
-var i=items.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/)});
-var s={};i=i.filter(function(r){var k=r.u;if(s[k])return false;s[k]=true;return true});
-if(!i.length){r.innerHTML='<div style="padding:10px;text-align:center;color:#999;font-size:11px">Ничего не найдено</div>';r.style.display='block';return}
-i.forEach(function(x){var k=x.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=x.u.split('/').filter(Boolean).slice(-2,-1)[0];
-var d=document.createElement('div');d.style.cssText='padding:7px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
-d.onmouseover=function(){this.style.background='#fff8f0'};d.onmouseout=function(){this.style.background=''};
-d.innerHTML='<span style="color:#F77C2A;font-size:10px">▶</span><span style="flex:1;color:#333;font-weight:600">'+x.n+'</span><span style="color:#888;font-size:11px">'+x.s+'</span>';
-d.onclick=function(){hqPick(x)};r.appendChild(d)});
-r.style.display='block';}
-function hqPick(r){
-document.getElementById('hqInp').value=r.n;document.getElementById('hqRes').style.display='none';document.getElementById('hqRst').style.display='inline';
-document.getElementById('qs2').style.background='#F77C2A';document.getElementById('qs2').style.color='#fff';document.getElementById('qs2t').style.color='#333';
+var quizTimer=null,quizSelected=null,quizPrices={},quizStep=1;
+var QIMGS={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg'};
+var QDEFS={beer:'cct-tank.jpg',dairy:'dairy-reception.jpg',wine:'wine-red-fermentation.jpg',industrial:'industrial-cip.jpg'};
+var QDESC={'cct':'Цилиндро-конические танки для брожения, дображивания и лагеризации пива из нержавеющей стали AISI 304','hot-water-tank':'Баки горячей воды из нержавейки для пивоварения','reception':'Ёмкости для приёмки и фильтрации молока','storage':'Резервуары для хранения молока','vdp':'Ванны длительной пастеризации','fermentation':'Танки для ферментации йогурта, сметаны, кефира','cheese-maker':'Аппараты для производства сыра','universal-tank':'Универсальные терморегулируемые танки для виноделия','cooler':'Резервуары-охладители молока','cottage-cheese':'Танки для производства творога','yeast':'Заквасочные аппараты','brine':'Контейнеры для соления сыра','cheese-shelves':'Стеллажи для созревания сыра','red-fermentation':'Ферментационные танки для красных вин','white-fermentation':'Ферментационные танки для белых вин','storage-aging':'Ёмкости для выдержки и хранения вина','cold-stabilization':'Танки криостабилизации','mixing':'Ёмкости с мешалкой','thermal':'Ёмкости с терморегуляцией','pressure':'Ёмкости под давлением','cip':'CIP-станции','heat-exchanger':'Промышленные теплообменники'};
+var QFEATS={'cct':['AISI 304/316','до 4 зон охлаждения','угол конуса 60-70°','CIP-мойка'],'hot-water-tank':['Паровой нагрев','Термоизоляция ППУ','Люк-лаз DN400'],'reception':['Фильтр грубой очистки','Люк-лаз DN400','CIP-мойка'],'storage':['Объём до 200 000 л','Термоизоляция','CIP-мойка'],'vdp':['AISI 304','Ручная/автоматика','Сливной кран'],'fermentation':['Рубашка охлаждения','AISI 304','CIP-мойка'],'cheese-maker':['Плавный нагрев','AISI 304/316','Мешалка'],'universal-tank':['AISI 304/316','Рубашка охлаждения','2 зоны терморегуляции'],'cooler':['Охлаждение до 4°C','AISI 304','Автоматика'],'cottage-cheese':['AISI 304','Мешалка','Слив'],'red-fermentation':['AISI 304/316','Рубашка охлаждения','Гребнеотделитель'],'white-fermentation':['AISI 304/316','Термоизоляция','Фильтр'],'storage-aging':['AISI 304/316','Объём до 200 000 л','CIP-мойка'],'cold-stabilization':['AISI 304/316','Термоизоляция','Автоматика'],'mixing':['AISI 304/316','Мешалка','CIP-мойка'],'thermal':['AISI 304/316','Рубашка','Термоизоляция'],'pressure':['AISI 304/316','До 10 бар','Герметичность'],'cip':['AISI 304','Автоматика','Насосы Alfa Laval']};
+function qImg(k,s){return '/'+(QIMGS[k]||QDEFS[s]||'cct-tank.jpg');}
+function qFeats(k){return QFEATS[k]||['AISI 304','Гарантия 12 мес','Доставка по РФ'];}
+function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽');}
+function toggleCatList(){var el=document.getElementById('catList'),t=document.getElementById('catToggle');if(el.style.display==='none'||!el.style.display){el.style.display='block';t.innerHTML='📋 Или выберите из каталога ↑'}else{el.style.display='none';t.innerHTML='📋 Или выберите из каталога ↓'}}
+function pickCat(si,slug){var names={'cct':'ЦКТ (Цилиндро-конические танки)','brew-house':'Варочные порядки','hot-water-tank':'Бак горячей воды','grain-mill':'Дробилка солода','steam-generator':'Парогенератор','chiller':'Чиллер','unitank':'Форфас (BBT)','heat-exchanger':'Теплообменник пластинчатый','reception':'Ёмкость приёмки молока','cooler':'Резервуар-охладитель молока','storage':'Резервуар для хранения молока','vdp':'Ванна длительной пастеризации (ВДП)','fermentation':'Ферментационный танк','cheese-maker':'Сыроизготовитель','cottage-cheese':'Творогоизготовитель','yeast':'Заквасочник','brine':'Контейнер для соления сыра','cheese-shelves':'Стеллажи для созревания сыра','red-fermentation':'Ферментационный танк для красных вин','white-fermentation':'Ферментационный танк для белых вин','storage-aging':'Ёмкость для выдержки и хранения вина','cold-stabilization':'Танк холодной стабилизации','blending':'Ёмкость для купажирования','sulfitation':'Ёмкость сульфитации','universal-tank':'Винификатор (УТТ)','mixing':'Ёмкость с мешалкой','thermal':'Ёмкость с терморегуляцией','pressure':'Ёмкость под давлением'};
+var urls={'cct':'/catalog/beer/cct/','brew-house':'/catalog/beer/brew-house/','hot-water-tank':'/catalog/beer/hot-water-tank/','grain-mill':'/catalog/beer/grain-mill/','steam-generator':'/catalog/beer/steam-generator/','chiller':'/catalog/beer/chiller/','unitank':'/catalog/beer/unitank/','heat-exchanger':'/catalog/beer/heat-exchanger/','reception':'/catalog/dairy/reception/','cooler':'/catalog/dairy/cooler/','storage':'/catalog/dairy/storage/','vdp':'/catalog/dairy/vdp/','fermentation':'/catalog/dairy/fermentation/','cheese-maker':'/catalog/dairy/cheese-maker/','cottage-cheese':'/catalog/dairy/cottage-cheese/','yeast':'/catalog/dairy/yeast/','brine':'/catalog/dairy/brine/','cheese-shelves':'/catalog/dairy/cheese-shelves/','red-fermentation':'/catalog/wine/red-fermentation/','white-fermentation':'/catalog/wine/white-fermentation/','storage-aging':'/catalog/wine/storage-aging/','cold-stabilization':'/catalog/wine/cold-stabilization/','blending':'/catalog/wine/blending/','sulfitation':'/catalog/wine/sulfitation/','universal-tank':'/catalog/wine/universal-tank/','mixing':'/catalog/industrial/mixing/','thermal':'/catalog/industrial/thermal/','pressure':'/catalog/industrial/pressure/'};
+var secNames={beer:'Пивоваренное оборудование',dairy:'Молочное оборудование',wine:'Винодельческое оборудование',industrial:'Промышленное оборудование'};
+var r={n:names[slug]||slug,u:urls[slug]||'/'+slug,si:si,s:secNames[si]||''};toggleCatList();selectQuiz(r);}
+document.getElementById('quizInput').addEventListener('input',function(){
+clearTimeout(quizTimer);var q=this.value.trim();var res=document.getElementById('quizResults');
+if(!q){res.style.display='none';return;}
+quizTimer=setTimeout(function(){
+fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(d){
+res.innerHTML='';var items=d.results.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/);});
+var seen={};items=items.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true;});
+if(!items.length){res.innerHTML='<div style="padding:16px;text-align:center;color:#999;font-size:13px">Ничего не найдено</div>';res.style.display='block';return;}
+items.forEach(function(r){
 var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
+var im=qImg(k,r.si),feats=qFeats(k);
+var fh='';feats.slice(0,3).forEach(function(f){fh+='<li style="font-size:12px;padding:2px 0">✓ '+f+'</li>';});
+var div=document.createElement('div');div.style.cssText='display:flex;gap:24px;padding:20px;cursor:pointer;border-radius:12px;transition:background .15s;margin-bottom:8px';
+div.onmouseover=function(){this.style.background='#fff8f0';};div.onmouseout=function(){this.style.background='';};
+div.innerHTML='<img src="'+im+'" style="width:240px;height:240px;border-radius:16px;object-fit:contain;background:#fff;flex-shrink:0" onerror="this.style.display=\'none\'"><div style="flex:1;min-width:0"><div style="font-weight:700;font-size:15px;color:#1a1a26;margin-bottom:4px">'+r.n+'</div><div style="font-size:12px;color:#888;margin-bottom:4px">'+(QDESC[k]||r.s)+'</div><ul style="font-size:12px;color:#888;margin:0;padding:0;list-style:none">'+fh+'</ul></div><button style="align-self:center;padding:8px 18px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0">Выбрать</button>';
+div.querySelector('button').onclick=function(e){e.stopPropagation();selectQuiz(r);};div.onclick=function(){selectQuiz(r);};
+res.appendChild(div);});res.style.display='block';}).catch(function(){});
+},300);});
+document.getElementById('quizInput').addEventListener('blur',function(){setTimeout(function(){document.getElementById('quizResults').style.display='none';},300);});
+function selectQuiz(r){
+document.getElementById('quizInput').value=r.n;document.getElementById('quizResults').style.display='none';quizSelected=r;
+var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
+var im=qImg(k,r.si);document.getElementById('qImg2').src=im;document.getElementById('qImg2').style.display='block';
+document.getElementById('qSelName').textContent=r.n;document.getElementById('qVolGrid').innerHTML='<div style="text-align:center;padding:24px;color:#999;font-size:13px">Загружаем цены...</div>';
+var desc=QDESC[k]||'',feats=qFeats(k);
+var d2=document.getElementById('qDesc2');d2.textContent=desc;d2.style.display=desc?'block':'none';
+var f2=document.getElementById('qFeats2');f2.innerHTML='';f2.style.display=feats.length?'flex':'none';
+feats.slice(0,4).forEach(function(f){var li=document.createElement('li');li.style.cssText='display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#666;background:#f5f7fa;padding:4px 10px;border-radius:6px';li.innerHTML='✓ '+f;f2.appendChild(li);});
+var d3=document.getElementById('qDesc3');d3.textContent=desc;d3.style.display=desc?'block':'none';
+var f3=document.getElementById('qFeats3');f3.innerHTML='';f3.style.display=feats.length?'flex':'none';
+feats.slice(0,4).forEach(function(f){var li=document.createElement('li');li.style.cssText='display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#666;background:#f5f7fa;padding:4px 10px;border-radius:6px';li.innerHTML='✓ '+f;f3.appendChild(li);});
+nextQStep();
 var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var last=pp[pp.length-1];var ck=last.match(/^\d+l?$/)?pp[pp.length-2]:last;
 var sm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=sm[r.si]||'';
 if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
-fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+src).then(function(r){return r.json()}).then(function(d){
-var s=document.getElementById('hqSel');s.innerHTML='<option value="">— выберите объём —</option>';
-if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л ('+fmtP(p.price)+')';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var v=parseInt(this.value);if(v>0){document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(v);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна'}}}
-else{s.innerHTML='<option value="">Нет данных</option>';s.style.display='block'};document.getElementById('hqSt').textContent='Выберите объём'});
-}
-function hqCustom(){document.getElementById('hqCstBox').style.display='block';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none'}
-function hqCstGo(){var v=parseInt(document.getElementById('hqCstVal').value);if(v>0){
-document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';
-document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
-document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена по запросу'}}
-function hqReset(){
-document.getElementById('hqInp').value='';document.getElementById('hqRes').style.display='none';document.getElementById('hqRst').style.display='none';
-document.getElementById('qs2').style.background='#eee';document.getElementById('qs2').style.color='#aaa';document.getElementById('qs2t').style.color='#aaa';
-document.getElementById('qs3').style.background='#eee';document.getElementById('qs3').style.color='#aaa';document.getElementById('qs3t').style.color='#aaa';
-document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';
-document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования'}
-function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽')}
+fetch('/catalog/?get_prices='+encodeURIComponent(ck)+'&src='+src).then(function(r){return r.json();}).then(function(d){
+quizPrices=d;var g=document.getElementById('qVolGrid');g.innerHTML='';
+if(!d.prices||!d.prices.length){g.innerHTML='<div style="text-align:center;padding:24px;color:#999">Нет данных о ценах</div>';return;}
+d.prices.sort(function(a,b){return a.vol-b.vol;});
+d.prices.forEach(function(p){
+var b=document.createElement('button');
+b.style.cssText='padding:10px;border:2px solid #e0e0e0;border-radius:8px;background:#fff;cursor:pointer;text-align:center;font-family:inherit;font-size:13px;font-weight:600;color:#333;transition:all .2s';
+b.innerHTML='<span style="font-size:16px;font-weight:800;color:#1a1a26;display:block">'+p.vol+'</span><span style="font-size:11px;color:#999">л</span>';
+b.onmouseover=function(){this.style.borderColor='#F77C2A';this.style.transform='translateY(-2px)';};
+b.onmouseout=function(){if(!this.classList.contains('sel')){this.style.borderColor='#e0e0e0';this.style.transform='';}};
+b.onclick=function(){g.querySelectorAll('button').forEach(function(b2){b2.classList.remove('sel');b2.style.background='';b2.style.color='#333';b2.querySelector('span').style.color='#1a1a26';});
+b.classList.add('sel');b.style.background='#F77C2A';b.style.color='#fff';b.querySelector('span').style.color='#fff';qShowPrice(d,p.vol,p.price);};g.appendChild(b);});
+var cb=document.createElement('button');cb.style.cssText='padding:10px;border:2px dashed #e0e0e0;border-radius:8px;background:#fff;cursor:pointer;text-align:center;font-family:inherit;font-size:13px;font-weight:600;color:#333';
+cb.innerHTML='<span style="font-size:14px;display:block">Свой</span><span style="font-size:11px;color:#999">объём</span>';
+cb.onclick=function(){var v=parseInt(document.getElementById('qCustomVal').value);if(!v||v<=0){document.getElementById('qCustomVal').focus();return;}qShowPrice(quizPrices,v,0);};g.appendChild(cb);
+}).catch(function(){document.getElementById('qVolGrid').innerHTML='<div style="text-align:center;padding:24px;color:#e74c3c">Ошибка загрузки</div>';});}
+function qShowPrice(d,vol,price){
+var vs=vol>0?vol+' л':'нестандартный объём';document.getElementById('qFormProduct').value=d.name+' '+vs;
+document.getElementById('qResName').textContent=d.name;document.getElementById('qResVol').textContent=vs;
+document.getElementById('qImg3').src=document.getElementById('qImg2').src;
+if(price>0){document.getElementById('qPriceVal').textContent='от '+fmtP(price);document.getElementById('qPrice').style.display='block';}
+else{document.getElementById('qPrice').style.display='block';document.getElementById('qPriceVal').textContent='По запросу';}
+nextQStep();}
+function nextQStep(){var step=quizStep;
+['qs1','qs2','qs3'].forEach(function(id,i){var el=document.getElementById(id);el.classList.toggle('active',i===step);el.classList.toggle('done',i<step);});
+['qc1','qc2','qc3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===step);});
+quizStep++;window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,behavior:'smooth'});}
+function quizBack(){quizStep=1;
+['qs1','qs2','qs3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===0);document.getElementById(id).classList.remove('done');});
+['qc1','qc2','qc3'].forEach(function(id,i){document.getElementById(id).classList.toggle('active',i===0);});
+window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,behavior:'smooth'});}
+
+// Scroll reveal
+(function(){if(!window.IntersectionObserver)return;document.querySelectorAll('.scroll-reveal').forEach(function(el){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){e[0].target.classList.add('visible');o.disconnect()}},{threshold:.15});o.observe(el)})})();
 </script>
+</section>
 
 <!-- TRUST BAR -->
 <section class="db-row-section scroll-reveal" style="padding:32px 0">
@@ -567,31 +690,6 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 <a href="/certificates.html" class="db-weld-badge" style="font-size:12px">Сертификаты</a>
 <div class="db-weld-badge" style="font-size:12px">Лазерная сварка</div>
 <div class="db-weld-badge" style="font-size:12px">AISI 304/316</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- QUALITY / WHY US -->
-<section class="db-row-section scroll-reveal" style="padding:0 0 32px">
-<div class="db-wrap">
-<div class="db-weld-frame" style="padding:0;overflow:hidden;border-color:rgba(247,124,42,.08)">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-<div style="display:flex;align-items:center;justify-content:center;padding:36px;background:rgba(247,124,42,.03)">
-<img src="cct-tank.jpg" alt="Качество лазерной сварки" style="max-width:100%;max-height:340px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.15)">
-</div>
-<div style="padding:36px 40px;display:flex;flex-direction:column;justify-content:center">
-<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:8px">Качество</div>
-<div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.25">Емкости из стали AISI 304/316 <br>с лазерной сваркой швов</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px">
-<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">🔬</span> Лазерная сварка</div>
-<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">🧪</span> Гидроиспытания</div>
-<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">📏</span> Зеркальная полировка Ra≤0,8</div>
-<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">🔧</span> Арматура Inoxpa</div>
-<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">📄</span> Паспорта сосудов под давление</div>
-<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">✅</span> Сертификаты ТР ЕАЭС</div>
-</div>
 </div>
 </div>
 </div>
@@ -622,365 +720,190 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 </section>
 
 <!-- EQUIPMENT CATEGORIES -->
-<section class="db-section" id="equipment" style="padding:20px 0 48px;background:transparent">
-<div class="db-wrap" style="max-width:1200px">
-<div class="db-weld-frame" style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
-<div style="text-align:center;margin-bottom:24px">
-<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">Каталог</div>
-<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 4px">Оборудование по отраслям</h2>
-<p style="font-size:14px;color:rgba(255,255,255,.5);margin:0">Выберите вашу отрасль</p>
+<section class="db-section alt scroll-reveal" id="equipment" style="padding:64px 0 48px">
+<div class="db-wrap" style="max-width:1400px">
+<div class="db-section-line"></div>
+<h2 class="db-section-title">Категории оборудования</h2>
+<p class="db-section-sub">Полный каталог промышленного оборудования из нержавеющей стали AISI 304/316</p>
+<div class="cat-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px">
+<a href="/beer.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+<div style="height:200px;overflow:hidden;position:relative">
+<img src="cat-img-565c2c35.jpg" alt="Пивоваренное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
 </div>
-
-<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px" id="catTabs2">
-<button class="cat-tab2 active" data-i="0" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:#F77C2A;color:#fff">🥛 Молочное</button>
-<button class="cat-tab2" data-i="1" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">🍷 Винодельческое</button>
-<button class="cat-tab2" data-i="2" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">🍺 Пивоваренное</button>
-<button class="cat-tab2" data-i="3" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">💧 Вода</button>
-<button class="cat-tab2" data-i="4" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">🫒 Масло</button>
-<button class="cat-tab2" data-i="5" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">🍯 Кондитерская</button>
-</div>
-
-<div class="banner2" style="position:relative;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.2)">
-<img id="bimg2" src="banner-dairy.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover">
-<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(26,26,38,.92) 30%,rgba(26,26,38,.5) 70%,rgba(26,26,38,.1) 100%);z-index:2"></div>
-<div style="position:relative;z-index:3;padding:30px 36px 32px">
-<div style="font-size:24px;font-weight:800;color:#fff;margin-bottom:2px" id="ttl2">🥛 Молочное</div>
-<div style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:16px" id="ssub2">Оборудование для молочной промышленности</div>
-<div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap">
-<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 14px;font-size:13px;color:#fff;font-weight:600" id="vvol2">500 - 200 000 л</span>
-<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 14px;font-size:13px;color:#fff;font-weight:600">AISI 304/316</span>
-<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 14px;font-size:13px;color:#F77C2A;font-weight:700" id="ppr2">от 195 000 ₽</span>
-</div>
-<div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:16px;max-width:600px" id="ddesc2">Оборудование для молочной промышленности: ёмкости приёмки и хранения, резервуары-охладители, ВДП, ферментационные танки, сыро- и творогоизготовители.</div>
-<div class="prods2" id="pprod2" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px"></div>
+<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Пивоваренное</div>
+<div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">ЦКТ, варочные порядки, дробилки, БГВ, парогенераторы, чиллеры, форфасы, теплообменники</div>
+<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
+<span style="font-size:12px;color:#F77C2A;font-weight:600">13 категорий</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
 </div>
 </div>
-
-</div></div></section>
-
-<style>
-.prods2 a{flex:0 0 auto;width:150px;text-decoration:none;color:inherit}
-.prods2 div{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);min-height:170px;display:flex;flex-direction:column}
-.prods2::-webkit-scrollbar{height:4px}
-.prods2::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:2px}
-.prods2 img{width:100%;height:100px;object-fit:contain;display:block;background:#fff;padding:8px;flex-shrink:0}
-.prods2 span{display:flex;align-items:center;justify-content:center;padding:6px 8px;font-size:11px;color:#333;font-weight:600;text-align:center;line-height:1.2;min-height:36px;flex:1}
-.prods2 .pr-btn{display:block;padding:5px 8px;font-size:10px;color:#F77C2A;font-weight:700;text-align:center;border-top:1px solid #eee;flex-shrink:0}
-</style>
-
-<script>
-(function(){
-var D = [
-  {img:"banner-dairy.jpg",title:"🥛 Молочное",sub:"Оборудование для молочной промышленности",vol:"500 – 200 000 л",price:"от 195 000 ₽",desc:"Оборудование для молочной промышленности: ёмкости приёмки и хранения, резервуары-охладители, ВДП, ферментационные танки, сыро- и творогоизготовители.",pd:'<a href="/catalog/dairy/reception/"><div><img src="dairy-reception.jpg"><span>Ёмкость приёмки молока</span><span class="pr-btn">1 000 – 50 000 л →</span></div></a><a href="/catalog/dairy/storage/"><div><img src="dairy-storage.jpg"><span>Резервуар хранения молока</span><span class="pr-btn">3 000 – 200 000 л →</span></div></a><a href="/catalog/dairy/cooler/"><div><img src="dairy-cooler.jpg"><span>Резервуар-охладитель</span><span class="pr-btn">1 000 – 50 000 л →</span></div></a><a href="/catalog/dairy/vdp/"><div><img src="dairy-vdp.jpg"><span>Ванна пастеризации ВДП</span><span class="pr-btn">200 – 10 000 л →</span></div></a><a href="/catalog/dairy/fermentation/"><div><img src="dairy-fermentation.jpg"><span>Ферментационный танк</span><span class="pr-btn">500 – 50 000 л →</span></div></a><a href="/catalog/dairy/cheese-maker/"><div><img src="dairy-cheese-maker.jpg"><span>Сыроизготовитель</span><span class="pr-btn">200 – 10 000 л →</span></div></a><a href="/catalog/dairy/cottage-cheese/"><div><img src="dairy-cottage-cheese.jpg"><span>Творогоизготовитель</span><span class="pr-btn">200 – 6 300 л →</span></div></a><a href="/catalog/dairy/yeast/"><div><img src="dairy-yeast.jpg"><span>Заквасочник</span><span class="pr-btn">50 – 1 000 л →</span></div></a>'},
-  {img:"banner-wine.jpg",title:"🍷 Винодельческое",sub:"Оборудование для виноделия",vol:"500 – 50 000 л",price:"от 280 000 ₽",desc:"Винодельческое оборудование: ферментационные танки для красных и белых вин, ёмкости выдержки и хранения, криостабилизация, купажирование, сульфитация, винификаторы.",pd:'<a href="/catalog/wine/red-fermentation/"><div><img src="wine-red-fermentation.jpg"><span>Ферментация красных вин</span><span class="pr-btn">500 – 50 000 л →</span></div></a><a href="/catalog/wine/white-fermentation/"><div><img src="wine-white-fermentation.jpg"><span>Ферментация белых вин</span><span class="pr-btn">500 – 31 500 л →</span></div></a><a href="/catalog/wine/storage-aging/"><div><img src="wine-storage-aging.jpg"><span>Выдержка и хранение</span><span class="pr-btn">1 000 – 200 000 л →</span></div></a><a href="/catalog/wine/cold-stabilization/"><div><img src="wine-cold-stabilization.jpg"><span>Танк криостабилизации</span><span class="pr-btn">500 – 31 500 л →</span></div></a><a href="/catalog/wine/blending/"><div><img src="wine-blending.png"><span>Ёмкость для купажирования</span><span class="pr-btn">1 000 – 50 000 л →</span></div></a><a href="/catalog/wine/sulfitation/"><div><img src="wine-sulfitation.jpg"><span>Ёмкость сульфитации</span><span class="pr-btn">500 – 31 500 л →</span></div></a><a href="/catalog/wine/universal-tank/"><div><img src="wine-universal-tank.jpg"><span>Винификатор УТТ</span><span class="pr-btn">500 – 50 000 л →</span></div></a>'},
-  {img:"banner-beer.jpg",title:"🍺 Пивоваренное",sub:"Оборудование для пивоварен",vol:"100 – 200 000 л",price:"от 94 000 ₽",desc:"Полный цикл пивоваренного оборудования: ЦКТ, варочные порядки, дробилки, БГВ, парогенераторы, чиллеры, форфасы, теплообменники.",pd:'<a href="/catalog/beer/cct/"><div><img src="cct-tank.jpg"><span>ЦКТ для брожения</span><span class="pr-btn">100 – 200 000 л →</span></div></a><a href="/catalog/beer/brew-house/mash-tun/"><div><img src="mash-tun.jpg"><span>Заторный аппарат</span><span class="pr-btn">250 – 5 000 л →</span></div></a><a href="/catalog/beer/brew-house/combined-kettle/"><div><img src="combined-kettle.jpg"><span>Заторно-сусловарочный</span><span class="pr-btn">250 – 5 000 л →</span></div></a><a href="/catalog/beer/brew-house/lauter-tun/"><div><img src="lauter-tun.jpg"><span>Фильтрационный аппарат</span><span class="pr-btn">250 – 5 000 л →</span></div></a><a href="/catalog/beer/brew-house/brew-kettle/"><div><img src="brew-kettle.jpg"><span>Сусловарочный аппарат</span><span class="pr-btn">250 – 5 000 л →</span></div></a><a href="/catalog/beer/brew-house/whirlpool/"><div><img src="whirlpool.jpg"><span>Гидроциклон Вирпул</span><span class="pr-btn">250 – 5 000 л →</span></div></a><a href="/catalog/beer/hot-water-tank/"><div><img src="beer-hot-water-tank.jpg"><span>Бак горячей воды</span><span class="pr-btn">500 – 20 000 л →</span></div></a><a href="/catalog/beer/unitank/"><div><img src="unitank.jpg"><span>Форфас (BBT)</span><span class="pr-btn">250 – 5 000 л →</span></div></a><a href="/catalog/beer/chiller/"><div><img src="chiller.jpg"><span>Чиллер</span><span class="pr-btn">8 – 150 кВт →</span></div></a><a href="/catalog/beer/steam-generator/"><div><img src="steam-generator.jpg"><span>Парогенератор</span><span class="pr-btn">20 – 700 кг/ч →</span></div></a>'},
-  {img:"banner-water.jpg",title:"💧 Для воды",sub:"Баки горячей воды и резервуары хранения",vol:"250 – 50 000 л",price:"от 150 000 ₽",desc:"Резервуары для воды из AISI 304/316.",pd:'<a href="/catalog/beer/hot-water-tank/"><div><img src="hot-water-tank.jpg"><span>Бак горячей воды</span><span class="pr-btn">500 – 20 000 л →</span></div></a><a href="/catalog/industrial/storage/"><div><img src="industrial-storage.jpg"><span>Резервуар хранения</span><span class="pr-btn">1 000 – 100 000 л →</span></div></a>'},
-  {img:"banner-oil.jpg",title:"🫒 Для масла",sub:"Ёмкости для пищевых масел",vol:"500 – 50 000 л",price:"от 220 000 ₽",desc:"Ёмкости для пищевых масел и жиров: резервуары хранения, ёмкости с мешалкой.",pd:'<a href="/catalog/industrial/mixing/"><div><img src="industrial-mixing.jpg"><span>Ёмкость с мешалкой</span><span class="pr-btn">500 – 50 000 л →</span></div></a><a href="/catalog/industrial/storage/"><div><img src="industrial-storage.jpg"><span>Резервуар хранения</span><span class="pr-btn">1 000 – 100 000 л →</span></div></a>'},
-  {img:"banner-conf.jpg",title:"🍯 Кондитерская",sub:"Ёмкости для глазурей и сиропов",vol:"500 – 20 000 л",price:"от 200 000 ₽",desc:"Ёмкости с мешалкой для глазурей, сиропов, кондитерских масс.",pd:'<a href="/catalog/industrial/mixing/"><div><img src="industrial-mixing.jpg"><span>Ёмкость с мешалкой</span><span class="pr-btn">500 – 50 000 л →</span></div></a>'}
-];
-var cur=-1;
-function sw(i){
-  if(i===cur)return;
-  var d=D[i];
-  document.querySelectorAll('.cat-tab2').forEach(function(t,j){t.style.background=j===i?'#F77C2A':'rgba(255,255,255,.06)';t.style.color=j===i?'#fff':'rgba(255,255,255,.5)'});
-  document.getElementById('bimg2').src=d.img;
-  document.getElementById('ttl2').textContent=d.title;
-  document.getElementById('ssub2').textContent=d.sub;
-  document.getElementById('vvol2').textContent=d.vol;
-  document.getElementById('ppr2').textContent=d.price;
-  document.getElementById('ddesc2').textContent=d.desc;
-  document.getElementById('pprod2').innerHTML=d.pd;
-  cur=i;
-}
-document.querySelectorAll('.cat-tab2').forEach(function(b){b.addEventListener('click',function(){sw(parseInt(this.dataset.i))})});
-sw(0);
-})();
-</script>
+</a>
+<a href="/dairy.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+<div style="height:200px;overflow:hidden;position:relative">
+<img src="cat-dairy.jpg" alt="Молочное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
+</div>
+<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Молочное</div>
+<div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">Ёмкости приёмки и хранения, резервуары-охладители, ВДП, ферментационные танки, сыро- и творогоизготовители</div>
+<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
+<span style="font-size:12px;color:#F77C2A;font-weight:600">10 категорий</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+</div>
+</div>
+</a>
+<a href="/winery.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+<div style="height:200px;overflow:hidden;position:relative">
+<img src="cat-wine.jpg" alt="Винодельческое оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
+</div>
+<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Винодельческое</div>
+<div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">Ферментация красных и белых вин, выдержка, криостабилизация, купажирование, сульфитация, винификаторы</div>
+<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
+<span style="font-size:12px;color:#F77C2A;font-weight:600">7 категорий</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+</div>
+</div>
+</a>
+<a href="/industrial.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+<div style="height:200px;overflow:hidden;position:relative">
+<img src="cat-industrial.jpg" alt="Промышленное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
+</div>
+<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
+<div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Промышленное</div>
+<div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">Резервуары для хранения, ёмкости с мешалкой, терморегуляция, давление, CIP-станции, теплообменники</div>
+<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
+<span style="font-size:12px;color:#F77C2A;font-weight:600">6 категорий</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
 
 <!-- PROJECTS -->
-<section class="db-section" id="projects" style="padding:20px 0 48px;background:transparent">
-<div class="db-wrap" style="max-width:1200px">
-<div class="db-weld-frame" style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
-<div style="text-align:center;margin-bottom:24px">
-<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">Проекты</div>
-<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 4px">Примеры нашего оборудования</h2>
-<p style="font-size:14px;color:rgba(255,255,255,.5);margin:0">Реализованные проекты для пищевой промышленности</p>
-</div>
+<section class="db-section alt" id="projects">
+<div class="db-wrap">
+<div class="db-section-line"></div>
+<h2 class="db-section-title">Примеры нашего оборудования</h2>
+<p class="db-section-sub">Реализованные проекты для пищевой промышленности</p>
+<div class="db-projects-scroll">
 
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;text-align:center">
-<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
-<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">400+</div>
-<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">проектов по всей России</div>
+<div class="db-project-card">
+<img src="milk-tank.jpg" alt="Молочные резервуары" loading="lazy">
+<div class="db-project-body">
+<h3>Оснащение молочного завода, Краснодарский край</h3>
+<div class="db-project-preview">
+<ul><li>Герметичные конструкции двойные швы</li><li>Температурный диапазон 40°C–120°C</li><li>Увеличение производительности на 40%</li></ul>
+<button class="db-project-btn js-toggle-case">Читать кейс</button>
 </div>
-<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
-<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">2000 м²</div>
-<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">собственное производство</div>
-</div>
-<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
-<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">17</div>
-<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">лет на рынке</div>
-</div>
-<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
-<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">12</div>
-<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">месяцев гарантии</div>
-</div>
-</div>
-
-<div style="display:flex;gap:20px;overflow-x:auto;padding-bottom:8px">
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="milk-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🥛 Молочный завод</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">50 тонн переработки в сутки</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Полный цикл оснащения молочного завода мощностью 50 тонн переработки в сутки: от приёмки до хранения.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Приёмно-охладительные ёмкости 25 000 л × 2, хранение 30 000 л × 4, пастеризация 5000 л/ч.</p>
-<p style="margin:0 0 4px"><strong>Система:</strong> CIP-мойка на 4 контура с программируемым циклом.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: +40% производительности, сокращение потерь сырья на 15%</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="milk-park.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🥛 Молочный парк</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">Танки 25 000–50 000 л</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Изготовление и монтаж парка ёмкостного оборудования для молочного завода. Резервуары из AISI 304.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Хранение 25 000–50 000 л × 6 с теплоизоляцией, приёмка 20 000 л × 3.</p>
-<p style="margin:0 0 4px"><strong>Технология:</strong> Танки для созревания сливок 10 000 л × 2, CIP-мойка.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: 500 тонн единовременного хранения молока</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="cheez-kont.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧀 Цех созревания сыров</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">20 тонн единовременного хранения</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Специализированный цех созревания твёрдых и полутвёрдых сыров. Полностью автоматизированное поддержание микроклимата.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Стелажные системы из AISI 304, камеры 4 зоны: +8°C / +12°C / +15°C / +18°C.</p>
-<p style="margin:0 0 4px"><strong>Система:</strong> Увлажнение и вентиляция с HEPA-фильтрацией, контроль влажности 75–95%.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: стабильное качество сыра, снижение брака на 25%</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="sir.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧀 Сыроварня, МО</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">600 кг сыра/смена</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Комплексное оснащение крафтовой сыроварни мощностью 2 тонны молока в смену. Все ёмкости из AISI 304.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Сыроизготовители 1000 л × 2, ВДП 500 л с профилем, ферментация 300 л × 3.</p>
-<p style="margin:0 0 4px"><strong>Оснащение:</strong> Контейнеры для посола 500 л × 2, лазерная резка сырного зерна.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: 6 сортов сыра, 600 кг/смена, запуск за 8 недель</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="wine-equipment.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍷 Винодельня, Ставрополье</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">Винодельня полного цикла</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Винодельня «под ключ» — от приёмки винограда до розлага. Проект включал бродильный цех, погреб выдержки и линию розлага.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Ферментация 10 000 л × 8, система инертизации N2, погреб выдержки.</p>
-<p style="margin:0 0 4px"><strong>Линия:</strong> Розлив 3000 бут/ч, АСУ ТП Siemens.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: 500 000 бутылок/год, 7 сортов, запуск за 16 недель</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="wine-equipment-1.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍷 Винификаторы, Крым</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">3 винификатора с рубашкой охлаждения</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Изготовление и установка трёх винификаторов из AISI 304 для винодельни в Крыму. Каждый танк с рубашкой охлаждения.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Винификаторы 2 000 л × 3, лазерная сварка, полировка Ra ≤ 0,4 мкм.</p>
-<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens, пробоотборники, смотровые фонари.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: точный контроль ферментации, выход за 6 недель</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="brewery-voronezh.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивзавод, Воронеж</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">Варочный порядок 5 000 л · 8 варок/сутки</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Изготовили и ввели в эксплуатацию варочный порядок на 5000 литров. Производственная мощность линии — 40 000 литров сусла в сутки. Внедрена автоматизированная система управления на базе Siemens.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 5000 л, ЦКТ 10000 л × 8 шт., парогенератор, чиллер, CIP-мойка.</p>
-<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens S7-1200, контроль температуры, давления, уровней.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: снижение человеческого фактора, стабильное качество, 8 варок/сутки, 6 сортов пива</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="brewery-abkhazia.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, Абхазия</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">Комплексное оснащение под ключ</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Полный цикл оснащения пивоварни «под ключ»: от проекта до первой варки. Все ёмкости из AISI 304 с зеркальной полировкой.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 1000 л, ЦКТ 2000 л × 6 шт., БГВ, парогенератор, чиллер.</p>
-<p style="margin:0 0 4px"><strong>Автоматика:</strong> Siemens, управление с планшета, CIP-мойка.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: запуск за 6 недель, 4 сорта пива, стабильное качество</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="brewery-chekhov.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, г. Чехов</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">Мини-пивоварня ресторанного типа</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Небольшая пивоварня ресторанного формата на 5 сортов разливного пива. Проект реализован под ключ за 4 недели.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 250 л, ЦКТ 500 л × 3 шт., парогенератор 60 кВт, чиллер 8 кВт.</p>
-<p style="margin:0 0 4px"><strong>Размещение:</strong> Компактно в цокольном этаже ресторана, CIP-мойка на 2 контура.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: 5 сортов, стабильное качество, окупаемость 14 месяцев</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="kvas-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧃 Завод кваса, Воронеж</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">300 000 л/мес · 6 сортов</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Линия производства кваса полного цикла на базе пивоваренного оборудования. Уникальный рецепт сбраживания в ЦКТ.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 3000 л, ЦКТ 5000 л × 4, купажные ёмкости 3000 л × 2.</p>
-<p style="margin:0 0 4px"><strong>Линия:</strong> Розлив ПЭТ 1,5 л (3000 бут/ч), автоматизация.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: 300 000 л/мес, 6 сортов кваса, запуск за 10 недель</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="projects/industrial-tanks.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🏭 Парк резервуаров</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">10+ емкостей для масла</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Изготовление и монтаж крупного парка резервуаров для масложирового комбината. Более 10 емкостей из нержавеющей стали.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> Резервуары 100 000–200 000 л × 10+, ёмкости с мешалкой 20 000 л × 2.</p>
-<p style="margin:0 0 4px"><strong>Система:</strong> Азотная подушка на каждом, CIP-мойка, теплообменники.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: +300 тонн единовременного хранения</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
-</div>
-</div>
-<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="projects/cip-station.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
-<div style="padding:14px 18px 8px">
-<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧼 CIP-станция</h3>
-<p style="font-size:12px;color:#888;margin:0 0 6px">Автоматическая безразборная мойка</p>
-<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
-<p style="margin:0 0 6px">Автоматизированная CIP-станция для безразборной мойки технологического оборудования. Корпус и трубопроводы из AISI 316.</p>
-<p style="margin:0 0 4px"><strong>Оборудование:</strong> 4 независимых контура мойки, баки 1500 л × 4 из AISI 316.</p>
-<p style="margin:0 0 4px"><strong>Управление:</strong> Siemens S7-1200, визуализация, датчики концентрации.</p>
-<p style="color:#F77C2A;font-weight:600">✅ Результат: -40% времени мойки, -25% расхода моющих средств</p>
-</div>
-<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+<div class="db-project-details">
+<p>Полный цикл оснащения молочного завода мощностью 50 тонн переработки в сутки. Проект включал приёмочное отделение, цех пастеризации, танки хранения и линии розлага.</p>
+<ul>
+<li>Приёмно-охладительные ёмкости 25 000 л × 2 шт.</li>
+<li>Резервуары хранения молока 30 000 л × 4 шт.</li>
+<li>Пастеризационно-охладительная установка 5000 л/час</li>
+<li>CIP-мойка на 4 контура с программируемым циклом</li>
+</ul>
+<p><strong>Результат:</strong> увеличение производительности на 40%, сокращение потерь сырья на 15%.</p>
+<button class="db-project-btn js-toggle-case">Свернуть</button>
 </div>
 </div>
 </div>
-<div style="text-align:center;margin-top:24px"><a href="/#quiz-block" style="display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(247,124,42,.2)">Подобрать ёмкость →</a></div>
+<div class="db-project-card">
+<img src="kvas-tank.jpg" alt="ЦКТ для кваса" loading="lazy">
+<div class="db-project-body">
+<h3>Завод по производству кваса, Воронеж</h3>
+<div class="db-project-preview">
+<ul><li>Производственная мощность: 300 000 л/мес</li><li>Полностью автоматизированный процесс</li><li>Система управления ферментацией</li></ul>
+<button class="db-project-btn js-toggle-case">Читать кейс</button>
+</div>
+<div class="db-project-details">
+<p>Линия производства кваса полного цикла на базе пивоваренного оборудования. Уникальный рецепт сбраживания квасного сусла в ЦКТ с последующей купажой.</p>
+<ul>
+<li>Варочный порядок 3000 л для варки квасного сусла</li>
+<li>ЦКТ 5000 л × 4 шт. с рубашкой охлаждения</li>
+<li>Купажные ёмкости 3000 л × 2 шт.</li>
+<li>Линия розлага ПЭТ 1,5 л (3000 бут/час)</li>
+</ul>
+<p><strong>Результат:</strong> 300 000 л/мес, 6 сортов кваса, запуск за 10 недель.</p>
+<button class="db-project-btn js-toggle-case">Свернуть</button>
 </div>
 </div>
+</div>
+<div class="db-project-card">
+<img src="cheez-kont.jpg" alt="Стелажные системы" loading="lazy">
+<div class="db-project-body">
+<h3>Цех созревания сыров, Ленинградская область</h3>
+<div class="db-project-preview">
+<ul><li>Антикоррозийное покрытие двойной защиты</li><li>Регулируемая система вентиляции</li></ul>
+<button class="db-project-btn js-toggle-case">Читать кейс</button>
+</div>
+<div class="db-project-details">
+<p>Специализированный цех созревания твёрдых и полутвёрдых сыров на 20 тонн единовременного хранения. Полностью автоматизированное поддержание микроклимата.</p>
+<ul>
+<li>Стелажные системы из нержавеющей стали AISI 304</li>
+<li>Камеры созревания 4 зоны: +8°C / +12°C / +15°C / +18°C</li>
+<li>Система увлажнения и вентиляции с HEPA-фильтрацией</li>
+<li>Автоматический контроль влажности 75–95%</li>
+</ul>
+<p><strong>Результат:</strong> стабильное качество сыра, снижение брака на 25%.</p>
+<button class="db-project-btn js-toggle-case">Свернуть</button>
+</div>
+</div>
+</div>
+<div class="db-project-card">
+<img src="sir.jpg" alt="Сыроварня" loading="lazy">
+<div class="db-project-body">
+<h3>Сыроварня полного цикла, Московская область</h3>
+<div class="db-project-preview">
+<ul><li>Резервуары для хранения молока</li><li>Ёмкости для пастеризации</li><li>Ферментационные танки</li></ul>
+<button class="db-project-btn js-toggle-case">Читать кейс</button>
+</div>
+<div class="db-project-details">
+<p>Комплексное оснащение крафтовой сыроварни мощностью 2 тонны молока в смену. Все ёмкости из AISI 304 с зеркальной полировкой.</p>
+<ul>
+<li>Сыроизготовители 1000 л × 2 шт. с лазерной резкой сырного зерна</li>
+<li>Ванны пастеризации 500 л с программируемым профилем</li>
+<li>Ферментационные танки для заквасок 300 л × 3 шт.</li>
+<li>Контейнеры для посола сыра 500 л × 2 шт.</li>
+</ul>
+<p><strong>Результат:</strong> 6 сортов сыра, 600 кг/смена, запуск за 8 недель.</p>
+<button class="db-project-btn js-toggle-case">Свернуть</button>
+</div>
+</div>
+</div>
+</div>
+<div style="text-align:center;margin-top:16px"><a href="/catalog/#projects" class="db-hero-cta" style="display:inline-flex;font-size:14px;padding:12px 28px">Смотреть все проекты →</a></div>
 </div>
 </section>
-<style>
-.proj-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
-.proj-detail{display:none!important}
-.proj-card.expanded .proj-detail{display:block!important}
-.proj-card.expanded .proj-detail ~ p{display:none}
-</style>
-<script>
-function toggleProj(el){
-  document.querySelectorAll('.proj-card').forEach(function(c){if(c!==el)c.classList.remove('expanded')});
-  el.classList.toggle('expanded');
-}
-</script>
 
 
 
-<!-- ABOUT US -->
-<section class="db-section" id="about" style="padding:20px 0 48px;background:transparent">
-<div class="db-wrap" style="max-width:1200px">
-<div class="db-weld-frame" style="padding:0;overflow:hidden;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-<div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center">
-<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">О нас</div>
-<h2 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.2">Производство ёмкостей<br>из нержавеющей стали</h2>
-<p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin:0 0 12px">ООО «Оборудование Кубани» — производитель промышленного оборудования из нержавеющей стали AISI 304/316. Собственное производство 2000 м² в Краснодаре.</p>
-<div id="aboutMore" style="display:none;font-size:13px;color:rgba(255,255,255,.5);line-height:1.6">
-<p style="margin:0 0 8px">Изготавливаем резервуары для хранения, ёмкости с мешалками, терморегуляцией, сосуды под давлением до 6 бар, CIP-станции и теплообменники. Оборудование используется в пивоваренной, молочной, винодельческой, масложировой отраслях.</p>
-<p style="margin:0 0 8px">Парк оборудования: лазерный раскройный комплекс, автоматы аргонодуговой сварки, вальцы для гибки металла до 25 мм, линия вальцовки днищ. Контроль качества: неразрушающие методы, гидравлические испытания.</p>
-<p style="margin:0 0 4px">География поставок — от Калининграда до Владивостока и СНГ. Гарантия 12 месяцев. Сертификаты ТР ЕАЭС, паспорта сосудов под давлением.</p>
+<!-- SEO TEXT -->
+<section class="db-section">
+<div class="db-wrap">
+<div class="db-section-line"></div>
+<h2 class="db-section-title">Производство оборудования из нержавеющей стали в Краснодаре</h2>
+<p class="db-section-sub">Полный цикл производства емкостного оборудования для пищевой промышленности</p>
+<div class="db-seo-wrap">
+<div class="db-seo-text" id="seoText">
+<p>ООО «Оборудование Кубани» — российский производитель промышленного оборудования из нержавеющей стали AISI 304 и AISI 316. Мы изготавливаем резервуары для хранения, ёмкости с мешалками, ёмкости с терморегуляцией (нагрев и охлаждение), сосуды под давлением до 6 бар, CIP-станции безразборной мойки и пластинчатые теплообменники. Наше оборудование используется в пивоваренной, молочной, винодельческой, масложировой и других отраслях пищевой промышленности.</p>
+<p>Производство находится в Краснодаре, площадь цеха — 2000 м². Собственный парк оборудования включает лазерный раскройный комплекс, автоматы аргонодуговой сварки, вальцы для гибки листового металла до 25 мм, линию вальцовки днищ. Это позволяет выполнять заказы любой сложности без привлечения субподрядчиков. Все сварные швы контролируются неразрушающими методами, каждое изделие проходит гидравлические испытания перед отгрузкой.</p>
+<p>Мы поставляем оборудование как отдельных единиц, так и комплексные решения «под ключ»: от проектирования и изготовления до доставки, монтажа и пусконаладки. В стандартную комплектацию входят необходимая арматура, контрольно-измерительные приборы, системы автоматизации на базе Siemens или отечественных контроллеров. Возможно изготовление по индивидуальным чертежам заказчика с учётом особенностей планировки цеха и технологического процесса.</p>
+<p>География поставок — от Калининграда до Владивостока, а также страны СНГ. Доставка осуществляется любой транспортной компанией или собственным транспортом. Гарантия на оборудование — 12 месяцев. Предоставляем сертификаты ТР ЕАЭС, паспорта сосудов под давлением, полный пакет технической документации. Оставьте заявку через форму ниже — мы подготовим коммерческое предложение в течение 2 рабочих дней.</p>
 </div>
-<span onclick="toggleAbout()" style="display:inline-block;color:#F77C2A;font-size:13px;font-weight:600;cursor:pointer;margin-bottom:16px">Читать подробнее ↓</span>
-<div style="display:flex;gap:8px;flex-wrap:wrap">
-<a href="/#order-form" style="display:inline-flex;align-items:center;gap:6px;padding:11px 24px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">📋 Получить расчёт</a>
-<a href="/factory-tour.jpg" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:11px 24px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);border-radius:8px;font-size:13px;font-weight:600;text-decoration:none">🏭 Экскурсия по цеху</a>
-</div>
-<div id="aboutEquip" style="display:none;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06)">
-<p style="font-size:12px;color:rgba(255,255,255,.45);margin:0 0 10px;font-weight:600">⚙️ Оборудование цеха:</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap">
-<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
-<img src="equipment/ostas-mill.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
-<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Вальцы OSTAS</div>
-</div>
-<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
-<img src="equipment/hydraulic-press.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
-<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Пресс с ЧПУ</div>
-</div>
-<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
-<img src="equipment/cnc-guillotine.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
-<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Гильотина с ЧПУ</div>
-</div>
-<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
-<img src="equipment/band-saw.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
-<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Ленточная пила</div>
-</div>
-<div style="background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;width:100px">
-<img src="equipment/laser-welding.jpg" style="width:100%;height:70px;object-fit:contain;display:block;background:#fff;padding:4px">
-<div style="padding:4px;font-size:9px;color:rgba(255,255,255,.5);text-align:center">Лазерная сварка</div>
-</div>
-</div>
-</div>
-<span onclick="toggleAboutEquip()" style="display:inline-block;color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;margin-top:10px">Оборудование цеха →</span>
-</div>
-<div style="display:flex;align-items:center;justify-content:center;padding:30px;background:rgba(255,255,255,.02);flex-direction:column">
-<img src="about-workshop.jpg" alt="Производственный цех" style="max-width:100%;max-height:380px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.2)">
-<p style="font-size:12px;color:rgba(255,255,255,.35);margin:12px 0 0;text-align:center">📍 Краснодар, пос. Индустриальный, Дорожный пер., 5</p>
-</div>
-</div>
+<button class="db-seo-toggle" onclick="toggleSeo()">Читать подробнее ↓</button>
 </div>
 </div>
 </section>
 
-<script>
-function toggleAbout(){
-  var el=document.getElementById('aboutMore');
-  el.style.display=el.style.display==='none'||!el.style.display?'block':'none';
-}
-function toggleAboutEquip(){
-  var el=document.getElementById('aboutEquip');
-  el.style.display=el.style.display==='none'||!el.style.display?'block':'none';
-}
-</script>
+<!-- FORM -->
 <section class="db-section dark" id="order-form">
 <div class="db-wrap">
 <div class="db-section-line"></div>
@@ -1072,11 +995,32 @@ function toggleAboutEquip(){
 <span>Я согласен(а) на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">Политикой конфиденциальности</a></span>
 </label>
 <button type="submit" class="sbtn submit-btn">Получить расчёт →</button>
+<a href="/catalog/industrial/" class="sbtn catalog-link-btn" id="draft-catalog-link" target="_blank" style="display:inline-block; margin-top:8px; text-align:center; text-decoration:none; background:transparent; border:2px solid rgba(247,124,42,.3); color:#F77C2A; padding:13px; border-radius:10px; font-size:14px; font-weight:600;">Смотреть в каталоге →</a>
 </form>
 </div>
 </section>
 
 <!-- LEAD MAGNET: Скачать каталог -->
+<section class="db-row-section" style="padding:0;margin-top:-24px">
+<div class="db-wrap">
+<div class="db-weld-frame" style="background:linear-gradient(135deg,#1a1a26,#2b2b39);padding:0;overflow:hidden">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center">
+<div style="padding:40px 44px">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:8px">Скачать каталог</div>
+<div style="font-size:22px;font-weight:800;color:#fff;margin-bottom:10px">Полный каталог с ценами</div>
+<div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:16px">Все позиции, объёмы и цены в одном PDF. Удобно для планирования бюджета и согласования.</div>
+<form method="post" action="/php/send.php" style="display:flex;gap:10px;flex-wrap:wrap">
+<input type="hidden" name="form_type" value="catalog-request">
+<input type="email" name="email" required placeholder="Ваш email для получения каталога" style="flex:1;min-width:200px;padding:12px 16px;border:1px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none">
+<button type="submit" style="padding:12px 28px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap">📥 Скачать →</button>
+</form>
+<div style="font-size:11px;color:rgba(255,255,255,.35);margin-top:8px">Нажимая «Скачать», вы соглашаетесь с Политикой конфиденциальности</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;padding:40px;background:rgba(247,124,42,.04);font-size:60px">📋</div>
+</div>
+</div>
+</div>
+</section>
 
 <!-- CONTACTS -->
 <section class="db-section alt" id="contacts">
@@ -1110,8 +1054,6 @@ function toggleAboutEquip(){
 </div>
 </section>
 
-<!-- Scroll reveal -->
-<script>(function(){if(!window.IntersectionObserver)return;document.querySelectorAll('.scroll-reveal').forEach(function(el){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){e[0].target.classList.add('visible');o.disconnect()}},{threshold:.15});o.observe(el)})})();</script>
 </main>
 
 <?php require $_SERVER['DOCUMENT_ROOT'].'/php/footer.php'; ?>
@@ -1271,4 +1213,5 @@ window.addEventListener('scroll', function(){ if (!ticking) { requestAnimationFr
 update();
 })();
 </script></body>
+</html>
 
