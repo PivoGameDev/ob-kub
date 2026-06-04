@@ -548,6 +548,8 @@ if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d
 else{s.innerHTML='<option value="">Нет данных</option>';s.style.display='block'};
 document.getElementById('hqSt').textContent='Выберите объём'});
 }
+window.hqCustom=function(){document.getElementById('hqCstBox').style.display='block';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none'}
+window.hqCstGo=function(){var v=parseInt(document.getElementById('hqCstVal').value);if(v>0){
 window._hqVol=v+' л';window._hqPrice='По запросу';
 document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';
 document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
