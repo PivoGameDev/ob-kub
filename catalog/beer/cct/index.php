@@ -282,46 +282,22 @@ $volCount = count($volumes);
     </div>
 </div>
 <section class="container">
-    <div class="section-head">
-        <h2 class="section-title">Выберите подходящий объём</h2>
-        <p class="section-desc">Нажмите на карточку, чтобы перейти к подробным характеристикам, чертежам и стоимости</p>
-    </div>
 
-<style>
-.volumes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;padding:24px 0 40px}
-.vol-card{background:#fff;border-radius:10px;text-decoration:none;color:inherit;display:flex;flex-direction:column;position:relative;overflow:hidden;border:1px solid #eee;transition:transform .2s,box-shadow .2s,border-color .2s}
-.vol-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(247,124,42,.1);border-color:#fed7a8}
-.vol-card-body{padding:14px 14px 10px;flex:1;display:flex;flex-direction:column}
-.vol-label{font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:#bbb;margin-bottom:1px}
-.vol-value{font-size:22px;font-weight:800;color:#1a1a26;line-height:1.1;margin-bottom:1px}
-.vol-unit{font-size:12px;color:#aaa;font-weight:400}
-.price{font-size:15px;font-weight:700;color:#F77C2A;margin:4px 0 8px}
-.specs{display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;margin-bottom:4px}
-.specs div{font-size:11px;color:#888;padding:2px 0;border-bottom:1px dotted #f0f0f0;display:flex;justify-content:space-between}
-.specs div:last-child,.specs div:nth-last-child(2){border-bottom:none}
-.specs .l{color:#ccc}
-.popular-badge{position:absolute;top:8px;right:8px;background:#F77C2A;color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:3px 8px;border-radius:4px}
-</style>
-<div class="volumes-grid">
-<?php
-$popular = $volumes[floor(count($volumes) / 2)] ?? null;
-foreach ($volumes as $v):
-    $d = $allData[$v];
-    $p = $d['from_price'];
-    $ps = $p >= 1000000 ? number_format($p/1000000,1,'.','').' млн ₽' : ($p >= 1000 ? number_format($p/1000,0,'.','').' тыс ₽' : number_format($p,0,'.',' ').' ₽');
-    $isPopular = ($v === $popular);
-?>
-<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" class="vol-card">
-<?php if ($isPopular): ?><div class="popular-badge">⭐ Популярный</div><?php endif; ?>
-<div class="vol-card-body">
-<div class="vol-label">Объём</div>
-<div class="vol-value"><?= number_format($v, 0, '.', ' ') ?><span class="vol-unit"> л</span></div>
-<div class="specs">
-<div><span class="l">Рабочий</span><span><?= number_format($d['working_volume'], 0, '.', ' ') ?> л</span></div>
-</div>
-</div>
-</a>
+<div class="db-weld-frame" style="padding:0;overflow:hidden;margin-top:24px">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent);z-index:2"></div>
+<div style="position:relative;background:linear-gradient(135deg,#1a1a26,#2b2b39);padding:36px 40px">
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:.12;background-image:url(/banner-beer.jpg);background-size:cover;background-position:center;z-index:0"></div>
+<div style="position:relative;z-index:1">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:4px">Выберите объём</div>
+<h2 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 4px">Все доступные объёмы ЦКТ</h2>
+<p style="font-size:13px;color:rgba(255,255,255,.5);margin:0 0 20px">Нажмите на нужный объём для перехода к характеристикам</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<?php foreach ($volumes as $v): ?>
+<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;background:rgba(247,124,42,.12);border:1px solid rgba(247,124,42,.25);border-radius:6px;font-size:13px;font-weight:700;color:#F77C2A;text-decoration:none;transition:all .2s;min-width:60px" onmouseover="this.style.background='#F77C2A';this.style.color='#fff'" onmouseout="this.style.background='';this.style.color=''"><?= number_format($v, 0, '.', ' ') ?> л</a>
 <?php endforeach; ?>
+</div>
+</div>
+</div>
 </div>
 </section>
 
