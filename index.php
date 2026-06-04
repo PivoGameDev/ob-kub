@@ -1048,7 +1048,7 @@ function toggleAboutEquip(){
   el.style.display=el.style.display==='none'||!el.style.display?'block':'none';
 }
 </script>
-<style>@media(max-width:860px){#order-form .db-weld-frame>form>div{grid-template-columns:1fr!important}#order-form .db-weld-frame>form>div>div:first-child{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px}}</style>
+<style>@media(max-width:860px){#order-form .db-weld-frame>form>div{grid-template-columns:1fr!important}#order-form .db-weld-frame>form>div>div:first-child{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px}}#order-form .db-weld-frame::before{top:-1px;left:-1px;right:-1px;border-radius:17px 17px 0 0}</style>
 <section id="order-form" style="padding:64px 0;background:#f5f6f8">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:0;overflow:visible">
