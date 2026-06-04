@@ -577,7 +577,6 @@ var fi=document.getElementById('fqImg');
 var hp=document.getElementById('fqProduct'),hv=document.getElementById('fqVolume'),hi=document.getElementById('fqPriceInput');
 var en=document.getElementById('formEquipName');
 var fs=document.getElementById('formVolSel'),fpb=document.getElementById('formPriceBlock'),fpv=document.getElementById('formPriceVal');
-var v=parseInt(vol);
 if(fd&&fn){
 fd.style.display='block';
 fn.textContent=name||'—';
@@ -586,7 +585,10 @@ if(si)meta.push(si==='beer'?'Пивоварение':si==='dairy'?'Молочн�
 if(fm)fm.textContent=meta.join(' · ');
 fv.textContent=v>0?vol+' л':'—';
 if(fprc)fprc.textContent=price||'—';
-if(mw)mw.style.display='none'
+if(mw)mw.style.display='none';
+var fr=document.getElementById('fqRst');if(fr)fr.style.display='inline'
+}
+var v=parseInt(vol);
 if(hp)hp.value=name||'';
 if(hv)hv.value=v>0?vol:'';
 if(hi)hi.value=price||'';
