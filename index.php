@@ -561,36 +561,48 @@ document.getElementById('hqPriceBox').style.display='none';document.getElementBy
 function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽')}
 window.hqGoForm=function(){
 try{
-var data=window.hqSelData||{};
-var vol='',quizPrice='';
-var selEl=document.getElementById('hqSel');
-var cstEl=document.getElementById('hqCstVal');
-if(selEl&&selEl.style.display!='none'&&selEl.value){vol=selEl.options[selEl.selectedIndex].textContent.replace(' л','').trim();quizPrice=document.getElementById('hqPriceVal').textContent}
-else if(cstEl&&cstEl.style.display!='none'&&cstEl.value){vol=cstEl.value;quizPrice=document.getElementById('hqPriceVal').textContent}
-var indMap={beer:'beer',dairy:'dairy',wine:'wine',industrial:'other'};
-var ind=document.getElementById('draft-industry');
-if(data.si&&indMap[data.si]&&ind)ind.value=indMap[data.si];
-var opt=document.getElementById('optSection');
-if(opt&&opt.style.display!='block'){var to=window.toggleOptional;if(to)to()}
-var udt=window.updateDraftTypes;if(udt)udt();
-var udt=window.updateDraftTypes;if(udt)udt();
-var v=parseInt(vol);
-if(v>0){
-var btnVols=[250,500,1000,3000,5000,10000];
-var match=btnVols.slice().sort(function(a,b){return Math.abs(a-v)-Math.abs(b-v)})[0];
-var dv=document.getElementById('draft-volume');if(dv)dv.value=match;
-document.querySelectorAll('.db-vol-btn').forEach(function(x){x.classList.remove('active')});
-var b=document.querySelector('.db-vol-btn[data-vol="'+match+'"]');
-if(b)b.classList.add('active');
-var dc=document.getElementById('draft-vol-custom');if(dc)dc.style.display='none'}
-var keyMap={cct:'ckt','hot-water-tank':'hot_water','mash-tun':'mash_tun','combined-kettle':'combined_kettle','lauter-tun':'lauter_tun','brew-kettle':'brew_kettle','whirlpool':'whirlpool','wort-receiver':'wort_receiver',unitank:'forfas','steam-generator':'steam',chiller:'chiller','grain-mill':'mill','heat-exchanger':'heatex',reception:'reception',storage:'storage','cheese-maker':'cheesemaker',fermentation:'fermentation',vdp:'pasteurizer','cottage-cheese':'curd',cooler:'reception','red-fermentation':'red_fermenter','white-fermentation':'white_fermenter','storage-aging':'aging','cold-stabilization':'cryostat',blending:'blending','universal-tank':'universal',mixing:'mixing',thermal:'thermal',pressure:'pressure',cip:'cip'};
+var name=(document.getElementById('hqSelName')||{}).textContent||'';
+var vol='',price='';
+var se=document.getElementById('hqSel');
+var ce=document.getElementById('hqCstVal');
+if(se&&se.style.display!='none'&&se.value){
+vol=(se.options[se.selectedIndex]||{}).textContent||'';
+vol=vol.replace(' л','').trim();
+price=(document.getElementById('hqPriceVal')||{}).textContent||''
+} else if(ce&&ce.style.display!='none'&&ce.value){
+vol=ce.value;price=(document.getElementById('hqPriceVal')||{}).textContent||''
+}
+var si=(window.hqSelData||{}).si||'';
+var key=(window.hqSelData||{}).key||'';
+var im={beer:'beer',dairy:'dairy',wine:'wine',industrial:'other'};
+var el=document.getElementById('draft-industry');
+if(si&&im[si]&&el)el.value=im[si];
+var os=document.getElementById('optSection'),ot=document.getElementById('optTrigger');
+if(os&&ot){os.style.display='block';ot.classList.add('open')}
+var ud=window.updateDraftTypes;if(ud)ud();
+var km={cct:'ckt','hot-water-tank':'hot_water','mash-tun':'mash_tun','combined-kettle':'combined_kettle','lauter-tun':'lauter_tun','brew-kettle':'brew_kettle','whirlpool':'whirlpool','wort-receiver':'wort_receiver',unitank:'forfas','steam-generator':'steam',chiller:'chiller','grain-mill':'mill','heat-exchanger':'heatex',reception:'reception',storage:'storage','cheese-maker':'cheesemaker',fermentation:'fermentation',vdp:'pasteurizer','cottage-cheese':'curd',cooler:'reception','red-fermentation':'red_fermenter','white-fermentation':'white_fermenter','storage-aging':'aging','cold-stabilization':'cryostat',blending:'blending','universal-tank':'universal',mixing:'mixing',thermal:'thermal',pressure:'pressure',cip:'cip'};
 var ft=document.getElementById('draft-type');
-var tgt=keyMap[data.key];
-if(tgt&&ft){for(var xi=0;xi<ft.options.length;xi++){if(ft.options[xi].value===tgt){ft.value=tgt;break}}}
-var upd=window.updateDraftPrice;if(upd)upd();
-if(quizPrice){var pv=document.getElementById('draft-price-value');if(pv)pv.textContent=quizPrice}
-if(data.name){var ta=document.querySelector('textarea[name="comment"]');
-if(ta&&!ta.value.trim())ta.value='Запрос из подбора: '+data.name+(v>0?', объём '+v+' л':'')+(quizPrice?', цена '+quizPrice:'')}
+var tg=km[key];
+if(tg&&ft&&ft.options){
+for(var xi=0;xi<ft.options.length;xi++){
+if(ft.options[xi]&&ft.options[xi].value===tg){ft.value=tg;break}
+}}
+var v=parseInt(vol);
+if(v>0&&!isNaN(v)){
+var bv=[250,500,1000,3000,5000,10000];
+var mt=bv.slice().sort(function(a,b){return Math.abs(a-v)-Math.abs(b-v)})[0];
+var dv=document.getElementById('draft-volume');
+if(dv)dv.value=String(mt);
+document.querySelectorAll('.db-vol-btn').forEach(function(x){x.classList.remove('active')});
+var bb=document.querySelector('.db-vol-btn[data-vol="'+mt+'"]');
+if(bb)bb.classList.add('active');
+var dc=document.getElementById('draft-vol-custom');
+if(dc)dc.style.display='none'
+}
+var up=window.updateDraftPrice;if(up)up();
+if(price){var pv=document.getElementById('draft-price-value');if(pv)pv.textContent=price}
+if(name){var ta=document.querySelector('textarea[name="comment"]');
+if(ta&&!ta.value.trim())ta.value='Запрос из подбора: '+name+(v>0?', объём '+v+' л':'')+(price?', цена '+price:'')}
 }catch(e){console.error(e)}
 document.getElementById('order-form').scrollIntoView({behavior:'smooth'})};
 })();
