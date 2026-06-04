@@ -290,11 +290,11 @@ $volCount = count($volumes);
 <h2 style="font-size:20px;font-weight:800;color:#fff;margin:0 0 4px">Все доступные объёмы ЦКТ</h2>
 <p style="font-size:13px;color:rgba(255,255,255,.45);margin:0 0 20px">Нажмите на нужный объём</p>
 </div>
-<div style="margin:0 28px 24px;border-radius:10px;overflow:hidden;position:relative">
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url(/banner-beer.jpg) center/cover;filter:blur(6px) brightness(.25);z-index:0"></div>
-<div style="position:relative;z-index:1;padding:24px 20px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;backdrop-filter:blur(2px)">
+<div style="margin:0 28px 24px;border-radius:10px;overflow:hidden;position:relative;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)">
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url(/banner-beer.jpg) center/cover;filter:blur(2px) brightness(.4);z-index:0"></div>
+<div style="position:relative;z-index:1;padding:28px 24px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
 <?php foreach ($volumes as $v): ?>
-<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;background:rgba(247,124,42,.12);border:1px solid rgba(247,124,42,.25);border-radius:7px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;transition:all .2s;min-width:60px" onmouseover="this.style.background='#F77C2A';this.style.borderColor='#F77C2A'" onmouseout="this.style.background='';this.style.borderColor=''"><?= number_format($v, 0, '.', ' ') ?> л</a>
+<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);border-radius:8px;font-size:14px;font-weight:700;color:#fff;text-decoration:none;transition:all .2s;min-width:66px;backdrop-filter:blur(4px)" onmouseover="this.style.background='#F77C2A';this.style.borderColor='#F77C2A';this.style.backdropFilter='none'" onmouseout="this.style.background='';this.style.borderColor='';this.style.backdropFilter=''"><?= number_format($v, 0, '.', ' ') ?> л</a>
 <?php endforeach; ?>
 </div>
 </div>
