@@ -220,28 +220,33 @@ function renderCctList($allData, $cat) {
     require __DIR__ . '/../../catalog-styles.php';
     require __DIR__ . '/../../layout-start.php';
 ?>
-<div class="list-hero">
+<section style="background:#fff;border-bottom:1px solid #f0f0f0;padding:14px 0">
 <div class="container">
-<div class="breadcrumbs">
-<a href="/">Главная</a><span class="sep">/</span>
-<a href="/catalog/">Каталог</a><span class="sep">/</span>
-<a href="/catalog/beer/">Пивоваренное оборудование</a><span class="sep">/</span>
-<span class="current">ЦКТ</span>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">
+<div style="font-size:11px;color:#999">
+<a href="/" style="color:#F77C2A;text-decoration:none">Главная</a>
+<span style="color:#ccc;margin:0 5px">/</span>
+<a href="/catalog/" style="color:#F77C2A;text-decoration:none">Каталог</a>
+<span style="color:#ccc;margin:0 5px">/</span>
+<a href="/catalog/beer/" style="color:#F77C2A;text-decoration:none">Пивоваренное</a>
+<span style="color:#ccc;margin:0 5px">/</span>
+<span style="color:#999">ЦКТ</span>
 </div>
-<div class="list-hero-inner">
-<div class="list-hero-img"><img src="/cct-tank.jpg" alt="ЦКТ"></div>
-<div class="list-hero-text">
-<h1><?= htmlspecialchars($cat['h1']) ?></h1>
-<p class="hero-sub">ЦКТ из нержавеющей стали AISI 304 для брожения, дображивания и лагеризации пива. Полный комплект арматуры, рубашки охлаждения, автоматика.</p>
-<div class="hero-tags">
-<span>AISI 304 / 316</span>
-<span>до 4 зон охлаждения</span>
-<span>угол конуса 60-70°</span>
-</div>
-</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:3px;padding:4px 8px;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:10px;font-weight:600;color:#F77C2A">🏭 50+ пивоварен</span>
+<span style="display:inline-flex;align-items:center;gap:3px;padding:4px 8px;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:10px;font-weight:600;color:#F77C2A">⚙️ Свой цех</span>
+<span style="display:inline-flex;align-items:center;gap:3px;padding:4px 8px;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:10px;font-weight:600;color:#F77C2A">📦 Доставка</span>
+<span style="display:inline-flex;align-items:center;gap:3px;padding:4px 8px;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:10px;font-weight:600;color:#F77C2A">✅ Гарантия 12 мес</span>
 </div>
 </div>
 </div>
+</section>
+
+<div class="container" style="padding-top:28px">
+<h1 style="font-size:22px;font-weight:800;color:#1a1a26;margin:0 0 4px;text-transform:uppercase;letter-spacing:.4px">Цилиндро-конические танки (ЦКТ) для пива</h1>
+<p style="font-size:14px;color:#888;margin:0 0 4px;line-height:1.5">ЦКТ из нержавеющей стали AISI 304 для брожения, дображивания и лагеризации пива. Полный комплект арматуры, рубашки охлаждения, автоматика.</p>
+</div>
+
 <?php
 $minVol = min($volumes);
 $maxVol = max($volumes);
