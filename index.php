@@ -1070,12 +1070,13 @@ function toggleAboutEquip(){
 <input type="email" name="email" required placeholder="Email для КП" style="padding:13px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;transition:border-color .25s;box-sizing:border-box" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''">
 </div>
 
-<div class="db-form-opt-trigger" id="optTrigger" style="margin-top:8px;padding:10px 0" onclick="var s=document.getElementById('optSection2');if(s.style.display!='block'){s.style.display='block';this.classList.add('open')}else{s.style.display='none';this.classList.remove('open')}">
-<span>⚙️ Указать параметры оборудования</span>
-<svg class="db-opt-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+</div>
 </div>
 
-<div id="optSection2" style="display:none">
+<div style="padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between">
+<div>
+<div style="font-size:13px;font-weight:700;color:#F77C2A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:18px">Параметры</div>
+
 <div id="fqDisplay" style="background:rgba(255,255,255,.04);border-radius:8px;padding:14px;margin-bottom:12px;display:none">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
 <img id="fqImg" src="" style="width:36px;height:36px;object-fit:contain;background:rgba(255,255,255,.08);border-radius:6px;flex-shrink:0;display:none">
@@ -1087,6 +1088,12 @@ function toggleAboutEquip(){
 </div>
 </div>
 
+<div class="db-form-opt-trigger" id="optTrigger" style="padding:10px 0;margin-bottom:10px" onclick="var s=document.getElementById('optSection2');if(s.style.display!='block'){s.style.display='block';this.classList.add('open')}else{s.style.display='none';this.classList.remove('open')}">
+<span>⚙️ Указать параметры оборудования</span>
+<svg class="db-opt-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+</div>
+
+<div id="optSection2" style="display:none">
 <div id="formManualWrap">
 <div style="position:relative;margin-bottom:10px">
 <input type="text" id="formEquipName" autocomplete="off" placeholder="Начните вводить оборудование..." style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:13px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''">
@@ -1107,14 +1114,7 @@ function toggleAboutEquip(){
 <input type="hidden" name="quiz_price" id="fqPriceInput" value="">
 </div>
 
-</div>
-</div>
-
-<div style="padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between">
-<div>
-<div style="font-size:13px;font-weight:700;color:#F77C2A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:18px">Дополнительно</div>
-
-<textarea name="comment" rows="4" placeholder="Дополнительные пожелания — опции, сроки, планировка, чертежи…" style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:13px;font-family:inherit;outline:none;resize:vertical;min-height:100px;box-sizing:border-box;transition:border-color .25s" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''"></textarea>
+<textarea name="comment" rows="4" placeholder="Дополнительные пожелания — опции, сроки, планировка, чертежи…" style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:13px;font-family:inherit;outline:none;resize:vertical;min-height:100px;box-sizing:border-box;transition:border-color .25s;margin-top:14px" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''"></textarea>
 
 <div style="margin-top:12px">
 <label style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:12px;cursor:pointer">
