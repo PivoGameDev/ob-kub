@@ -49,8 +49,7 @@ function renderCctPage($vol, $d, $allData, $cat) {
     require __DIR__ . '/../../catalog-styles.php';
     require __DIR__ . '/../../layout-start.php';
 ?>
-<section class="cct-hero" style="position:relative;overflow:hidden">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent);z-index:1"></div>
+<section class="cct-hero">
 <div class="container">
 <div class="cct-breadcrumbs">
 <a href="/">Главная</a><span class="sep">/</span>
@@ -183,30 +182,29 @@ function renderCctPage($vol, $d, $allData, $cat) {
 <div class="faq-item"><div class="faq-q">Нужен ли чиллер для ЦКТ?</div><div class="faq-a">Да, для работы рубашек охлаждения требуется холодильная установка (чиллер). Мы подбираем чиллер под количество и объём ЦКТ. Примерно: на 3 ЦКТ <?=$volStr?> л потребуется чиллер от <?=max(5, round($vol * 0.003))?> кВт. <a href="/beer.html" style="color:#F77C2A">Подробнее →</a></div></div>
 </div>
 
-<div class="cct-form" id="order" style="background:linear-gradient(135deg,#2b2b39,#1a1a26);border:1px solid rgba(247,124,42,.12);border-radius:16px;position:relative;overflow:hidden;padding:32px 36px">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
-<h2 style="font-size:20px;font-weight:800;color:#fff;margin:0 0 4px">📩 Получить расчёт ЦКТ <?=$volStr?> л</h2>
-<p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:28px;line-height:1.5">Оставьте заявку — подготовим КП с точной стоимостью, сроками изготовления и доставки. Отвечаем в течение 2 часов.</p>
+<div class="cct-form" id="order">
+<h2>📩 Получить расчёт ЦКТ <?=$volStr?> литров</h2>
+<p class="cft-sub">Оставьте заявку — подготовим КП с точной стоимостью, сроками изготовления и доставки. Отвечаем в течение 2 часов.</p>
 <form method="post" action="/php/send.php">
 <input type="hidden" name="form_type" value="quick">
 <input type="hidden" name="product" value="ЦКТ <?=$volStr?> л">
-<input type="hidden" id="csrfToken" name="csrf" value="">
-<div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
-<div><input type="text" name="name" required placeholder="Ваше имя" style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box"></div>
-<div><input type="tel" name="phone" required placeholder="Телефон" style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box"></div>
+<div class="row">
+<div><label>Ваше имя</label><input type="text" name="name" required placeholder="Иван"></div>
+<div><label>Телефон</label><input type="tel" name="phone" required placeholder="+7 (___) ___-__-__"></div>
 </div>
-<div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
-<div><input type="email" name="email" placeholder="Email для КП" style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box"></div>
-<div><input type="number" name="quantity" value="3" min="1" placeholder="Количество ЦКТ" style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box"></div>
+<div class="row">
+<div><label>Email</label><input type="email" name="email" placeholder="ivan@example.ru"></div>
+<div><label>Количество ЦКТ</label><input type="number" name="quantity" value="3" min="1"></div>
 </div>
-<div style="margin-bottom:14px">
-<textarea name="comment" rows="3" placeholder="Дополнительные требования..." style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;resize:vertical;min-height:80px;box-sizing:border-box">ЦКТ <?=$volStr?> л, количество: 3 шт. Прошу рассчитать стоимость и сроки.</textarea>
-</div>
-<label style="display:flex;align-items:flex-start;gap:8px;margin-bottom:16px;font-size:12px;color:rgba(255,255,255,.5);cursor:pointer">
-<input type="checkbox" name="agreement" value="1" required style="margin-top:2px;accent-color:#F77C2A">
-<span>Я согласен(а) на обработку персональных данных в соответствии с <a href="/privacy.html" target="_blank" style="color:#F77C2A;text-decoration:none">Политикой конфиденциальности</a></span>
+<div class="full"><label>Требования / вопросы</label><textarea name="comment" rows="3" placeholder="Дополнительные требования...">ЦКТ <?=$volStr?> л, количество: 3 шт. Прошу рассчитать стоимость и сроки.</textarea></div>
+<div class="full">
+<label class="chk-label">
+<input type="checkbox" name="agreement" value="1" required>
+<span>Я согласен(а) на обработку персональных данных в соответствии с <a href="/privacy.html" target="_blank" style="color:#F77C2A">Политикой конфиденциальности</a></span>
 </label>
-<button type="submit" style="width:100%;padding:14px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">📩 Получить расчёт</button>
+</div>
+<input type="hidden" id="csrfToken" name="csrf" value="">
+				<button type="submit" class="submit-btn">Получить расчёт</button>
 <div class="form-success-message"></div>
 </form>
 </div>
