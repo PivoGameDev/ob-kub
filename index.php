@@ -1214,14 +1214,13 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 <!-- LEAD MAGNET: Скачать каталог -->
 
 <!-- CONTACTS -->
-<section class="db-section alt" id="contacts" style="padding:64px 0;background:#f5f6f8">
+<section class="db-section alt" id="contacts" style="padding:32px 0 64px;background:#f5f6f8">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:44px">
-<div class="db-section-line" style="margin-bottom:10px"></div>
-<h2 class="db-section-title" style="color:#fff">Контакты</h2>
-<p class="db-section-sub" style="margin-bottom:36px">Свяжитесь с нами любым удобным способом</p>
-<div class="db-contacts" style="color:#fff">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
 <div>
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#F77C2A;font-weight:600;margin-bottom:6px">Контакты</div>
+<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 20px;text-transform:uppercase;letter-spacing:.4px">Свяжитесь с нами</h2>
 <div class="db-contact-item">
 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
 <div><h4 style="color:#fff">Адрес</h4><p style="color:rgba(255,255,255,.6)">Дорожный переулок, 5, посёлок Индустриальный, городской округ Краснодар</p></div>
@@ -1243,6 +1242,9 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 <iframe src="https://yandex.ru/map-widget/v1/?ll=39.000000%2C45.000000&z=15&l=map&pt=39.000000,45.000000,comma" allowfullscreen loading="lazy"></iframe>
 </div>
 </div>
+</div>
+</div>
+</section>
 </div>
 </div>
 </section>
