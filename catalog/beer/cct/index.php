@@ -49,27 +49,32 @@ function renderCctPage($vol, $d, $allData, $cat) {
     require __DIR__ . '/../../catalog-styles.php';
     require __DIR__ . '/../../layout-start.php';
 ?>
-<section class="cct-hero">
+<section class="cct-hero" style="background:linear-gradient(135deg,#2b2b39,#1a1a26);position:relative;overflow:hidden;padding:32px 0 40px">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
 <div class="container">
-<div class="cct-breadcrumbs">
-<a href="/">Главная</a><span class="sep">/</span>
-<a href="/catalog/">Каталог</a><span class="sep">/</span>
-<a href="/catalog/beer/">Пивоваренное оборудование</a><span class="sep">/</span>
-<a href="/catalog/beer/cct/">ЦКТ</a><span class="sep">/</span>
-<span class="current"><?= $volStr ?> л</span>
+<div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:12px">
+<a href="/" style="color:rgba(255,255,255,.45);text-decoration:none">Главная</a>
+<span style="display:inline-block;margin:0 6px;color:rgba(255,255,255,.15)">•</span>
+<a href="/catalog/" style="color:rgba(255,255,255,.45);text-decoration:none">Каталог</a>
+<span style="display:inline-block;margin:0 6px;color:rgba(255,255,255,.15)">•</span>
+<a href="/catalog/beer/" style="color:rgba(255,255,255,.45);text-decoration:none">Пивоваренное</a>
+<span style="display:inline-block;margin:0 6px;color:rgba(255,255,255,.15)">•</span>
+<span style="color:rgba(255,255,255,.5)">ЦКТ <?= $volStr ?> л</span>
 </div>
-<div class="cct-hero-inner">
-<div class="cct-hero-img"><img src="/cct-tank.jpg" alt="ЦКТ <?= $volStr ?> литров" loading="lazy"></div>
-<div class="cct-hero-info">
-<div class="label">Цилиндро-конический танк</div>
-<h1>ЦКТ <?= $volStr ?> литров</h1>
-<p class="sub"><?= htmlspecialchars($d['desc']) ?></p>
-<div class="cct-hero-price">от <?= $priceStr ?> <small>с НДС</small></div>
-<div class="cct-hero-tags">
-<span><strong>±0.3°C</strong> точность</span>
-<span><strong>до <?= $d['pressure'] ?> бар</strong></span>
-<span><strong>Ra ≤ 0.8</strong> мкм</span>
-<span><strong><?= $d['jackets'] ?> зоны</strong> охлаждения</span>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+<div style="display:flex;align-items:center;justify-content:center">
+<img src="/cct-tank.jpg" alt="ЦКТ <?= $volStr ?> литров" style="max-width:100%;max-height:340px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.35)">
+</div>
+<div>
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">Цилиндро-конический танк</div>
+<h1 style="font-size:28px;font-weight:800;color:#fff;margin:0 0 8px">ЦКТ <?= $volStr ?> литров</h1>
+<p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;margin:0 0 16px"><?= htmlspecialchars($d['desc']) ?></p>
+<div style="font-size:24px;font-weight:800;color:#F77C2A;margin-bottom:16px">от <?= $priceStr ?> <span style="font-size:14px;font-weight:400;color:rgba(255,255,255,.35)">с НДС</span></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:12px;font-weight:600;color:#F77C2A">±0.3°C точность</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:12px;font-weight:600;color:#F77C2A">до <?= $d['pressure'] ?> бар</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:12px;font-weight:600;color:#F77C2A">Ra ≤ 0.8 мкм</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:12px;font-weight:600;color:#F77C2A"><?= $d['jackets'] ?> зоны охл.</span>
 </div>
 </div>
 </div>
