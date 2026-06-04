@@ -271,8 +271,8 @@ $volCount = count($volumes);
 
 <section class="container" style="margin-top:24px">
 
-<div style="position:relative;min-height:300px;border-radius:14px;overflow:hidden">
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url(/banner-beer.jpg) center/cover;z-index:0"></div>
+<div id="volBlock" style="position:relative;min-height:300px;border-radius:14px;overflow:hidden">
+<div id="volBg" style="position:absolute;top:0;left:0;width:100%;height:120%;background:url(/banner-beer.jpg) center/cover;z-index:0"></div>
 <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.55),rgba(26,26,38,.1));z-index:1"></div>
 <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:28px 32px">
 <div>
@@ -290,6 +290,9 @@ $volCount = count($volumes);
 </div>
 </div>
 </section>
+<script>
+(function(){var el=document.getElementById('volBlock'),bg=document.getElementById('volBg');if(!el||!bg)return;var ticking=false;function update(){var rect=el.getBoundingClientRect(),vh=window.innerHeight;if(rect.bottom<0||rect.top>vh){ticking=false;return}var mid=rect.top+rect.height/2,sc=Math.max(-1,Math.min(1,(vh/2-mid)/(vh/2)));var maxMove=rect.height*0.15;bg.style.transform='translateY('+(sc*maxMove)+'px)';ticking=false}window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});update()})();
+</script>
 
 <div class="seo-text-wrap">
     <div class="seo-text-card">
