@@ -20,24 +20,24 @@
 <span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">500+ резервуаров</span>
 </div>
 </div>
-<div class="fnav" style="display:flex;flex-wrap:wrap;gap:0 16px">
-<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 10px;width:100%">Навигация</h3>
-<a href="/#about" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">О нас</a>
-<a href="/catalog/" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">Каталог</a>
-<a href="/#projects" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">Проекты</a>
-<a href="/#contacts" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">Контакты</a>
-<a href="/articles.html" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">Статьи</a>
-<a href="/certificates.html" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">Сертификаты</a>
-<a href="/payment-delivery.html" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">Оплата и доставка</a>
+<div class="fnav">
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Навигация</h3>
+<a href="/#about" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">О нас</a>
+<a href="/catalog/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Каталог</a>
+<a href="/#projects" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Проекты</a>
+<a href="/#contacts" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Контакты</a>
+<a href="/articles.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Статьи</a>
+<a href="/certificates.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Сертификаты</a>
+<a href="/payment-delivery.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Оплата и доставка</a>
 </div>
-<div class="feq" style="display:flex;flex-wrap:wrap;gap:0 16px">
-<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 10px;width:100%">Оборудование</h3>
-<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(0)},400)" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">🥛 Молочное</a>
-<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(1)},400)" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">🍷 Винодельческое</a>
-<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(2)},400)" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">🍺 Пивоваренное</a>
-<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(3)},400)" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">💧 Вода</a>
-<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(4)},400)" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">🫒 Масло</a>
-<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(5)},400)" style="font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s;flex:0 0 calc(50% - 8px)">🍯 Кондитерская</a>
+<div class="feq">
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Оборудование</h3>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(0)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🥛 Молочное</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(1)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍷 Винодельческое</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(2)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍺 Пивоваренное</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(3)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">💧 Вода</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(4)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🫒 Масло</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(5)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍯 Кондитерская</a>
 </div>
 <div>
 <h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Контакты</h3>
