@@ -15,11 +15,11 @@
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;padding:0!important;font-family:'Source Sans Pro',sans-serif;color:#2c3e50;background:#f5f6f8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 main{display:block;margin:0;padding:0}
-.header{position:relative!important;background:#fff!important;border-bottom:none!important;padding:0!important;height:64px!important;display:flex!important;align-items:center!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
+.header{position:relative!important;background:#fff!important;border-bottom:none!important;padding:0!important;min-height:72px!important;display:flex!important;align-items:center!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
 .header .container{max-width:1200px!important;padding:0 24px!important;margin:0 auto!important;width:100%!important}
-.header-top{padding:0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important}
+.header-top{padding:4px 0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important}
 .header .logo-section{display:flex!important;align-items:center!important;flex-shrink:0!important}
-.header .logo-img{height:58px!important;width:auto!important;padding:0!important;margin:0!important;display:block!important}
+.header .logo-img{height:73px!important;width:auto!important;padding:0!important;margin:0!important;display:block!important}
 .nav{position:static!important;transform:none!important;display:flex!important;align-items:center!important;gap:24px!important;flex-wrap:nowrap!important;background:transparent!important;border:none!important}
 .nav>a{color:#333!important;font-size:14px!important;font-weight:600!important;padding:6px 0!important;white-space:nowrap!important;text-decoration:none!important;border:none!important;background:transparent!important}
 .nav>a:hover{color:#F77C2A!important;background:transparent!important}
@@ -377,31 +377,51 @@ body{padding-top:0!important}
 </section>
 </main>
 
-<footer class="db-footer">
-<div class="db-wrap">
-<div class="db-footer-inner">
-<div class="db-footer-col">
-<h3>Навигация</h3>
-<a href="/">Главная</a>
-<a href="/catalog/">Каталог</a>
-<a href="/#projects">Проекты</a>
-<a href="/#contacts">Контакты</a>
-</div>
-<div class="db-footer-col">
-<h3>Оборудование</h3>
-<a href="/catalog/beer/">Пивоваренное</a>
-<a href="/catalog/dairy/">Молочное</a>
-<a href="/catalog/wine/">Винодельческое</a>
-<a href="/catalog/industrial/">Промышленное</a>
-</div>
-<div class="db-footer-col">
-<h3>Контакты</h3>
-<a href="tel:+79935940107">8 (993) 594-01-07</a>
-<a href="mailto:oborudovanie-kubani@yandex.ru">oborudovanie-kubani@yandex.ru</a>
-<a href="/privacy.html">Политика конфиденциальности</a>
+<footer style="background:linear-gradient(135deg,#2b2b39,#1a1a26);padding:44px 0 0;margin-top:60px;border-top:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
+<div class="db-wrap" style="padding-top:44px">
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:30px">
+<div>
+<div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:14px">Оборудование Кубани</div>
+<p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 16px">Производим резервуары из нержавеющей стали AISI 304/316 с 2008 года. Собственное производство 2000 м² в Краснодаре.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">17 лет</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">2000 м²</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">500+ резервуаров</span>
 </div>
 </div>
-<div class="db-footer-bot">© ОБОРУДОВАНИЕ КУБАНИ · 2008–2026 · Все права защищены</div>
+<div>
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Навигация</h3>
+<a href="/#about" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">О нас</a>
+<a href="/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Главная</a>
+<a href="/#projects" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Проекты</a>
+<a href="/articles.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Статьи</a>
+<a href="/certificates.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Сертификаты</a>
+<a href="/payment-delivery.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Оплата и доставка</a>
+</div>
+<div>
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Оборудование</h3>
+<a href="/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🥛 Молочное</a>
+<a href="/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍷 Винодельческое</a>
+<a href="/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍺 Пивоваренное</a>
+<a href="/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">💧 Вода</a>
+<a href="/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🫒 Масло</a>
+<a href="/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍯 Кондитерская</a>
+</div>
+<div>
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Контакты</h3>
+<a href="tel:+79935940107" style="display:block;font-size:16px;font-weight:700;color:#F77C2A;text-decoration:none;padding:4px 0">8 (993) 594-01-07</a>
+<a href="mailto:oborudovanie-kubani@yandex.ru" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0">oborudovanie-kubani@yandex.ru</a>
+<a href="https://t.me/oborudovanie_kubani" target="_blank" rel="noopener" style="display:block;font-size:13px;color:#27a6e5;font-weight:600;text-decoration:none;padding:4px 0">✈️ Telegram</a>
+<div style="margin-top:8px">
+<a href="/" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">📩 Получить КП</a>
+</div>
+<a href="/privacy.html" style="display:block;font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;padding:4px 0;margin-top:8px">Политика конфиденциальности</a>
+</div>
+</div>
+<div style="padding:24px 0;margin-top:36px;border-top:1px solid rgba(255,255,255,.06)">
+<div style="font-size:12px;color:rgba(255,255,255,.3);text-align:center">© ОБОРУДОВАНИЕ КУБАНИ · 2008–2026 · Все права защищены</div>
+</div>
 </div>
 </footer>
 
