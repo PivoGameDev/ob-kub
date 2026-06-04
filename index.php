@@ -560,6 +560,7 @@ document.getElementById('hqSel').style.display='none';document.getElementById('h
 document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования'}
 function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽')}
 window.hqGoForm=function(){
+try{
 var data=window.hqSelData||{};
 var vol='',quizPrice='';
 var selEl=document.getElementById('hqSel');
@@ -569,21 +570,21 @@ else if(cstEl&&cstEl.style.display!='none'&&cstEl.value){vol=cstEl.value;quizPri
 var indMap={beer:'beer',dairy:'dairy',wine:'wine',industrial:'other'};
 if(data.si&&indMap[data.si]){document.getElementById('draft-industry').value=indMap[data.si]}
 var opt=document.getElementById('optSection');
-if(opt.style.display!='block')toggleOptional();
-else updateDraftTypes();
+if(opt&&opt.style.display!='block'){var to=window.toggleOptional;if(to)to()}
 var v=parseInt(vol);
 if(v>0){
 var known=[250,500,630,1000,1250,1500,2000,2500,3000,3150,4000,5000,6000,7500,8000,10000];
 var match=known.slice().sort(function(a,b){return Math.abs(a-v)-Math.abs(b-v)})[0];
-document.getElementById('draft-volume').value=match;
+var dv=document.getElementById('draft-volume');if(dv)dv.value=match;
 var b=document.querySelector('.db-vol-btn[data-vol="'+match+'"]');
 document.querySelectorAll('.db-vol-btn').forEach(function(x){x.classList.remove('active')});
 if(b)b.classList.add('active');
-document.getElementById('draft-vol-custom').style.display='none';
-updateDraftPrice()}
+var dc=document.getElementById('draft-vol-custom');if(dc)dc.style.display='none';
+var upd=window.updateDraftPrice;if(upd)upd()}
 if(quizPrice){var pv=document.getElementById('draft-price-value');if(pv)pv.textContent=quizPrice}
 if(data.name){var ta=document.querySelector('textarea[name="comment"]');
 if(ta&&!ta.value.trim())ta.value='Запрос из подбора: '+data.name+(v>0?', объём '+v+' л':'')+(quizPrice?', цена '+quizPrice:'')}
+}catch(e){console.error(e)}
 document.getElementById('order-form').scrollIntoView({behavior:'smooth'})};
 })();
 </script>
