@@ -405,7 +405,7 @@ body{padding-top:0!important}
 /* ===== MOBILE HEADER + DRAWER ===== */
 @media(max-width:768px){
 .header-top{display:none!important}
-.header .container{max-width:100%!important;width:100%!important;padding:0!important;margin:0!important}
+.header .container{display:none!important}
 .header{display:block!important;width:100%!important;position:sticky!important;top:0;z-index:1000;background:#fff;min-height:0!important}
 
 .mobile-header{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 20px;background:#fff;width:100%;box-sizing:border-box}
