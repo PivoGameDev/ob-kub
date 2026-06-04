@@ -481,7 +481,7 @@ body{padding-top:0!important}
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
 <input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
 </div>
-<div id="hqRes" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:6px;max-height:200px;overflow-y:auto;z-index:50;margin-top:2px"></div>
+<div id="hqRes" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:6px;max-height:300px;overflow-y:auto;z-index:50;margin-top:2px"></div>
 </div>
 
 <div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
