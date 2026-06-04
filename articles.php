@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 <title>Статьи — ОБОРУДОВАНИЕ КУБАНИ</title>
-    <link rel="canonical" href="https://ob-kub.ru/articles.html">
 <meta name="description" content="Полезные статьи о пивоваренном, молочном, винодельческом и промышленном оборудовании из нержавеющей стали.">
+<link rel="canonical" href="https://ob-kub.ru/articles.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,81 +15,21 @@
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;padding:0!important;font-family:'Source Sans Pro',sans-serif;color:#2c3e50;background:#f5f6f8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 main{display:block;margin:0;padding:0}
-
-/* ===== HEADER — WHITE ===== */
-.header{position:relative!important;background:#fff!important;border-bottom:none!important;padding:0!important;min-height:64px!important;display:flex!important;align-items:center!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important;overflow:visible!important}
+.header{position:relative!important;background:#fff!important;border-bottom:none!important;padding:0!important;min-height:72px!important;display:flex!important;align-items:center!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
 .header .container{max-width:1200px!important;padding:0 24px!important;margin:0 auto!important;width:100%!important}
-.header-top{padding:0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important}
+.header-top{padding:4px 0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important}
 .header .logo-section{display:flex!important;align-items:center!important;flex-shrink:0!important}
-.header .logo-img{height:58px!important;width:auto!important;padding:0!important;margin:0!important;display:block!important}
+.header .logo-img{height:73px!important;width:auto!important;padding:0!important;margin:0!important;display:block!important}
 .nav{position:static!important;transform:none!important;display:flex!important;align-items:center!important;gap:24px!important;flex-wrap:nowrap!important;background:transparent!important;border:none!important}
 .nav>a{color:#333!important;font-size:14px!important;font-weight:600!important;padding:6px 0!important;white-space:nowrap!important;text-decoration:none!important;border:none!important;background:transparent!important}
-.nav>a:hover,.cat-trigger:hover{color:#F77C2A!important;background:transparent!important}
-.cat-trigger{color:#333!important;font-size:14px!important;font-weight:600!important;padding:6px 0!important;text-decoration:none!important;cursor:pointer!important;display:inline-flex!important;align-items:center!important;gap:4px!important;background:none!important;border:none!important;font-family:inherit!important}
-.cat-trigger:hover{color:#F77C2A!important}
-.cat-trigger.active{color:#F77C2A!important}
-.search-trigger{color:#333!important;font-size:14px!important;font-weight:600!important;padding:6px 0!important;cursor:pointer!important;display:inline-flex!important;align-items:center!important;gap:4px!important;background:none!important;border:none!important;font-family:inherit!important;white-space:nowrap!important}
-.search-trigger:hover{color:#F77C2A!important}
-.search-trigger.active{color:#F77C2A!important}
-.srch-ico{width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:2px;position:relative;top:-1px}
+.nav>a:hover{color:#F77C2A!important;background:transparent!important}
 .header-right{display:flex!important;align-items:center!important;gap:12px!important;flex-shrink:0!important}
 .header .phone{padding:0!important;margin:0!important;font-size:15px!important;font-weight:600!important}
 .header .phone a{color:#333!important;text-decoration:none!important;white-space:nowrap!important}
 .header .phone a:hover{color:#F77C2A!important}
 .header .consult-btn{background:#F77C2A!important;color:#fff!important;border:none!important;font-weight:600!important;font-size:12px!important;letter-spacing:.4px!important;border-radius:6px!important;padding:8px 16px!important;height:36px!important;cursor:pointer!important;white-space:nowrap!important;min-width:auto!important;text-transform:uppercase!important}
 .header .consult-btn:hover{background:#e06a15!important;transform:none!important;box-shadow:none!important}
-.header-menu-row,.header-back-row{display:none!important}
 
-/* ===== CATALOG PANEL ===== */
-.catalog-dropdown{border-top:2px solid #F77C2A;overflow:hidden;max-height:0;opacity:0;padding:0;transition:max-height .4s ease,opacity .3s ease,padding .3s ease;position:absolute;left:0;right:0;top:100%;background:#fff;z-index:999;box-shadow:0 8px 30px rgba(0,0,0,.12)}
-.catalog-dropdown.active{max-height:420px;opacity:1;padding:20px 24px 24px}
-.catalog-dropdown .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-.catalog-dropdown .cat-col h3{font-size:11px;font-weight:700;color:#F77C2A;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px;padding:0 0 6px;border-bottom:1px solid #f0f0f0}
-.catalog-dropdown .cat-col a{display:block;font-size:13px;color:#555;text-decoration:none;padding:4px 0;line-height:1.5;transition:color .2s}
-.catalog-dropdown .cat-col a:hover{color:#F77C2A}
-.catalog-overlay{position:fixed;top:0;left:0;width:100%;height:100dvh;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:99999;display:flex;align-items:stretch;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
-.catalog-overlay.active{opacity:1;visibility:visible}
-.catalog-overlay-inner{background:#fff;width:100%;max-width:520px;display:flex;flex-direction:column;height:100dvh}
-.catalog-overlay-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #eee;flex-shrink:0;background:#fff}
-.catalog-overlay-header h2{font-size:16px;font-weight:700;color:#1a1a26;margin:0;padding:0;border:none}
-.catalog-overlay-close{background:none;border:none;font-size:26px;cursor:pointer;color:#999;line-height:1;padding:0;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:background .2s}
-.catalog-overlay-close:hover{background:#f5f5f5;color:#333}
-.catalog-overlay-body{flex:1;overflow-y:auto;padding:16px 20px 20px;scrollbar-width:thin}
-.catalog-overlay-body .cat-col{margin-bottom:16px}
-.catalog-overlay-body .cat-col h3{font-size:13px;font-weight:700;color:#F77C2A;margin:0 0 6px;padding:0;border:none;text-transform:none;letter-spacing:0}
-.catalog-overlay-body .cat-col h3 a{color:#F77C2A;text-decoration:none}
-.catalog-overlay-body .cat-col a{display:block;font-size:14px;color:#555;text-decoration:none;padding:5px 0;line-height:1.4;border-bottom:1px solid #f5f5f5}
-.catalog-overlay-body .cat-col a:last-child{border-bottom:none}
-.catalog-overlay-body .cat-col a:hover{color:#F77C2A}
-
-/* ===== SEARCH DROPDOWN ===== */
-.search-dropdown{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:2px solid #F77C2A;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,.12)}
-.search-dropdown.active{display:block}
-.search-inner{max-width:600px;margin:0 auto;padding:20px 24px}
-.search-field-wrap{position:relative;display:flex;align-items:center;background:#f4f5f7;border-radius:10px;padding:0 14px;border:1px solid #e2e4e8;transition:border-color .2s}
-.search-field-wrap:focus-within{border-color:#F77C2A;background:#fff}
-.search-icon{flex-shrink:0;margin-right:10px}
-.search-input{flex:1;border:none;background:transparent;padding:14px 0;font-size:15px;font-family:inherit;outline:none;color:#333}
-.search-input::placeholder{color:#aaa}
-.search-clear{display:none;font-size:22px;color:#999;cursor:pointer;padding:0 0 0 10px;line-height:1;user-select:none}
-.search-clear.visible{display:block}
-.search-clear:hover{color:#333}
-.search-results{padding:10px 0 0;max-height:340px;overflow-y:auto}
-.search-results.has-results+.search-empty{display:none}
-.search-results a{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f0f0f0;text-decoration:none;color:inherit;transition:background .15s}
-.search-results a:last-child{border-bottom:none}
-.search-results a:hover{background:#fafafa}
-.sr-icon{width:40px;height:40px;border-radius:6px;overflow:hidden;flex-shrink:0;background:#f4f5f7;display:flex;align-items:center;justify-content:center}
-.sr-icon img{width:100%;height:100%;object-fit:contain}
-.sr-info{flex:1;min-width:0}
-.sr-title{font-size:14px;font-weight:600;color:#1a1a26;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sr-spec{font-size:11px;color:#888;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sr-price{font-size:14px;font-weight:700;color:#F77C2A;white-space:nowrap;margin-left:8px}
-.search-empty{padding:20px 0 10px;text-align:center;color:#aaa;font-size:13px}
-.search-dropdown.loading .search-results::after{content:'Поиск...';display:block;padding:20px;text-align:center;color:#aaa;font-size:13px}
-.search-dropdown.has-query .search-empty{display:none}
-
-/* ===== PAGE CONTENT ===== */
 .db-page{padding:60px 0}
 .db-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
 .db-section-title{font-size:26px;font-weight:800;color:#1a1a26;text-align:center;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
@@ -107,41 +47,42 @@ main{display:block;margin:0;padding:0}
 .article-link{color:#F77C2A;font-size:13px;font-weight:600;text-decoration:none}
 .article-link:hover{text-decoration:underline}
 
-/* ===== FOOTER ===== */
-.db-footer{background:linear-gradient(135deg,#2b2b39,#1a1a26);padding:44px 0 0;border-top:1px solid rgba(255,255,255,.05)}
-.db-footer-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.db-footer{background:#1a1a26;padding:48px 0 0;color:rgba(255,255,255,.6)}
+.db-footer-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-bottom:32px}
 .db-footer-col h3{font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px}
-.db-footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s}
+.db-footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;padding:4px 0;transition:color .2s}
 .db-footer-col a:hover{color:#F77C2A}
-.db-footer-bot{padding:24px 0;margin-top:36px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.3);text-align:center}
+.db-footer-bot{font-size:12px;color:rgba(255,255,255,.3);border-top:1px solid rgba(255,255,255,.08);padding:16px 0;text-align:center}
 
-/* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
 body{padding-top:0!important}
-.header{position:relative!important;height:auto!important;min-height:auto!important;background:#fff!important;border-bottom:none!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
+.header{position:relative!important;height:auto!important;min-height:44px!important}
 .header .container{padding:0 16px!important;width:100%!important}
-.header-top{gap:8px!important;padding:4px 0!important}
+.header-top{flex-wrap:wrap!important;gap:4px!important;padding:4px 0!important}
 .header .logo-img{height:48px!important}
 .header .phone{font-size:13px!important}
 .header .consult-btn{font-size:10px!important;padding:5px 10px!important;height:28px!important;min-width:auto!important}
-.nav{gap:10px!important}
-.nav>a,.cat-trigger,.search-trigger{font-size:12px!important;padding:3px 0!important;border:none!important}
+.nav{display:flex!important;width:100%!important;flex-wrap:wrap!important;justify-content:center!important;gap:6px 12px!important;padding:4px 0 0!important;border-top:1px solid #eee!important;margin-top:4px!important;background:transparent!important;position:static!important;transform:none!important;height:auto!important;order:3!important}
+.nav>a{font-size:12px!important;padding:3px 0!important;border:none!important}
 .header-right{gap:6px!important}
 .header-menu-row,.header-back-row{display:none!important}
 .articles-grid{grid-template-columns:repeat(2,1fr);gap:18px}
 }
-@media(max-width:700px){
-.header{position:relative!important;height:auto!important;min-height:auto!important;flex-direction:column!important;background:#fff!important;border-bottom:none!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
+@media(max-width:768px){
+.header-top{display:none!important}
+.header .container{display:none!important}
+.header{display:block!important;width:100%!important;position:sticky!important;top:0;z-index:1000;background:#fff;min-height:0!important}
+.header{height:auto!important;min-height:auto!important;flex-direction:column!important}
 .header .container{padding:0 12px!important;width:100%!important}
-.header-top{flex-wrap:wrap!important;gap:1px!important;padding:2px 0!important}
-.header .logo-img{height:36px!important}
-.header .phone{font-size:11px!important}
-.header .consult-btn{font-size:9px!important;padding:3px 6px!important;height:22px!important}
-.nav{order:3!important;width:100%!important;display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:2px 8px!important;padding:0!important;border-top:1px solid #eee!important;margin-top:0!important}
-.nav>a,.cat-trigger,.search-trigger{font-size:10px!important;padding:0!important;line-height:1.2!important}
+.header-top{flex-wrap:wrap!important;gap:3px!important;padding:3px 0!important}
+.header .logo-img{height:42px!important}
+.header .phone{font-size:12px!important}
+.header .consult-btn{font-size:9px!important;padding:4px 8px!important;height:24px!important}
+.nav{order:3!important;width:100%!important;display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:4px 10px!important;padding:3px 0 0!important;border-top:1px solid #eee!important;margin-top:3px!important}
+.nav>a{font-size:11px!important;padding:2px 0!important;line-height:1.2!important}
 .header-right{gap:4px!important}
-.header-menu-row,.header-back-row{display:none!important}
-.db-footer-inner{grid-template-columns:1fr;gap:20px}
+.articles-grid{grid-template-columns:1fr;gap:14px}
+.db-section-title{font-size:18px}
 }
 
 /* ===== MOBILE HEADER + DRAWER ===== */
@@ -149,6 +90,7 @@ body{padding-top:0!important}
 .header-top{display:none!important}
 .header .container{max-width:100%!important;width:100%!important;padding:0!important;margin:0!important}
 .header{display:block!important;width:100%!important;position:sticky!important;top:0;z-index:1000;background:#fff;min-height:0!important}
+
 .mobile-header{display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 20px;background:#fff;width:100%;box-sizing:border-box}
 .mobile-header .mobile-logo-wrap{display:flex;align-items:center;flex-shrink:0}
 .mobile-header .mobile-logo-wrap a{display:block}
@@ -159,17 +101,21 @@ body{padding-top:0!important}
 .mobile-action-btn.phone-btn svg{stroke-width:2.2}
 .mobile-header .hamburger{width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:none;border:none;cursor:pointer}
 .mobile-header .hamburger span{display:block;width:20px;height:2.5px;background:#333;border-radius:2px;transition:all .3s}
+
 .mobile-drawer-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:9999;opacity:0;visibility:hidden;transition:all .3s;-webkit-tap-highlight-color:transparent}
 .mobile-drawer-overlay.active{opacity:1;visibility:visible}
 .mobile-drawer{position:fixed;top:0;right:-300px;width:300px;max-width:85vw;height:100%;background:#fff;z-index:10000;overflow-y:auto;transition:right .3s ease;box-shadow:-2px 0 20px rgba(0,0,0,.12);-webkit-overflow-scrolling:touch}
 .mobile-drawer.active{right:0}
+
 .drawer-header{display:flex;align-items:center;justify-content:space-between;padding:16px 16px 16px 20px;border-bottom:1px solid #eee}
 .drawer-brand{font-size:13px;font-weight:700;color:#1a1a26;letter-spacing:.3px}
 .drawer-close{width:36px;height:36px;background:none;border:none;font-size:24px;color:#999;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:6px;margin-right:-6px}
 .drawer-close:active{background:#f5f5f5}
+
 .drawer-nav{padding:4px 0}
 .drawer-link{display:flex;align-items:center;padding:14px 20px;font-size:15px;color:#333;text-decoration:none;font-weight:500;transition:background .15s;-webkit-tap-highlight-color:transparent}
 .drawer-link:active{background:#f5f5f5}
+
 .drawer-group-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px 20px;background:none;border:none;font-size:15px;font-weight:500;color:#333;cursor:pointer;font-family:inherit;transition:background .15s;-webkit-tap-highlight-color:transparent}
 .drawer-group-toggle:active{background:#f5f5f5}
 .drawer-arrow{font-size:9px;color:#999;transition:transform .3s}
@@ -179,7 +125,9 @@ body{padding-top:0!important}
 .drawer-subgroup-title{padding:12px 20px 4px 32px;font-size:10px;font-weight:700;color:#F77C2A;text-transform:uppercase;letter-spacing:.5px}
 .drawer-submenu a{display:block;padding:10px 20px 10px 32px;font-size:14px;color:#555;text-decoration:none;transition:background .15s}
 .drawer-submenu a:active{background:#eee}
+
 .drawer-divider{height:1px;background:#eee;margin:8px 20px}
+
 .drawer-footer{display:flex;gap:10px;padding:16px 20px 20px}
 .drawer-footer-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 8px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;transition:opacity .15s;min-height:44px;border:none}
 .drawer-footer-btn:active{opacity:.8}
@@ -187,22 +135,127 @@ body{padding-top:0!important}
 .drawer-footer-btn.primary svg{stroke:#fff}
 .drawer-footer-btn.secondary{background:#f0f0f0;color:#333}
 .drawer-footer-btn.secondary svg{stroke:#555}
-.catalog-overlay-body{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
 }
 @media(min-width:769px){
-.catalog-overlay{display:none!important}
+.mobile-header,.mobile-drawer,.mobile-drawer-overlay{display:none!important}
 .mobile-header,.mobile-drawer,.mobile-drawer-overlay{display:none!important}
 }
 
-@media(max-width:768px){
-.articles-grid{grid-template-columns:1fr;gap:14px}
-.db-section-title{font-size:18px}
-}
 </style>
 </head>
 <body>
 
-<?php require $_SERVER["DOCUMENT_ROOT"]."/php/header.php"; ?>
+<header class="header">
+<div class="container">
+<div class="header-top">
+<div class="logo-section">
+<a href="/" class="logo-link">
+<img src="logo.png" alt="ОБОРУДОВАНИЕ КУБАНИ" class="logo-img" onerror="this.style.display='none'">
+</a>
+</div>
+<nav class="nav">
+<a href="/">Главная</a>
+<a href="/catalog/">Каталог</a>
+<a href="/#contacts">Контакты</a>
+</nav>
+<div class="header-right">
+<div class="phone"><a href="tel:+79935940107">8 (993) 594-01-07</a></div>
+<button class="consult-btn" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">Получить КП</button>
+</div>
+</div>
+</div>
+
+<!-- Mobile header -->
+<div class="mobile-header">
+  <div class="mobile-logo-wrap">
+    <a href="/"><img src="/logo.png" alt="ОБОРУДОВАНИЕ КУБАНИ"></a>
+  </div>
+  <div class="mobile-actions">
+    <a href="tel:+79935940107" class="mobile-action-btn phone-btn" aria-label="Позвонить">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <button class="mobile-action-btn" id="mobileSearchBtn" aria-label="Поиск">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+</header>
+<!-- Drawer overlay -->
+<div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+<div class="drawer-header">
+<div class="drawer-brand">ОБОРУДОВАНИЕ КУБАНИ</div>
+<button class="drawer-close" id="drawerClose">&times;</button>
+</div>
+<nav class="drawer-nav">
+<a href="#about" class="drawer-link">О нас</a>
+<a href="#projects" class="drawer-link">Проекты</a>
+
+<div class="drawer-group">
+<button class="drawer-group-toggle" data-group="catalog">
+Каталог <span class="drawer-arrow">▼</span>
+</button>
+<div class="drawer-submenu">
+<div class="drawer-subgroup-title">🍺 Пивоваренное</div>
+<a href="/catalog/beer/">ЦКТ</a>
+<a href="/catalog/beer/brew-house/">Варочные порядки</a>
+<a href="/catalog/beer/grain-mill/">Дробилки солода</a>
+<a href="/catalog/beer/hot-water-tank/">Баки горячей воды</a>
+<a href="/catalog/beer/steam-generator/">Парогенераторы</a>
+<a href="/catalog/beer/chiller/">Чиллеры</a>
+<a href="/catalog/beer/unitank/">Форфасы</a>
+<a href="/catalog/beer/heat-exchanger/">Теплообменники</a>
+<div class="drawer-subgroup-title">🥛 Молочное</div>
+<a href="/catalog/dairy/reception/">Ёмкости приёмки молока</a>
+<a href="/catalog/dairy/">Резервуары-охладители</a>
+<a href="/catalog/dairy/storage/">Резервуары хранения</a>
+<a href="/catalog/dairy/vdp/">Ванны длительной пастеризации</a>
+<a href="/catalog/dairy/fermentation/">Ферментационные танки</a>
+<a href="/catalog/dairy/cheese-maker/">Сыроизготовители</a>
+<a href="/catalog/dairy/cottage-cheese/">Творогоизготовители</a>
+<a href="/catalog/dairy/">Заквасочники</a>
+<a href="/catalog/dairy/">Контейнеры для соления сыра</a>
+<div class="drawer-subgroup-title">🍷 Винодельческое</div>
+<a href="/catalog/wine/red-fermentation/">Ферментация красных вин</a>
+<a href="/catalog/wine/white-fermentation/">Ферментация белых вин</a>
+<a href="/catalog/wine/storage-aging/">Выдержка и хранение</a>
+<a href="/catalog/wine/cold-stabilization/">Холодная стабилизация</a>
+<a href="/catalog/wine/blending/">Купажирование</a>
+<a href="/catalog/wine/">Сульфитация</a>
+<a href="/catalog/wine/universal-tank/">Винификатор</a>
+<div class="drawer-subgroup-title">🏭 Промышленное</div>
+<a href="/catalog/industrial/storage/">Резервуары для хранения</a>
+<a href="/catalog/industrial/mixing/">Ёмкости с мешалкой</a>
+<a href="/catalog/industrial/thermal/">Ёмкости с терморегуляцией</a>
+<a href="/catalog/industrial/pressure/">Ёмкости под давлением</a>
+</div>
+</div>
+
+<a href="#contacts" class="drawer-link">Контакты</a>
+<a href="/articles.html" class="drawer-link">Статьи</a>
+<a href="/certificates.html" class="drawer-link">Сертификаты</a>
+<a href="/payment-delivery.html" class="drawer-link">Оплата и доставка</a>
+<a href="/privacy.html" class="drawer-link">Политика конфиденциальности</a>
+
+<div class="drawer-divider"></div>
+
+<div class="drawer-footer">
+<button class="drawer-footer-btn primary" onclick="document.getElementById('order-form')&amp;&amp;document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+Получить КП
+</button>
+<a href="tel:+79935940107" class="drawer-footer-btn secondary">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+Звонок
+</a>
+</div>
+</div>
 
 <main>
 <section class="db-page">
@@ -328,7 +381,65 @@ body{padding-top:0!important}
 </section>
 </main>
 
-<?php require $_SERVER['DOCUMENT_ROOT'].'/php/footer.php'; ?>
+<footer class="db-footer" style="position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
+<div class="db-wrap" style="padding-top:44px">
+<div class="fgr" style="display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:30px">
+<div>
+<div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:14px">Оборудование Кубани</div>
+<p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 16px">Производим резервуары из нержавеющей стали AISI 304/316 с 2008 года. Собственное производство 2000 м² в Краснодаре.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">17 лет</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">2000 м²</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">500+ резервуаров</span>
+</div>
+</div>
+<div class="fnav">
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Навигация</h3>
+<a href="/#about" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">О нас</a>
+<a href="/catalog/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Каталог</a>
+<a href="/#projects" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Проекты</a>
+<a href="/#contacts" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Контакты</a>
+<a href="/articles.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Статьи</a>
+<a href="/certificates.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Сертификаты</a>
+<a href="/payment-delivery.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Оплата и доставка</a>
+</div>
+<div class="feq">
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Оборудование</h3>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(0)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🥛 Молочное</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(1)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍷 Винодельческое</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(2)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍺 Пивоваренное</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(3)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">💧 Вода</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(4)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🫒 Масло</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(5)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍯 Кондитерская</a>
+</div>
+<div>
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Контакты</h3>
+<a href="tel:+79935940107" style="display:block;font-size:16px;font-weight:700;color:#F77C2A;text-decoration:none;padding:4px 0">8 (993) 594-01-07</a>
+<a href="mailto:oborudovanie-kubani@yandex.ru" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0">oborudovanie-kubani@yandex.ru</a>
+<div style="margin-top:8px">
+<a href="/#order-form" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">📩 Получить КП</a>
+</div>
+<a href="/privacy.html" style="display:block;font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;padding:4px 0;margin-top:8px">Политика конфиденциальности</a>
+</div>
+</div>
+<div style="padding:24px 0;margin-top:36px;border-top:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+<div style="font-size:12px;color:rgba(255,255,255,.3)">© ОБОРУДОВАНИЕ КУБАНИ · 2008–2026 · Все права защищены</div>
+</div>
+</div>
+</footer>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109477134,"init",{webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109477134" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>
+// Mobile drawer
+(function(){var h=document.getElementById('hamburger'),d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),c=document.getElementById('drawerClose');function openD(){d.classList.add('active');o.classList.add('active');document.body.style.overflow='hidden'}function closeD(){d.classList.remove('active');o.classList.remove('active');document.body.style.overflow=''}if(!h)return;h.addEventListener('click',function(e){e.stopPropagation();if(d.classList.contains('active')){closeD()}else{openD()}});if(c)c.addEventListener('click',closeD);if(o)o.addEventListener('click',closeD);document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD()});document.querySelectorAll('.drawer-group-toggle').forEach(function(b){b.addEventListener('click',function(){this.closest('.drawer-group').classList.toggle('open')})})})();
+
+// Mobile search trigger
+(function(){var b=document.getElementById('mobileSearchBtn'),s=document.getElementById('searchTrigger');if(b&&s)b.addEventListener('click',function(e){e.preventDefault();s.click()})})();
+</script>
 
 </body>
 </html>

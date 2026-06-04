@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 <title>Политика конфиденциальности — ОБОРУДОВАНИЕ КУБАНИ</title>
-    <link rel="canonical" href="https://ob-kub.ru/privacy.html">
 <meta name="description" content="Политика обработки персональных данных ООО «Оборудование Кубани».">
+<link rel="canonical" href="https://ob-kub.ru/privacy.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,11 +15,11 @@
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;padding:0!important;font-family:'Source Sans Pro',sans-serif;color:#2c3e50;background:#f5f6f8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 main{display:block;margin:0;padding:0}
-.header{position:relative!important;background:#fff!important;border-bottom:none!important;padding:0!important;height:64px!important;display:flex!important;align-items:center!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
+.header{position:relative!important;background:#fff!important;border-bottom:none!important;padding:0!important;min-height:72px!important;display:flex!important;align-items:center!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
 .header .container{max-width:1200px!important;padding:0 24px!important;margin:0 auto!important;width:100%!important}
-.header-top{padding:0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important}
+.header-top{padding:4px 0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important}
 .header .logo-section{display:flex!important;align-items:center!important;flex-shrink:0!important}
-.header .logo-img{height:58px!important;width:auto!important;display:block!important}
+.header .logo-img{height:73px!important;width:auto!important;display:block!important}
 .nav{position:static!important;transform:none!important;display:flex!important;align-items:center!important;gap:24px!important;flex-wrap:nowrap!important;background:transparent!important;border:none!important}
 .nav>a{color:#333!important;font-size:14px!important;font-weight:600!important;padding:6px 0!important;white-space:nowrap!important;text-decoration:none!important;border:none!important;background:transparent!important}
 .nav>a:hover{color:#F77C2A!important;background:transparent!important}
@@ -59,6 +59,9 @@ body{padding-top:0!important}
 .header-menu-row,.header-back-row{display:none!important}
 }
 @media(max-width:768px){
+.header-top{display:none!important}
+.header .container{display:none!important}
+.header{display:block!important;width:100%!important;position:sticky!important;top:0;z-index:1000;background:#fff;min-height:0!important}
 .header{height:auto!important;min-height:auto!important;flex-direction:column!important}
 .header .container{padding:0 12px!important;width:100%!important}
 .header-top{flex-wrap:wrap!important;gap:3px!important;padding:3px 0!important}
@@ -123,13 +126,124 @@ body{padding-top:0!important}
 }
 @media(min-width:769px){
 .mobile-header,.mobile-drawer,.mobile-drawer-overlay{display:none!important}
+.mobile-header,.mobile-drawer,.mobile-drawer-overlay{display:none!important}
 }
 
 </style>
 </head>
 <body>
 
-<?php require $_SERVER["DOCUMENT_ROOT"]."/php/header.php"; ?>
+<header class="header">
+<div class="container">
+<div class="header-top">
+<div class="logo-section">
+<a href="/" class="logo-link">
+<img src="logo.png" alt="ОБОРУДОВАНИЕ КУБАНИ" class="logo-img" onerror="this.style.display='none'">
+</a>
+</div>
+<nav class="nav">
+<a href="/">Главная</a>
+<a href="/catalog/">Каталог</a>
+<a href="/#contacts">Контакты</a>
+</nav>
+<div class="header-right">
+<div class="phone"><a href="tel:+79935940107">8 (993) 594-01-07</a></div>
+<button class="consult-btn" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">Получить КП</button>
+</div>
+</div>
+</div>
+
+<!-- Mobile header -->
+<div class="mobile-header">
+  <div class="mobile-logo-wrap">
+    <a href="/"><img src="/logo.png" alt="ОБОРУДОВАНИЕ КУБАНИ"></a>
+  </div>
+  <div class="mobile-actions">
+    <a href="tel:+79935940107" class="mobile-action-btn phone-btn" aria-label="Позвонить">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <button class="mobile-action-btn" id="mobileSearchBtn" aria-label="Поиск">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+</header>
+<!-- Drawer overlay -->
+<div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+<div class="drawer-header">
+<div class="drawer-brand">ОБОРУДОВАНИЕ КУБАНИ</div>
+<button class="drawer-close" id="drawerClose">&times;</button>
+</div>
+<nav class="drawer-nav">
+<a href="#about" class="drawer-link">О нас</a>
+<a href="#projects" class="drawer-link">Проекты</a>
+
+<div class="drawer-group">
+<button class="drawer-group-toggle" data-group="catalog">
+Каталог <span class="drawer-arrow">▼</span>
+</button>
+<div class="drawer-submenu">
+<div class="drawer-subgroup-title">🍺 Пивоваренное</div>
+<a href="/catalog/beer/">ЦКТ</a>
+<a href="/catalog/beer/brew-house/">Варочные порядки</a>
+<a href="/catalog/beer/grain-mill/">Дробилки солода</a>
+<a href="/catalog/beer/hot-water-tank/">Баки горячей воды</a>
+<a href="/catalog/beer/steam-generator/">Парогенераторы</a>
+<a href="/catalog/beer/chiller/">Чиллеры</a>
+<a href="/catalog/beer/unitank/">Форфасы</a>
+<a href="/catalog/beer/heat-exchanger/">Теплообменники</a>
+<div class="drawer-subgroup-title">🥛 Молочное</div>
+<a href="/catalog/dairy/reception/">Ёмкости приёмки молока</a>
+<a href="/catalog/dairy/">Резервуары-охладители</a>
+<a href="/catalog/dairy/storage/">Резервуары хранения</a>
+<a href="/catalog/dairy/vdp/">Ванны длительной пастеризации</a>
+<a href="/catalog/dairy/fermentation/">Ферментационные танки</a>
+<a href="/catalog/dairy/cheese-maker/">Сыроизготовители</a>
+<a href="/catalog/dairy/cottage-cheese/">Творогоизготовители</a>
+<a href="/catalog/dairy/">Заквасочники</a>
+<a href="/catalog/dairy/">Контейнеры для соления сыра</a>
+<div class="drawer-subgroup-title">🍷 Винодельческое</div>
+<a href="/catalog/wine/red-fermentation/">Ферментация красных вин</a>
+<a href="/catalog/wine/white-fermentation/">Ферментация белых вин</a>
+<a href="/catalog/wine/storage-aging/">Выдержка и хранение</a>
+<a href="/catalog/wine/cold-stabilization/">Холодная стабилизация</a>
+<a href="/catalog/wine/blending/">Купажирование</a>
+<a href="/catalog/wine/">Сульфитация</a>
+<a href="/catalog/wine/universal-tank/">Винификатор</a>
+<div class="drawer-subgroup-title">🏭 Промышленное</div>
+<a href="/catalog/industrial/storage/">Резервуары для хранения</a>
+<a href="/catalog/industrial/mixing/">Ёмкости с мешалкой</a>
+<a href="/catalog/industrial/thermal/">Ёмкости с терморегуляцией</a>
+<a href="/catalog/industrial/pressure/">Ёмкости под давлением</a>
+</div>
+</div>
+
+<a href="#contacts" class="drawer-link">Контакты</a>
+<a href="/articles.html" class="drawer-link">Статьи</a>
+<a href="/certificates.html" class="drawer-link">Сертификаты</a>
+<a href="/payment-delivery.html" class="drawer-link">Оплата и доставка</a>
+<a href="/privacy.html" class="drawer-link">Политика конфиденциальности</a>
+
+<div class="drawer-divider"></div>
+
+<div class="drawer-footer">
+<button class="drawer-footer-btn primary" onclick="document.getElementById('order-form')&amp;&amp;document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+Получить КП
+</button>
+<a href="tel:+79935940107" class="drawer-footer-btn secondary">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+Звонок
+</a>
+</div>
+</div>
 
 <main>
 <section class="db-page">
@@ -246,7 +360,65 @@ body{padding-top:0!important}
 </section>
 </main>
 
-<?php require $_SERVER['DOCUMENT_ROOT'].'/php/footer.php'; ?>
+<footer class="db-footer" style="position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
+<div class="db-wrap" style="padding-top:44px">
+<div class="fgr" style="display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:30px">
+<div>
+<div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:14px">Оборудование Кубани</div>
+<p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 16px">Производим резервуары из нержавеющей стали AISI 304/316 с 2008 года. Собственное производство 2000 м² в Краснодаре.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">17 лет</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">2000 м²</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">500+ резервуаров</span>
+</div>
+</div>
+<div class="fnav">
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Навигация</h3>
+<a href="/#about" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">О нас</a>
+<a href="/catalog/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Каталог</a>
+<a href="/#projects" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Проекты</a>
+<a href="/#contacts" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Контакты</a>
+<a href="/articles.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Статьи</a>
+<a href="/certificates.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Сертификаты</a>
+<a href="/payment-delivery.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">Оплата и доставка</a>
+</div>
+<div class="feq">
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Оборудование</h3>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(0)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🥛 Молочное</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(1)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍷 Винодельческое</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(2)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍺 Пивоваренное</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(3)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">💧 Вода</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(4)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🫒 Масло</a>
+<a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(5)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0">🍯 Кондитерская</a>
+</div>
+<div>
+<h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Контакты</h3>
+<a href="tel:+79935940107" style="display:block;font-size:16px;font-weight:700;color:#F77C2A;text-decoration:none;padding:4px 0">8 (993) 594-01-07</a>
+<a href="mailto:oborudovanie-kubani@yandex.ru" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0">oborudovanie-kubani@yandex.ru</a>
+<div style="margin-top:8px">
+<a href="/#order-form" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">📩 Получить КП</a>
+</div>
+<a href="/privacy.html" style="display:block;font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;padding:4px 0;margin-top:8px">Политика конфиденциальности</a>
+</div>
+</div>
+<div style="padding:24px 0;margin-top:36px;border-top:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+<div style="font-size:12px;color:rgba(255,255,255,.3)">© ОБОРУДОВАНИЕ КУБАНИ · 2008–2026 · Все права защищены</div>
+</div>
+</div>
+</footer>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109477134,"init",{webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109477134" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>
+// Mobile drawer
+(function(){var h=document.getElementById('hamburger'),d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),c=document.getElementById('drawerClose');function openD(){d.classList.add('active');o.classList.add('active');document.body.style.overflow='hidden'}function closeD(){d.classList.remove('active');o.classList.remove('active');document.body.style.overflow=''}if(!h)return;h.addEventListener('click',function(e){e.stopPropagation();if(d.classList.contains('active')){closeD()}else{openD()}});if(c)c.addEventListener('click',closeD);if(o)o.addEventListener('click',closeD);document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD()});document.querySelectorAll('.drawer-group-toggle').forEach(function(b){b.addEventListener('click',function(){this.closest('.drawer-group').classList.toggle('open')})})})();
+
+// Mobile search trigger
+(function(){var b=document.getElementById('mobileSearchBtn'),s=document.getElementById('searchTrigger');if(b&&s)b.addEventListener('click',function(e){e.preventDefault();s.click()})})();
+</script>
 
 </body>
 </html>
