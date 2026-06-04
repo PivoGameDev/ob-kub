@@ -511,7 +511,7 @@ body{padding-top:0!important}
 <button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="hqGoForm()">📩 Получить КП</button>
 <div id="hqSt" style="font-size:11px;color:#999;text-align:center;margin-top:8px">Введите название оборудования</div>
 </div>
-<div id="hqRes" style="display:none;position:absolute;top:94px;left:28px;right:28px;z-index:100;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;max-height:280px;overflow-y:auto"></div>
+<div id="hqRes" style="display:none;position:absolute;top:136px;left:28px;right:28px;z-index:100;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;max-height:280px;overflow-y:auto"></div>
 
 <script>
 (function(){
