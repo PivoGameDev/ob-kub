@@ -6,11 +6,11 @@
 // Mobile search trigger
 (function(){var b=document.getElementById('mobileSearchBtn'),s=document.getElementById('searchTrigger');if(b&&s)b.addEventListener('click',function(e){e.preventDefault();s.click()})})();
 </script>
-
+<style>@media(max-width:700px){.fgr{grid-template-columns:1fr 1fr!important;gap:20px!important}}@media(max-width:480px){.fgr{grid-template-columns:1fr!important;gap:16px!important}}</style>
 <footer class="db-footer" style="position:relative;overflow:hidden">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
 <div class="db-wrap" style="padding-top:44px">
-<div style="display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:30px">
+<div class="fgr" style="display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:30px">
 <div>
 <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:14px">Оборудование Кубани</div>
 <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 16px">Производим резервуары из нержавеющей стали AISI 304/316 с 2008 года. Собственное производство 2000 м² в Краснодаре.</p>
