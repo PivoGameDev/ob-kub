@@ -470,29 +470,84 @@ body{padding-top:0!important}
 <a href="/industrial.html">🍽️ Пищевые производства</a>
 </div>
 </div>
-<div style="width:340px;max-height:460px;overflow-y:auto;background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
+<div style="width:340px;max-height:480px;overflow-y:auto;background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F77C2A" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-<span style="font-size:14px;font-weight:700;color:#1a1a26">Быстрый подбор</span>
+<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
+<span style="font-size:13px;font-weight:600;color:#333">Найдите оборудование</span>
+<span id="hqRst" onclick="hqReset()" style="display:none;margin-left:auto;font-size:16px;color:#999;cursor:pointer;line-height:1">×</span>
 </div>
-<div style="display:flex;align-items:center;border:1px solid #ddd;border-radius:8px;padding:0 10px;margin-bottom:10px">
+<div style="position:relative">
+<div style="display:flex;align-items:center;border:1px solid #ddd;border-radius:8px;padding:0 10px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
 <input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
 </div>
-<div id="hqResults" style="display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:6px;max-height:200px;overflow-y:auto"></div>
-<div style="margin-top:12px;padding-top:10px;border-top:1px solid #f0f0f0">
-<div style="display:flex;gap:6px;flex-wrap:wrap">
-<a href="/beer.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍺 Пиво</a>
-<a href="/dairy.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🥛 Молоко</a>
-<a href="/winery.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍷 Вино</a>
-<a href="/industrial.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍽️ Пищевое</a>
+<div id="hqRes" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:6px;max-height:200px;overflow-y:auto;z-index:50;margin-top:2px"></div>
 </div>
-<div style="display:flex;gap:8px;margin-top:10px;font-size:11px;color:#999;flex-wrap:wrap">
-<span>🔥 Цена сразу</span>
-<span>⚡ КП за 2 часа</span>
-<span>🔒 Конфиденциально</span>
+
+<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
+<span id="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">2</span>
+<span id="qs2t" style="font-size:13px;font-weight:600;color:#aaa">Объём</span>
+<a id="hqCst" onclick="hqCustom()" style="display:none;margin-left:auto;font-size:11px;color:#F77C2A;cursor:pointer">Свой объём</a>
 </div>
+<select id="hqSel" style="display:none;width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:12px;font-family:inherit;color:#333;background:#fff">
+<option value="">— выберите объём —</option>
+</select>
+<div id="hqCstBox" style="display:none">
+<input type="number" id="hqCstVal" placeholder="Ваш объём, л" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:12px;outline:none;font-family:inherit;box-sizing:border-box">
+<button onclick="hqCstGo()" style="width:100%;margin-top:6px;padding:8px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">Узнать цену</button>
 </div>
+
+<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
+<span id="qs3" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">3</span>
+<span id="qs3t" style="font-size:13px;font-weight:600;color:#aaa">Цена</span>
 </div>
+<div id="hqPriceBox" style="display:none;background:#fff8f0;border:2px solid #F77C2A;border-radius:8px;padding:12px;text-align:center">
+<div style="font-size:11px;color:#888">💰 Ориентировочная цена</div>
+<div id="hqPriceVal" style="font-size:22px;font-weight:900;color:#F77C2A"></div>
+</div>
+<button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">📩 Получить КП</button>
+<div id="hqSt" style="font-size:11px;color:#999;text-align:center;margin-top:8px">Введите название оборудования</div>
+</div>
+
+<script>
+(function(){
+var inp=document.getElementById('hqInp'),res=document.getElementById('hqRes');
+if(!inp||!res)return;
+inp.addEventListener('focus',function(){if(!this.value.trim())fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){showRes(d.results)})});
+inp.addEventListener('input',function(){var q=this.value.trim();if(!q){res.style.display='none';return}fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json()}).then(function(d){showRes(d.results)})});
+function showRes(items){
+res.innerHTML='';var a=items.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/)});
+var s={};a=a.filter(function(r){var k=r.u;if(s[k])return false;s[k]=true;return true});
+if(!a.length){res.innerHTML='<div style="padding:10px;text-align:center;color:#999;font-size:11px">Ничего не найдено</div>';res.style.display='block';return}
+a.forEach(function(x){var d=document.createElement('div');d.style.cssText='padding:7px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
+d.onmouseover=function(){this.style.background='#fff8f0'};d.onmouseout=function(){this.style.background=''};
+d.innerHTML='<span style="color:#F77C2A;font-size:10px">▶</span><span style="flex:1;color:#333;font-weight:600">'+x.n+'</span><span style="color:#888;font-size:11px">'+x.s+'</span>';
+d.onclick=function(){pick(x)};res.appendChild(d)});res.style.display='block'}
+function pick(r){
+inp.value=r.n;res.style.display='none';document.getElementById('hqRst').style.display='inline';
+document.getElementById('qs2').style.background='#F77C2A';document.getElementById('qs2').style.color='#fff';document.getElementById('qs2t').style.color='#333';
+var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/').filter(Boolean).slice(-2,-1)[0];
+var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var lm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=lm[r.si]||'';
+if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
+fetch('/catalog/?get_prices='+encodeURIComponent(k)+'&src='+src).then(function(r){return r.json()}).then(function(d){
+var s=document.getElementById('hqSel');s.innerHTML='<option value="">— выберите объём —</option>';
+if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л ('+fmtP(p.price)+')';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var v=parseInt(this.value);if(v>0){document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(v);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна'}}}
+else{s.innerHTML='<option value="">Нет данных</option>';s.style.display='block'};document.getElementById('hqSt').textContent='Выберите объём'});
+}
+window.hqCustom=function(){document.getElementById('hqCstBox').style.display='block';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none'}
+window.hqCstGo=function(){var v=parseInt(document.getElementById('hqCstVal').value);if(v>0){
+document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';
+document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
+document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена по запросу'}}
+window.hqReset=function(){
+inp.value='';res.style.display='none';document.getElementById('hqRst').style.display='none';
+document.getElementById('qs2').style.background='#eee';document.getElementById('qs2').style.color='#aaa';document.getElementById('qs2t').style.color='#aaa';
+document.getElementById('qs3').style.background='#eee';document.getElementById('qs3').style.color='#aaa';document.getElementById('qs3t').style.color='#aaa';
+document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';
+document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования'}
+function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽')}
+})();
+</script>
 </div>
 </section>
 
@@ -1215,30 +1270,6 @@ window.addEventListener('scroll', function(){ if (!ticking) { requestAnimationFr
 update();
 })();
 // Simple quiz search
-document.addEventListener('DOMContentLoaded',function(){
-var inp=document.getElementById('hqInp');
-if(!inp)return;
-var res=document.createElement('div');
-res.style.cssText='display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:260px;overflow-y:auto';
-inp.parentElement.parentElement.appendChild(res);
-inp.addEventListener('input',function(){
-var q=this.value.trim();
-if(!q){res.style.display='none';return}
-fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json()}).then(function(d){
-res.innerHTML='';
-var items=d.results.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/)});
-var seen={};items=items.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true});
-if(!items.length){res.innerHTML='<div style="padding:10px;text-align:center;color:#999;font-size:11px">Ничего не найдено</div>';res.style.display='block';return}
-items.forEach(function(it){
-var d=document.createElement('div');
-d.style.cssText='padding:6px 8px;cursor:pointer;border-radius:4px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
-d.onmouseover=function(){this.style.background='#fff8f0'};d.onmouseout=function(){this.style.background=''};
-d.innerHTML='<a href="'+it.u+'" style="color:#333;font-weight:600;text-decoration:none;flex:1">'+it.n+'</a><span style="color:#888;font-size:11px">'+it.s+'</span>';
-res.appendChild(d);
-});
-res.style.display='block';
-});
-});
-});
+
 </script></body>
 
