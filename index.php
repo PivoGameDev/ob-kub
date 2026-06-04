@@ -720,26 +720,82 @@ window.scrollTo({top:document.querySelector('.db-qcard.active').offsetTop-120,be
 </section>
 
 <!-- EQUIPMENT CATEGORIES -->
-<section class="db-section alt scroll-reveal" id="equipment" style="padding:64px 0 48px">
-<div class="db-wrap" style="max-width:1400px">
-<div class="db-section-line"></div>
-<h2 class="db-section-title">Категории оборудования</h2>
-<p class="db-section-sub">Полный каталог промышленного оборудования из нержавеющей стали AISI 304/316</p>
-<div class="cat-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px">
-<a href="/beer.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-<div style="height:200px;overflow:hidden;position:relative">
-<img src="cat-img-565c2c35.jpg" alt="Пивоваренное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-<div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.6))"></div>
+<section class="db-section" id="equipment" style="padding:20px 0 48px;background:transparent">
+<div class="db-wrap" style="max-width:1200px">
+<div class="db-weld-frame" style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
+<div style="text-align:center;margin-bottom:24px">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">Каталог</div>
+<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 4px">Оборудование по отраслям</h2>
+<p style="font-size:14px;color:rgba(255,255,255,.5);margin:0">Выберите вашу отрасль</p>
 </div>
-<div style="padding:20px 24px;flex:1;display:flex;flex-direction:column">
-<div style="font-size:18px;font-weight:700;color:#1a1a26;margin-bottom:4px">Пивоваренное</div>
-<div style="font-size:13px;color:#666;line-height:1.5;flex:1;margin-bottom:12px">ЦКТ, варочные порядки, дробилки, БГВ, парогенераторы, чиллеры, форфасы, теплообменники</div>
-<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px;margin-top:auto">
-<span style="font-size:12px;color:#F77C2A;font-weight:600">13 категорий</span>
-<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 16px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:6px;font-size:12px;font-weight:700">Смотреть →</span>
+
+<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px" id="catTabs2">
+<button class="cat-tab2 active" data-i="0" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:#F77C2A;color:#fff">🥛 Молочное</button>
+<button class="cat-tab2" data-i="1" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">🍷 Винодельческое</button>
+<button class="cat-tab2" data-i="2" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">🍺 Пивоваренное</button>
+<button class="cat-tab2" data-i="3" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">💧 Вода</button>
+<button class="cat-tab2" data-i="4" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">🫒 Масло</button>
+<button class="cat-tab2" data-i="5" style="padding:12px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">🍯 Кондитерская</button>
+</div>
+
+<div class="banner2" style="position:relative;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.2)">
+<img id="bimg2" src="banner-dairy.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(26,26,38,.92) 30%,rgba(26,26,38,.5) 70%,rgba(26,26,38,.1) 100%);z-index:2"></div>
+<div style="position:relative;z-index:3;padding:30px 36px 32px">
+<div style="font-size:24px;font-weight:800;color:#fff;margin-bottom:2px" id="ttl2">🥛 Молочное</div>
+<div style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:16px" id="ssub2">Оборудование для молочной промышленности</div>
+<div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap">
+<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 14px;font-size:13px;color:#fff;font-weight:600" id="vvol2">500 - 200 000 л</span>
+<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 14px;font-size:13px;color:#fff;font-weight:600">AISI 304/316</span>
+<span style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 14px;font-size:13px;color:#F77C2A;font-weight:700" id="ppr2">от 195 000 ₽</span>
+</div>
+<div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:16px;max-width:600px" id="ddesc2">Оборудование для молочной промышленности: ёмкости приёмки и хранения, резервуары-охладители, ВДП, ферментационные танки, сыро- и творогоизготовители.</div>
+<div class="prods2" id="pprod2" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px"></div>
 </div>
 </div>
-</a>
+
+</div></div></section>
+
+<style>
+.prods2 a{flex:0 0 auto;width:150px;text-decoration:none;color:inherit}
+.prods2 div{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);min-height:170px;display:flex;flex-direction:column}
+.prods2::-webkit-scrollbar{height:4px}
+.prods2::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:2px}
+.prods2 img{width:100%;height:100px;object-fit:contain;display:block;background:#fff;padding:8px;flex-shrink:0}
+.prods2 span{display:flex;align-items:center;justify-content:center;padding:6px 8px;font-size:11px;color:#333;font-weight:600;text-align:center;line-height:1.2;min-height:36px;flex:1}
+.prods2 .pr-btn{display:block;padding:5px 8px;font-size:10px;color:#F77C2A;font-weight:700;text-align:center;border-top:1px solid #eee;flex-shrink:0}
+</style>
+
+<script>
+(function(){
+var D = [
+  {img:"banner-dairy.jpg",title:"🥛 Молочное",sub:"Оборудование для молочной промышленности",vol:"500 – 200 000 л",price:"от 195 000 ₽",desc:"Оборудование для молочной промышленности: ёмкости приёмки и хранения, резервуары-охладители, ВДП, ферментационные танки, сыро- и творогоизготовители.",pd:'<a href="/catalog/dairy/reception/"><div><img src="dairy-reception.jpg"><span>Ёмкость приёмки молока</span><span class="pr-btn">1 000 – 50 000 л →</span></div></a><a href="/catalog/dairy/storage/"><div><img src="dairy-storage.jpg"><span>Резервуар хранения молока</span><span class="pr-btn">3 000 – 200 000 л →</span></div></a><a href="/catalog/dairy/cooler/"><div><img src="dairy-cooler.jpg"><span>Резервуар-охладитель</span><span class="pr-btn">1 000 – 50 000 л →</span></div></a><a href="/catalog/dairy/vdp/"><div><img src="dairy-vdp.jpg"><span>Ванна пастеризации ВДП</span><span class="pr-btn">200 – 10 000 л →</span></div></a><a href="/catalog/dairy/fermentation/"><div><img src="dairy-fermentation.jpg"><span>Ферментационный танк</span><span class="pr-btn">500 – 50 000 л →</span></div></a><a href="/catalog/dairy/cheese-maker/"><div><img src="dairy-cheese-maker.jpg"><span>Сыроизготовитель</span><span class="pr-btn">200 – 10 000 л →</span></div></a><a href="/catalog/dairy/cottage-cheese/"><div><img src="dairy-cottage-cheese.jpg"><span>Творогоизготовитель</span><span class="pr-btn">200 – 6 300 л →</span></div></a><a href="/catalog/dairy/yeast/"><div><img src="dairy-yeast.jpg"><span>Заквасочник</span><span class="pr-btn">50 – 1 000 л →</span></div></a>'},
+  {img:"banner-wine.jpg",title:"🍷 Винодельческое",sub:"Оборудование для виноделия",vol:"500 – 50 000 л",price:"от 280 000 ₽",desc:"Винодельческое оборудование: ферментационные танки для красных и белых вин, ёмкости выдержки и хранения, криостабилизация, купажирование, сульфитация, винификаторы.",pd:'<a href="/catalog/wine/red-fermentation/"><div><img src="wine-red-fermentation.jpg"><span>Ферментация красных вин</span><span class="pr-btn">500 – 50 000 л →</span></div></a><a href="/catalog/wine/white-fermentation/"><div><img src="wine-white-fermentation.jpg"><span>Ферментация белых вин</span><span class="pr-btn">500 – 31 500 л →</span></div></a><a href="/catalog/wine/storage-aging/"><div><img src="wine-storage-aging.jpg"><span>Выдержка и хранение</span><span class="pr-btn">1 000 – 200 000 л →</span></div></a><a href="/catalog/wine/cold-stabilization/"><div><img src="wine-cold-stabilization.jpg"><span>Танк криостабилизации</span><span class="pr-btn">500 – 31 500 л →</span></div></a><a href="/catalog/wine/blending/"><div><img src="wine-blending.png"><span>Ёмкость для купажирования</span><span class="pr-btn">1 000 – 50 000 л →</span></div></a><a href="/catalog/wine/sulfitation/"><div><img src="wine-sulfitation.jpg"><span>Ёмкость сульфитации</span><span class="pr-btn">500 – 31 500 л →</span></div></a><a href="/catalog/wine/universal-tank/"><div><img src="wine-universal-tank.jpg"><span>Винификатор УТТ</span><span class="pr-btn">500 – 50 000 л →</span></div></a>'},
+  {img:"banner-beer.jpg",title:"🍺 Пивоваренное",sub:"Оборудование для пивоварен",vol:"100 – 200 000 л",price:"от 94 000 ₽",desc:"Полный цикл пивоваренного оборудования: ЦКТ, варочные порядки, дробилки, БГВ, парогенераторы, чиллеры, форфасы, теплообменники.",pd:'<a href="/catalog/beer/cct/"><div><img src="cct-tank.jpg"><span>ЦКТ для брожения</span><span class="pr-btn">100 – 200 000 л →</span></div></a><a href="/catalog/beer/brew-house/"><div><img src="brew-kettle.jpg"><span>Варочный порядок</span><span class="pr-btn">250 – 5 000 л →</span></div></a><a href="/catalog/beer/hot-water-tank/"><div><img src="beer-hot-water-tank.jpg"><span>Бак горячей воды</span><span class="pr-btn">500 – 20 000 л →</span></div></a><a href="/catalog/beer/chiller/"><div><img src="chiller.jpg"><span>Чиллер</span><span class="pr-btn">8 – 150 кВт →</span></div></a>'},
+  {img:"banner-water.jpg",title:"💧 Для воды",sub:"Баки горячей воды и резервуары хранения",vol:"250 – 50 000 л",price:"от 150 000 ₽",desc:"Резервуары для воды из AISI 304/316.",pd:'<a href="/catalog/beer/hot-water-tank/"><div><img src="hot-water-tank.jpg"><span>Бак горячей воды</span><span class="pr-btn">500 – 20 000 л →</span></div></a>'},
+  {img:"banner-oil.jpg",title:"🫒 Для масла",sub:"Ёмкости для пищевых масел",vol:"500 – 50 000 л",price:"от 220 000 ₽",desc:"Ёмкости для пищевых масел и жиров: резервуары хранения, ёмкости с мешалкой.",pd:'<a href="/catalog/industrial/mixing/"><div><img src="industrial-mixing.jpg"><span>Ёмкость с мешалкой</span><span class="pr-btn">500 – 50 000 л →</span></div></a>'},
+  {img:"banner-conf.jpg",title:"🍯 Кондитерская",sub:"Ёмкости для глазурей и сиропов",vol:"500 – 20 000 л",price:"от 200 000 ₽",desc:"Ёмкости с мешалкой для глазурей, сиропов, кондитерских масс.",pd:'<a href="/catalog/industrial/mixing/"><div><img src="industrial-mixing.jpg"><span>Ёмкость с мешалкой</span><span class="pr-btn">500 – 50 000 л →</span></div></a>'}
+];
+var cur=-1;
+function sw(i){
+  if(i===cur)return;
+  var d=D[i];
+  document.querySelectorAll('.cat-tab2').forEach(function(t,j){t.style.background=j===i?'#F77C2A':'rgba(255,255,255,.06)';t.style.color=j===i?'#fff':'rgba(255,255,255,.5)'});
+  document.getElementById('bimg2').src=d.img;
+  document.getElementById('ttl2').textContent=d.title;
+  document.getElementById('ssub2').textContent=d.sub;
+  document.getElementById('vvol2').textContent=d.vol;
+  document.getElementById('ppr2').textContent=d.price;
+  document.getElementById('ddesc2').textContent=d.desc;
+  document.getElementById('pprod2').innerHTML=d.pd;
+  cur=i;
+}
+document.querySelectorAll('.cat-tab2').forEach(function(b){b.addEventListener('click',function(){sw(parseInt(this.dataset.i))})});
+sw(0);
+})();
+</script>
+
+<!-- PROJECTS -->
 <a href="/dairy.html" class="cat-card" style="position:relative;border-radius:14px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(247,124,42,.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
 <div style="height:200px;overflow:hidden;position:relative">
 <img src="cat-dairy.jpg" alt="Молочное оборудование" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
