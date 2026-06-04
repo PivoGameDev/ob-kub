@@ -696,7 +696,7 @@ window.hqSelData={};window._hqVol='';window._hqPrice=''
 <!-- EMAIL CTA -->
 <section style="background:linear-gradient(135deg,#F77C2A,#e06a15);position:relative;overflow:hidden">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3498db,transparent)"></div>
-<div class="db-wrap" style="padding:32px 24px">
+<div style="max-width:820px;margin:0 auto;padding:32px 24px">
 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 40px;position:relative;z-index:1">
 <div style="text-align:center">
 <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px">📩 Отправьте проект на рассмотрение</div>
