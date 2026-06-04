@@ -242,10 +242,25 @@ function renderCctList($allData, $cat) {
 </div>
 </section>
 
-<div class="container" style="padding-top:28px">
-<h1 style="font-size:22px;font-weight:800;color:#1a1a26;margin:0 0 4px;text-transform:uppercase;letter-spacing:.4px">Цилиндро-конические танки (ЦКТ) для пива</h1>
-<p style="font-size:14px;color:#888;margin:0 0 4px;line-height:1.5">ЦКТ из нержавеющей стали AISI 304 для брожения, дображивания и лагеризации пива. Полный комплект арматуры, рубашки охлаждения, автоматика.</p>
+<section style="background:linear-gradient(135deg,#2b2b39,#1a1a26);position:relative;overflow:hidden;padding:36px 0">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
+<div class="container">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+<div style="display:flex;align-items:center;justify-content:center">
+<img src="/cct-tank.jpg" alt="ЦКТ" style="max-width:100%;max-height:340px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.35)">
 </div>
+<div>
+<h1 style="font-size:26px;font-weight:800;color:#fff;margin:0 0 8px;text-transform:uppercase;letter-spacing:.4px">Цилиндро-конические танки (ЦКТ)</h1>
+<p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;margin:0 0 14px">ЦКТ из нержавеющей стали AISI 304 для брожения, дображивания и лагеризации пива. Полный комплект арматуры, рубашки охлаждения, автоматика.</p>
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:11px;font-weight:600;color:#F77C2A">AISI 304 / 316</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:11px;font-weight:600;color:#F77C2A">до 4 зон охлаждения</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:11px;font-weight:600;color:#F77C2A">угол конуса 60-70°</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 <?php
 $minVol = min($volumes);
