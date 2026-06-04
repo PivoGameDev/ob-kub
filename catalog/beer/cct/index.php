@@ -310,6 +310,16 @@ $volCount = count($volumes);
 ['title' => 'Как разобраться в названиях: ЦКТ, танк брожения, форфас и другие термины', 'content' => ['<p>В пивоварении одно и то же оборудование могут называть по-разному. ЦКТ — цилиндро-конический танк — также называют конусным танком, коническим танком, танком брожения или танком дображивания.</p>','<p><strong>Основные синонимы пивного оборудования:</strong></p><p>• <strong>ЦКТ</strong> = цилиндроконический танк = конический танк = танк брожения = танк дображивания</p><p>• <strong>Форфас</strong> = лагерный танк = юнит = unitank = BBT (Bright Beer Tank)</p><p>• <strong>Заторный аппарат</strong> = маш тюн = заторный чан = mash tun</p><p>• <strong>Фильтрационный аппарат</strong> = лаутер тюн = фильтрчан = lauter tun</p><p>• <strong>Сусловарочный аппарат</strong> = сусловарка = варочный котел</p><p>• <strong>Гидроциклонный аппарат</strong> = вирпул = whirlpool</p><p>• <strong>Бак горячей воды</strong> = БГВ</p>','<p>Всё наше оборудование производится из нержавеющей стали AISI 304/316, поэтому материал в названии не указывается. Если сомневаетесь — позвоните, инженер поможет подобрать правильный вариант.</p>']],
 ]; ?>
 
+<style>
+.article-card{background:#fff!important;border-radius:10px!important;padding:20px 24px!important;box-shadow:0 2px 12px rgba(0,0,0,.08)!important}
+.article-card .article-header{margin-bottom:12px!important}
+.article-card .article-tag{font-size:9px!important;padding:2px 8px!important;margin-bottom:6px!important}
+.article-card .article-title{font-size:15px!important;margin:6px 0 0!important}
+.article-card .article-body{font-size:13px!important;line-height:1.6!important}
+.article-card .article-body p{margin:0 0 8px!important}
+.article-card .article-btn{padding:8px 18px!important;font-size:12px!important}
+.article-card .article-toggle{font-size:12px!important;padding:2px 0 0!important}
+</style>
 <section style="margin-top:32px">
 <div class="container">
 <div style="background:linear-gradient(135deg,#1a1a26,#2b2b39);border-radius:14px;position:relative;overflow:hidden;padding:28px 32px">
