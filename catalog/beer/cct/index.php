@@ -441,6 +441,25 @@ $volCount = count($volumes);
     </div>
 </section>
 
+<!-- EMAIL CTA -->
+<section style="padding:32px 0;background:#f5f6f8">
+<div class="db-wrap" style="max-width:820px">
+<div style="background:linear-gradient(135deg,#F77C2A,#e06a15);border-radius:14px;position:relative;overflow:hidden;padding:28px 24px">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3498db,transparent)"></div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 40px;position:relative;z-index:1">
+<div style="text-align:center">
+<div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px">📩 Отправьте проект на рассмотрение</div>
+<div style="font-size:14px;color:rgba(255,255,255,.7)">Наши технологи готовы оценить вашу задачу прямо сейчас</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:8px 14px 8px 20px">
+<span style="font-size:15px;font-weight:700;color:#fff;letter-spacing:.3px">oborudovanie-kubani@yandex.ru</span>
+<button onclick="var b=this;navigator.clipboard.writeText('oborudovanie-kubani@yandex.ru').then(function(){b.textContent='✅ Скопировано';setTimeout(function(){b.textContent='📋 Копировать'},2000)}).catch(function(){b.textContent='❌ Ошибка';setTimeout(function(){b.textContent='📋 Копировать'},2000)})" style="padding:8px 16px;background:#fff;color:#F77C2A;border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;transition:opacity .2s" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity=''">📋 Копировать</button>
+ </div>
+</div>
+</div>
+</div>
+</section>
+
 <div class="article-modal" id="articleModal" onclick="if(event.target===this)closeArticleModal()"><div class="article-modal-backdrop"></div><div class="article-modal-card"><button class="article-modal-close" onclick="closeArticleModal()">&times;</button><div class="article-modal-header"><span class="article-tag">Статья по теме</span><h2 class="article-modal-title" id="articleModalTitle"></h2></div><div class="article-modal-body" id="articleModalBody"></div><div class="article-modal-cta"><p>Нужна консультация по выбору? Инженер подберёт оптимальный объём под вашу варку, рассчитает количество танков и подготовит КП с точной стоимостью.</p><a href="/beer.html#order-form" class="article-btn">Получить расчёт →</a></div></div></div>
  <script>function toggleProj(el){el.classList.toggle('expanded')} function openArticleModal(b){var c=b.closest('.article-card'),t=c.querySelector('.article-title').textContent,h='';c.querySelectorAll('.article-full>*').forEach(function(e){if(!e.classList.contains('article-cta'))h+=e.outerHTML});document.getElementById('articleModalTitle').textContent=t;document.getElementById('articleModalBody').innerHTML=h;document.getElementById('articleModal').classList.add('active');document.body.style.overflow='hidden'}function closeArticleModal(){document.getElementById('articleModal').classList.remove('active');document.body.style.overflow=''}</script>
 <?php require __DIR__ . '/../../layout-end.php'; }
