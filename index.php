@@ -492,7 +492,9 @@ body{padding-top:0!important}
 </div>
 <div style="background:#fff;border-radius:12px;padding:24px 28px;margin-top:28px;box-shadow:0 4px 20px rgba(0,0,0,.08);cursor:pointer" onclick="document.querySelector('.db-hero-inner>div:last-child').scrollIntoView({behavior:'smooth',block:'nearest'});setTimeout(function(){var e=document.getElementById('hqInp');if(e)e.focus()},500)" onmouseover="this.style.boxShadow='0 8px 32px rgba(247,124,42,.25)'" onmouseout="this.style.boxShadow=''">
 <div style="display:flex;align-items:center;gap:20px">
-<img src="/dairy-storage.jpg" alt="Резервуар для молока" style="width:100px;height:100px;object-fit:contain;border-radius:10px;background:#fff;flex-shrink:0">
+<div style="width:100px;height:100px;border-radius:10px;background:#fff;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.04)">
+<img src="/dairy-storage.jpg" alt="Резервуар для молока" style="max-width:90%;max-height:90%;object-fit:contain;display:block">
+</div>
 <div style="flex:1;min-width:0">
 <div style="font-size:18px;font-weight:800;color:#1a1a26;line-height:1.2">Рассчитайте стоимость онлайн</div>
 <div style="font-size:13px;color:#666;margin-top:6px;line-height:1.5">Просто выберите тип оборудования и объём — цена перед отправкой заявки</div>
