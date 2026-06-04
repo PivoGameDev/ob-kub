@@ -20,7 +20,7 @@ main{display:block;margin:0;padding:0}
 
 /* ===== HEADER — WHITE ===== */
 .header{position:relative!important;background:#fff!important;border-bottom:none!important;padding:0!important;min-height:72px!important;display:flex!important;align-items:center!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
-.header .container{display:none;max-width:1200px;margin:0 auto;padding:0 24px;width:100%}
+.header .container{display:none!important;max-width:1200px;margin:0 auto;padding:0 24px;width:100%}
 @media(min-width:769px){
 .header .container{display:block!important}
 .catalog-overlay{display:none!important}
@@ -402,6 +402,8 @@ body{padding-top:0!important}
 .mobile-header .hamburger span{display:block;width:20px;height:2.5px;background:#333;border-radius:2px;transition:all .3s}
 
 @media(max-width:768px){
+header.header .header-top{display:none!important}
+header.header{display:block!important;width:100%!important;position:sticky!important;top:0;z-index:1000;background:#fff;min-height:0!important}
 .mobile-drawer-overlay.active{opacity:1;visibility:visible}
 .mobile-drawer{position:fixed;top:0;right:-300px;width:300px;max-width:85vw;height:100%;background:#fff;z-index:10000;overflow-y:auto;transition:right .3s ease;box-shadow:-2px 0 20px rgba(0,0,0,.12);-webkit-overflow-scrolling:touch}
 .mobile-drawer.active{right:0}
