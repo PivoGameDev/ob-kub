@@ -281,6 +281,7 @@ body{padding-top:0!important}
 .ql-grid,.bp-grid,.ab-grid{grid-template-columns:1fr!important}
 .ql-feat{grid-template-columns:1fr!important}
 .ql-grid>div:first-child,.bp-grid>div:last-child,.ab-grid>div:last-child{order:-1!important}
+#contact-grid,#contacts .db-weld-frame>[style*="grid"]{grid-template-columns:1fr!important}
 .header{position:relative!important;height:auto!important;min-height:auto!important;flex-direction:column!important;background:#fff!important;border-bottom:none!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
 .header .container{padding:0 12px!important;width:100%!important}
 .header-top{flex-wrap:wrap!important;gap:0!important;padding:0!important}
@@ -348,6 +349,11 @@ body{padding-top:0!important}
  .db-prod-equip-card .eq-img{height:100px!important;padding:8px!important}
  .db-contacts>div:first-child{padding:0}
  #order-form .db-weld-frame>form>div>div{padding:24px 18px!important}
+ #order-form .db-weld-frame>form>div{min-height:auto!important}
+ #order-form .db-weld-frame form input,#order-form .db-weld-frame form textarea{font-size:13px!important;padding:11px 14px!important}
+ #order-form .db-weld-frame form .db-form-opt-trigger{padding:10px 14px!important;font-size:12px!important}
+ #order-form .db-weld-frame form button[type="submit"]{padding:12px!important;font-size:14px!important}
+ #order-form .db-weld-frame form [style*="grid-template-columns:1fr 1fr;gap:14px"]{grid-template-columns:1fr!important}
  .fnav a,.feq a{width:45%!important;display:inline-block!important;vertical-align:top!important}
 }
 .fnav a,.feq a{width:45%!important;display:inline-block!important;vertical-align:top!important}.cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
@@ -1195,10 +1201,10 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 <section class="db-section alt" id="contacts" style="padding:32px 0 64px;background:#f5f6f8">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:44px">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
-<div>
 <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#F77C2A;font-weight:600;margin-bottom:6px">Контакты</div>
-<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 20px;text-transform:uppercase;letter-spacing:.4px">Свяжитесь с нами</h2>
+<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 24px;text-transform:uppercase;letter-spacing:.4px">Свяжитесь с нами</h2>
+<div class="db-contacts" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;color:#fff">
+<div>
 <div class="db-contact-item">
 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
 <div><h4 style="color:#fff">Адрес</h4><p style="color:rgba(255,255,255,.6)">Дорожный переулок, 5, посёлок Индустриальный, городской округ Краснодар</p></div>
@@ -1211,11 +1217,9 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
 <div><h4 style="color:#fff">Телефоны</h4><p style="color:rgba(255,255,255,.6)"><a href="tel:+79935940107" style="color:rgba(255,255,255,.6)">8 (993) 594-01-07</a> — бесплатный звонок<br><a href="tel:+79935940107" style="color:rgba(255,255,255,.6)">8 (993) 594-01-07</a></p></div>
 </div>
-<div class="db-contact-item">
-<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.78 5.42-.92 6.8-.07.67-.36.89-.88.56-2.45-1.83-3.74-2.97-6.06-4.76-.56-.39-.56-.61.2-.91 2.4-.99 4.05-1.65 6.38-2.61.61-.25 1.14-.04 1.38.57.31.79.47 2.38.7 3.35z"/></svg>
 </div>
 <div class="db-contact-map">
-<iframe src="https://yandex.ru/map-widget/v1/?ll=39.000000%2C45.000000&z=15&l=map&pt=39.000000,45.000000,comma" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://yandex.ru/map-widget/v1/?ll=39.000000%2C45.000000&z=15&l=map&pt=39.000000,45.000000,comma" allowfullscreen loading="lazy" style="width:100%;display:block"></iframe>
 </div>
 </div>
 </div>
