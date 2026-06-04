@@ -341,11 +341,14 @@ body{padding-top:0!important}
 .db-weld-frame{padding:20px 16px!important}
 .db-hero-inner{padding:12px 12px 30px!important}
 .db-hero-inner>div:last-child{width:100%!important}
-.db-weld-badge{font-size:11px!important;padding:5px 10px!important}
-.db-weld-inner{gap:12px!important}
-.db-prod-equip{grid-template-columns:repeat(2,1fr);gap:8px}
-.db-prod-equip-card .eq-img{height:100px!important;padding:8px!important}
-.db-contacts>div:first-child{padding:0}
+ .db-weld-badge{font-size:11px!important;padding:5px 10px!important}
+ .db-weld-inner{gap:12px!important}
+ .db-weld-frame{padding:24px 16px!important}
+ .db-prod-equip{grid-template-columns:repeat(2,1fr);gap:8px}
+ .db-prod-equip-card .eq-img{height:100px!important;padding:8px!important}
+ .db-contacts>div:first-child{padding:0}
+ #order-form .db-weld-frame>form>div>div{padding:24px 18px!important}
+ .fnav a,.feq a{width:45%!important;display:inline-block!important;vertical-align:top!important}
 }
 .fnav a,.feq a{width:45%!important;display:inline-block!important;vertical-align:top!important}.cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 .cat-card-img{height:110px}
