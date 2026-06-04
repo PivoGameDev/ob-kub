@@ -257,6 +257,7 @@ function renderCctList($allData, $cat) {
 <span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:11px;font-weight:600;color:#F77C2A">до 4 зон охлаждения</span>
 <span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:11px;font-weight:600;color:#F77C2A">угол конуса 60-70°</span>
 </div>
+<div onclick="document.querySelector('.volumes-grid').scrollIntoView({behavior:'smooth'})" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:4px">Выбрать объём →</div>
 </div>
 </div>
 </div>
