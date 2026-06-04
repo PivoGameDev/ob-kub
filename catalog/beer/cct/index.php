@@ -283,22 +283,22 @@ $volCount = count($volumes);
 </div>
 <section class="container">
 
-<div class="db-weld-frame" style="padding:0;overflow:hidden;border-radius:14px;margin-top:24px">
-<div style="position:relative">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent);z-index:3"></div>
-<div style="position:relative;padding:32px 36px 28px;background:linear-gradient(135deg,#1a1a26,#2b2b39);border-radius:14px 14px 0 0;text-align:center;z-index:2">
+<div class="db-weld-frame" style="padding:0;overflow:hidden;border-radius:14px;margin-top:28px">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent);z-index:1"></div>
+<div style="padding:32px 36px 24px;text-align:center">
 <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:4px">Выберите объём</div>
-<h2 style="font-size:20px;font-weight:800;color:#fff;margin:0 0 2px">Все доступные объёмы ЦКТ</h2>
-<p style="font-size:13px;color:rgba(255,255,255,.45);margin:0">Нажмите на нужный объём</p>
-</div>
-<div style="position:relative;overflow:hidden">
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url(/banner-beer.jpg) center/cover;filter:blur(4px) brightness(.3);z-index:0"></div>
-<div style="position:relative;z-index:1;padding:28px 36px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+<h2 style="font-size:20px;font-weight:800;color:#fff;margin:0 0 4px">Все доступные объёмы ЦКТ</h2>
+<p style="font-size:13px;color:rgba(255,255,255,.45);margin:0 0 20px">Нажмите на нужный объём</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:700px;margin:0 auto">
 <?php foreach ($volumes as $v): ?>
-<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;background:rgba(247,124,42,.15);border:1px solid rgba(247,124,42,.3);border-radius:8px;font-size:14px;font-weight:700;color:#fff;text-decoration:none;transition:all .2s;backdrop-filter:blur(4px)" onmouseover="this.style.background='#F77C2A';this.style.borderColor='#F77C2A'" onmouseout="this.style.background='';this.style.borderColor=''" onfocus="this.style.outline='none'"><?= number_format($v, 0, '.', ' ') ?> л</a>
+<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.2);border-radius:8px;font-size:14px;font-weight:700;color:#F77C2A;text-decoration:none;transition:all .2s;min-width:70px" onmouseover="this.style.background='#F77C2A';this.style.color='#fff';this.style.borderColor='#F77C2A'" onmouseout="this.style.background='';this.style.color='';this.style.borderColor=''"><?= number_format($v, 0, '.', ' ') ?> л</a>
 <?php endforeach; ?>
 </div>
 </div>
+<div style="border-top:1px solid rgba(255,255,255,.06);padding:16px 36px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px">
+<span style="font-size:12px;color:rgba(255,255,255,.4)">Нужен нестандартный размер?</span>
+<span style="font-size:13px;font-weight:600;color:#fff">oborudovanie-kubani@yandex.ru</span>
+<button onclick="var b=this;navigator.clipboard.writeText('oborudovanie-kubani@yandex.ru').then(function(){b.textContent='✅ Скопировано';setTimeout(function(){b.textContent='📋 Копировать'},2000)})" style="padding:6px 14px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.25);color:#F77C2A;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;white-space:nowrap">📋 Копировать</button>
 </div>
 </div>
 </section>
