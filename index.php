@@ -470,7 +470,7 @@ body{padding-top:0!important}
 <a href="/industrial.html">🍽️ Пищевые производства</a>
 </div>
 </div>
-<div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
+<div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box;position:relative">
 <div style="font-size:15px;font-weight:700;color:#333;margin-bottom:16px;text-align:center">Узнайте примерную цену в 3 шага</div>
 <div style="max-height:480px;overflow-y:auto;overflow-x:hidden">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
@@ -483,10 +483,6 @@ body{padding-top:0!important}
 <input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
     </div>
 
-<div id="hqRes" style="display:none;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:6px;max-height:220px;overflow-y:auto"></div>
-
-
-    
 <div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
 <span id="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">2</span>
 <span id="qs2t" style="font-size:13px;font-weight:600;color:#aaa">Объём</span>
@@ -515,6 +511,7 @@ body{padding-top:0!important}
 <button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="hqGoForm()">📩 Получить КП</button>
 <div id="hqSt" style="font-size:11px;color:#999;text-align:center;margin-top:8px">Введите название оборудования</div>
 </div>
+<div id="hqRes" style="display:none;position:absolute;top:94px;left:28px;right:28px;z-index:100;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;max-height:280px;overflow-y:auto"></div>
 
 <script>
 (function(){
