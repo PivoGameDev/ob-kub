@@ -519,23 +519,17 @@ body{padding-top:0!important}
 var inp=document.getElementById('hqInp'),res=document.getElementById('hqRes');
 if(!inp||!res)return;
 var hqImgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg','red-fermentation':'wine-red-fermentation.jpg','mixing':'industrial-mixing.jpg','thermal':'industrial-thermal.jpg','storage-aging':'wine-storage-aging.jpg','brew-house':'brew-kettle.jpg','chiller':'chiller.jpg','steam-generator':'steam-generator.jpg','unitank':'unitank.jpg','cooler':'dairy-cooler.jpg','cottage-cheese':'dairy-cottage-cheese.jpg','yeast':'dairy-yeast.jpg','white-fermentation':'wine-white-fermentation.jpg','cold-stabilization':'wine-cold-stabilization.jpg','blending':'wine-blending.png','sulfitation':'wine-sulfitation.jpg','mash-tun':'mash-tun.jpg','combined-kettle':'combined-kettle.jpg','lauter-tun':'lauter-tun.jpg','brew-kettle':'brew-kettle.jpg','whirlpool':'whirlpool.jpg','industrial-storage':'industrial-storage.jpg','cip':'industrial-cip.jpg','pressure':'industrial-pressure.jpg','beer-hot-water-tank':'beer-hot-water-tank.jpg'};
-function hqKey(u){if(!u)return'';var k=u.split('/').filter(Boolean).pop();if(k&&k.match(/^\d+l?$/))k=u.split('/').filter(Boolean).slice(-2,-1)[0];return k||''}
-inp.addEventListener('focus',function(){if(!this.value.trim()){res.textContent='Загрузка...';res.style.display='block';document.getElementById('qs2').style.background='#eee';document.getElementById('qs2').style.color='#aaa';document.getElementById('qs2t').style.color='#aaa';document.getElementById('qs3').style.background='#eee';document.getElementById('qs3').style.color='#aaa';document.getElementById('qs3t').style.color='#aaa';document.getElementById('hqSelected').style.display='none';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования';fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){try{showRes(d.results)}catch(e){res.textContent='Ошибка: '+e.message;res.style.display='block'}})}});
+function hqKey(u){var k=u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=u.split('/').filter(Boolean).slice(-2,-1)[0];return k}
+inp.addEventListener('focus',function(){if(!this.value.trim()){document.getElementById('qs2').style.background='#eee';document.getElementById('qs2').style.color='#aaa';document.getElementById('qs2t').style.color='#aaa';document.getElementById('qs3').style.background='#eee';document.getElementById('qs3').style.color='#aaa';document.getElementById('qs3t').style.color='#aaa';document.getElementById('hqSelected').style.display='none';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования';fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){showRes(d.results)})}});
 inp.addEventListener('input',function(){var q=this.value.trim();if(!q){res.style.display='none';return}document.getElementById('hqSelected').style.display='none';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Ищем...';fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json()}).then(function(d){showRes(d.results)})});
 function showRes(items){
-try{
-if(!items||!items.length){res.style.display='none';return}
-res.innerHTML='';var a=[];
-try{a=items.filter(function(r){return r.u&&!r.u.match(/\/(\d+)l?\/?$/)})}catch(e){a=items}
-var s={};a=a.filter(function(r){var k=r.u;if(!k||s[k])return false;s[k]=true;return true});
+res.innerHTML='';var a=items.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/)});
+var s={};a=a.filter(function(r){var k=r.u;if(s[k])return false;s[k]=true;return true});
 if(!a.length){res.innerHTML='<div style="padding:10px;text-align:center;color:#999;font-size:11px">Ничего не найдено</div>';res.style.display='block';return}
-a.forEach(function(x){try{
-var d=document.createElement('div');d.style.cssText='padding:7px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
+a.forEach(function(x){var d=document.createElement('div');d.style.cssText='padding:7px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
 d.onmouseover=function(){this.style.background='#fff8f0'};d.onmouseout=function(){this.style.background=''};
-var img=(x.u?hqImgs[hqKey(x.u)]:null)||'cct-tank.jpg';
-d.innerHTML='<img src="/'+img+'" style="width:32px;height:32px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0"><span style="flex:1;color:#333;font-weight:600">'+(x.n||'')+'</span><span style="color:#888;font-size:11px">'+(x.s||'')+'</span>';
-d.onclick=function(){pick(x)};res.appendChild(d)}catch(e){}});res.style.display='block'
-}catch(e){}}
+d.innerHTML='<img src="/'+(hqImgs[hqKey(x.u)]||'cct-tank.jpg')+'" style="width:32px;height:32px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0"><span style="flex:1;color:#333;font-weight:600">'+x.n+'</span><span style="color:#888;font-size:11px">'+x.s+'</span>';
+d.onclick=function(){pick(x)};res.appendChild(d)});res.style.display='block'}
 function pick(r){
 inp.value=r.n;res.style.display='none';document.getElementById('hqRst').style.display='inline';
 document.getElementById('qs2').style.background='#F77C2A';document.getElementById('qs2').style.color='#fff';document.getElementById('qs2t').style.color='#333';
@@ -549,10 +543,9 @@ if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
 fetch('/catalog/?get_prices='+encodeURIComponent(k)+'&src='+src).then(function(r){return r.json()}).then(function(d){
 var s=document.getElementById('hqSel');s.innerHTML='<option value="">— выберите объём —</option>';
 if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var sel=this,pr=parseInt(sel.value);var txt=sel.options[sel.selectedIndex].text;document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(pr);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна';window._hqVol=txt;window._hqPrice=document.getElementById('hqPriceVal').textContent}}
-else{document.getElementById('hqSt').textContent='Нет цен для этого оборудования'};
+else{s.innerHTML='<option value="">Нет данных</option>';s.style.display='block'};
 document.getElementById('hqSt').textContent='Выберите объём'});
-window.hqCustom=function(){document.getElementById('hqCstBox').style.display='block';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none'}
-window.hqCstGo=function(){var v=parseInt(document.getElementById('hqCstVal').value);if(v>0){
+}
 window._hqVol=v+' л';window._hqPrice='По запросу';
 document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';
 document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
