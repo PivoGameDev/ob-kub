@@ -578,11 +578,11 @@ var os=document.getElementById('optSection2'),ot=document.getElementById('optTri
 if(os&&ot){os.style.display='block';ot.classList.add('open')}
 var fd=document.getElementById('fqDisplay'),mw=document.getElementById('formManualWrap');
 var fn=document.getElementById('fqName'),fm=document.getElementById('fqMeta');
-var fv=document.getElementById('fqVol'),fp=document.getElementById('fqPrice');
+var fv=document.getElementById('fqVol'),fprc=document.getElementById('fqPrice');
 var fi=document.getElementById('fqImg');
 var hp=document.getElementById('fqProduct'),hv=document.getElementById('fqVolume'),hi=document.getElementById('fqPriceInput');
-var en=document.getElementById('formEquipName'),vlinp=document.getElementById('formVolume');
-var fs=document.getElementById('formVolSel'),fp=document.getElementById('formPriceBlock'),fpr=document.getElementById('formPriceVal');
+var en=document.getElementById('formEquipName');
+var fs=document.getElementById('formVolSel'),fpb=document.getElementById('formPriceBlock'),fpv=document.getElementById('formPriceVal');
 if(fd&&fn){
 fd.style.display='block';
 fn.textContent=name||'—';
@@ -590,7 +590,7 @@ var meta=[];
 if(si)meta.push(si==='beer'?'Пивоварение':si==='dairy'?'Молочное':si==='wine'?'Виноделие':'Промышленность');
 if(fm)fm.textContent=meta.join(' · ');
 fv.textContent=v>0?vol+' л':'—';
-fp.textContent=price||'—';
+if(fprc)fprc.textContent=price||'—';
 if(mw)mw.style.display='none'
 }
 var v=parseInt(vol);
@@ -598,12 +598,11 @@ if(hp)hp.value=name||'';
 if(hv)hv.value=v>0?vol:'';
 if(hi)hi.value=price||'';
 if(en)en.value=name||'';
-if(vlinp)vlinp.value=v>0?vol:'';
-if(fs&&v>0){
+if(fs&&v>0&&fs.options){
 for(var xi=0;xi<fs.options.length;xi++){
-if(fs.options[xi].textContent.replace(' л','').trim()==String(v)){fs.value=fs.options[xi].value;break}
+if(fs.options[xi]&&fs.options[xi].textContent&&fs.options[xi].textContent.replace(' л','').trim()==String(v)){fs.value=fs.options[xi].value;break}
 }
-if(fs.value&&fp&&fpr){fpr.textContent=price||'от '+fmtP(parseInt(fs.value));fp.style.display='block'}
+if(fs.value&&fpb&&fpv){fpv.textContent=price||'от '+fmtP(parseInt(fs.value));fpb.style.display='block'}
 }
 if(key&&fi){
 var imgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','mash-tun':'mash-tun.jpg','combined-kettle':'combined-kettle.jpg','lauter-tun':'lauter-tun.jpg','brew-kettle':'brew-kettle.jpg','whirlpool':'whirlpool.jpg','wort-receiver':'wort-receiver.jpg',unitank:'unitank.jpg',reception:'dairy-reception.jpg',storage:'dairy-storage.jpg','cheese-maker':'dairy-cheese-maker.jpg',fermentation:'dairy-fermentation.jpg',vdp:'dairy-vdp.jpg','cottage-cheese':'dairy-cottage-cheese.jpg',cooler:'dairy-cooler.jpg','red-fermentation':'wine-red-fermentation.jpg','white-fermentation':'wine-white-fermentation.jpg','storage-aging':'wine-storage-aging.jpg','cold-stabilization':'wine-cold-stabilization.jpg',blending:'wine-blending.png','universal-tank':'wine-universal-tank.jpg',mixing:'industrial-mixing.jpg',thermal:'industrial-thermal.jpg',pressure:'industrial-pressure.jpg',cip:'industrial-cip.jpg','steam-generator':'steam-generator.jpg',chiller:'chiller.jpg'};
