@@ -360,6 +360,10 @@ body{padding-top:0!important}
 .feq h3{width:100%!important}
 .feq a{width:calc(50% - 8px)!important;padding:4px 0!important}
 .ql-grid>div,.bp-grid>div,.ab-grid>div{padding:28px 20px!important}
+#order-form{padding:32px 0!important}
+#contacts{padding:24px 0 40px!important}
+#email-cta{padding:20px 0!important}
+#email-cta .em-card{padding:20px 16px!important}
 }
 }
 .cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
@@ -700,9 +704,9 @@ window.hqSelData={};window._hqVol='';window._hqPrice=''
 </section>
 
 <!-- EMAIL CTA -->
-<section style="padding:32px 0;background:#f5f6f8">
+<section id="email-cta" style="padding:32px 0;background:#f5f6f8">
 <div class="db-wrap" style="max-width:820px">
-<div style="background:linear-gradient(135deg,#F77C2A,#e06a15);border-radius:14px;position:relative;overflow:hidden;padding:28px 24px">
+<div class="em-card" style="background:linear-gradient(135deg,#F77C2A,#e06a15);border-radius:14px;position:relative;overflow:hidden;padding:28px 24px">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3498db,transparent)"></div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 40px;position:relative;z-index:1">
 <div style="text-align:center">
