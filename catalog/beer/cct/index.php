@@ -285,7 +285,7 @@ $volCount = count($volumes);
 <style>.proj-card.expanded .proj-detail{display:block!important}.proj-card{cursor:pointer}</style>
 <section class="db-section" style="padding:20px 0;background:transparent">
 <div class="db-wrap" style="max-width:1200px">
-<div class="db-weld-frame" style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39);border-radius:14px;position:relative;overflow:hidden">
+<div style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39);border-radius:14px;position:relative;overflow:hidden">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
 <div style="text-align:center;margin-bottom:24px">
 <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">Проекты</div>
@@ -302,7 +302,7 @@ $volCount = count($volumes);
 
 <div style="display:flex;gap:20px;overflow-x:auto;padding-bottom:8px">
 <div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="brewery-voronezh.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<img src="/brewery-voronezh.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивзавод, Воронеж</h3>
 <p style="font-size:12px;color:#888;margin:0 0 6px">Варочный порядок 5 000 л · 8 варок/сутки</p>
@@ -315,7 +315,7 @@ $volCount = count($volumes);
 </div>
 </div>
 <div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="brewery-abkhazia.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<img src="/brewery-abkhazia.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, Абхазия</h3>
 <p style="font-size:12px;color:#888;margin:0 0 6px">Комплексное оснащение под ключ</p>
@@ -328,7 +328,7 @@ $volCount = count($volumes);
 </div>
 </div>
 <div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="brewery-chekhov.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<img src="/brewery-chekhov.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, г. Чехов</h3>
 <p style="font-size:12px;color:#888;margin:0 0 6px">Мини-пивоварня ресторанного типа</p>
@@ -341,7 +341,7 @@ $volCount = count($volumes);
 </div>
 </div>
 <div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="kvas-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<img src="/kvas-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧃 Завод кваса, Воронеж</h3>
 <p style="font-size:12px;color:#888;margin:0 0 6px">300 000 л/мес · 6 сортов</p>
@@ -354,7 +354,7 @@ $volCount = count($volumes);
 </div>
 </div>
 <div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
-<img src="projects/cip-station.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<img src="/projects/cip-station.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
 <div style="padding:14px 18px 8px">
 <h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧼 CIP-станция</h3>
 <p style="font-size:12px;color:#888;margin:0 0 6px">Автоматическая безразборная мойка</p>
