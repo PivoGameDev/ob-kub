@@ -470,6 +470,32 @@ body{padding-top:0!important}
 </div>
 </section>
 
+<!-- QUIZ -->
+<section class="db-section" id="hqSection" style="padding:24px 0;background:transparent">
+<div class="db-wrap" style="max-width:800px">
+<div style="background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06)">
+<div style="text-align:center;margin-bottom:16px">
+<div style="display:inline-flex;align-items:center;gap:10px">
+<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
+<span style="font-size:14px;color:#aaa">→</span>
+<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">2</span>
+<span style="font-size:14px;color:#aaa">→</span>
+<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">3</span>
+</div>
+<div style="font-size:16px;font-weight:700;color:#1a1a26;margin-top:6px">Подбор оборудования за 1 минуту</div>
+</div>
+
+<div style="display:flex;gap:10px;margin-bottom:12px">
+<div style="flex:1;display:flex;align-items:center;border:1px solid #ddd;border-radius:8px;padding:0 10px">
+<input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
+</div>
+<button onclick="document.getElementById('hqResults').scrollIntoView({behavior:'smooth'})" style="padding:10px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap">Найти</button>
+</div>
+<div id="hqResults" style="display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:260px;overflow-y:auto;position:relative"></div>
+</div>
+</div>
+</section>
+
 <!-- TRUST BAR -->
 <section class="db-row-section scroll-reveal" style="padding:32px 0">
 <div class="db-wrap">
@@ -1188,5 +1214,31 @@ ticking = false;
 window.addEventListener('scroll', function(){ if (!ticking) { requestAnimationFrame(update); ticking = true; } }, {passive: true});
 update();
 })();
+// Simple quiz search
+document.addEventListener('DOMContentLoaded',function(){
+var inp=document.getElementById('hqInp');
+if(!inp)return;
+var res=document.createElement('div');
+res.style.cssText='display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:260px;overflow-y:auto';
+inp.parentElement.parentElement.appendChild(res);
+inp.addEventListener('input',function(){
+var q=this.value.trim();
+if(!q){res.style.display='none';return}
+fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json()}).then(function(d){
+res.innerHTML='';
+var items=d.results.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/)});
+var seen={};items=items.filter(function(r){var k=r.u;if(seen[k])return false;seen[k]=true;return true});
+if(!items.length){res.innerHTML='<div style="padding:10px;text-align:center;color:#999;font-size:11px">Ничего не найдено</div>';res.style.display='block';return}
+items.forEach(function(it){
+var d=document.createElement('div');
+d.style.cssText='padding:6px 8px;cursor:pointer;border-radius:4px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
+d.onmouseover=function(){this.style.background='#fff8f0'};d.onmouseout=function(){this.style.background=''};
+d.innerHTML='<a href="'+it.u+'" style="color:#333;font-weight:600;text-decoration:none;flex:1">'+it.n+'</a><span style="color:#888;font-size:11px">'+it.s+'</span>';
+res.appendChild(d);
+});
+res.style.display='block';
+});
+});
+});
 </script></body>
 
