@@ -277,6 +277,9 @@ body{padding-top:0!important}
 }
 @media(max-width:700px){
 body{padding-top:0!important}
+.db-wrap{padding:0 12px!important}
+.ql-grid,.bp-grid{grid-template-columns:1fr!important}
+.ql-feat{grid-template-columns:1fr!important}
 .header{position:relative!important;height:auto!important;min-height:auto!important;flex-direction:column!important;background:#fff!important;border-bottom:none!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
 .header .container{padding:0 12px!important;width:100%!important}
 .header-top{flex-wrap:wrap!important;gap:0!important;padding:0!important}
@@ -364,6 +367,7 @@ body{padding-top:0!important}
 .db-prod-equip-card .eq-body{padding:6px 8px 8px!important}
 .db-prod-equip-card .eq-name{font-size:11px!important;margin-bottom:1px!important}
 .db-prod-equip-card .eq-spec{font-size:10px!important}
+}
 }
 
 /* ===== MOBILE HEADER + DRAWER ===== */
@@ -636,14 +640,14 @@ window.hqSelData={};window._hqVol='';window._hqPrice=''
 <section class="db-row-section scroll-reveal" style="padding:48px 0 40px">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:0;overflow:hidden;border-color:rgba(247,124,42,.08)">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+<div class="ql-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0">
 <div style="display:flex;align-items:center;justify-content:center;padding:36px;background:rgba(247,124,42,.03)">
 <img src="/weld.jpg" alt="Качество лазерной сварки" style="max-width:100%;max-height:340px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.15)">
 </div>
 <div style="padding:36px 40px;display:flex;flex-direction:column;justify-content:center">
 <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:8px">Качество</div>
 <div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.25">Емкости из стали AISI 304/316 <br>с лазерной сваркой швов</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px">
+<div class="ql-feat" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">🔬</span> Лазерная сварка</div>
 <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">🧪</span> Гидроиспытания</div>
 <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)"><span style="font-size:16px">📏</span> Зеркальная полировка Ra≤0,8</div>
@@ -661,7 +665,7 @@ window.hqSelData={};window._hqVol='';window._hqPrice=''
 <section class="db-row-section" style="padding:0 0 40px;background:transparent">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:0;background:linear-gradient(135deg,#1a1a26,#2b2b39);overflow:hidden">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch">
+<div class="bp-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch">
 <div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center">
 <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:8px">Чертежи и ТЗ</div>
 <div style="font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.2">Работаем по вашим чертежам</div>
