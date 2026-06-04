@@ -406,7 +406,7 @@ $volCount = count($volumes);
 .article-card .article-btn{padding:8px 18px!important;font-size:12px!important}
 .article-card .article-toggle{font-size:12px!important;padding:2px 0 0!important}
 </style>
-<section style="margin-top:32px">
+<section style="margin-top:32px;margin-bottom:48px">
 <div class="container">
 <div style="background:linear-gradient(135deg,#1a1a26,#2b2b39);border-radius:14px;position:relative;overflow:hidden;padding:28px 32px">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
