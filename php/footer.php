@@ -20,7 +20,7 @@
 <span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">500+ резервуаров</span>
 </div>
 </div>
-<div>
+<div class="fnav">
 <h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Навигация</h3>
 <a href="/#about" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">О нас</a>
 <a href="/catalog/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">Каталог</a>
@@ -30,7 +30,7 @@
 <a href="/certificates.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">Сертификаты</a>
 <a href="/payment-delivery.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">Оплата и доставка</a>
 </div>
-<div>
+<div class="feq">
 <h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Оборудование</h3>
 <a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(0)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🥛 Молочное</a>
 <a href="/#equipment" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(1)},400)" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🍷 Винодельческое</a>

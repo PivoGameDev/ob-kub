@@ -278,8 +278,9 @@ body{padding-top:0!important}
 @media(max-width:700px){
 body{padding-top:0!important}
 .db-wrap{padding:0 12px!important}
-.ql-grid,.bp-grid{grid-template-columns:1fr!important}
+.ql-grid,.bp-grid,.ab-grid{grid-template-columns:1fr!important}
 .ql-feat{grid-template-columns:1fr!important}
+.ql-grid>div:first-child,.bp-grid>div:last-child,.ab-grid>div:last-child{order:-1!important}
 .header{position:relative!important;height:auto!important;min-height:auto!important;flex-direction:column!important;background:#fff!important;border-bottom:none!important;box-shadow:0 1px 4px rgba(0,0,0,.08)!important}
 .header .container{padding:0 12px!important;width:100%!important}
 .header-top{flex-wrap:wrap!important;gap:0!important;padding:0!important}
@@ -346,7 +347,7 @@ body{padding-top:0!important}
 .db-prod-equip-card .eq-img{height:100px!important;padding:8px!important}
 .db-contacts>div:first-child{padding:0}
 }
-.cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.fnav a,.feq a{width:45%!important;display:inline-block!important;vertical-align:top!important}.cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 .cat-card-img{height:110px}
 .cat-card-body{padding:10px 12px}
 .cat-card-body .cat-name{font-size:13px}
@@ -367,7 +368,6 @@ body{padding-top:0!important}
 .db-prod-equip-card .eq-body{padding:6px 8px 8px!important}
 .db-prod-equip-card .eq-name{font-size:11px!important;margin-bottom:1px!important}
 .db-prod-equip-card .eq-spec{font-size:10px!important}
-}
 }
 
 /* ===== MOBILE HEADER + DRAWER ===== */
@@ -1002,7 +1002,7 @@ function toggleProj(el){
 <section class="db-section" id="about" style="padding:20px 0 48px;background:transparent">
 <div class="db-wrap" style="max-width:1200px">
 <div class="db-weld-frame" style="padding:0;overflow:hidden;background:linear-gradient(135deg,#1a1a26,#2b2b39)">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+<div class="ab-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0">
 <div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center">
 <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">О нас</div>
 <h2 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.2">Производство ёмкостей<br>из нержавеющей стали</h2>
