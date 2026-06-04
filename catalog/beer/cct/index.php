@@ -281,6 +281,96 @@ $volCount = count($volumes);
         <button class="seo-text-toggle" onclick="var t=this.previousElementSibling;t.classList.toggle('expanded');t.classList.toggle('collapsed');this.textContent=t.classList.contains('expanded')?'Свернуть':'Читать полностью'">Читать полностью</button>
     </div>
 </div>
+
+<style>.proj-card.expanded .proj-detail{display:block!important}.proj-card{cursor:pointer}</style>
+<section class="db-section" style="padding:20px 0;background:transparent">
+<div class="db-wrap" style="max-width:1200px">
+<div class="db-weld-frame" style="padding:36px 40px;background:linear-gradient(135deg,#1a1a26,#2b2b39);border-radius:14px;position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
+<div style="text-align:center;margin-bottom:24px">
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">Проекты</div>
+<h2 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 4px">Примеры реализованных проектов</h2>
+<p style="font-size:14px;color:rgba(255,255,255,.5);margin:0">Оборудование в работе на пивоварнях и производствах</p>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;text-align:center">
+<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px"><div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">400+</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">проектов по всей России</div></div>
+<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px"><div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">5000 м²</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">собственное производство</div></div>
+<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px"><div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">17</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">лет на рынке</div></div>
+<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px"><div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">12</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">месяцев гарантии</div></div>
+</div>
+
+<div style="display:flex;gap:20px;overflow-x:auto;padding-bottom:8px">
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="brewery-voronezh.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивзавод, Воронеж</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Варочный порядок 5 000 л · 8 варок/сутки</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Изготовили и ввели в эксплуатацию варочный порядок на 5000 литров. Производственная мощность — 40 000 литров сусла в сутки. Автоматизация на Siemens.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 5000 л, ЦКТ 10000 л × 8, парогенератор, чиллер, CIP-мойка.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: 8 варок/сутки, 6 сортов пива</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="brewery-abkhazia.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, Абхазия</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Комплексное оснащение под ключ</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Полный цикл оснащения пивоварни «под ключ»: от проекта до первой варки. Все ёмкости из AISI 304.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 1000 л, ЦКТ 2000 л × 6, БГВ, парогенератор, чиллер.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: запуск за 6 недель, 4 сорта пива</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="brewery-chekhov.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🍺 Пивоварня, г. Чехов</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Мини-пивоварня ресторанного типа</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Небольшая пивоварня ресторанного формата на 5 сортов пива. Проект реализован под ключ за 4 недели.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 250 л, ЦКТ 500 л × 3, парогенератор 60 кВт, чиллер 8 кВт.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: 5 сортов, окупаемость 14 месяцев</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="kvas-tank.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧃 Завод кваса, Воронеж</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">300 000 л/мес · 6 сортов</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Линия производства кваса на базе пивоваренного оборудования. Сбраживание в ЦКТ.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> Варочный порядок 3000 л, ЦКТ 5000 л × 4, купажные ёмкости.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: 300 000 л/мес, 6 сортов, запуск за 10 недель</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+<div class="proj-card" onclick="toggleProj(this)" style="flex:0 0 320px;background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s">
+<img src="projects/cip-station.jpg" alt="" style="width:100%;height:180px;object-fit:cover;display:block">
+<div style="padding:14px 18px 8px">
+<h3 style="font-size:14px;font-weight:700;color:#1a1a26;margin:0 0 4px">🧼 CIP-станция</h3>
+<p style="font-size:12px;color:#888;margin:0 0 6px">Автоматическая безразборная мойка</p>
+<div class="proj-detail" style="display:none;font-size:12px;color:#555;line-height:1.5;padding:8px 0;border-top:1px solid #f0f0f0">
+<p style="margin:0 0 6px">Автоматизированная CIP-станция для мойки технологического оборудования. Корпус из AISI 316.</p>
+<p style="margin:0 0 4px"><strong>Оборудование:</strong> 4 контура мойки, баки 1500 л × 4 из AISI 316, Siemens S7-1200.</p>
+<p style="color:#F77C2A;font-weight:600">✅ Результат: -40% времени мойки, -25% расхода моющих средств</p>
+</div>
+<p style="font-size:11px;color:#F77C2A;font-weight:600;margin:0;padding:6px 0;border-top:1px solid #f0f0f0">Подробнее →</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <section class="container">
 
 <div style="margin-top:28px;position:relative;min-height:300px;border-radius:14px;overflow:hidden">
@@ -351,5 +441,5 @@ $volCount = count($volumes);
 </section>
 
 <div class="article-modal" id="articleModal" onclick="if(event.target===this)closeArticleModal()"><div class="article-modal-backdrop"></div><div class="article-modal-card"><button class="article-modal-close" onclick="closeArticleModal()">&times;</button><div class="article-modal-header"><span class="article-tag">Статья по теме</span><h2 class="article-modal-title" id="articleModalTitle"></h2></div><div class="article-modal-body" id="articleModalBody"></div><div class="article-modal-cta"><p>Нужна консультация по выбору? Инженер подберёт оптимальный объём под вашу варку, рассчитает количество танков и подготовит КП с точной стоимостью.</p><a href="/beer.html#order-form" class="article-btn">Получить расчёт →</a></div></div></div>
-<script>function openArticleModal(b){var c=b.closest('.article-card'),t=c.querySelector('.article-title').textContent,h='';c.querySelectorAll('.article-full>*').forEach(function(e){if(!e.classList.contains('article-cta'))h+=e.outerHTML});document.getElementById('articleModalTitle').textContent=t;document.getElementById('articleModalBody').innerHTML=h;document.getElementById('articleModal').classList.add('active');document.body.style.overflow='hidden'}function closeArticleModal(){document.getElementById('articleModal').classList.remove('active');document.body.style.overflow=''}</script>
+ <script>function toggleProj(el){el.classList.toggle('expanded')} function openArticleModal(b){var c=b.closest('.article-card'),t=c.querySelector('.article-title').textContent,h='';c.querySelectorAll('.article-full>*').forEach(function(e){if(!e.classList.contains('article-cta'))h+=e.outerHTML});document.getElementById('articleModalTitle').textContent=t;document.getElementById('articleModalBody').innerHTML=h;document.getElementById('articleModal').classList.add('active');document.body.style.overflow='hidden'}function closeArticleModal(){document.getElementById('articleModal').classList.remove('active');document.body.style.overflow=''}</script>
 <?php require __DIR__ . '/../../layout-end.php'; }
