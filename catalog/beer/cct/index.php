@@ -287,6 +287,24 @@ $volCount = count($volumes);
         <p class="section-desc">Нажмите на карточку, чтобы перейти к подробным характеристикам, чертежам и стоимости</p>
     </div>
 
+<style>
+.volumes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;padding:24px 0 40px}
+.vol-card{background:#fff;border-radius:10px;text-decoration:none;color:inherit;display:flex;flex-direction:column;position:relative;overflow:hidden;border:1px solid #eee;transition:transform .2s,box-shadow .2s,border-color .2s}
+.vol-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(247,124,42,.1);border-color:#fed7a8}
+.vol-card-body{padding:14px 14px 10px;flex:1;display:flex;flex-direction:column}
+.vol-label{font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:#bbb;margin-bottom:1px}
+.vol-value{font-size:22px;font-weight:800;color:#1a1a26;line-height:1.1;margin-bottom:1px}
+.vol-unit{font-size:12px;color:#aaa;font-weight:400}
+.price{font-size:15px;font-weight:700;color:#F77C2A;margin:4px 0 8px}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;margin-bottom:4px}
+.specs div{font-size:11px;color:#888;padding:2px 0;border-bottom:1px dotted #f0f0f0;display:flex;justify-content:space-between}
+.specs div:last-child,.specs div:nth-last-child(2){border-bottom:none}
+.specs .l{color:#ccc}
+.vol-card-footer{padding:0 14px 12px}
+.vol-card-footer .btn-elect{display:block;width:100%;padding:9px;background:#F77C2A;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;transition:background .2s}
+.vol-card-footer .btn-elect:hover{background:#e06a1a}
+.popular-badge{position:absolute;top:8px;right:8px;background:#F77C2A;color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:3px 8px;border-radius:4px}
+</style>
 <div class="volumes-grid">
 <?php
 $popular = $volumes[floor(count($volumes) / 2)] ?? null;
