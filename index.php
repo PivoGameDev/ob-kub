@@ -1235,8 +1235,6 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 </div>
 <div class="db-contact-item">
 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.78 5.42-.92 6.8-.07.67-.36.89-.88.56-2.45-1.83-3.74-2.97-6.06-4.76-.56-.39-.56-.61.2-.91 2.4-.99 4.05-1.65 6.38-2.61.61-.25 1.14-.04 1.38.57.31.79.47 2.38.7 3.35z"/></svg>
-<div><h4 style="color:#fff">Telegram</h4><p><a href="https://t.me/oborudovanie_kubani" target="_blank" style="color:rgba(255,255,255,.6)">@oborudovanie_kubani</a></p></div>
-</div>
 </div>
 <div class="db-contact-map">
 <iframe src="https://yandex.ru/map-widget/v1/?ll=39.000000%2C45.000000&z=15&l=map&pt=39.000000,45.000000,comma" allowfullscreen loading="lazy"></iframe>
