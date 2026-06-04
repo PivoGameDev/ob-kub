@@ -576,16 +576,13 @@ var si=(window.hqSelData||{}).si||'';
 var key=(window.hqSelData||{}).key||'';
 var os=document.getElementById('optSection'),ot=document.getElementById('optTrigger');
 if(os&&ot){os.style.display='block';ot.classList.add('open')}
-var fd=document.getElementById('fqDisplay');
-var fn=document.getElementById('fqName');
-var fm=document.getElementById('fqMeta');
-var fv=document.getElementById('fqVol');
-var fp=document.getElementById('fqPrice');
+var fd=document.getElementById('fqDisplay'),mw=document.getElementById('formManualWrap');
+var fn=document.getElementById('fqName'),fm=document.getElementById('fqMeta');
+var fv=document.getElementById('fqVol'),fp=document.getElementById('fqPrice');
 var fi=document.getElementById('fqImg');
-var hp=document.getElementById('fqProduct');
-var hv=document.getElementById('fqVolume');
-var hi=document.getElementById('fqPriceInput');
-if(fd&&fn&&fv&&fp){
+var hp=document.getElementById('fqProduct'),hv=document.getElementById('fqVolume'),hi=document.getElementById('fqPriceInput');
+var en=document.getElementById('formEquipName'),vlinp=document.getElementById('formVolume');
+if(fd&&fn){
 fd.style.display='block';
 fn.textContent=name||'—';
 var meta=[];
@@ -593,11 +590,14 @@ if(si)meta.push(si==='beer'?'Пивоварение':si==='dairy'?'Молочн�
 if(fm)fm.textContent=meta.join(' · ');
 fv.textContent=v>0?vol+' л':'—';
 fp.textContent=price||'—';
+if(mw)mw.style.display='none'
 }
 var v=parseInt(vol);
 if(hp)hp.value=name||'';
 if(hv)hv.value=v>0?vol:'';
 if(hi)hi.value=price||'';
+if(en)en.value=name||'';
+if(vlinp)vlinp.value=v>0?vol:'';
 if(key&&fi){
 var imgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','mash-tun':'mash-tun.jpg','combined-kettle':'combined-kettle.jpg','lauter-tun':'lauter-tun.jpg','brew-kettle':'brew-kettle.jpg','whirlpool':'whirlpool.jpg','wort-receiver':'wort-receiver.jpg',unitank:'unitank.jpg',reception:'dairy-reception.jpg',storage:'dairy-storage.jpg','cheese-maker':'dairy-cheese-maker.jpg',fermentation:'dairy-fermentation.jpg',vdp:'dairy-vdp.jpg','cottage-cheese':'dairy-cottage-cheese.jpg',cooler:'dairy-cooler.jpg','red-fermentation':'wine-red-fermentation.jpg','white-fermentation':'wine-white-fermentation.jpg','storage-aging':'wine-storage-aging.jpg','cold-stabilization':'wine-cold-stabilization.jpg',blending:'wine-blending.png','universal-tank':'wine-universal-tank.jpg',mixing:'industrial-mixing.jpg',thermal:'industrial-thermal.jpg',pressure:'industrial-pressure.jpg',cip:'industrial-cip.jpg','steam-generator':'steam-generator.jpg',chiller:'chiller.jpg'};
 var src=imgs[key];
@@ -1076,17 +1076,26 @@ function toggleAboutEquip(){
 
 <div class="db-form-section-label" style="font-size:13px">Параметры из подбора</div>
 
-<div id="fqDisplay" style="background:rgba(247,124,42,.06);border-radius:8px;padding:14px;margin-bottom:14px;display:none">
+<div id="fqDisplay" style="background:rgba(255,255,255,.06);border-radius:8px;padding:14px;margin-bottom:14px;display:none">
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-<img id="fqImg" src="" style="width:40px;height:40px;object-fit:contain;background:#fff;border-radius:6px;flex-shrink:0;display:none">
+<img id="fqImg" src="" style="width:40px;height:40px;object-fit:contain;background:rgba(255,255,255,.1);border-radius:6px;flex-shrink:0;display:none">
 <div style="flex:1">
-<div id="fqName" style="font-size:14px;font-weight:700;color:#1a1a26"></div>
-<div id="fqMeta" style="font-size:12px;color:#666;margin-top:2px"></div>
+<div id="fqName" style="font-size:14px;font-weight:700;color:#fff"></div>
+<div id="fqMeta" style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px"></div>
 </div>
 </div>
-<div style="display:flex;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(247,124,42,.12);padding-top:10px">
-<div><span style="font-size:11px;color:#888">Объём</span><div id="fqVol" style="font-size:15px;font-weight:700;color:#333"></div></div>
-<div><span style="font-size:11px;color:#888">Цена</span><div id="fqPrice" style="font-size:15px;font-weight:700;color:#F77C2A"></div></div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08);padding-top:10px">
+<div><span style="font-size:11px;color:rgba(255,255,255,.4)">Объём</span><div id="fqVol" style="font-size:15px;font-weight:700;color:#fff"></div></div>
+<div><span style="font-size:11px;color:rgba(255,255,255,.4)">Цена</span><div id="fqPrice" style="font-size:15px;font-weight:700;color:#F77C2A"></div></div>
+</div>
+</div>
+
+<div class="db-form-row" id="formManualWrap">
+<div>
+<input type="text" name="equipment_name" id="formEquipName" placeholder="Тип оборудования (ЦКТ, БГВ, ферментатор...)" class="db-form-input" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff">
+</div>
+<div>
+<input type="number" name="volume" id="formVolume" placeholder="Объём, л" class="db-form-input" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff" min="1">
 </div>
 </div>
 
@@ -1095,7 +1104,7 @@ function toggleAboutEquip(){
 <input type="hidden" name="quiz_price" id="fqPriceInput" value="">
 
 <div class="db-form-row single">
-<textarea name="comment" rows="3" placeholder="Дополнительные пожелания (опции, сроки, планировка...)"></textarea>
+<textarea name="comment" rows="3" placeholder="Дополнительные пожелания (опции, сроки, планировка...)" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff"></textarea>
 </div>
 
 <div class="db-form-row single">
