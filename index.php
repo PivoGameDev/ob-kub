@@ -470,7 +470,7 @@ body{padding-top:0!important}
 <a href="/industrial.html">🍽️ Пищевые производства</a>
 </div>
 </div>
-<div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
+<div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box;position:relative">
 <div style="font-size:15px;font-weight:700;color:#333;margin-bottom:16px;text-align:center">Узнайте примерную цену в 3 шага</div>
 <div style="max-height:480px;overflow-y:auto;overflow-x:hidden">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
@@ -482,8 +482,6 @@ body{padding-top:0!important}
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
 <input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
     </div>
-
-<div id="hqRes" style="display:none;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:6px;max-height:220px;overflow-y:auto"></div>
 
 <div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
 <span id="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">2</span>
@@ -513,6 +511,7 @@ body{padding-top:0!important}
 <button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="hqGoForm()">📩 Получить КП</button>
 <div id="hqSt" style="font-size:11px;color:#999;text-align:center;margin-top:8px">Введите название оборудования</div>
 </div>
+<div id="hqRes" style="display:none;position:absolute;top:142px;left:28px;right:28px;z-index:100;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;max-height:280px;overflow-y:auto"></div>
 
 <script>
 (function(){
@@ -520,16 +519,22 @@ var inp=document.getElementById('hqInp'),res=document.getElementById('hqRes');
 if(!inp||!res)return;
 var hqImgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg','red-fermentation':'wine-red-fermentation.jpg','mixing':'industrial-mixing.jpg','thermal':'industrial-thermal.jpg','storage-aging':'wine-storage-aging.jpg','brew-house':'brew-kettle.jpg','chiller':'chiller.jpg','steam-generator':'steam-generator.jpg','unitank':'unitank.jpg','cooler':'dairy-cooler.jpg','cottage-cheese':'dairy-cottage-cheese.jpg','yeast':'dairy-yeast.jpg','white-fermentation':'wine-white-fermentation.jpg','cold-stabilization':'wine-cold-stabilization.jpg','blending':'wine-blending.png','sulfitation':'wine-sulfitation.jpg','mash-tun':'mash-tun.jpg','combined-kettle':'combined-kettle.jpg','lauter-tun':'lauter-tun.jpg','brew-kettle':'brew-kettle.jpg','whirlpool':'whirlpool.jpg','industrial-storage':'industrial-storage.jpg','cip':'industrial-cip.jpg','pressure':'industrial-pressure.jpg','beer-hot-water-tank':'beer-hot-water-tank.jpg'};
 function hqKey(u){if(!u)return'';var k=u.split('/').filter(Boolean).pop();if(k&&k.match(/^\d+l?$/))k=u.split('/').filter(Boolean).slice(-2,-1)[0];return k||''}
-inp.addEventListener('focus',function(){if(!this.value.trim()){document.getElementById('qs2').style.background='#eee';document.getElementById('qs2').style.color='#aaa';document.getElementById('qs2t').style.color='#aaa';document.getElementById('qs3').style.background='#eee';document.getElementById('qs3').style.color='#aaa';document.getElementById('qs3t').style.color='#aaa';document.getElementById('hqSelected').style.display='none';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования';fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){showRes(d.results)})}});
+inp.addEventListener('focus',function(){if(!this.value.trim()){res.textContent='Загрузка...';res.style.display='block';document.getElementById('qs2').style.background='#eee';document.getElementById('qs2').style.color='#aaa';document.getElementById('qs2t').style.color='#aaa';document.getElementById('qs3').style.background='#eee';document.getElementById('qs3').style.color='#aaa';document.getElementById('qs3t').style.color='#aaa';document.getElementById('hqSelected').style.display='none';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования';fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){try{showRes(d.results)}catch(e){res.textContent='Ошибка: '+e.message;res.style.display='block'}})}});
 inp.addEventListener('input',function(){var q=this.value.trim();if(!q){res.style.display='none';return}document.getElementById('hqSelected').style.display='none';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Ищем...';fetch('/php/search.php?q='+encodeURIComponent(q)).then(function(r){return r.json()}).then(function(d){showRes(d.results)})});
 function showRes(items){
-res.innerHTML='';var a=items.filter(function(r){return !r.u.match(/\/(\d+)l?\/?$/)});
-var s={};a=a.filter(function(r){var k=r.u;if(s[k])return false;s[k]=true;return true});
+try{
+if(!items||!items.length){res.style.display='none';return}
+res.innerHTML='';var a=[];
+try{a=items.filter(function(r){return r.u&&!r.u.match(/\/(\d+)l?\/?$/)})}catch(e){a=items}
+var s={};a=a.filter(function(r){var k=r.u;if(!k||s[k])return false;s[k]=true;return true});
 if(!a.length){res.innerHTML='<div style="padding:10px;text-align:center;color:#999;font-size:11px">Ничего не найдено</div>';res.style.display='block';return}
-a.forEach(function(x){var d=document.createElement('div');d.style.cssText='padding:7px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
+a.forEach(function(x){try{
+var d=document.createElement('div');d.style.cssText='padding:7px 10px;cursor:pointer;border-radius:6px;font-size:12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f5f5f5';
 d.onmouseover=function(){this.style.background='#fff8f0'};d.onmouseout=function(){this.style.background=''};
-d.innerHTML='<img src="/'+(hqImgs[hqKey(x.u)]||'cct-tank.jpg')+'" style="width:32px;height:32px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0"><span style="flex:1;color:#333;font-weight:600">'+x.n+'</span><span style="color:#888;font-size:11px">'+x.s+'</span>';
-d.onclick=function(){pick(x)};res.appendChild(d)});res.style.display='block'}
+var img=(x.u?hqImgs[hqKey(x.u)]:null)||'cct-tank.jpg';
+d.innerHTML='<img src="/'+img+'" style="width:32px;height:32px;object-fit:contain;background:#fff;border-radius:4px;flex-shrink:0"><span style="flex:1;color:#333;font-weight:600">'+(x.n||'')+'</span><span style="color:#888;font-size:11px">'+(x.s||'')+'</span>';
+d.onclick=function(){pick(x)};res.appendChild(d)}catch(e){}});res.style.display='block'
+}catch(e){}}
 function pick(r){
 inp.value=r.n;res.style.display='none';document.getElementById('hqRst').style.display='inline';
 document.getElementById('qs2').style.background='#F77C2A';document.getElementById('qs2').style.color='#fff';document.getElementById('qs2t').style.color='#333';
