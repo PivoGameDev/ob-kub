@@ -667,7 +667,7 @@ window.hqSelData={};window._hqVol='';window._hqPrice=''
 <div class="db-weld-frame" style="padding:0;overflow:hidden;border-color:rgba(247,124,42,.08)">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
 <div style="display:flex;align-items:center;justify-content:center;padding:36px;background:rgba(247,124,42,.03)">
-<img src="cct-tank.jpg" alt="Качество лазерной сварки" style="max-width:100%;max-height:340px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.15)">
+<img src="/weld.jpg" alt="Качество лазерной сварки" style="max-width:100%;max-height:340px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.15)">
 </div>
 <div style="padding:36px 40px;display:flex;flex-direction:column;justify-content:center">
 <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:8px">Качество</div>
