@@ -32,10 +32,12 @@
 </div>
 <div>
 <h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Оборудование</h3>
-<a href="/beer.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🍺 Пивоваренное</a>
-<a href="/dairy.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🥛 Молочное</a>
-<a href="/winery.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🍷 Винодельческое</a>
-<a href="/industrial.html" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🏭 Промышленное</a>
+<a href="/catalog/dairy/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🥛 Молочное</a>
+<a href="/catalog/wine/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🍷 Винодельческое</a>
+<a href="/catalog/beer/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🍺 Пивоваренное</a>
+<a href="/catalog/industrial/storage/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">💧 Вода</a>
+<a href="/catalog/industrial/mixing/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🫒 Масло</a>
+<a href="/catalog/industrial/mixing/" style="display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:5px 0;transition:color .2s">🍯 Кондитерская</a>
 </div>
 <div>
 <h3 style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin:0 0 14px">Контакты</h3>
