@@ -472,7 +472,7 @@ body{padding-top:0!important}
 </div>
 <div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
 <div style="font-size:15px;font-weight:700;color:#333;margin-bottom:16px;text-align:center">Узнайте примерную цену в 3 шага</div>
-<div style="max-height:400px;overflow-y:auto;overflow-x:hidden">
+<div style="max-height:480px;overflow-y:auto;overflow-x:hidden">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
 <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
 <span style="font-size:13px;font-weight:600;color:#333">Найдите оборудование</span>
