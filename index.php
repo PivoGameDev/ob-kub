@@ -457,7 +457,9 @@ body{padding-top:0!important}
 <section class="db-hero">
 <img src="hero-bg.jpg" alt="" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
-<div class="db-hero-inner">
+<div class="db-hero-inner" style="display:flex!important;gap:48px!important;align-items:center!important;justify-content:space-between!important">
+<style>@media(max-width:900px){.db-hero-inner{flex-direction:column!important;gap:24px!important}}@media(max-width:900px){.db-hero-inner>div:last-child{width:100%!important}}</style>
+<div style="flex:1;min-width:0">
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
 <h1>Резервуары из стали AISI 304/316</h1>
 <p>Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
@@ -468,30 +470,28 @@ body{padding-top:0!important}
 <a href="/industrial.html">🍽️ Пищевые производства</a>
 </div>
 </div>
-</section>
-
-<!-- QUIZ -->
-<section class="db-section" id="hqSection" style="padding:24px 0;background:transparent">
-<div class="db-wrap" style="max-width:800px">
-<div style="background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06)">
-<div style="text-align:center;margin-bottom:16px">
-<div style="display:inline-flex;align-items:center;gap:10px">
-<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
-<span style="font-size:14px;color:#aaa">→</span>
-<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">2</span>
-<span style="font-size:14px;color:#aaa">→</span>
-<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">3</span>
+<div style="width:340px;max-height:460px;overflow-y:auto;background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F77C2A" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+<span style="font-size:14px;font-weight:700;color:#1a1a26">Быстрый подбор</span>
 </div>
-<div style="font-size:16px;font-weight:700;color:#1a1a26;margin-top:6px">Подбор оборудования за 1 минуту</div>
-</div>
-
-<div style="display:flex;gap:10px;margin-bottom:12px">
-<div style="flex:1;display:flex;align-items:center;border:1px solid #ddd;border-radius:8px;padding:0 10px">
+<div style="display:flex;align-items:center;border:1px solid #ddd;border-radius:8px;padding:0 10px;margin-bottom:10px">
 <input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
 </div>
-<button onclick="document.getElementById('hqResults').scrollIntoView({behavior:'smooth'})" style="padding:10px 20px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap">Найти</button>
+<div id="hqResults" style="display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:6px;max-height:200px;overflow-y:auto"></div>
+<div style="margin-top:12px;padding-top:10px;border-top:1px solid #f0f0f0">
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+<a href="/beer.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍺 Пиво</a>
+<a href="/dairy.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🥛 Молоко</a>
+<a href="/winery.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍷 Вино</a>
+<a href="/industrial.html" style="padding:5px 10px;background:#f5f6f8;border-radius:5px;font-size:11px;color:#555;text-decoration:none">🍽️ Пищевое</a>
 </div>
-<div id="hqResults" style="display:none;background:#fff;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.08);padding:6px;max-height:260px;overflow-y:auto;position:relative"></div>
+<div style="display:flex;gap:8px;margin-top:10px;font-size:11px;color:#999;flex-wrap:wrap">
+<span>🔥 Цена сразу</span>
+<span>⚡ КП за 2 часа</span>
+<span>🔒 Конфиденциально</span>
+</div>
+</div>
 </div>
 </div>
 </section>
