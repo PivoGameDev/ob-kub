@@ -485,10 +485,10 @@ body{padding-top:0!important}
 <h1>Резервуары из стали AISI 304/316</h1>
 <p>Изготовим резервуар под вашу задачу — от 100 до 200 000 литров. Собственное производство в Краснодаре. Доставка по РФ.</p>
 <div class="db-hero-tags">
-<a href="/beer.html">🍺 Пивоваренное</a>
-<a href="/dairy.html">🥛 Молочное</a>
-<a href="/winery.html">🍷 Винодельческое</a>
-<a href="/industrial.html">🍽️ Пищевые производства</a>
+<a href="#" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(2)},400)">🍺 Пивоваренное</a>
+<a href="#" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(0)},400)">🥛 Молочное</a>
+<a href="#" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(1)},400)">🍷 Винодельческое</a>
+<a href="#" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(4)},400)">🍽️ Пищевые производства</a>
 </div>
 </div>
 <div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
@@ -784,6 +784,7 @@ function sw(i){
   cur=i;
 }
 document.querySelectorAll('.cat-tab2').forEach(function(b){b.addEventListener('click',function(){sw(parseInt(this.dataset.i))})});
+window.sw=sw;
 sw(0);
 })();
 </script>
