@@ -300,8 +300,8 @@ $volCount = count($volumes);
 .specs div{font-size:11px;color:#888;padding:2px 0;border-bottom:1px dotted #f0f0f0;display:flex;justify-content:space-between}
 .specs div:last-child,.specs div:nth-last-child(2){border-bottom:none}
 .specs .l{color:#ccc}
-.vol-card-footer{padding:0 14px 12px}
-.vol-card-footer .btn-elect{display:block;width:100%;padding:9px;background:#F77C2A;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;transition:background .2s}
+.vol-card-footer{padding:0 14px 10px}
+.vol-card-footer .btn-elect{display:block;width:100%;padding:6px;background:#F77C2A;color:#fff;border:none;border-radius:5px;font-size:14px;cursor:pointer;text-decoration:none;text-align:center;transition:background .2s}
 .vol-card-footer .btn-elect:hover{background:#e06a1a}
 .popular-badge{position:absolute;top:8px;right:8px;background:#F77C2A;color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:3px 8px;border-radius:4px}
 </style>
@@ -320,13 +320,10 @@ foreach ($volumes as $v):
 <div class="vol-label">Объём</div>
 <div class="vol-value"><?= number_format($v, 0, '.', ' ') ?><span class="vol-unit"> л</span></div>
 <div class="specs">
-<div><span class="l">Полный</span><span><?= number_format($d['full_volume'], 0, '.', ' ') ?> л</span></div>
 <div><span class="l">Рабочий</span><span><?= number_format($d['working_volume'], 0, '.', ' ') ?> л</span></div>
-<div><span class="l">Диаметр</span><span><?= $d['diameter'] ?> мм</span></div>
-<div><span class="l">Высота</span><span><?= $d['height_full'] ?> мм</span></div>
 </div>
 </div>
-<div class="vol-card-footer"><span class="btn-elect">Выбрать</span></div>
+<div class="vol-card-footer"><span class="btn-elect">→</span></div>
 </a>
 <?php endforeach; ?>
 </div>
