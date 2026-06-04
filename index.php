@@ -454,7 +454,7 @@ header.header{display:block!important;width:100%!important;position:sticky!impor
 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
 <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
 <div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">17</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">лет работы</div></div>
-<div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">Цех 5000 м²</div></div>
+<div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">5000 м²</div></div>
 <div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">60+</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">мастеров</div></div>
 <div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">500+</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">резервуаров</div></div>
 </div>
