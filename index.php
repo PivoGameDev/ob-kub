@@ -572,6 +572,8 @@ var ind=document.getElementById('draft-industry');
 if(data.si&&indMap[data.si]&&ind)ind.value=indMap[data.si];
 var opt=document.getElementById('optSection');
 if(opt&&opt.style.display!='block'){var to=window.toggleOptional;if(to)to()}
+var udt=window.updateDraftTypes;if(udt)udt();
+var udt=window.updateDraftTypes;if(udt)udt();
 var v=parseInt(vol);
 if(v>0){
 var btnVols=[250,500,1000,3000,5000,10000];
