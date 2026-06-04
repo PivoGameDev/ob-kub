@@ -74,6 +74,9 @@ body{padding-top:0!important}
 .header-menu-row,.header-back-row{display:none!important}
 }
 @media(max-width:768px){
+.header-top{display:none!important}
+.header .container{display:none!important}
+.header{display:block!important;width:100%!important;position:sticky!important;top:0;z-index:1000;background:#fff;min-height:0!important}
 .header{height:auto!important;min-height:auto!important;flex-direction:column!important}
 .header .container{padding:0 12px!important;width:100%!important}
 .header-top{flex-wrap:wrap!important;gap:3px!important;padding:3px 0!important}
@@ -137,6 +140,7 @@ body{padding-top:0!important}
 .drawer-footer-btn.secondary svg{stroke:#555}
 }
 @media(min-width:769px){
+.mobile-header,.mobile-drawer,.mobile-drawer-overlay{display:none!important}
 .mobile-header,.mobile-drawer,.mobile-drawer-overlay{display:none!important}
 }
 
