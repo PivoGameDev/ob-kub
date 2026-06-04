@@ -451,6 +451,25 @@ body{padding-top:0!important}
 <!-- HEADER -->
 <?php require $_SERVER["DOCUMENT_ROOT"]."/php/header.php"; ?>
 
+<section style="background:linear-gradient(135deg,#2b2b39,#1a1a26);border-bottom:1px solid rgba(247,124,42,.1);padding:14px 0">
+<div class="db-wrap">
+<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center">
+<div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+<div style="text-align:center"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1">17</div><div style="font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.3px">лет работы</div></div>
+<div style="text-align:center"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1">2000 м²</div><div style="font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.3px">производства</div></div>
+<div style="text-align:center"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1">60+</div><div style="font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.3px">мастеров</div></div>
+</div>
+<div style="width:1px;height:24px;background:rgba(255,255,255,.08)"></div>
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.15);border-radius:5px;font-size:11px;font-weight:600;color:#2ecc71">✓ Гарантия 12 мес</span>
+<a href="/certificates.html" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A;text-decoration:none">Сертификаты</a>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">Лазерная сварка</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A">AISI 304/316</span>
+</div>
+</div>
+</div>
+</section>
+
 <main>
 
 <!-- HERO -->
