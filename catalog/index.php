@@ -249,20 +249,27 @@ function renderMainCatalog() {
 </div>
 </div>
 </section>
-<section class="container" 
-style="padding-top:24px;padding-bottom:48px">
-<div class="cat-grid">
-<?php foreach ($sections as $s): ?>
-<a href="<?= htmlspecialchars($s['url']) ?>" class="cat-card">
-<div class="cat-card-img"><img 
-src="<?= htmlspecialchars($s['image']) ?>" alt="<?= htmlspecialchars($s['name']) ?>"></div>
-<div class="cat-card-body">
-<div class="cat-name"><?= htmlspecialchars($s['name']) ?></div>
-<div class="cat-desc"><?= htmlspecialchars($s['desc']) ?></div>
-<div class="cat-count"><?= htmlspecialchars($s['count']) ?></div>
+<section class="db-section" style="padding:32px 0">
+<div class="db-wrap" style="max-width:1200px">
+<?php 
+$i = 0;
+foreach ($sections as $s): 
+$cls = $i === 0 ? '' : 'style="margin-top:36px"';
+$i++;
+?>
+<div class="db-weld-frame" <?= $cls ?>>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center">
+<div>
+<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">📦 <?= htmlspecialchars($s['name']) ?></div>
+<p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin:0 0 16px"><?= htmlspecialchars($s['desc']) ?></p>
+<div style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:12px"><?= htmlspecialchars($s['count']) ?></div>
+<a href="<?= htmlspecialchars($s['url']) ?>" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">Смотреть оборудование →</a>
 </div>
-<div class="cat-card-footer"><span class="btn-view">Перейти к каталогу</span></div>
-</a>
+<div style="display:flex;align-items:center;justify-content:center">
+<img src="<?= htmlspecialchars($s['image']) ?>" alt="<?= htmlspecialchars($s['name']) ?>" style="max-width:100%;max-height:260px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.35)">
+</div>
+</div>
+</div>
 <?php endforeach; ?>
 </div>
 </section>
