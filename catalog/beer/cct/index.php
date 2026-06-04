@@ -246,7 +246,7 @@ function renderCctList($allData, $cat) {
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
 <div class="container">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
-<div style="display:flex;align-items:center;justify-content:center">
+<div style="display:flex;align-items:center;justify-content:center;background:rgba(247,124,42,.03);padding:36px">
 <img src="/cct-tank.jpg" alt="ЦКТ" style="max-width:100%;max-height:340px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.35)">
 </div>
 <div>
