@@ -1087,7 +1087,7 @@ function toggleAboutEquip(){
 </div>
 </div>
 
-<div class="db-form-opt-trigger" id="optTrigger" style="padding:10px 0;margin-bottom:10px" onclick="var s=document.getElementById('optSection2');if(s.style.display!='block'){s.style.display='block';this.classList.add('open')}else{s.style.display='none';this.classList.remove('open')}">
+<div class="db-form-opt-trigger" id="optTrigger" style="margin-bottom:14px" onclick="var s=document.getElementById('optSection2');if(s.style.display!='block'){s.style.display='block';this.classList.add('open')}else{s.style.display='none';this.classList.remove('open')}">
 <span>⚙️ Указать параметры оборудования</span>
 <svg class="db-opt-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 </div>
@@ -1116,10 +1116,10 @@ function toggleAboutEquip(){
 <textarea name="comment" rows="4" placeholder="Дополнительные пожелания — опции, сроки, планировка, чертежи…" style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:13px;font-family:inherit;outline:none;resize:vertical;min-height:100px;box-sizing:border-box;transition:border-color .25s;margin-top:14px" onfocus="this.style.borderColor='#F77C2A'" onblur="this.style.borderColor=''"></textarea>
 
 <div style="margin-top:12px">
-<label style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:12px;cursor:pointer">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg>
-<input type="file" name="attachment" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png,.dxf,.dwg" style="display:none" onchange="this.previousElementSibling.textContent=this.files[0]?this.files[0].name:'Прикрепить файл'">
-<span style="flex:1">Прикрепить файл</span>
+<label id="fileLabel" style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:12px;cursor:pointer;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.1);border-radius:8px;padding:10px 12px;transition:all .25s">
+<span id="fileIcon" style="display:inline-flex;flex-shrink:0">📎</span>
+<input type="file" name="attachment" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png,.dxf,.dwg" style="display:none" onchange="var l=document.getElementById('fileLabel'),n=document.getElementById('fileName'),i=document.getElementById('fileIcon');if(this.files[0]){n.textContent=this.files[0].name;l.style.borderColor='rgba(247,124,42,.5)';l.style.color='#fff';l.style.background='rgba(247,124,42,.08)';i.textContent='✅'}else{n.textContent='Прикрепить файл';l.style.borderColor='';l.style.color='';l.style.background='';i.textContent='📎'}">
+<span id="fileName" style="flex:1">Прикрепить файл</span>
 </label>
 </div>
 </div>
