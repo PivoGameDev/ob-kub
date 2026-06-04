@@ -57,48 +57,42 @@ sort($sorted);
     require __DIR__ . '/../catalog-styles.php';
     require __DIR__ . '/../layout-start.php';
 ?>
-<section style="background:linear-gradient(135deg,#2b2b39,#1a1a26);position:relative;overflow:hidden;padding:28px 0 36px">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
+<section class="cct-hero">
 <div class="container">
-<div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:12px">
-<a href="/" style="color:rgba(255,255,255,.45);text-decoration:none">Главная</a>
-<span style="display:inline-block;margin:0 6px;color:rgba(255,255,255,.15)">•</span>
-<a href="/catalog/" style="color:rgba(255,255,255,.45);text-decoration:none">Каталог</a>
-<span style="display:inline-block;margin:0 6px;color:rgba(255,255,255,.15)">•</span>
-<?php if ($breadcrumbMiddle): ?><a href="<?= htmlspecialchars($breadcrumbMiddleUrl) ?>" style="color:rgba(255,255,255,.45);text-decoration:none"><?= htmlspecialchars($breadcrumbMiddle) ?></a><span style="display:inline-block;margin:0 6px;color:rgba(255,255,255,.15)">•</span><?php endif; ?>
-<a href="<?= htmlspecialchars($baseUrl) ?>" style="color:rgba(255,255,255,.45);text-decoration:none"><?= htmlspecialchars($data['name_short']) ?></a>
-<span style="display:inline-block;margin:0 6px;color:rgba(255,255,255,.15)">•</span>
-<span style="color:rgba(255,255,255,.5)"><?= $volStr ?> <?= $specUnit ?></span>
+<div class="cct-breadcrumbs">
+<a href="/">Главная</a><span class="ep">/</span>
+<a href="/catalog/">Каталог</a><span class="ep">/</span>
+<?php if ($breadcrumbMiddle): ?><a href="<?= htmlspecialchars($breadcrumbMiddleUrl) ?>"><?= htmlspecialchars($breadcrumbMiddle) ?></a><span class="ep">/</span><?php endif; ?>
+<a href="<?= htmlspecialchars($baseUrl) ?>"><?= htmlspecialchars($data['name_short']) ?></a><span class="ep">/</span>
+<span class="current"><?= $volStr ?> <?= $specUnit ?></span>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center">
-<div style="display:flex;align-items:center;justify-content:center">
-<img id="mainImg" src="<?= $image ?>" alt="<?= htmlspecialchars($data['name']) ?>" style="max-width:100%;max-height:320px;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.35)">
-</div>
-<div>
-<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px"><?= htmlspecialchars($data['name_short']) ?></div>
-<h1 style="font-size:26px;font-weight:800;color:#fff;margin:0 0 8px"><?= htmlspecialchars($data['name']) ?> на <?= $volStr ?> <?= $specUnit ?></h1>
-<p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;margin:0 0 14px"><?= htmlspecialchars($data['desc']) ?></p>
-<div style="font-size:24px;font-weight:800;color:#F77C2A;margin-bottom:16px">от <?= $priceStr ?> <span style="font-size:13px;font-weight:400;color:rgba(255,255,255,.35)">с НДС</span></div>
-<div style="display:flex;gap:6px;flex-wrap:wrap">
+<div class="cct-hero-inner">
+<div class="cct-hero-img"><img id="mainImg" src="<?= $image ?>" alt="<?= htmlspecialchars($data['name']) ?>" loading="lazy" style="width:100%;height:auto;max-height:280px;object-fit:contain;display:block;border-radius:8px"></div>
+<div class="cct-hero-info">
+<div class="label"><?= htmlspecialchars($data['name_short']) ?></div>
+<h1><?= htmlspecialchars($data['name']) ?> на <?= $volStr ?> <?= $specUnit ?></h1>
+<p class="sub"><?= htmlspecialchars($data['desc']) ?></p>
+<div class="cct-hero-price">от <?= $priceStr ?> <small>с НДС</small></div>
+<div class="cct-hero-tags">
 <?php foreach ($tagFeatures as $f):
-$clean = preg_replace('/\(.*?\)|\[.*?\]/', '', $f);
-$clean = trim($clean, ' ·,');
-if (!$clean) continue;
-$parts = explode(':', $clean);
-if (count($parts) > 1):
-$val = trim($parts[0]);
-$rest = trim($parts[1]);
-echo '<span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:11px;font-weight:600;color:#F77C2A"><strong>' . htmlspecialchars($val) . ':</strong> ' . htmlspecialchars($rest) . '</span>';
-else:
-echo '<span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:11px;font-weight:600;color:#F77C2A">' . htmlspecialchars($clean) . '</span>';
-endif;
+    $clean = preg_replace('/\(.*?\)|\[.*?\]/', '', $f);
+    $clean = trim($clean, ' ·,');
+    if (!$clean) continue;
+    $parts = explode(':', $clean);
+    if (count($parts) > 1) {
+        $val = trim($parts[0]);
+        $rest = trim($parts[1]);
+        echo '<span><strong>' . htmlspecialchars($val) . ':</strong> ' . htmlspecialchars($rest) . '</span>';
+    } else {
+        echo '<span>' . htmlspecialchars($clean) . '</span>';
+    }
 endforeach; ?>
 </div>
 <?php if ($catKey === 'hot-water-tank'): ?>
-<div style="display:flex;gap:6px;margin-top:12px">
-<img src="<?= $image ?>" alt="" class="thumb-img" onclick="switchImg(this)" style="height:45px;width:auto;border-radius:4px;cursor:pointer;border:2px solid #F77C2A">
-<img src="/hot-water-tank-2.jpg" alt="" class="thumb-img" onclick="switchImg(this)" style="height:45px;width:auto;border-radius:4px;cursor:pointer;border:2px solid transparent">
-<img src="/hot-water-tank-3.jpg" alt="" class="thumb-img" onclick="switchImg(this)" style="height:45px;width:auto;border-radius:4px;cursor:pointer;border:2px solid transparent">
+<div style="display:flex;gap:4px;margin-top:12px;align-items:center">
+<img src="<?= $image ?>" alt="Бак горячей воды" loading="lazy" class="thumb-img" onclick="switchImg(this)" style="height:50px;width:auto;display:block;border-radius:4px;cursor:pointer;border:2px solid #F77C2A;transition:border-color .2s">
+<img src="/hot-water-tank-2.jpg" alt="Бак горячей воды" loading="lazy" class="thumb-img" onclick="switchImg(this)" style="height:50px;width:auto;display:block;border-radius:4px;cursor:pointer;border:2px solid transparent;transition:border-color .2s">
+<img src="/hot-water-tank-3.jpg" alt="Бак горячей воды" loading="lazy" class="thumb-img" onclick="switchImg(this)" style="height:50px;width:auto;display:block;border-radius:4px;cursor:pointer;border:2px solid transparent;transition:border-color .2s">
 </div>
 <script>function switchImg(el){document.querySelectorAll('.thumb-img').forEach(function(t){t.style.borderColor='transparent'});el.style.borderColor='#F77C2A';document.getElementById('mainImg').src=el.src}</script>
 <?php endif; ?>
@@ -107,147 +101,133 @@ endforeach; ?>
 </div>
 </section>
 
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1100px;margin:28px auto;padding:0 24px">
+<div class="cct-adv">
 <?php foreach ($advItems as $a): ?>
-<div style="background:rgba(247,124,42,.06);border:1px solid rgba(247,124,42,.1);border-radius:8px;padding:14px 12px;text-align:center">
-<div style="font-size:22px;margin-bottom:4px"><?= $a['icon'] ?></div>
-<div style="font-size:13px;font-weight:700;color:#1a1a26;margin-bottom:2px"><?= htmlspecialchars($a['title']) ?></div>
-<div style="font-size:11px;color:#999"><?= htmlspecialchars($a['text']) ?></div>
-</div>
+<div class="cct-adv-item"><div class="cct-adv-icon"><?= $a['icon'] ?></div><div class="cct-adv-title"><?= htmlspecialchars($a['title']) ?></div><div class="cct-adv-text"><?= htmlspecialchars($a['text']) ?></div></div>
 <?php endforeach; ?>
 </div>
 
 <div class="container">
-<div style="display:flex;justify-content:space-between;align-items:center;margin:20px 0;gap:12px">
-<?php if ($prevVol): ?><a href="<?= "{$catPrefix}{$catKey}/{$prevVol}l/" ?>" style="display:inline-flex;align-items:center;gap:4px;padding:8px 16px;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.15);border-radius:6px;font-size:13px;font-weight:600;color:#F77C2A;text-decoration:none">← <?= number_format($prevVol, 0, '.', ' ') ?> <?= $specUnit ?></a><?php else: ?><div></div><?php endif; ?>
-<a href="<?= htmlspecialchars($baseUrl) ?>" style="display:inline-flex;align-items:center;gap:4px;padding:8px 16px;border:1px solid #ddd;border-radius:6px;font-size:13px;font-weight:600;color:#666;text-decoration:none">📋 Все объёмы</a>
-<?php if ($nextVol): ?><a href="<?= "{$catPrefix}{$catKey}/{$nextVol}l/" ?>" style="display:inline-flex;align-items:center;gap:4px;padding:8px 16px;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.15);border-radius:6px;font-size:13px;font-weight:600;color:#F77C2A;text-decoration:none"><?= number_format($nextVol, 0, '.', ' ') ?> <?= $specUnit ?> →</a><?php else: ?><div></div><?php endif; ?>
+<div class="cct-nav">
+<a href="<?= $prevVol ? "{$catPrefix}{$catKey}/{$prevVol}l/" : '#' ?>" class="<?= $prevVol ? '' : 'dis' ?>">← <?= $prevVol ? number_format($prevVol, 0, '.', ' ') . ' ' . $specUnit : '—' ?></a>
+<a href="<?= htmlspecialchars($baseUrl) ?>">📋 Все объёмы</a>
+<a href="<?= $nextVol ? "{$catPrefix}{$catKey}/{$nextVol}l/" : '#' ?>" class="<?= $nextVol ? '' : 'dis' ?>"><?= $nextVol ? number_format($nextVol, 0, '.', ' ') . ' ' . $specUnit : '—' ?> →</a>
 </div>
 
-<div class="db-weld-frame" style="padding:28px 32px">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
-<h2 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 16px;display:flex;align-items:center;gap:8px"><span style="color:#F77C2A">📐</span> Технические характеристики</h2>
-<table style="width:100%;border-collapse:collapse;font-size:14px">
-<tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:8px 10px;color:rgba(255,255,255,.4);width:200px"><?= $specLabel ?></td><td style="padding:8px 10px;color:#fff;font-weight:600"><?= $volStr ?> <?= $specUnit ?></td></tr>
+<div class="cct-card">
+<h2><span class="acc">📐</span> Технические характеристики</h2>
+<table class="cct-specs">
+<tr><td><?= $specLabel ?></td><td><?= $volStr ?> <?= $specUnit ?></td></tr>
 <?php if (!empty($s['full_volume'])): ?>
-<tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:8px 10px;color:rgba(255,255,255,.4)">Полный объём</td><td style="padding:8px 10px;color:#fff;font-weight:600"><?= number_format($s['full_volume'], 0, '.', ' ') ?> л</td></tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:8px 10px;color:rgba(255,255,255,.4)">Рабочий объём</td><td style="padding:8px 10px;color:#fff;font-weight:600"><?= number_format($s['working_volume'], 0, '.', ' ') ?> л</td></tr>
+<tr><td>Полный объём</td><td><?= number_format($s['full_volume'], 0, '.', ' ') ?> л</td></tr>
+<tr><td>Рабочий объём</td><td><?= number_format($s['working_volume'], 0, '.', ' ') ?> л</td></tr>
 <?php endif; ?>
 <?php if ($hasDim): ?>
-<tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:8px 10px;color:rgba(255,255,255,.4)">Диаметр</td><td style="padding:8px 10px;color:#fff;font-weight:600"><?= $diameterM ?> м (<?= $s['diameter'] ?> мм)</td></tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:8px 10px;color:rgba(255,255,255,.4)">Высота</td><td style="padding:8px 10px;color:#fff;font-weight:600"><?= $heightM ?> м (<?= $s['height'] ?> мм)</td></tr>
+<tr><td>Диаметр</td><td><?= $diameterM ?> м (<?= $s['diameter'] ?> мм)</td></tr>
+<tr><td>Высота</td><td><?= $heightM ?> м (<?= $s['height'] ?> мм)</td></tr>
 <?php endif; ?>
-<tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:8px 10px;color:rgba(255,255,255,.4)">Толщина стенки</td><td style="padding:8px 10px;color:#fff;font-weight:600"><?= $s['wall'] ?> мм</td></tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:8px 10px;color:rgba(255,255,255,.4)">Вес (пустой)</td><td style="padding:8px 10px;color:#fff;font-weight:600">≈ <?= $s['weight'] ?> кг</td></tr>
+<tr><td>Толщина стенки</td><td><?= $s['wall'] ?> мм</td></tr>
+<tr><td>Вес (пустой)</td><td>≈ <?= $s['weight'] ?> кг</td></tr>
 <?php if ($s['power'] > 0): ?>
-<tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:8px 10px;color:rgba(255,255,255,.4)">Мощность</td><td style="padding:8px 10px;color:#fff;font-weight:600"><?= $s['power'] ?> кВт</td></tr>
+<tr><td>Мощность</td><td><?= $s['power'] ?> кВт</td></tr>
 <?php endif; ?>
-<tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:8px 10px;color:rgba(255,255,255,.4)">Материал</td><td style="padding:8px 10px;color:#fff;font-weight:600">AISI 304 / AISI 316 (опция)</td></tr>
-<tr><td style="padding:8px 10px;color:rgba(255,255,255,.4)">Внутренняя обработка</td><td style="padding:8px 10px;color:#fff;font-weight:600">Электрополировка Ra ≤ 0,8 мкм</td></tr>
+<tr><td>Материал</td><td>AISI 304 / AISI 316 (опция)</td></tr>
+<tr><td>Внутренняя обработка</td><td>Электрополировка Ra ≤ 0,8 мкм</td></tr>
 </table>
 </div>
 
-<div class="db-weld-frame" style="padding:28px 32px;margin-top:20px">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
-<h2 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 12px;display:flex;align-items:center;gap:8px"><span style="color:#F77C2A">🏗️</span> Конструкция и материалы</h2>
-<p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin:0 0 12px"><?= htmlspecialchars($data['desc']) ?></p>
-<p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin:0">Изготовлен из высококачественной нержавеющей стали AISI 304 с зеркальной полировкой Ra ≤ 0.8 мкм. Сварные швы выполняются аргонодуговой сваркой с последующей шлифовкой. Каждое изделие проходит гидравлические испытания перед отгрузкой. Возможно изготовление из AISI 316 для агрессивных сред.</p>
+<div class="cct-card">
+<h2><span class="acc">🏗️</span> Конструкция и материалы</h2>
+<p 
+style="font-size:14px;color:#666;line-height:1.8;margin:0"><?= htmlspecialchars($data['desc']) ?></p>
+<p 
+style="font-size:14px;color:#666;line-height:1.8;margin-top:12px">Изготовлен из высококачественной нержавеющей стали AISI 304 с зеркальной полировкой Ra ≤ 0.8 мкм. Сварные швы выполняются аргонодуговой сваркой с последующей шлифовкой. Каждое изделие проходит гидравлические испытания перед отгрузкой. Возможно изготовление из AISI 316 для агрессивных сред.</p>
 </div>
 
-<div class="db-weld-frame" style="padding:28px 32px;margin-top:20px">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
-<h2 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:#F77C2A">📦</span> Комплектация</h2>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+<div class="cct-card">
+<h2><span class="acc">📦</span> Комплектация и особенности</h2>
+<div class="cct-grid">
 <?php foreach ($features as $f): ?>
-<div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:14px;color:rgba(255,255,255,.6)"><span style="color:#2ecc71;font-weight:700">✓</span> <?= htmlspecialchars($f) ?></div>
+<div class="cct-grid-item"><span class="ok">✓</span> <?= htmlspecialchars($f) ?></div>
 <?php endforeach; ?>
 </div>
 </div>
 
-<div class="cct-cta" style="text-align:center;margin:28px 0"><button onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit">📩 Получить расчёт <?= htmlspecialchars($data['name']) ?> <?= $volStr ?> <?= $specUnit ?></button></div>
+<div class="cct-card">
+<h2><span class="acc">🔧</span> Дополнительные опции</h2>
+<div class="cct-grid">
+<div class="cct-grid-item"><span class="plus">+</span> Увеличенная теплоизоляция (100/150/200 мм)</div>
+<div class="cct-grid-item"><span class="plus">+</span> Датчики температуры / давления / уровня</div>
+<div class="cct-grid-item"><span class="plus">+</span> PID-регулятор температуры</div>
+<div class="cct-grid-item"><span class="plus">+</span> Мешалка (мотор-редуктор)</div>
+<div class="cct-grid-item"><span class="plus">+</span> CIP-мойка (ротационная головка)</div>
+<div class="cct-grid-item"><span class="plus">+</span> Исполнение из AISI 316</div>
+</div>
+</div>
+
+<div class="cct-cta"><button onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">📩 Получить расчёт <?= htmlspecialchars($data['name']) ?> <?= $volStr ?> <?= $specUnit ?></button></div>
 
 <?php if (!empty($allSpecs)): ?>
-<div class="db-weld-frame" style="padding:28px 32px;margin-top:20px">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
-<h2 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:#F77C2A">📊</span> Все объёмы</h2>
-<div style="overflow-x:auto">
-<table style="width:100%;border-collapse:collapse;font-size:13px">
-<thead><tr style="background:rgba(255,255,255,.04)"><?php
-$cols = ['<th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);font-weight:700">' . $specLabel . '</th>',
-'<th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);font-weight:700">Полный, л</th>',
-'<th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);font-weight:700">Раб., л</th>'];
-if (empty($s['diameter'])) { $cols[] = '<th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);font-weight:700">D, мм</th><th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);font-weight:700">H, мм</th>'; }
-$cols[] = '<th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);font-weight:700">Стенка</th>';
-$cols[] = '<th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);font-weight:700">Вес, кг</th>';
-$cols[] = '<th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.4);font-weight:700">Цена</th>';
-echo implode("\n", $cols);
-?></tr></thead>
+<div class="cct-card">
+<h2><span class="acc">📊</span> Все объёмы</h2>
+<table class="cct-table">
+<thead><tr><th><?= $specLabel ?></th><th>Полный, л</th><th>Раб., л</th><th>D, мм</th><th>H, мм</th><th>Стенка</th><th>Вес, кг</th><th>Цена</th></tr></thead>
 <tbody><?php
 $allVols = array_keys($allSpecs);
+
 sort($allVols);
 foreach ($allVols as $v):
-$spec = $allSpecs[$v];
-$vFmt = number_format($v, 0, '.', ' ');
-$p = $spec['price'];
-$pStr = $p >= 1000000 ? number_format($p/1000000,1,'.','').' млн ₽' : ($p >= 1000 ? number_format($p/1000,0,'.','').' тыс ₽' : number_format($p,0,'.',' ').' ₽');
-$d = !empty($spec['diameter']) ? $spec['diameter'] : '—';
-$h = !empty($spec['height']) ? $spec['height'] : '—';
-$fv = !empty($spec['full_volume']) ? number_format($spec['full_volume'], 0, '.', ' ') : '—';
-$wv = !empty($spec['working_volume']) ? number_format($spec['working_volume'], 0, '.', ' ') : '—';
-$isAct = $v === $vol ? 'background:rgba(247,124,42,.08)' : '';
+    $spec = $allSpecs[$v];
+    $vFmt = number_format($v, 0, '.', ' ');
+    $p = $spec['price'];
+    $pStr = $p >= 1000000 ? number_format($p/1000000,1,'.','').' млн ₽' : ($p >= 1000 ? number_format($p/1000,0,'.','').' тыс ₽' : number_format($p,0,'.',' ').' ₽');
+    $d = !empty($spec['diameter']) ? $spec['diameter'] : '—';
+    $h = !empty($spec['height']) ? $spec['height'] : '—';
+    $fv = !empty($spec['full_volume']) ? number_format($spec['full_volume'], 0, '.', ' ') : '—';
+    $wv = !empty($spec['working_volume']) ? number_format($spec['working_volume'], 0, '.', ' ') : '—';
 ?>
-<tr style="border-bottom:1px solid rgba(255,255,255,.04);<?= $isAct ?>">
-<td style="padding:8px 10px;color:#F77C2A;font-weight:600"><a href="<?= "{$catPrefix}{$catKey}/{$v}l/" ?>" style="color:#F77C2A;text-decoration:none"><?= $vFmt ?> <?= $specUnit ?></a></td>
-<td style="padding:8px 10px;color:rgba(255,255,255,.6)"><?= $fv ?></td>
-<td style="padding:8px 10px;color:rgba(255,255,255,.6)"><?= $wv ?></td>
-<?php if (empty($s['diameter'])): ?><td style="padding:8px 10px;color:rgba(255,255,255,.6)"><?= $d ?></td>
-<td style="padding:8px 10px;color:rgba(255,255,255,.6)"><?= $h ?></td><?php endif; ?>
-<td style="padding:8px 10px;color:rgba(255,255,255,.6)"><?= $spec['wall'] ?> мм</td>
-<td style="padding:8px 10px;color:rgba(255,255,255,.6)"><?= $spec['weight'] ?></td>
-<td style="padding:8px 10px;color:#F77C2A;font-weight:600"><?= $pStr ?></td>
-</tr>
+<tr class="<?= $v === $vol ? 'act' : '' ?>"><td><a href="<?= "{$catPrefix}{$catKey}/{$v}l/" ?>"><?= $vFmt ?> <?= $specUnit ?></a></td><td><?= $fv ?></td><td><?= $wv ?></td><td><?= $d ?></td><td><?= $h ?></td><td><?= $spec['wall'] ?> мм</td><td><?= $spec['weight'] ?></td><td><?= $pStr ?></td></tr>
 <?php endforeach; ?></tbody>
 </table>
 </div>
-</div>
 <?php endif; ?>
 
-<div class="db-weld-frame" style="padding:28px 32px;margin-top:20px">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
-<h2 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 16px;display:flex;align-items:center;gap:8px"><span style="color:#F77C2A">❓</span> Часто задаваемые вопросы</h2>
-<div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,.06)"><div class="faq-q" style="padding:14px 0;font-weight:600;color:#fff;cursor:pointer;font-size:14px" onclick="this.closest('.faq-item').classList.toggle('open')">Из какого материала изготавливается оборудование?</div><div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s;font-size:14px;color:rgba(255,255,255,.5);line-height:1.6">Стандартное исполнение — нержавеющая сталь AISI 304 (пищевая, кислотостойкая). Для агрессивных сред доступна сталь AISI 316. По запросу — AISI 316L для фармацевтики и особо чистых производств.</div></div>
-<div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,.06)"><div class="faq-q" style="padding:14px 0;font-weight:600;color:#fff;cursor:pointer;font-size:14px" onclick="this.closest('.faq-item').classList.toggle('open')">Какие сроки изготовления?</div><div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s;font-size:14px;color:rgba(255,255,255,.5);line-height:1.6">Стандартные позиции — от 3-5 рабочих дней. Крупные позиции — от 14-20 дней, в зависимости от сложности и загрузки производства.</div></div>
-<div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,.06)"><div class="faq-q" style="padding:14px 0;font-weight:600;color:#fff;cursor:pointer;font-size:14px" onclick="this.closest('.faq-item').classList.toggle('open')">Какая гарантия на оборудование?</div><div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s;font-size:14px;color:rgba(255,255,255,.5);line-height:1.6">Гарантия на оборудование — 12 месяцев с даты отгрузки. Распространяется на дефекты материалов и изготовления.</div></div>
-<div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,.06)"><div class="faq-q" style="padding:14px 0;font-weight:600;color:#fff;cursor:pointer;font-size:14px" onclick="this.closest('.faq-item').classList.toggle('open')">Доставляете и монтируете?</div><div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s;font-size:14px;color:rgba(255,255,255,.5);line-height:1.6">Да, осуществляем доставку по всей России и странам СНГ любой ТК. Также предоставляем услуги шеф-монтажа и пусконаладки силами наших инженеров.</div></div>
-<div class="faq-item"><div class="faq-q" style="padding:14px 0;font-weight:600;color:#fff;cursor:pointer;font-size:14px" onclick="this.closest('.faq-item').classList.toggle('open')">Как заказать?</div><div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s;font-size:14px;color:rgba(255,255,255,.5);line-height:1.6">Оставьте заявку через форму ниже или позвоните по телефону <strong style="color:#fff">8 (993) 594-01-07</strong>. Мы подготовим коммерческое предложение с точной стоимостью, сроками и условиями доставки.</div></div>
-<style>.faq-item.open .faq-a{max-height:200px!important;padding:0 0 14px!important}.faq-q::after{content:'+';font-size:18px;color:rgba(255,255,255,.2);transition:transform .2s;flex-shrink:0}.faq-item.open .faq-q::after{content:'−';color:#F77C2A}</style>
+<div class="cct-faq">
+<h2><span class="acc">❓</span> Часто задаваемые вопросы</h2>
+<div class="faq-item"><div class="faq-q">Из какого материала изготавливается оборудование?</div><div class="faq-a">Стандартное исполнение — нержавеющая сталь AISI 304 (пищевая, кислотостойкая). Для агрессивных сред доступна сталь AISI 316. По запросу — AISI 316L для фармацевтики и особо чистых производств.</div></div>
+<div class="faq-item"><div class="faq-q">Какие сроки изготовления?</div><div class="faq-a">Стандартные позиции — от 3-5 рабочих дней. Крупные позиции — от 14-20 дней, в зависимости от сложности и загрузки производства.</div></div>
+<div class="faq-item"><div class="faq-q">Какая гарантия на оборудование?</div><div class="faq-a">Гарантия на оборудование — 12 месяцев с даты отгрузки. Распространяется на дефекты материалов и изготовления.</div></div>
+<div class="faq-item"><div class="faq-q">Доставляете и монтируете?</div><div class="faq-a">Да, осуществляем доставку по всей России и странам СНГ любой ТК. Также предоставляем услуги шеф-монтажа и пусконаладки силами наших инженеров.</div></div>
+<div class="faq-item"><div class="faq-q">Как заказать?</div><div class="faq-a">Оставьте заявку через форму ниже или позвоните по телефону <strong>8 (993) 594-01-07</strong>. Мы подготовим коммерческое предложение с точной стоимостью, сроками и условиями доставки.</div></div>
 </div>
 
-<div class="db-weld-frame" style="padding:32px 36px;margin:28px 0 48px" id="order">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
-<div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:4px">Заявка</div>
-<h2 style="font-size:20px;font-weight:800;color:#fff;margin:0 0 4px">Получить расчёт <?= htmlspecialchars($data['name']) ?> <?= $volStr ?> <?= $specUnit ?></h2>
-<p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:28px;line-height:1.5">Оставьте заявку — подготовим КП с точной стоимостью, сроками изготовления и доставки. Отвечаем в течение 2 часов.</p>
+<div class="cct-form" id="order">
+<h2>📩 Получить расчёт <?= htmlspecialchars($data['name']) ?> <?= $volStr ?> <?= $specUnit ?></h2>
+<p class="cft-ub">Оставьте заявку — подготовим КП с точной стоимостью, сроками изготовления и доставки. Отвечаем в течение 2 часов.</p>
 <form method="post" action="/php/send.php">
 <input type="hidden" name="csrf" id="csrfToken" value="">
 <input type="hidden" name="form_type" value="<?= htmlspecialchars($formType) ?>">
 <input type="hidden" name="product" value="<?= htmlspecialchars($data['name'] . ' ' . $vol . ' ' . $specUnit) ?>">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
-<div><input type="text" name="name" required placeholder="Ваше имя" style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box"></div>
-<div><input type="tel" name="phone" required placeholder="Телефон" class="phone-mask" style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box"></div>
+<div class="row">
+<div><label>Ваше имя</label><input type="text" name="name" required placeholder="Иван"></div>
+<div><label>Телефон</label><input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="phone-mask"></div>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
-<div><input type="email" name="email" placeholder="Email для КП" style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box"></div>
-<div><input type="number" name="quantity" value="1" min="1" placeholder="Количество" style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box"></div>
+<div class="row">
+<div><label>Email</label><input type="email" name="email" placeholder="ivan@example.ru"></div>
+<div><label>Количество</label><input type="number" name="quantity" value="1" min="1"></div>
 </div>
-<div style="margin-bottom:14px">
-<textarea name="comment" rows="3" placeholder="Дополнительные требования, материал, опции, сроки..." style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;resize:vertical;min-height:80px;box-sizing:border-box"><?= htmlspecialchars($data['name']) ?> <?= $volStr ?> <?= $specUnit ?>, количество: 1 шт. Прошу рассчитать стоимость и сроки.</textarea>
-</div>
-<label style="display:flex;align-items:flex-start;gap:8px;margin-bottom:16px;font-size:12px;color:rgba(255,255,255,.5);cursor:pointer">
-<input type="checkbox" name="agreement" value="1" required style="margin-top:2px;accent-color:#F77C2A">
-<span>Я согласен(а) на обработку персональных данных в соответствии с <a href="/privacy.html" target="_blank" style="color:#F77C2A;text-decoration:none">Политикой конфиденциальности</a></span>
+<div class="full"><label>Требования / вопросы</label><textarea name="comment" rows="3" placeholder="Дополнительные требования, материал, опции, сроки..."><?= htmlspecialchars($data['name']) ?> <?= $volStr ?> <?= $specUnit ?>, количество: 1 шт. Прошу рассчитать стоимость и сроки.</textarea></div>
+<div class="full" 
+style="margin-bottom:16px">
+<label class="chk-label" 
+style="display:flex;align-items:flex-tart;gap:10px;cursor:pointer;font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:#666">
+<input type="checkbox" name="agreement" value="1" required 
+style="width:auto;margin-top:2px;accent-color:#F77C2A;flex-hrink:0">
+<span>Я согласен(а) на обработку персональных данных в соответствии с <a href="/privacy.html" target="_blank" 
+style="color:#F77C2A">Политикой конфиденциальности</a></span>
 </label>
-<button type="submit" style="width:100%;padding:14px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">📩 Получить расчёт</button>
+</div>
+<button type="submit" class="submit-btn">Получить расчёт</button>
 <div class="form-success-message"></div>
 </form>
 </div>
