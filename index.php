@@ -490,9 +490,17 @@ body{padding-top:0!important}
 <a href="#" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(1)},400)">🍷 Винодельческое</a>
 <a href="#" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(4)},400)">🍽️ Пищевые производства</a>
 </div>
-<div onclick="document.querySelector('.db-hero-inner>div:last-child').scrollIntoView({behavior:'smooth',block:'nearest'})" style="display:inline-flex;align-items:center;gap:8px;margin-top:28px;padding:10px 20px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.25);border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;color:#F77C2A;transition:background .2s" onmouseover="this.style.background='rgba(247,124,42,.2)'" onmouseout="this.style.background=''">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F77C2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-<span>Не нашли оборудование? <span style="text-decoration:underline">Подберите за 3 шага →</span></span>
+<div style="background:#fff;border-radius:12px;padding:24px 28px;margin-top:28px;box-shadow:0 4px 20px rgba(0,0,0,.08);max-width:460px;cursor:pointer" onclick="document.querySelector('.db-hero-inner>div:last-child').scrollIntoView({behavior:'smooth',block:'nearest'});document.querySelector('.db-hero-inner>div:last-child #hqInp').focus()" onmouseover="this.style.boxShadow='0 6px 28px rgba(247,124,42,.2)'" onmouseout="this.style.boxShadow=''">
+<div style="display:flex;align-items:center;gap:14px">
+<div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px">🔍</div>
+<div style="flex:1">
+<div style="font-size:16px;font-weight:700;color:#1a1a26;line-height:1.2">Не нашли что искали?</div>
+<div style="font-size:13px;color:#888;margin-top:3px">Подберите оборудование и узнайте цену за 3 шага</div>
+</div>
+<div style="width:36px;height:36px;border-radius:50%;background:#F77C2A;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</div>
+</div>
 </div>
 </div>
 <div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
