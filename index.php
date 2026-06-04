@@ -490,15 +490,12 @@ body{padding-top:0!important}
 <a href="#" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(1)},400)">🍷 Винодельческое</a>
 <a href="#" onclick="event.preventDefault();document.getElementById('equipment').scrollIntoView({behavior:'smooth'});setTimeout(function(){if(window.sw)sw(4)},400)">🍽️ Пищевые производства</a>
 </div>
-<div style="background:#fff;border-radius:12px;padding:24px 28px;margin-top:28px;box-shadow:0 4px 20px rgba(0,0,0,.08);max-width:460px;cursor:pointer" onclick="document.querySelector('.db-hero-inner>div:last-child').scrollIntoView({behavior:'smooth',block:'nearest'});document.querySelector('.db-hero-inner>div:last-child #hqInp').focus()" onmouseover="this.style.boxShadow='0 6px 28px rgba(247,124,42,.2)'" onmouseout="this.style.boxShadow=''">
-<div style="display:flex;align-items:center;gap:14px">
-<div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px">🔍</div>
-<div style="flex:1">
-<div style="font-size:16px;font-weight:700;color:#1a1a26;line-height:1.2">Не нашли что искали?</div>
-<div style="font-size:13px;color:#888;margin-top:3px">Подберите оборудование и узнайте цену за 3 шага</div>
-</div>
-<div style="width:36px;height:36px;border-radius:50%;background:#F77C2A;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+<div style="background:#fff;border-radius:12px;padding:24px 28px;margin-top:28px;box-shadow:0 4px 20px rgba(0,0,0,.08);max-width:480px;cursor:pointer" onclick="document.querySelector('.db-hero-inner>div:last-child').scrollIntoView({behavior:'smooth',block:'nearest'});setTimeout(function(){var e=document.getElementById('hqInp');if(e)e.focus()},500)" onmouseover="this.style.boxShadow='0 8px 32px rgba(247,124,42,.25)'" onmouseout="this.style.boxShadow=''">
+<div style="display:flex;align-items:center;gap:20px">
+<img src="/cct-tank.jpg" alt="Резервуар" style="width:100px;height:100px;object-fit:contain;border-radius:10px;background:#f5f6f8;flex-shrink:0">
+<div style="flex:1;min-width:0">
+<div style="font-size:18px;font-weight:800;color:#1a1a26;line-height:1.2">Рассчитайте стоимость онлайн</div>
+<div style="font-size:13px;color:#666;margin-top:6px;line-height:1.5">Просто выберите тип оборудования и объём — цена перед отправкой заявки</div>
 </div>
 </div>
 </div>
