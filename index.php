@@ -357,16 +357,28 @@ body{padding-top:0!important}
 .db-weld-frame{padding:24px 20px!important}
 .db-weld-img img{max-width:100%!important;max-height:260px!important;width:auto!important}
 .db-weld-badge{font-size:12px!important;padding:6px 14px!important}
+.db-hero-inner{padding:20px 16px 50px!important}
+.db-hero-inner>div:last-child{width:100%!important}
+#order-form .db-weld-frame>form>div>div:first-child{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06)}
+#order-form .db-weld-frame>form>div>div{padding:28px 24px!important}
 }
 @media(max-width:480px){
 .db-hero{min-height:50vh}
-.db-hero-stats{gap:14px;flex-direction:column}
-.db-hero h1{font-size:20px}
-.db-hero-tags a{padding:6px 12px;font-size:11px}
-.db-section{padding:36px 0}
+.db-hero h1{font-size:22px}
+.db-hero-tags a{padding:5px 10px;font-size:11px}
+.db-section{padding:32px 0}
 .db-section-title{font-size:16px}
 .db-section-sub{font-size:12px}
-.db-row-section{padding:24px 0}
+.db-row-section{padding:20px 0}
+.db-weld-frame{padding:20px 16px!important}
+.db-hero-inner{padding:12px 12px 30px!important}
+.db-hero-inner>div:last-child{width:100%!important}
+.db-weld-badge{font-size:11px!important;padding:5px 10px!important}
+.db-weld-inner{gap:12px!important}
+.db-prod-equip{grid-template-columns:repeat(2,1fr);gap:8px}
+.db-prod-equip-card .eq-img{height:100px!important;padding:8px!important}
+.db-contacts>div:first-child{padding:0}
+}
 .cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 .cat-card-img{height:110px}
 .cat-card-body{padding:10px 12px}
@@ -1088,7 +1100,7 @@ function toggleAboutEquip(){
   el.style.display=el.style.display==='none'||!el.style.display?'block':'none';
 }
 </script>
-<style>@media(max-width:860px){#order-form .db-weld-frame>form>div{grid-template-columns:1fr!important}#order-form .db-weld-frame>form>div>div:first-child{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px}}#order-form .db-weld-frame::before{top:-1px;border-radius:16px 16px 0 0}</style>
+<style>@media(max-width:860px){#order-form .db-weld-frame>form>div{grid-template-columns:1fr!important}#order-form .db-weld-frame>form>div>div:first-child{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:0}#order-form .db-weld-frame>form>div>div{padding:32px 28px!important}}#order-form .db-weld-frame::before{top:-1px;border-radius:16px 16px 0 0}</style>
 <section id="order-form" style="padding:64px 0;background:#f5f6f8">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:0;overflow:visible">
