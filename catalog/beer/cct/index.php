@@ -283,7 +283,7 @@ $volCount = count($volumes);
 </div>
 <section class="container">
 
-<div class="db-weld-frame" style="padding:0;overflow:hidden;border-radius:14px;margin-top:28px">
+<div style="background:linear-gradient(135deg,#2b2b39,#1a1a26);border:1px solid rgba(247,124,42,.12);border-radius:14px;position:relative;overflow:hidden;margin-top:28px;padding:0">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent);z-index:1"></div>
 <div style="padding:32px 36px 24px;text-align:center">
 <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:4px">Выберите объём</div>
