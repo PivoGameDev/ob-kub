@@ -354,6 +354,12 @@ body{padding-top:0!important}
  #order-form .db-weld-frame form .db-form-opt-trigger{padding:10px 14px!important;font-size:12px!important}
  #order-form .db-weld-frame form button[type="submit"]{padding:12px!important;font-size:14px!important}
   #order-form .db-weld-frame form [style*="grid-template-columns:1fr 1fr;gap:14px"]{grid-template-columns:1fr!important}
+  .fnav{display:flex!important;flex-wrap:wrap!important;gap:0 16px!important}
+  .fnav h3{width:100%!important}
+  .fnav a{width:calc(50% - 8px)!important;padding:4px 0!important}
+  .feq{display:flex!important;flex-wrap:wrap!important;gap:0 16px!important}
+  .feq h3{width:100%!important}
+  .feq a{width:calc(50% - 8px)!important;padding:4px 0!important}
 }
 .cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 .cat-card-img{height:110px}
