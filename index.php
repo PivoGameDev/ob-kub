@@ -453,13 +453,12 @@ body{padding-top:0!important}
 
 <section style="background:#fff;border-bottom:1px solid #f0f0f0;padding:12px 0">
 <div class="db-wrap">
-<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 28px">
-<div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
-<div style="text-align:center"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">17</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">лет работы</div></div>
-<div style="text-align:center"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">2000 м²</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">производства</div></div>
-<div style="text-align:center"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">60+</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">мастеров</div></div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+<div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+<div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">17</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">лет работы</div></div>
+<div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">2000 м²</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">производства</div></div>
+<div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">60+</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">мастеров</div></div>
 </div>
-<div style="width:1px;height:24px;background:#e0e0e0;flex-shrink:0"></div>
 <div style="display:flex;gap:6px;flex-wrap:wrap">
 <span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.18);border-radius:5px;font-size:11px;font-weight:600;color:#27ae60">✓ Гарантия 12 мес</span>
 <a href="/certificates.html" style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.08);border:1px solid rgba(247,124,42,.18);border-radius:5px;font-size:11px;font-weight:600;color:#F77C2A;text-decoration:none">Сертификаты</a>
