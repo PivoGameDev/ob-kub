@@ -544,11 +544,12 @@ var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);
 if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
 fetch('/catalog/?get_prices='+encodeURIComponent(k)+'&src='+src).then(function(r){return r.json()}).then(function(d){
 var s=document.getElementById('hqSel');s.innerHTML='<option value="">— выберите объём —</option>';
-if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var sel=this,pr=parseInt(sel.value);var txt=sel.options[sel.selectedIndex].text;document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(pr);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна'}}
+if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var sel=this,pr=parseInt(sel.value);var txt=sel.options[sel.selectedIndex].text;window.hqSelData=window.hqSelData||{};window.hqSelData.vol=txt;document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(pr);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна'}}
 else{s.innerHTML='<option value="">Нет данных</option>';s.style.display='block'};document.getElementById('hqSt').textContent='Выберите объём'});
 }
 window.hqCustom=function(){document.getElementById('hqCstBox').style.display='block';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none'}
 window.hqCstGo=function(){var v=parseInt(document.getElementById('hqCstVal').value);if(v>0){
+window.hqSelData=window.hqSelData||{};window.hqSelData.vol=v+' л';
 document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';
 document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
 document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена по запросу'}}
@@ -571,6 +572,9 @@ vol=vol.replace(' л','').trim();
 price=(document.getElementById('hqPriceVal')||{}).textContent||''
 } else if(ce&&ce.style.display!='none'&&ce.value){
 vol=ce.value;price=(document.getElementById('hqPriceVal')||{}).textContent||''
+}
+if((!vol||isNaN(parseInt(vol)))&&window.hqSelData&&window.hqSelData.vol){
+vol=String(window.hqSelData.vol).replace(' л','').trim()
 }
 var si=(window.hqSelData||{}).si||'';
 var key=(window.hqSelData||{}).key||'';
@@ -1047,7 +1051,7 @@ function toggleAboutEquip(){
   el.style.display=el.style.display==='none'||!el.style.display?'block':'none';
 }
 </script>
-<style>@media(max-width:860px){#order-form .db-weld-frame>form>div{grid-template-columns:1fr!important}#order-form .db-weld-frame>form>div>div:first-child{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px}}#order-form .db-weld-frame::before{top:-1px;left:-1px;right:-1px;border-radius:17px 17px 0 0}</style>
+<style>@media(max-width:860px){#order-form .db-weld-frame>form>div{grid-template-columns:1fr!important}#order-form .db-weld-frame>form>div>div:first-child{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px}}#order-form .db-weld-frame::before{top:-1px}</style>
 <section id="order-form" style="padding:64px 0;background:#f5f6f8">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:0;overflow:visible">
