@@ -283,10 +283,9 @@ $volCount = count($volumes);
 </div>
 <section class="container">
 
-<div style="background:linear-gradient(135deg,#2b2b39,#1a1a26);border:1px solid rgba(247,124,42,.12);border-radius:14px;position:relative;overflow:hidden;margin-top:28px;padding:0;min-height:300px">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent);z-index:3"></div>
+<div style="margin-top:28px;position:relative;min-height:300px;border-radius:14px;overflow:hidden">
 <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url(/banner-beer.jpg) center/cover;z-index:0"></div>
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.5),rgba(26,26,38,.1));z-index:1"></div>
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.55),rgba(26,26,38,.1));z-index:1"></div>
 <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:28px 32px">
 <div>
 <div style="display:inline-block;background:#fff;border-radius:8px;padding:12px 20px;box-shadow:0 4px 16px rgba(0,0,0,.12)">
@@ -301,12 +300,6 @@ $volCount = count($volumes);
 <?php endforeach; ?>
 </div>
 </div>
-</div>
-</div>
-<div style="border-top:1px solid rgba(255,255,255,.06);padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px">
-<span style="font-size:12px;color:rgba(255,255,255,.5)">Нужен нестандартный размер?</span>
-<span style="font-size:13px;font-weight:700;color:#fff">oborudovanie-kubani@yandex.ru</span>
-<button onclick="var b=this;navigator.clipboard.writeText('oborudovanie-kubani@yandex.ru').then(function(){b.textContent='✅ Скопировано';b.style.background='rgba(46,204,113,.15)';b.style.borderColor='rgba(46,204,113,.3)';setTimeout(function(){b.textContent='📋 Копировать';b.style.background='';b.style.borderColor=''},2000)})" style="padding:6px 14px;background:rgba(247,124,42,.12);border:1px solid rgba(247,124,42,.25);color:#F77C2A;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;white-space:nowrap">📋 Копировать</button>
 </div>
 </div>
 </section>
