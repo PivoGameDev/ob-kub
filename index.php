@@ -543,7 +543,8 @@ if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
 fetch('/catalog/?get_prices='+encodeURIComponent(k)+'&src='+src).then(function(r){return r.json()}).then(function(d){
 var s=document.getElementById('hqSel');s.innerHTML='<option value="">— выберите объём —</option>';
 if(d.prices&&d.prices.length){d.prices.sort(function(a,b){return a.vol-b.vol});d.prices.forEach(function(p){var o=document.createElement('option');o.value=p.price;o.textContent=p.vol+' л';s.appendChild(o)});s.style.display='block';document.getElementById('hqCst').style.display='inline';s.onchange=function(){var sel=this,pr=parseInt(sel.value);var txt=sel.options[sel.selectedIndex].text;document.getElementById('qs3').style.background='#27ae60';document.getElementById('qs3').style.color='#fff';document.getElementById('qs3t').style.color='#333';document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='от '+fmtP(pr);document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена известна';window._hqVol=txt;window._hqPrice=document.getElementById('hqPriceVal').textContent}}
-}
+else{document.getElementById('hqSt').textContent='Нет цен для этого оборудования'};
+document.getElementById('hqSt').textContent='Выберите объём'});
 window.hqCustom=function(){document.getElementById('hqCstBox').style.display='block';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none'}
 window.hqCstGo=function(){var v=parseInt(document.getElementById('hqCstVal').value);if(v>0){
 window._hqVol=v+' л';window._hqPrice='По запросу';
