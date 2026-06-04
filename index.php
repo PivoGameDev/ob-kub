@@ -353,10 +353,9 @@ body{padding-top:0!important}
  #order-form .db-weld-frame form input,#order-form .db-weld-frame form textarea{font-size:13px!important;padding:11px 14px!important}
  #order-form .db-weld-frame form .db-form-opt-trigger{padding:10px 14px!important;font-size:12px!important}
  #order-form .db-weld-frame form button[type="submit"]{padding:12px!important;font-size:14px!important}
- #order-form .db-weld-frame form [style*="grid-template-columns:1fr 1fr;gap:14px"]{grid-template-columns:1fr!important}
- .fnav a,.feq a{width:45%!important;display:inline-block!important;vertical-align:top!important}
+  #order-form .db-weld-frame form [style*="grid-template-columns:1fr 1fr;gap:14px"]{grid-template-columns:1fr!important}
 }
-.fnav a,.feq a{width:45%!important;display:inline-block!important;vertical-align:top!important}.cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 .cat-card-img{height:110px}
 .cat-card-body{padding:10px 12px}
 .cat-card-body .cat-name{font-size:13px}
@@ -1201,9 +1200,10 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 <section class="db-section alt" id="contacts" style="padding:32px 0 64px;background:#f5f6f8">
 <div class="db-wrap">
 <div class="db-weld-frame" style="padding:44px">
-<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#F77C2A;font-weight:600;margin-bottom:6px">Контакты</div>
-<h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 24px;text-transform:uppercase;letter-spacing:.4px">Свяжитесь с нами</h2>
-<div class="db-contacts" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;color:#fff">
+<div class="db-section-line" style="margin-bottom:10px"></div>
+<h2 style="font-size:24px;font-weight:800;color:#fff;text-align:center;margin:0 0 6px;text-transform:uppercase;letter-spacing:.4px">Контакты</h2>
+<p style="font-size:14px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:32px">Свяжитесь с нами любым удобным способом</p>
+<div class="db-contacts" style="color:#fff">
 <div>
 <div class="db-contact-item">
 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -1219,7 +1219,7 @@ function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000
 </div>
 </div>
 <div class="db-contact-map">
-<iframe src="https://yandex.ru/map-widget/v1/?ll=39.000000%2C45.000000&z=15&l=map&pt=39.000000,45.000000,comma" allowfullscreen loading="lazy" style="width:100%;display:block"></iframe>
+<iframe src="https://yandex.ru/map-widget/v1/?ll=39.000000%2C45.000000&z=15&l=map&pt=39.000000,45.000000,comma" allowfullscreen loading="lazy"></iframe>
 </div>
 </div>
 </div>
