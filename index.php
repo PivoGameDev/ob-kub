@@ -75,10 +75,10 @@ main{display:block;margin:0;padding:0}
 .header-menu-row,.header-back-row{display:none!important}
 
 /* ===== HERO ===== */
-.db-hero{position:relative;width:100%;min-height:80vh;display:flex;align-items:center;overflow:hidden;background:#1a1a26}
-.db-hero-bg{position:absolute;top:0;left:0;width:100%;height:130%;object-fit:cover;object-position:center 30%;will-change:transform;pointer-events:none}
+.db-hero{position:relative;width:100%;height:100vh;height:100dvh;display:flex;align-items:stretch;overflow:hidden;background:#1a1a26}
+.db-hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;will-change:transform;pointer-events:none}
 .db-hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.92) 40%,rgba(26,26,38,.5) 70%,rgba(26,26,38,.2) 100%)}
-.db-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:80px 24px 80px;width:100%}
+.db-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:80px 24px 80px;width:100%;height:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:48px}
 .db-hero-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#F77C2A;font-weight:600;margin-bottom:12px}
 .db-hero h1{font-size:48px;font-weight:800;color:#fff;line-height:1.1;margin:0 0 16px;text-transform:uppercase;letter-spacing:.5px;max-width:700px}
 .db-hero p{font-size:17px;line-height:1.7;color:rgba(255,255,255,.6);max-width:600px;margin:0 0 28px}
@@ -457,7 +457,7 @@ body{padding-top:0!important}
 <section class="db-hero">
 <img src="hero-bg.jpg" alt="" class="db-hero-bg">
 <div class="db-hero-overlay"></div>
-<div class="db-hero-inner" style="display:flex!important;gap:48px!important;align-items:center!important;justify-content:space-between!important">
+<div class="db-hero-inner">
 <style>@media(max-width:940px){.db-hero-inner{flex-direction:column!important;gap:24px!important}}@media(max-width:940px){.db-hero-inner>div:last-child{width:100%!important}}</style>
 <div style="flex:1;min-width:0">
 <div class="db-hero-label">Оборудование Кубани — с 2008 года</div>
@@ -470,9 +470,9 @@ body{padding-top:0!important}
 <a href="/industrial.html">🍽️ Пищевые производства</a>
 </div>
 </div>
-<div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box;position:relative">
+<div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
 <div style="font-size:15px;font-weight:700;color:#333;margin-bottom:16px;text-align:center">Узнайте примерную цену в 3 шага</div>
-<div style="min-height:260px;max-height:400px;overflow-y:auto;overflow-x:hidden">
+<div style="max-height:calc(100vh - 260px);overflow-y:auto;overflow-x:hidden">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
 <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
 <span style="font-size:13px;font-weight:600;color:#333">Найдите оборудование</span>
@@ -482,6 +482,9 @@ body{padding-top:0!important}
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
 <input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
     </div>
+
+<div id="hqRes" style="display:none;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:6px;max-height:220px;overflow-y:auto"></div>
+
 
     
 <div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
@@ -512,7 +515,6 @@ body{padding-top:0!important}
 <button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">📩 Получить КП</button>
 <div id="hqSt" style="font-size:11px;color:#999;text-align:center;margin-top:8px">Введите название оборудования</div>
 </div>
-<div id="hqRes" style="display:none;position:absolute;top:76px;left:28px;right:28px;z-index:200;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;max-height:220px;overflow-y:auto"></div>
 
 <script>
 (function(){
