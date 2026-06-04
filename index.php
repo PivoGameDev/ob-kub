@@ -470,19 +470,18 @@ body{padding-top:0!important}
 <a href="/industrial.html">🍽️ Пищевые производства</a>
 </div>
 </div>
-<div style="width:380px;max-height:520px;overflow-y:auto;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
+<div style="width:380px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.15);box-sizing:border-box">
+<div style="max-height:520px;overflow-y:auto;overflow-x:hidden">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
 <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#F77C2A;color:#fff;font-size:12px;font-weight:700">1</span>
 <span style="font-size:13px;font-weight:600;color:#333">Найдите оборудование</span>
 <span id="hqRst" onclick="hqReset()" style="display:none;margin-left:auto;font-size:16px;color:#999;cursor:pointer;line-height:1">×</span>
 </div>
-<div style="position:relative">
 <div style="display:flex;align-items:center;border:1px solid #ddd;border-radius:8px;padding:0 10px">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
 <input id="hqInp" placeholder="ЦКТ, БГВ, ферментатор..." style="flex:1;border:none;padding:10px 8px;font-size:13px;outline:none;font-family:inherit;color:#333;background:none">
 </div>
-<div id="hqRes" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:6px;max-height:300px;overflow-y:auto;z-index:50;margin-top:2px"></div>
-</div>
+<div id="hqRes" style="display:none;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:6px;max-height:320px;overflow-y:auto"></div>
 
 <div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px">
 <span id="qs2" style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee;color:#aaa;font-size:12px;font-weight:700">2</span>
