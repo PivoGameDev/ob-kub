@@ -539,7 +539,7 @@ var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/'
 document.getElementById('hqSelected').style.display='flex';
 document.getElementById('hqSelImg').src='/'+(hqImgs[k]||'cct-tank.jpg');
 document.getElementById('hqSelName').textContent=r.n;
-window.hqSelData={name:r.n,si:r.si};
+window.hqSelData={name:r.n,si:r.si,key:k};
 var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var lm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=lm[r.si]||'';
 if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
 fetch('/catalog/?get_prices='+encodeURIComponent(k)+'&src='+src).then(function(r){return r.json()}).then(function(d){
@@ -568,19 +568,24 @@ var cstEl=document.getElementById('hqCstVal');
 if(selEl&&selEl.style.display!='none'&&selEl.value){vol=selEl.options[selEl.selectedIndex].textContent.replace(' л','').trim();quizPrice=document.getElementById('hqPriceVal').textContent}
 else if(cstEl&&cstEl.style.display!='none'&&cstEl.value){vol=cstEl.value;quizPrice=document.getElementById('hqPriceVal').textContent}
 var indMap={beer:'beer',dairy:'dairy',wine:'wine',industrial:'other'};
-if(data.si&&indMap[data.si]){document.getElementById('draft-industry').value=indMap[data.si]}
+var ind=document.getElementById('draft-industry');
+if(data.si&&indMap[data.si]&&ind)ind.value=indMap[data.si];
 var opt=document.getElementById('optSection');
 if(opt&&opt.style.display!='block'){var to=window.toggleOptional;if(to)to()}
 var v=parseInt(vol);
 if(v>0){
-var known=[250,500,630,1000,1250,1500,2000,2500,3000,3150,4000,5000,6000,7500,8000,10000];
-var match=known.slice().sort(function(a,b){return Math.abs(a-v)-Math.abs(b-v)})[0];
+var btnVols=[250,500,1000,3000,5000,10000];
+var match=btnVols.slice().sort(function(a,b){return Math.abs(a-v)-Math.abs(b-v)})[0];
 var dv=document.getElementById('draft-volume');if(dv)dv.value=match;
-var b=document.querySelector('.db-vol-btn[data-vol="'+match+'"]');
 document.querySelectorAll('.db-vol-btn').forEach(function(x){x.classList.remove('active')});
+var b=document.querySelector('.db-vol-btn[data-vol="'+match+'"]');
 if(b)b.classList.add('active');
-var dc=document.getElementById('draft-vol-custom');if(dc)dc.style.display='none';
-var upd=window.updateDraftPrice;if(upd)upd()}
+var dc=document.getElementById('draft-vol-custom');if(dc)dc.style.display='none'}
+var keyMap={cct:'ckt','hot-water-tank':'hot_water','mash-tun':'mash_tun','combined-kettle':'combined_kettle','lauter-tun':'lauter_tun','brew-kettle':'brew_kettle','whirlpool':'whirlpool','wort-receiver':'wort_receiver',unitank:'forfas','steam-generator':'steam',chiller:'chiller','grain-mill':'mill','heat-exchanger':'heatex',reception:'reception',storage:'storage','cheese-maker':'cheesemaker',fermentation:'fermentation',vdp:'pasteurizer','cottage-cheese':'curd',cooler:'reception','red-fermentation':'red_fermenter','white-fermentation':'white_fermenter','storage-aging':'aging','cold-stabilization':'cryostat',blending:'blending','universal-tank':'universal',mixing:'mixing',thermal:'thermal',pressure:'pressure',cip:'cip'};
+var ft=document.getElementById('draft-type');
+var tgt=keyMap[data.key];
+if(tgt&&ft){for(var xi=0;xi<ft.options.length;xi++){if(ft.options[xi].value===tgt){ft.value=tgt;break}}}
+var upd=window.updateDraftPrice;if(upd)upd();
 if(quizPrice){var pv=document.getElementById('draft-price-value');if(pv)pv.textContent=quizPrice}
 if(data.name){var ta=document.querySelector('textarea[name="comment"]');
 if(ta&&!ta.value.trim())ta.value='Запрос из подбора: '+data.name+(v>0?', объём '+v+' л':'')+(quizPrice?', цена '+quizPrice:'')}
