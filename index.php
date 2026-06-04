@@ -512,7 +512,7 @@ body{padding-top:0!important}
 <div style="font-size:11px;color:#888">💰 Ориентировочная цена</div>
 <div id="hqPriceVal" style="font-size:22px;font-weight:900;color:#F77C2A"></div>
 </div>
-<button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">📩 Получить КП</button>
+<button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="hqGoForm()">📩 Получить КП</button>
 <div id="hqSt" style="font-size:11px;color:#999;text-align:center;margin-top:8px">Введите название оборудования</div>
 </div>
 
@@ -539,6 +539,7 @@ var k=r.u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=r.u.split('/'
 document.getElementById('hqSelected').style.display='flex';
 document.getElementById('hqSelImg').src='/'+(hqImgs[k]||'cct-tank.jpg');
 document.getElementById('hqSelName').textContent=r.n;
+window.hqSelData={name:r.n,si:r.si};
 var u=new URL(r.u,location.origin);var pp=u.pathname.split('/').filter(Boolean);var lm={beer:'beerExtra',dairy:'dairyData',wine:'wineData',industrial:'industrialData'};var src=lm[r.si]||'';
 if(pp.includes('brew-house'))src='brewData';if(pp.includes('cct'))src='cctData';
 fetch('/catalog/?get_prices='+encodeURIComponent(k)+'&src='+src).then(function(r){return r.json()}).then(function(d){
@@ -552,12 +553,34 @@ document.getElementById('qs3').style.background='#27ae60';document.getElementByI
 document.getElementById('hqPriceBox').style.display='block';document.getElementById('hqPriceVal').textContent='По запросу';
 document.getElementById('hqBtnGo').style.display='block';document.getElementById('hqSt').textContent='✅ Цена по запросу'}}
 window.hqReset=function(){
-inp.value='';res.style.display='none';document.getElementById('hqRst').style.display='none';
+inp.value='';res.style.display='none';window.hqSelData={};document.getElementById('hqRst').style.display='none';
 document.getElementById('qs2').style.background='#eee';document.getElementById('qs2').style.color='#aaa';document.getElementById('qs2t').style.color='#aaa';
 document.getElementById('qs3').style.background='#eee';document.getElementById('qs3').style.color='#aaa';document.getElementById('qs3t').style.color='#aaa';
 document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';
 document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования'}
 function fmtP(p){return p>=1000000?(p/1000000).toFixed(1)+' млн ₽':(p>=1000?Math.round(p/1000)+' тыс ₽':p+' ₽')}
+window.hqGoForm=function(){
+var data=window.hqSelData||{};
+var vol='';
+var selEl=document.getElementById('hqSel');
+var cstEl=document.getElementById('hqCstVal');
+if(selEl&&selEl.style.display!='none'&&selEl.value)vol=selEl.options[selEl.selectedIndex].textContent.replace(' л','').trim();
+else if(cstEl&&cstEl.style.display!='none'&&cstEl.value)vol=cstEl.value;
+var indMap={beer:'beer',dairy:'dairy',wine:'wine',industrial:'other'};
+if(data.si&&indMap[data.si]){document.getElementById('draft-industry').value=indMap[data.si]}
+var opt=document.getElementById('optSection');
+if(opt.style.display!='block')toggleOptional();
+if(vol){var v=parseInt(vol);if(v>0){
+var h=document.getElementById('draft-volume');h.value=v;
+var b=document.querySelector('.db-vol-btn[data-vol="'+v+'"]');
+document.querySelectorAll('.db-vol-btn').forEach(function(x){x.classList.remove('active')});
+if(b){b.classList.add('active');document.getElementById('draft-vol-custom').style.display='none'}
+else{document.querySelector('.db-vol-btn.custom').classList.add('active');
+document.getElementById('draft-vol-custom').style.display='block';document.getElementById('draft-vol-custom').value=v;h.value=''}
+updateDraftPrice()}}
+if(data.name){var ta=document.querySelector('textarea[name="comment"]');
+if(ta&&!ta.value.trim())ta.value='Запрос из подбора: '+data.name+(vol?', объём '+vol+' л':'')}
+document.getElementById('order-form').scrollIntoView({behavior:'smooth'})};
 })();
 </script>
 </div>
