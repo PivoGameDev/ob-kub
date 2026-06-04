@@ -257,7 +257,7 @@ function renderCctList($allData, $cat) {
 <span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:11px;font-weight:600;color:#F77C2A">до 4 зон охлаждения</span>
 <span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(247,124,42,.1);border:1px solid rgba(247,124,42,.15);border-radius:4px;font-size:11px;font-weight:600;color:#F77C2A">угол конуса 60-70°</span>
 </div>
-<div onclick="document.querySelector('.volumes-grid').scrollIntoView({behavior:'smooth'})" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:4px">Выбрать объём →</div>
+<div onclick="document.querySelector('.container:nth-of-type(3)').scrollIntoView({behavior:'smooth'})" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:4px">Выбрать объём →</div>
 </div>
 </div>
 </div>
@@ -268,6 +268,29 @@ $minVol = min($volumes);
 $maxVol = max($volumes);
 $volCount = count($volumes);
 ?>
+
+<section class="container" style="margin-top:24px">
+
+<div style="position:relative;min-height:300px;border-radius:14px;overflow:hidden">
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url(/banner-beer.jpg) center/cover;z-index:0"></div>
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.55),rgba(26,26,38,.1));z-index:1"></div>
+<div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:28px 32px">
+<div>
+<div style="display:inline-block;background:#fff;border-radius:8px;padding:12px 20px;box-shadow:0 4px 16px rgba(0,0,0,.12)">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600">Выберите объём ЦКТ</div>
+</div>
+</div>
+<div>
+<div style="display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;background:#fff;border-radius:8px;padding:14px 20px;box-shadow:0 4px 16px rgba(0,0,0,.12)">
+<?php foreach ($volumes as $v): ?>
+<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;background:#F77C2A;color:#fff;border:none;border-radius:5px;font-size:12px;font-weight:700;text-decoration:none;transition:all .2s" onmouseover="this.style.background='#e06a15'" onmouseout="this.style.background='#F77C2A'"><?= number_format($v, 0, '.', ' ') ?> л</a>
+<?php endforeach; ?>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <div class="seo-text-wrap">
     <div class="seo-text-card">
         <div class="seo-text-head">Полезная информация</div>
@@ -368,36 +391,7 @@ $volCount = count($volumes);
 </div>
 </div>
 </div>
-</div>
 </section>
-
-<section class="container">
-
-<div style="margin-top:28px;position:relative;min-height:300px;border-radius:14px;overflow:hidden">
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url(/banner-beer.jpg) center/cover;z-index:0"></div>
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,26,38,.55),rgba(26,26,38,.1));z-index:1"></div>
-<div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:28px 32px">
-<div>
-<div style="display:inline-block;background:#fff;border-radius:8px;padding:12px 20px;box-shadow:0 4px 16px rgba(0,0,0,.12)">
-<div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:2px">Выберите объём ЦКТ</div>
-</div>
-</div>
-<div>
-<div style="display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;background:#fff;border-radius:8px;padding:14px 20px;box-shadow:0 4px 16px rgba(0,0,0,.12)">
-<?php foreach ($volumes as $v): ?>
-<a href="/catalog/beer/cct/volume.php?vol=<?= $v ?>" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;background:#F77C2A;color:#fff;border:none;border-radius:5px;font-size:12px;font-weight:700;text-decoration:none;transition:all .2s" onmouseover="this.style.background='#e06a15'" onmouseout="this.style.background='#F77C2A'"><?= number_format($v, 0, '.', ' ') ?> л</a>
-<?php endforeach; ?>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<?php $cctArticles = [
-['title' => 'Как выбрать ЦКТ для пивоварни', 'content' => ['<p>Цилиндро-конический танк — сердце любой пивоварни. Именно в ЦКТ сусло превращается в пиво: бродит, дображивает, созревает и насыщается углекислотой. От правильного выбора ЦКТ зависит не только качество пива, но и эффективность всего производства.</p>','<h3>Главные параметры выбора</h3><p><strong>Объём.</strong> ЦКТ подбирается под сменную партию: рабочий объём танка должен быть на 20–30% больше объёма одной варки. Если варите 500 л — берите ЦКТ на 630–750 л. Для варки 1000 л оптимален танк на 1250–1500 л. В <a href=\"/catalog/beer/\">каталоге пивоваренного оборудования</a> представлены ЦКТ от 100 до 200 000 л.</p><p><strong>Угол конуса.</strong> Оптимальный угол — 60–75°. Чем круче конус, тем эффективнее сбор дрожжей. Для лагерных сортов рекомендуется угол 70–75°, для элей — 60–65°.</p><p><strong>Рубашки охлаждения.</strong> Для ЦКТ до 5000 л достаточно 2 зон охлаждения (колба + конус). Для танков большего объёма нужны 3–4 зоны. Точность поддержания температуры — ±0,5°C.</p><p><strong>Рабочее давление.</strong> Стандарт для пивоваренных ЦКТ — 2,5 бар. Все наши ЦКТ рассчитаны на 2,5 бар с запасом прочности.</p><h3>Сколько нужно ЦКТ</h3><p>Количество танков зависит от сортов пива и цикла брожения. На каждый сорт нужен отдельный ЦКТ на полный цикл (14–28 дней). Минимальная формула: <strong>количество сортов × 2</strong> (один танк занят, второй — на дображивании или мойке). Для пивоварни с 3 сортами пива нужно минимум 6 ЦКТ.</p><h3>Типовая комплектация</h3><p>Современный ЦКТ оснащается: рубашками охлаждения, термоизоляцией ППУ 50–100 мм, CIP-мойкой (ротационная головка), пробоотборным краном, датчиком температуры Pt100, манометром и предохранительным клапаном, шпунт-аппаратом для регулировки давления.</p>','<p>Не знаете, какой ЦКТ подойдёт? Инженер подберёт оптимальный объём под вашу варку, рассчитает количество танков и подготовит КП с точной стоимостью.</p>']],
-['title' => 'Сколько нужно ЦКТ: формула для пивоварни', 'content' => ['<p>Количество ЦКТ — один из главных вопросов при проектировании пивоварни. Недостаток танков ограничивает ассортимент и объём производства, избыток — замораживает бюджет. Оптимальное количество рассчитывается исходя из сортовой матрицы, цикла брожения и графика варок.</p>','<h3>Базовая формула</h3><p><strong>N = S × (C / D + 1)</strong>, где S — количество сортов в одновременном производстве, C — полный цикл ЦКТ (брожение + дображивание) в днях, D — периодичность варок в днях. Плюс один резервный танк на каждый сорт для мойки и CIP.</p><p>Пример: пивоварня варит 3 сорта пива (лагер, эль, пшеничное). Цикл лагера — 21 день, эля — 10 дней, пшеничного — 14 дней. При варке каждого сорта раз в неделю потребуется 7 ЦКТ.</p>','<p>«ОБОРУДОВАНИЕ КУБАНИ» помогает рассчитать конфигурацию ЦКТ под план производства — оставьте заявку для расчёта.</p>']],
-['title' => 'Как разобраться в названиях: ЦКТ, танк брожения, форфас и другие термины', 'content' => ['<p>В пивоварении одно и то же оборудование могут называть по-разному. ЦКТ — цилиндро-конический танк — также называют конусным танком, коническим танком, танком брожения или танком дображивания.</p>','<p><strong>Основные синонимы пивного оборудования:</strong></p><p>• <strong>ЦКТ</strong> = цилиндроконический танк = конический танк = танк брожения = танк дображивания</p><p>• <strong>Форфас</strong> = лагерный танк = юнит = unitank = BBT (Bright Beer Tank)</p><p>• <strong>Заторный аппарат</strong> = маш тюн = заторный чан = mash tun</p><p>• <strong>Фильтрационный аппарат</strong> = лаутер тюн = фильтрчан = lauter tun</p><p>• <strong>Сусловарочный аппарат</strong> = сусловарка = варочный котел</p><p>• <strong>Гидроциклонный аппарат</strong> = вирпул = whirlpool</p><p>• <strong>Бак горячей воды</strong> = БГВ</p>','<p>Всё наше оборудование производится из нержавеющей стали AISI 304/316, поэтому материал в названии не указывается. Если сомневаетесь — позвоните, инженер поможет подобрать правильный вариант.</p>']],
-]; ?>
 
 <style>
 .article-card{background:#fff!important;border-radius:10px!important;padding:20px 24px!important;box-shadow:0 2px 12px rgba(0,0,0,.08)!important}
