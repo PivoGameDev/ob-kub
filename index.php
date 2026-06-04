@@ -454,7 +454,7 @@ header.header{display:block!important;width:100%!important;position:sticky!impor
 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
 <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
 <div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">17</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">лет работы</div></div>
-<div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">Цех 2000 м²</div></div>
+<div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">Цех 5000 м²</div></div>
 <div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">60+</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">мастеров</div></div>
 <div style="text-align:left"><div style="font-size:20px;font-weight:800;color:#F77C2A;line-height:1.1">500+</div><div style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.5px">резервуаров</div></div>
 </div>
@@ -816,7 +816,7 @@ sw(0);
 <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">проектов по всей России</div>
 </div>
 <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
-<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">2000 м²</div>
+<div style="font-size:32px;font-weight:800;color:#F77C2A;line-height:1">5000 м²</div>
 <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">собственное производство</div>
 </div>
 <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:20px 10px">
@@ -1027,7 +1027,7 @@ function toggleProj(el){
 <div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center">
 <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F77C2A;font-weight:600;margin-bottom:6px">О нас</div>
 <h2 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.2">Производство ёмкостей<br>из нержавеющей стали</h2>
-<p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin:0 0 12px">ООО «Оборудование Кубани» — производитель промышленного оборудования из нержавеющей стали AISI 304/316. Собственное производство 2000 м² в Краснодаре.</p>
+<p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin:0 0 12px">ООО «Оборудование Кубани» — производитель промышленного оборудования из нержавеющей стали AISI 304/316. Собственное производство 5000 м² в Краснодаре.</p>
 <div id="aboutMore" style="display:none;font-size:13px;color:rgba(255,255,255,.5);line-height:1.6">
 <p style="margin:0 0 8px">Изготавливаем резервуары для хранения, ёмкости с мешалками, терморегуляцией, сосуды под давлением до 6 бар, CIP-станции и теплообменники. Оборудование используется в пивоваренной, молочной, винодельческой, масложировой отраслях.</p>
 <p style="margin:0 0 8px">Парк оборудования: лазерный раскройный комплекс, автоматы аргонодуговой сварки, вальцы для гибки металла до 25 мм, линия вальцовки днищ. Контроль качества: неразрушающие методы, гидравлические испытания.</p>
