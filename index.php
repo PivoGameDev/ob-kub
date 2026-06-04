@@ -574,35 +574,37 @@ vol=ce.value;price=(document.getElementById('hqPriceVal')||{}).textContent||''
 }
 var si=(window.hqSelData||{}).si||'';
 var key=(window.hqSelData||{}).key||'';
-var im={beer:'beer',dairy:'dairy',wine:'wine',industrial:'other'};
-var el=document.getElementById('draft-industry');
-if(si&&im[si]&&el)el.value=im[si];
 var os=document.getElementById('optSection'),ot=document.getElementById('optTrigger');
 if(os&&ot){os.style.display='block';ot.classList.add('open')}
-var ud=window.updateDraftTypes;if(ud)ud();
-var km={cct:'ckt','hot-water-tank':'hot_water','mash-tun':'mash_tun','combined-kettle':'combined_kettle','lauter-tun':'lauter_tun','brew-kettle':'brew_kettle','whirlpool':'whirlpool','wort-receiver':'wort_receiver',unitank:'forfas','steam-generator':'steam',chiller:'chiller','grain-mill':'mill','heat-exchanger':'heatex',reception:'reception',storage:'storage','cheese-maker':'cheesemaker',fermentation:'fermentation',vdp:'pasteurizer','cottage-cheese':'curd',cooler:'reception','red-fermentation':'red_fermenter','white-fermentation':'white_fermenter','storage-aging':'aging','cold-stabilization':'cryostat',blending:'blending','universal-tank':'universal',mixing:'mixing',thermal:'thermal',pressure:'pressure',cip:'cip'};
-var ft=document.getElementById('draft-type');
-var tg=km[key];
-if(tg&&ft&&ft.options){
-for(var xi=0;xi<ft.options.length;xi++){
-if(ft.options[xi]&&ft.options[xi].value===tg){ft.value=tg;break}
-}}
-var v=parseInt(vol);
-if(v>0&&!isNaN(v)){
-var bv=[250,500,1000,3000,5000,10000];
-var mt=bv.slice().sort(function(a,b){return Math.abs(a-v)-Math.abs(b-v)})[0];
-var dv=document.getElementById('draft-volume');
-if(dv)dv.value=String(mt);
-document.querySelectorAll('.db-vol-btn').forEach(function(x){x.classList.remove('active')});
-var bb=document.querySelector('.db-vol-btn[data-vol="'+mt+'"]');
-if(bb)bb.classList.add('active');
-var dc=document.getElementById('draft-vol-custom');
-if(dc)dc.style.display='none'
+var fd=document.getElementById('fqDisplay');
+var fn=document.getElementById('fqName');
+var fm=document.getElementById('fqMeta');
+var fv=document.getElementById('fqVol');
+var fp=document.getElementById('fqPrice');
+var fi=document.getElementById('fqImg');
+var hp=document.getElementById('fqProduct');
+var hv=document.getElementById('fqVolume');
+var hi=document.getElementById('fqPriceInput');
+if(fd&&fn&&fv&&fp){
+fd.style.display='block';
+fn.textContent=name||'—';
+var meta=[];
+if(si)meta.push(si==='beer'?'Пивоварение':si==='dairy'?'Молочное':si==='wine'?'Виноделие':'Промышленность');
+if(fm)fm.textContent=meta.join(' · ');
+fv.textContent=v>0?vol+' л':'—';
+fp.textContent=price||'—';
 }
-var up=window.updateDraftPrice;if(up)up();
-if(price){var pv=document.getElementById('draft-price-value');if(pv)pv.textContent=price}
+var v=parseInt(vol);
+if(hp)hp.value=name||'';
+if(hv)hv.value=v>0?vol:'';
+if(hi)hi.value=price||'';
+if(key&&fi){
+var imgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','mash-tun':'mash-tun.jpg','combined-kettle':'combined-kettle.jpg','lauter-tun':'lauter-tun.jpg','brew-kettle':'brew-kettle.jpg','whirlpool':'whirlpool.jpg','wort-receiver':'wort-receiver.jpg',unitank:'unitank.jpg',reception:'dairy-reception.jpg',storage:'dairy-storage.jpg','cheese-maker':'dairy-cheese-maker.jpg',fermentation:'dairy-fermentation.jpg',vdp:'dairy-vdp.jpg','cottage-cheese':'dairy-cottage-cheese.jpg',cooler:'dairy-cooler.jpg','red-fermentation':'wine-red-fermentation.jpg','white-fermentation':'wine-white-fermentation.jpg','storage-aging':'wine-storage-aging.jpg','cold-stabilization':'wine-cold-stabilization.jpg',blending:'wine-blending.png','universal-tank':'wine-universal-tank.jpg',mixing:'industrial-mixing.jpg',thermal:'industrial-thermal.jpg',pressure:'industrial-pressure.jpg',cip:'industrial-cip.jpg','steam-generator':'steam-generator.jpg',chiller:'chiller.jpg'};
+var src=imgs[key];
+if(src){fi.src='/'+src;fi.style.display='block'}
+}
 if(name){var ta=document.querySelector('textarea[name="comment"]');
-if(ta&&!ta.value.trim())ta.value='Запрос из подбора: '+name+(v>0?', объём '+v+' л':'')+(price?', цена '+price:'')}
+if(ta&&!ta.value.trim())ta.value='Запрос из подбора: '+name+(v>0?', объём '+vol+' л':'')+(price?', цена '+price:'')}
 }catch(e){console.error(e)}
 document.getElementById('order-form').scrollIntoView({behavior:'smooth'})};
 })();
@@ -1063,7 +1065,7 @@ function toggleAboutEquip(){
 <input type="email" name="email" required placeholder="Email (для отправки КП)">
 </div>
 
-<div class="db-form-opt-trigger" id="optTrigger" onclick="toggleOptional()">
+<div class="db-form-opt-trigger" id="optTrigger" onclick="var s=document.getElementById('optSection');if(s.style.display!='block'){s.style.display='block';this.classList.add('open')}else{s.style.display='none';this.classList.remove('open')}">
 <span>💰 Хочу примерную цену — укажу параметры</span>
 <svg class="db-opt-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
 </div>
@@ -1072,48 +1074,25 @@ function toggleAboutEquip(){
 
 <div class="db-form-divider"></div>
 
-<div class="db-form-section-label" style="font-size:13px">Параметры оборудования</div>
+<div class="db-form-section-label" style="font-size:13px">Параметры из подбора</div>
 
-<div class="db-form-row">
-<div>
-<select id="draft-industry" name="industry" class="db-form-select" onchange="updateDraftTypes()">
-<option value="">— Отрасль —</option>
-<option value="beer">🍺 Пивоварение</option>
-<option value="dairy">🥛 Молочная продукция</option>
-<option value="wine">🍷 Виноделие</option>
-<option value="cheese">🧀 Сыроварение</option>
-<option value="juice">🧃 Соки / Соусы</option>
-<option value="oil">🫒 Масложировая</option>
-<option value="other" selected>⚙️ Другое</option>
-</select>
+<div id="fqDisplay" style="background:rgba(247,124,42,.06);border-radius:8px;padding:14px;margin-bottom:14px;display:none">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<img id="fqImg" src="" style="width:40px;height:40px;object-fit:contain;background:#fff;border-radius:6px;flex-shrink:0;display:none">
+<div style="flex:1">
+<div id="fqName" style="font-size:14px;font-weight:700;color:#1a1a26"></div>
+<div id="fqMeta" style="font-size:12px;color:#666;margin-top:2px"></div>
 </div>
-<div>
-<select id="draft-type" name="equipment_type" class="db-form-select" onchange="updateDraftPrice();updateCatalogLink()">
-<option value="">— Тип оборудования —</option>
-</select>
+</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(247,124,42,.12);padding-top:10px">
+<div><span style="font-size:11px;color:#888">Объём</span><div id="fqVol" style="font-size:15px;font-weight:700;color:#333"></div></div>
+<div><span style="font-size:11px;color:#888">Цена</span><div id="fqPrice" style="font-size:15px;font-weight:700;color:#F77C2A"></div></div>
 </div>
 </div>
 
-<div class="db-form-row single">
-<label class="db-vol-label">Объём, литры</label>
-<div class="db-vol-btns" id="draft-vol-btns">
-<button type="button" class="db-vol-btn" data-vol="250" onclick="selectDraftVol(250)">250</button>
-<button type="button" class="db-vol-btn" data-vol="500" onclick="selectDraftVol(500)">500</button>
-<button type="button" class="db-vol-btn active" data-vol="1000" onclick="selectDraftVol(1000)">1 000</button>
-<button type="button" class="db-vol-btn" data-vol="3000" onclick="selectDraftVol(3000)">3 000</button>
-<button type="button" class="db-vol-btn" data-vol="5000" onclick="selectDraftVol(5000)">5 000</button>
-<button type="button" class="db-vol-btn" data-vol="10000" onclick="selectDraftVol(10000)">10 000</button>
-<button type="button" class="db-vol-btn custom" data-vol="custom" onclick="selectDraftVol('custom')">Другой</button>
-</div>
-<input type="number" id="draft-vol-custom" class="db-form-input" placeholder="Укажите объём в литрах" style="display:none" oninput="updateDraftPrice()">
-<input type="hidden" id="draft-volume" name="volume" value="1000">
-</div>
-
-<div class="db-price-block" id="draft-price-block">
-<div class="db-price-label">Предварительная стоимость:</div>
-<div class="db-price-value" id="draft-price-value">от 900 000 ₽</div>
-<div class="db-price-note">Точная цена после уточнения деталей</div>
-</div>
+<input type="hidden" name="quiz_product" id="fqProduct" value="">
+<input type="hidden" name="quiz_volume" id="fqVolume" value="">
+<input type="hidden" name="quiz_price" id="fqPriceInput" value="">
 
 <div class="db-form-row single">
 <textarea name="comment" rows="3" placeholder="Дополнительные пожелания (опции, сроки, планировка...)"></textarea>
@@ -1177,31 +1156,6 @@ function toggleAboutEquip(){
 <script>
 function toggleSeo(){document.getElementById('seoText').classList.toggle('expanded')}
 document.querySelectorAll('.js-toggle-case').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();var c=this.closest('.db-project-card');c.classList.toggle('expanded')})});
-
-const draftIndustryData={
-beer:{defaultPrices:{250:200000,500:350000,1000:600000,3000:1200000,5000:2000000,10000:3500000},types:[{value:'mash_tun',label:'Заторный аппарат',prices:{250:273000,500:403000,1000:637000,3000:1400000,5000:2000000,10000:3500000}},{value:'combined_kettle',label:'Заторно-сусловарочный аппарат',prices:{250:350000,500:520000,1000:800000,3000:1800000,5000:2600000,10000:4500000}},{value:'lauter_tun',label:'Фильтрационный аппарат (Фильтрчан)',prices:{250:280000,500:420000,1000:650000,3000:1450000,5000:2100000,10000:3600000}},{value:'brew_kettle',label:'Сусловарочный аппарат',prices:{250:320000,500:480000,1000:750000,3000:1600000,5000:2400000,10000:4000000}},{value:'whirlpool',label:'Гидроциклонный аппарат (Вихревой отстойник)',prices:{250:220000,500:330000,1000:520000,3000:1150000,5000:1700000,10000:2900000}},{value:'hot_water',label:'Бак горячей воды',prices:{250:150000,500:189000,1000:286000,3000:624000,5000:936000,10000:1600000}},{value:'wort_receiver',label:'Суслосборник',prices:{250:180000,500:270000,1000:420000,3000:950000,5000:1400000,10000:2400000}},{value:'ckt',label:'ЦКТ (Цилиндро-конический танк)',prices:{250:94000,500:150000,1000:247000,3000:598000,5000:936000,10000:1800000}},{value:'forfas',label:'Форфасы',prices:{250:111000,500:169000,1000:273000,3000:624000,5000:936000,10000:1800000}},{value:'mill',label:'Дробилка солода'},{value:'steam',label:'Парогенератор'},{value:'chiller',label:'Чиллер'},{value:'heatex',label:'Теплообменник'}]},
-dairy:{defaultPrices:{250:250000,500:450000,1000:750000,3000:1800000,5000:2800000,10000:4800000},types:[{value:'reception',label:'Ёмкость приёмки молока (ПОМ)',prices:{1000:195000,3000:460000,5000:684000,10000:1200000}},{value:'storage',label:'Резервуар для хранения молока',prices:{3000:367000,5000:546000,10000:937000}},{value:'cheesemaker',label:'Сыроизготовитель',prices:{500:306000,1000:525000,3000:1200000,5000:1800000,10000:3200000}},{value:'fermentation',label:'Ферментационный танк',prices:{500:247000,1000:424000,3000:999000,5000:1500000,10000:2600000}},{value:'pasteurizer',label:'Ванна пастеризации (ВДП)',prices:{500:345000,1000:593000,3000:1400000,5000:2100000,10000:3600000}},{value:'curd',label:'Творогоизготовитель',prices:{500:350000,1000:600000,3000:1400000,5000:2200000,10000:3800000}},{value:'shelf',label:'Стеллажная камера созревания'}]},
-wine:{defaultPrices:{250:200000,500:350000,1000:600000,3000:1400000,5000:2200000,10000:3800000},types:[{value:'red_fermenter',label:'Ферментационная ёмкость для красных вин',prices:{500:280000,1000:480000,3000:1100000,5000:1700000,10000:2900000}},{value:'white_fermenter',label:'Ферментационный танк для белых вин',prices:{500:300000,1000:500000,3000:1200000,5000:1800000,10000:3100000}},{value:'aging',label:'Цистерна для выдержки и хранения вина',prices:{1000:350000,3000:750000,5000:1100000,10000:2000000}},{value:'cryostat',label:'Танк холодной стабилизации (Криостат)',prices:{500:350000,1000:600000,3000:1300000,5000:2000000,10000:3400000}},{value:'blending',label:'Емкость для купажирования',prices:{1000:450000,3000:1000000,5000:1500000,10000:2600000}},{value:'universal',label:'Винификатор',prices:{500:380000,1000:650000,3000:1500000,5000:2300000,10000:3800000}}]},
-cheese:{defaultPrices:{250:200000,500:350000,1000:650000,3000:1500000,5000:2500000,10000:4000000},types:[{value:'cheesemaker',label:'Сыроизготовитель'},{value:'pasteurizer_bath',label:'Ванна пастеризации'},{value:'chamber',label:'Камера созревания'},{value:'salt_bath',label:'Солевая ванна'},{value:'cheese_press',label:'Пресс для сыра'}]},
-juice:{defaultPrices:{250:180000,500:320000,1000:600000,3000:1400000,5000:2200000,10000:3800000},types:[{value:'boiler',label:'Варочный котел'},{value:'pasteurizer',label:'Пастеризатор'},{value:'storage',label:'Емкость хранения'}]},
-oil:{defaultPrices:{250:220000,500:400000,1000:750000,3000:1800000,5000:2900000,10000:5000000},types:[{value:'storage',label:'Емкость хранения'}]},
-other:{defaultPrices:{250:200000,500:350000,1000:600000,3000:1500000,5000:2400000,10000:4000000},types:[{value:'storage',label:'Резервуар для хранения',prices:{1000:144000,3000:341000,5000:507000,10000:870000}},{value:'mixing',label:'Ёмкость с мешалкой',prices:{500:224000,1000:384000,3000:904000,5000:1300000,10000:2300000}},{value:'thermal',label:'Ёмкость с терморегуляцией',prices:{500:198000,1000:341000,3000:803000,5000:1200000,10000:2100000}},{value:'pressure',label:'Емкость под давлением',prices:{500:216000,1000:371000,3000:874000,5000:1300000,10000:2200000}},{value:'cip',label:'CIP-станция'},{value:'heatex',label:'Теплообменник пластинчатый / кожухотрубный'}]}
-};
-function updateDraftTypes(){var i=document.getElementById('draft-industry').value,t=document.getElementById('draft-type');t.innerHTML='';if(!i){t.innerHTML='<option value="">-- Любой тип --</option>';updateDraftPrice();updateCatalogLink();return}var d=draftIndustryData[i];if(!d){t.innerHTML='<option value="">-- Любой тип --</option>';updateDraftPrice();updateCatalogLink();return}t.innerHTML='<option value="">-- Выберите тип --</option>';d.types.forEach(function(x){var o=document.createElement('option');o.value=x.value;o.textContent=x.label;t.appendChild(o)});updateDraftPrice();updateCatalogLink()}
-function selectDraftVol(v){document.querySelectorAll('.db-vol-btn').forEach(function(b){b.classList.remove('active')});var c=document.getElementById('draft-vol-custom'),h=document.getElementById('draft-volume');if(v==='custom'){document.querySelector('.db-vol-btn.custom').classList.add('active');c.style.display='block';c.focus();h.value=''}else{document.querySelector('.db-vol-btn[data-vol="'+v+'"]').classList.add('active');c.style.display='none';c.value='';h.value=v}updateDraftPrice();updateCatalogLink()}
-function updateDraftPrice(){var i=document.getElementById('draft-industry').value,pv=document.getElementById('draft-price-value'),ci=document.getElementById('draft-vol-custom'),hi=document.getElementById('draft-volume'),d=draftIndustryData[i];if(!i||!d){pv.textContent='По запросу';return}var tv=document.getElementById('draft-type').value,to=null;for(var x=0;x<d.types.length;x++){if(d.types[x].value===tv){to=d.types[x];break}}var pr=(to&&to.prices)||d.defaultPrices;if(!pr){pv.textContent='По запросу';return}var v=parseInt(hi.value);if(ci.style.display!=='none'&&ci.value)v=parseInt(ci.value);if(!v||v<=0){pv.textContent='от '+pr[Object.keys(pr).map(Number).sort(function(a,b){return a-b})[0]].toLocaleString('ru-RU')+' ₽';return}var sv=Object.keys(pr).map(Number).sort(function(a,b){return a-b}),p=null;for(var x=0;x<sv.length;x++){if(v<=sv[x]){p=pr[sv[x]];break}}if(p===null){var mv=sv[sv.length-1];p=Math.round(pr[mv]*(v/mv))}pv.textContent='от '+Math.round(p).toLocaleString('ru-RU')+' ₽'}
-var catalogUrls={
-beer:{mash_tun:'/catalog/beer/brew-house/',combined_kettle:'/catalog/beer/brew-house/',lauter_tun:'/catalog/beer/brew-house/',brew_kettle:'/catalog/beer/brew-house/',whirlpool:'/catalog/beer/brew-house/',hot_water:'/catalog/beer/hot-water-tank/',wort_receiver:'/catalog/beer/brew-house/',ckt:'/catalog/beer/cct/',forfas:'/catalog/beer/unitank/',mill:'/catalog/beer/grain-mill/',steam:'/catalog/beer/steam-generator/',chiller:'/catalog/beer/chiller/',heatex:'/catalog/beer/heat-exchanger/',_default:'/catalog/beer/'},
-dairy:{reception:'/catalog/dairy/reception/',storage:'/catalog/dairy/storage/',cheesemaker:'/catalog/dairy/cheese-maker/',fermentation:'/catalog/dairy/fermentation/',pasteurizer:'/catalog/dairy/vdp/',curd:'/catalog/dairy/cottage-cheese/',shelf:'/catalog/dairy/',_default:'/catalog/dairy/'},
-wine:{red_fermenter:'/catalog/wine/red-fermentation/',white_fermenter:'/catalog/wine/white-fermentation/',aging:'/catalog/wine/storage-aging/',cryostat:'/catalog/wine/cold-stabilization/',blending:'/catalog/wine/blending/',universal:'/catalog/wine/universal-tank/',_default:'/catalog/wine/'},
-cheese:{cheesemaker:'/catalog/dairy/cheese-maker/',pasteurizer_bath:'/catalog/dairy/vdp/',chamber:'/catalog/dairy/',salt_bath:'/catalog/dairy/',cheese_press:'/catalog/dairy/',_default:'/catalog/dairy/'},
-juice:{boiler:'/catalog/industrial/',pasteurizer:'/catalog/industrial/thermal/',storage:'/catalog/industrial/storage/',_default:'/catalog/industrial/'},
-oil:{storage:'/catalog/industrial/storage/',_default:'/catalog/industrial/'},
-other:{storage:'/catalog/industrial/storage/',mixing:'/catalog/industrial/mixing/',thermal:'/catalog/industrial/thermal/',pressure:'/catalog/industrial/pressure/',cip:'/catalog/industrial/',heatex:'/catalog/industrial/',_default:'/catalog/industrial/'}
-};
-function updateCatalogLink(){var i=document.getElementById('draft-industry').value,t=document.getElementById('draft-type').value,l=document.getElementById('draft-catalog-link');if(!i||!t){l.style.display='none';return}var ind=catalogUrls[i];if(!ind){l.style.display='none';return}l.href=ind[t]||ind._default;l.style.display='inline-block'}
-var optInitialized=false;
-function toggleOptional(){var s=document.getElementById('optSection'),t=document.getElementById('optTrigger'),o=document.getElementById('optSection').style.display;if(o==='none'){s.style.display='block';t.classList.add('open');if(!optInitialized){optInitialized=true;updateDraftTypes();document.getElementById('draft-type').value='storage';var h=document.getElementById('draft-volume');h.value=1000;var b=document.querySelector('.db-vol-btn[data-vol="1000"]');if(b)b.classList.add('active');updateDraftPrice();updateCatalogLink()}}else{s.style.display='none';t.classList.remove('open')}}
 </script>
 
 <script>
