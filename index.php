@@ -512,14 +512,12 @@ body{padding-top:0!important}
 </div>
 <button id="hqBtnGo" style="display:none;width:100%;margin-top:10px;padding:12px;background:linear-gradient(135deg,#F77C2A,#e06a15);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer" onclick="hqGoForm()">📩 Получить КП</button>
 <div id="hqSt" style="font-size:11px;color:#999;text-align:center;margin-top:8px">Введите название оборудования</div>
-<div id="hqTest" style="font-size:10px;color:red;text-align:center">⏳</div>
 </div>
 
 <script>
 (function(){
 var inp=document.getElementById('hqInp'),res=document.getElementById('hqRes');
-var t=document.getElementById('hqTest');if(t)t.textContent='✓ скрипт запущен';
-if(!inp||!res){if(t)t.textContent='✗ inp='+(!!inp)+' res='+(!!res);return}
+if(!inp||!res)return;
 var hqImgs={'cct':'cct-tank.jpg','hot-water-tank':'hot-water-tank.jpg','reception':'dairy-reception.jpg','storage':'dairy-storage.jpg','vdp':'dairy-vdp.jpg','fermentation':'dairy-fermentation.jpg','cheese-maker':'dairy-cheese-maker.jpg','universal-tank':'wine-universal-tank.jpg','red-fermentation':'wine-red-fermentation.jpg','mixing':'industrial-mixing.jpg','thermal':'industrial-thermal.jpg','storage-aging':'wine-storage-aging.jpg','brew-house':'brew-kettle.jpg','chiller':'chiller.jpg','steam-generator':'steam-generator.jpg','unitank':'unitank.jpg','cooler':'dairy-cooler.jpg','cottage-cheese':'dairy-cottage-cheese.jpg','yeast':'dairy-yeast.jpg','white-fermentation':'wine-white-fermentation.jpg','cold-stabilization':'wine-cold-stabilization.jpg','blending':'wine-blending.png','sulfitation':'wine-sulfitation.jpg','mash-tun':'mash-tun.jpg','combined-kettle':'combined-kettle.jpg','lauter-tun':'lauter-tun.jpg','brew-kettle':'brew-kettle.jpg','whirlpool':'whirlpool.jpg','industrial-storage':'industrial-storage.jpg','cip':'industrial-cip.jpg','pressure':'industrial-pressure.jpg','beer-hot-water-tank':'beer-hot-water-tank.jpg'};
 function hqKey(u){var k=u.split('/').filter(Boolean).pop();if(k.match(/^\d+l?$/))k=u.split('/').filter(Boolean).slice(-2,-1)[0];return k}
 inp.addEventListener('focus',function(){if(!this.value.trim()){document.getElementById('qs2').style.background='#eee';document.getElementById('qs2').style.color='#aaa';document.getElementById('qs2t').style.color='#aaa';document.getElementById('qs3').style.background='#eee';document.getElementById('qs3').style.color='#aaa';document.getElementById('qs3t').style.color='#aaa';document.getElementById('hqSelected').style.display='none';document.getElementById('hqSel').style.display='none';document.getElementById('hqCst').style.display='none';document.getElementById('hqCstBox').style.display='none';document.getElementById('hqPriceBox').style.display='none';document.getElementById('hqBtnGo').style.display='none';document.getElementById('hqSt').textContent='Введите название оборудования';fetch('/php/search.php?q=а').then(function(r){return r.json()}).then(function(d){showRes(d.results)})}});
@@ -1348,7 +1346,6 @@ ticking = false;
 window.addEventListener('scroll', function(){ if (!ticking) { requestAnimationFrame(update); ticking = true; } }, {passive: true});
 update();
 })();
-// Simple quiz search
 
 </script></body>
 
