@@ -306,7 +306,7 @@ $volCount = count($volumes);
 
 <section style="margin-top:32px">
 <div class="container">
-<div class="db-weld-frame" style="padding:28px 32px;background:linear-gradient(135deg,#1a1a26,#2b2b39);border-radius:14px">
+<div style="background:linear-gradient(135deg,#1a1a26,#2b2b39);border-radius:14px;position:relative;overflow:hidden;padding:28px 32px">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F77C2A,transparent)"></div>
 <h2 style="font-size:16px;font-weight:800;color:#fff;margin:0 0 16px;text-transform:uppercase;letter-spacing:.4px">📖 Статьи по теме</h2>
 <div class="article-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
